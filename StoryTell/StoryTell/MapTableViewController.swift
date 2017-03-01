@@ -27,13 +27,26 @@ class MapTableViewController: UITableViewController {
         
         let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //Need to change action to show Publish Alert
         
-        let writeButton = UIBarButtonItem(title: "Write", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //Need to link to Write page
+        var writeImage = UIImage(named: "writeEdit")
+        
+        writeImage = writeImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        
+        //self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: writeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(writeButtonPressed))
+        
+        
+        let writeButton = UIBarButtonItem(image: writeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //Need to link to Write page
         
         let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //needs to be set up to go back a page
         
-        let homeButton = UIBarButtonItem(title: "Home", style: UIBarButtonItemStyle.plain, target: self, action: #selector(homeTapped)) //needs to be linked up to Landing Page
+        var homeImage = UIImage(named: "homePage")
         
-        navigationItem.rightBarButtonItems = [writeButton, publishButton]
+        homeImage = homeImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        
+        let homeButton = UIBarButtonItem(image: homeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(homeTapped))
+        
+        //self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: homeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(homeTapped))
+        
+        navigationItem.rightBarButtonItems = [publishButton, writeButton]
         navigationItem.leftBarButtonItems = [backButton, homeButton]
         
         
@@ -44,7 +57,7 @@ class MapTableViewController: UITableViewController {
     self.navigationController?.pushViewController(newViewController, animated: true)
     }
     func loadData() {
-        story = Story.readStory()!
+        story = [Story.readStory()!]
         
         for item in story {
             let title = item.title

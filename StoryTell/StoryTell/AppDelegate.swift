@@ -28,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //let navigationVC = UINavigationController(rootViewController: ReaderViewController())
         //let navigationVC = UINavigationController(rootViewController: TitlePageViewController())
         let navigationVC = UINavigationController(rootViewController: MapTableViewController())
+        //let navigationVC = UINavigationController(rootViewController: LandingPageViewController())
 
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
