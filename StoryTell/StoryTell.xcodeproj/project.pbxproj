@@ -15,7 +15,11 @@
 		7DF015C61E6B9B370048AAA8 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF015C51E6B9B370048AAA8 /* Story.swift */; };
 		7DF015CA1E6B9E4F0048AAA8 /* SherlockHolmes.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DF015C91E6B9E4F0048AAA8 /* SherlockHolmes.json */; };
 		7DF015CC1E6BA2880048AAA8 /* SampleStory.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DF015CB1E6BA2880048AAA8 /* SampleStory.json */; };
+
+		818518D71E7088DB00191121 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818518D61E7088DB00191121 /* LandingPageViewController.swift */; };
+
 		DF64A0BB1E708E44000EB09E /* TitlePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF64A0BA1E708E44000EB09E /* TitlePageViewController.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +35,11 @@
 		7DF015C51E6B9B370048AAA8 /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		7DF015C91E6B9E4F0048AAA8 /* SherlockHolmes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SherlockHolmes.json; sourceTree = "<group>"; };
 		7DF015CB1E6BA2880048AAA8 /* SampleStory.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SampleStory.json; sourceTree = "<group>"; };
+
+		818518D61E7088DB00191121 /* LandingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
+
 		DF64A0BA1E708E44000EB09E /* TitlePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitlePageViewController.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +104,11 @@
 			isa = PBXGroup;
 			children = (
 				7D3F95EB1E664EAD00FD6453 /* ViewController.swift */,
+
+				818518D61E7088DB00191121 /* LandingPageViewController.swift */,
+
 				DF64A0BA1E708E44000EB09E /* TitlePageViewController.swift */,
+
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -257,6 +269,7 @@
 				7D3F95EA1E664EAD00FD6453 /* AppDelegate.swift in Sources */,
 				DF64A0BB1E708E44000EB09E /* TitlePageViewController.swift in Sources */,
 				7DF015C61E6B9B370048AAA8 /* Story.swift in Sources */,
+				818518D71E7088DB00191121 /* LandingPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,10 +386,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = StoryTell/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sim.StoryTell;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -386,10 +401,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = StoryTell/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sim.StoryTell;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
