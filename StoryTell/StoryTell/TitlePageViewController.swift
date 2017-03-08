@@ -27,7 +27,6 @@ class TitlePageViewController: UIViewController {
         self.edgesForExtendedLayout = []
         self.view.addSubview(titleContainerView)
         self.view.addSubview(authorContainerView)
-        self.view.addSubview(bodyTextField)
         titleContainerView.addSubview(titleTextField)
         authorContainerView.addSubview(authorTextField)
     }
@@ -57,13 +56,6 @@ class TitlePageViewController: UIViewController {
             author.height.equalTo(authorContainerView.snp.height)
             
         }
-        
-        bodyTextField.snp.makeConstraints { (body) in
-            body.top.equalTo(authorContainerView.snp.bottom).offset(20)
-            body.trailing.equalToSuperview()
-            body.leading.equalToSuperview().inset(50)
-        }
-        
         
     }
     
@@ -95,15 +87,6 @@ class TitlePageViewController: UIViewController {
         let textField: UITextField = UITextField()
         textField.placeholder = "Author"
         textField.font = UIFont.boldSystemFont(ofSize: 40.0)
-        
-        return textField
-    }()
-    
-    
-    lazy var bodyTextField: UITextField = {
-        let textField: UITextField = UITextField()
-        textField.placeholder = "Start telling your story..."
-        
         
         return textField
     }()
