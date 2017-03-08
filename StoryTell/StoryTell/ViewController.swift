@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         constraints()
         loadInitialView()
         progressStory(linkPath)
+    
         
     }
     
