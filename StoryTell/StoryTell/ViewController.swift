@@ -129,12 +129,12 @@ class ViewController: UIViewController {
         storyTextView.snp.makeConstraints { (view) in
             view.centerY.equalToSuperview()
             view.centerX.equalToSuperview()
-            view.height.width.equalToSuperview().inset(50)
+            view.height.width.equalToSuperview()
         }
         buttonContainerView.snp.makeConstraints { (view) in
             view.centerY.equalTo(storyTextView)
             view.centerX.equalTo(storyTextView)
-            view.height.width.equalTo(storyTextView)
+            view.height.width.equalTo(storyTextView).inset(50)
         }
     }
     
