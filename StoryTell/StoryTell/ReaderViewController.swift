@@ -1,15 +1,15 @@
 //
-//  ViewController.swift
+//  ReaderViewController.swift
 //  StoryTell
 //
-//  Created by Simone on 3/3/17.
+//  Created by John Gabriel Breshears on 3/8/17.
 //  Copyright © 2017 Simone. All rights reserved.
 //
 
 import UIKit
 import SnapKit
 
-class ViewController: UIViewController {
+class ReaderViewController: UIViewController {
     var story = [Story]()
     var stitches: [String:Any]?
     var linkPath = String()
@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         constraints()
         loadInitialView()
         progressStory(linkPath)
-    
+        
         
     }
     
@@ -102,7 +102,7 @@ class ViewController: UIViewController {
             optButton.addTarget(self, action: #selector(optionSelected), for: .touchUpInside)
             
             self.buttonContainerView.addSubview(optButton)
-
+            
         }
     }
     
@@ -153,4 +153,5 @@ class ViewController: UIViewController {
     
     
 }
+
 
