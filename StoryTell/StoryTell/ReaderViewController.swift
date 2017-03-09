@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
+//  ReaderViewController.swift
 //  StoryTell
 //
-//  Created by Simone on 3/3/17.
+//  Created by John Gabriel Breshears on 3/8/17.
 //  Copyright © 2017 Simone. All rights reserved.
 //
 
@@ -23,6 +23,7 @@ class ReaderViewController: UIViewController {
         constraints()
         loadInitialView()
         progressStory(linkPath)
+        
         
     }
     
@@ -101,7 +102,7 @@ class ReaderViewController: UIViewController {
             optButton.addTarget(self, action: #selector(optionSelected), for: .touchUpInside)
             
             self.buttonContainerView.addSubview(optButton)
-
+            
         }
     }
     
@@ -129,12 +130,12 @@ class ReaderViewController: UIViewController {
         storyTextView.snp.makeConstraints { (view) in
             view.centerY.equalToSuperview()
             view.centerX.equalToSuperview()
-            view.height.width.equalToSuperview().inset(50)
+            view.height.width.equalToSuperview()
         }
         buttonContainerView.snp.makeConstraints { (view) in
             view.centerY.equalTo(storyTextView)
             view.centerX.equalTo(storyTextView)
-            view.height.width.equalTo(storyTextView)
+            view.height.width.equalTo(storyTextView).inset(50)
         }
     }
     
@@ -152,4 +153,5 @@ class ReaderViewController: UIViewController {
     
     
 }
+
 
