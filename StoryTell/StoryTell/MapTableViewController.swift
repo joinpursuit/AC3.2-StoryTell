@@ -29,9 +29,9 @@ class MapTableViewController: UITableViewController {
         
         let writeButton = UIBarButtonItem(title: "Write", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //Need to link to Write page
         
-        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack))
+        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //needs to be set up to go back a page
         
-        let homeButton = UIBarButtonItem(title: "Home", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //needs to be linked up to Landing Page
+        let homeButton = UIBarButtonItem(title: "Home", style: UIBarButtonItemStyle.plain, target: self, action: #selector(homeTapped)) //needs to be linked up to Landing Page
         
         navigationItem.rightBarButtonItems = [writeButton, publishButton]
         navigationItem.leftBarButtonItems = [backButton, homeButton]
@@ -39,7 +39,10 @@ class MapTableViewController: UITableViewController {
         
     }
 
-
+    func homeTapped() {
+    let newViewController = LandingPageViewController()
+    self.navigationController?.pushViewController(newViewController, animated: true)
+    }
     func loadData() {
         story = Story.readStory()!
         
