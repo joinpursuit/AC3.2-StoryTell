@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class ViewController: UIViewController {
+class ReaderViewController: UIViewController {
     var story = [Story]()
     var stitches: [String:Any]?
     var linkPath = String()

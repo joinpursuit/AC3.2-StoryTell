@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		3743B9C7A4D0F9DA0CEDF2FC /* Pods_StoryTell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A1CE72852B33412AAEBBD25 /* Pods_StoryTell.framework */; };
 		7D3F95EA1E664EAD00FD6453 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F95E91E664EAD00FD6453 /* AppDelegate.swift */; };
-		7D3F95EC1E664EAD00FD6453 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F95EB1E664EAD00FD6453 /* ViewController.swift */; };
-		7D3F95EF1E664EAD00FD6453 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D3F95ED1E664EAD00FD6453 /* Main.storyboard */; };
+		7D3F95EC1E664EAD00FD6453 /* ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F95EB1E664EAD00FD6453 /* ReaderViewController.swift */; };
 		7D3F95F11E664EAD00FD6453 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D3F95F01E664EAD00FD6453 /* Assets.xcassets */; };
 		7D3F95F41E664EAD00FD6453 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D3F95F21E664EAD00FD6453 /* LaunchScreen.storyboard */; };
 		7DF015C61E6B9B370048AAA8 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF015C51E6B9B370048AAA8 /* Story.swift */; };
@@ -24,8 +23,7 @@
 		7A1CE72852B33412AAEBBD25 /* Pods_StoryTell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StoryTell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D3F95E61E664EAD00FD6453 /* StoryTell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoryTell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D3F95E91E664EAD00FD6453 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7D3F95EB1E664EAD00FD6453 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7D3F95EE1E664EAD00FD6453 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7D3F95EB1E664EAD00FD6453 /* ReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderViewController.swift; sourceTree = "<group>"; };
 		7D3F95F01E664EAD00FD6453 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D3F95F31E664EAD00FD6453 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D3F95F51E664EAD00FD6453 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,11 +83,10 @@
 			isa = PBXGroup;
 			children = (
 				7D3F95E91E664EAD00FD6453 /* AppDelegate.swift */,
-				7D3F95EB1E664EAD00FD6453 /* ViewController.swift */,
+				7D3F95EB1E664EAD00FD6453 /* ReaderViewController.swift */,
 				7DF015C51E6B9B370048AAA8 /* Story.swift */,
 				7DF015C91E6B9E4F0048AAA8 /* SherlockHolmes.json */,
 				7DF015CB1E6BA2880048AAA8 /* SampleStory.json */,
-				7D3F95ED1E664EAD00FD6453 /* Main.storyboard */,
 				7D3F95F01E664EAD00FD6453 /* Assets.xcassets */,
 				7D3F95F21E664EAD00FD6453 /* LaunchScreen.storyboard */,
 				7D3F95F51E664EAD00FD6453 /* Info.plist */,
@@ -162,7 +159,6 @@
 				7D3F95F41E664EAD00FD6453 /* LaunchScreen.storyboard in Resources */,
 				7D3F95F11E664EAD00FD6453 /* Assets.xcassets in Resources */,
 				7DF015CA1E6B9E4F0048AAA8 /* SherlockHolmes.json in Resources */,
-				7D3F95EF1E664EAD00FD6453 /* Main.storyboard in Resources */,
 				7DF015CC1E6BA2880048AAA8 /* SampleStory.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,7 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D3F95EC1E664EAD00FD6453 /* ViewController.swift in Sources */,
+				7D3F95EC1E664EAD00FD6453 /* ReaderViewController.swift in Sources */,
 				7D3F95EA1E664EAD00FD6453 /* AppDelegate.swift in Sources */,
 				7DF015C61E6B9B370048AAA8 /* Story.swift in Sources */,
 			);
@@ -231,14 +227,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7D3F95ED1E664EAD00FD6453 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7D3F95EE1E664EAD00FD6453 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7D3F95F21E664EAD00FD6453 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
