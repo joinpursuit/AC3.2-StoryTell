@@ -19,7 +19,6 @@ class TitlePageViewController: UIViewController {
         setupViewHierarchy()
         configureConstraints()
         
-        // Do any additional setup after loading the view.
     }
     
     // MARK: - Setup
@@ -29,6 +28,7 @@ class TitlePageViewController: UIViewController {
         self.view.addSubview(authorContainerView)
         titleContainerView.addSubview(titleTextField)
         authorContainerView.addSubview(authorTextField)
+        self.view.addSubview(createStoryButton)
     }
     
     private func configureConstraints(){
@@ -57,9 +57,21 @@ class TitlePageViewController: UIViewController {
             
         }
         
+        createStoryButton.snp.makeConstraints { (button) in
+            button.top.equalTo(authorTextField.snp.bottom).offset(50)
+            button.centerX.equalToSuperview()
+        }
+        
     }
     
+    // MARK: - Actions
     
+    func createStoryAction(){
+        //present other view controller
+        print("button pressed")
+        present(StitchViewController(), animated: true, completion: nil)
+        
+    }
     
     
     // MARK: - Lazy Instantiate
@@ -90,5 +102,26 @@ class TitlePageViewController: UIViewController {
         
         return textField
     }()
+    
+    lazy var createStoryButton: UIButton = {
+        let button: UIButton = UIButton()
+        button.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        button.backgroundColor = UIColor.green
+        button.setTitle("Create Story", for: .normal)
+        button.addTarget(self, action: #selector(createStoryAction), for: .touchUpInside)
+        
+        return button
+    }()
+    
+    
+    /*
+     let btn: UIButton = UIButton(frame: CGRect(x: 100, y: 400, width: 100, height: 50))
+     btn.backgroundColor = UIColor.green
+     btn.setTitle(title: "Click Me", for: .normal)
+     btn.addTarget(self, action: #selector(buttonAction), forControlEvents: .touchUpInside)
+     btn.tag = 1
+     self.view.addSubview(btn)
+ 
+ */
     
 }
