@@ -17,6 +17,7 @@
 		818518D71E7088DB00191121 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818518D61E7088DB00191121 /* LandingPageViewController.swift */; };
 		DF1D27B51E70C6D6007285CE /* ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1D27B41E70C6D6007285CE /* ReaderViewController.swift */; };
 		DF1D27B91E71CFDA007285CE /* StitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1D27B81E71CFDA007285CE /* StitchViewController.swift */; };
+		DF1D27BB1E723812007285CE /* V2ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1D27BA1E723812007285CE /* V2ReaderViewController.swift */; };
 		DF64A0BB1E708E44000EB09E /* TitlePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF64A0BA1E708E44000EB09E /* TitlePageViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		818518D61E7088DB00191121 /* LandingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
 		DF1D27B41E70C6D6007285CE /* ReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderViewController.swift; sourceTree = "<group>"; };
 		DF1D27B81E71CFDA007285CE /* StitchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StitchViewController.swift; sourceTree = "<group>"; };
+		DF1D27BA1E723812007285CE /* V2ReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = V2ReaderViewController.swift; sourceTree = "<group>"; };
 		DF64A0BA1E708E44000EB09E /* TitlePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitlePageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 				DF64A0BA1E708E44000EB09E /* TitlePageViewController.swift */,
 				DF1D27B41E70C6D6007285CE /* ReaderViewController.swift */,
 				DF1D27B81E71CFDA007285CE /* StitchViewController.swift */,
+				DF1D27BA1E723812007285CE /* V2ReaderViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			files = (
 				7D3F95EA1E664EAD00FD6453 /* AppDelegate.swift in Sources */,
 				DF64A0BB1E708E44000EB09E /* TitlePageViewController.swift in Sources */,
+				DF1D27BB1E723812007285CE /* V2ReaderViewController.swift in Sources */,
 				7DF015C61E6B9B370048AAA8 /* Story.swift in Sources */,
 				818518D71E7088DB00191121 /* LandingPageViewController.swift in Sources */,
 				DF1D27B51E70C6D6007285CE /* ReaderViewController.swift in Sources */,

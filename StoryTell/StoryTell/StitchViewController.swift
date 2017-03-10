@@ -36,7 +36,7 @@ class StitchViewController: UIViewController {
         }
         
         branchButton.snp.makeConstraints { (button) in
-           button.top.equalTo(proseTextView.snp.bottom)
+            button.top.equalTo(proseTextView.snp.bottom)
             button.leading.equalToSuperview().inset(20)
             
         }
@@ -50,19 +50,20 @@ class StitchViewController: UIViewController {
         
     }
     
-    
     // MARK: - Actions
     
     func branchButtonAction(_ sender: UIButton){
         
         print("Branch button Pressed")
-      
+        
         let alertController = UIAlertController(title: "What Choices", message: "Please input your options:", preferredStyle: .alert)
         
         let confirmAction = UIAlertAction(title: "Confirm", style: .default) { (_) in
             if let field = alertController.textFields?[0] {
+                print(field.text)
+                
                 // store your data //
-               
+                
             } else {
                 // user did not fill field
             }
@@ -83,7 +84,7 @@ class StitchViewController: UIViewController {
     }
     
     // MARK: - Lazy Inits
-
+    
     lazy var optionsTableView: UITableView = {
         let tableView: UITableView = UITableView()
         //tableView.backgroundColor = UIColor.black
@@ -108,7 +109,7 @@ class StitchViewController: UIViewController {
         button.addTarget(self, action: #selector(branchButtonAction), for: .touchUpInside)
         
         
-       return button
+        return button
     }()
     
     
