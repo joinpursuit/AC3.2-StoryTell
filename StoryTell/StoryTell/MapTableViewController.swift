@@ -21,11 +21,28 @@ class MapTableViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "stitchCell")
         loadData()
         progressStory(linkPath)
+        self.navigationItem.titleView = setTitle(title: "title", subtitle: "author")
+        navigationController?.navigationBar.barTintColor = .white //this will probably be hex #efe9e7
+        view.backgroundColor = .white
+        
+        let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //Need to change action to show Publish Alert
+        
+        let writeButton = UIBarButtonItem(title: "Write", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //Need to link to Write page
+        
+        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //needs to be set up to go back a page
+        
+        let homeButton = UIBarButtonItem(title: "Home", style: UIBarButtonItemStyle.plain, target: self, action: #selector(homeTapped)) //needs to be linked up to Landing Page
+        
+        navigationItem.rightBarButtonItems = [writeButton, publishButton]
+        navigationItem.leftBarButtonItems = [backButton, homeButton]
         
         
     }
 
-
+    func homeTapped() {
+    let newViewController = LandingPageViewController()
+    self.navigationController?.pushViewController(newViewController, animated: true)
+    }
     func loadData() {
         story = Story.readStory()!
         
@@ -91,7 +108,41 @@ class MapTableViewController: UITableViewController {
         }
         return cell
     }
-    
+    //sets Title & Subtitle in Navigation Bar. From: https://gist.github.com/nazywamsiepawel/0166e8a71d74e96c7898
+    func setTitle(title:String, subtitle:String) -> UIView {
+        let titleLabel = UILabel(frame: CGRect(x:0, y:-5, width:0, height:0))
+        
+        titleLabel.backgroundColor = UIColor.clear
+        titleLabel.textColor = UIColor.gray
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
+        titleLabel.text = title
+        titleLabel.sizeToFit()
+        
+        let subtitleLabel = UILabel(frame: CGRect(x:0, y:18, width:0, height:0))
+        subtitleLabel.backgroundColor = UIColor.clear
+        subtitleLabel.textColor = UIColor.black
+        subtitleLabel.font = UIFont.systemFont(ofSize: 12)
+        subtitleLabel.text = subtitle
+        subtitleLabel.sizeToFit()
+        
+        let titleView = UIView(frame: CGRect(x:0, y:0, width:max(titleLabel.frame.size.width, subtitleLabel.frame.size.width), height:30))
+        titleView.addSubview(titleLabel)
+        titleView.addSubview(subtitleLabel)
+        
+        let widthDiff = subtitleLabel.frame.size.width - titleLabel.frame.size.width
+        
+        if widthDiff > 0 {
+            var frame = titleLabel.frame
+            frame.origin.x = widthDiff / 2
+            titleLabel.frame = frame.integral
+        } else {
+            var frame = subtitleLabel.frame
+            frame.origin.x = abs(widthDiff) / 2
+            titleLabel.frame = frame.integral
+        }
+        
+        return titleView
+    }
 
     /*
     // Override to support conditional editing of the table view.

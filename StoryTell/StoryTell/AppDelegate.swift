@@ -28,8 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 
-        //let navigationVC = UINavigationController(rootViewController: TitlePageViewController())
-        
+        //let navigationVC = UINavigationController(rootViewController: ReaderViewController())
+
 
       
         
