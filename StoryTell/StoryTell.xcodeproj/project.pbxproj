@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3743B9C7A4D0F9DA0CEDF2FC /* Pods_StoryTell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A1CE72852B33412AAEBBD25 /* Pods_StoryTell.framework */; };
+		4CC0C7611E71F7320094823E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC0C7601E71F7320094823E /* Colors.swift */; };
 		7D3F95EA1E664EAD00FD6453 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F95E91E664EAD00FD6453 /* AppDelegate.swift */; };
 		7D3F95F11E664EAD00FD6453 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D3F95F01E664EAD00FD6453 /* Assets.xcassets */; };
 		7D3F95F41E664EAD00FD6453 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D3F95F21E664EAD00FD6453 /* LaunchScreen.storyboard */; };
@@ -15,14 +16,24 @@
 		7DF015CA1E6B9E4F0048AAA8 /* SherlockHolmes.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DF015C91E6B9E4F0048AAA8 /* SherlockHolmes.json */; };
 		7DF015CC1E6BA2880048AAA8 /* SampleStory.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DF015CB1E6BA2880048AAA8 /* SampleStory.json */; };
 		818518D71E7088DB00191121 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818518D61E7088DB00191121 /* LandingPageViewController.swift */; };
+
+		818518D91E71C9CF00191121 /* MapTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818518D81E71C9CF00191121 /* MapTableViewController.swift */; };
+
 		DF1D27B51E70C6D6007285CE /* ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1D27B41E70C6D6007285CE /* ReaderViewController.swift */; };
+
 		DF1D27B91E71CFDA007285CE /* StitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1D27B81E71CFDA007285CE /* StitchViewController.swift */; };
+
 		DF1D27BB1E723812007285CE /* V2ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1D27BA1E723812007285CE /* V2ReaderViewController.swift */; };
+
+
+
+
 		DF64A0BB1E708E44000EB09E /* TitlePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF64A0BA1E708E44000EB09E /* TitlePageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0943E68594C8CA1FAF5C9F3C /* Pods-StoryTell.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoryTell.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StoryTell/Pods-StoryTell.debug.xcconfig"; sourceTree = "<group>"; };
+		4CC0C7601E71F7320094823E /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		5CBDCEDAA67C5077B0EE6A4A /* Pods-StoryTell.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoryTell.release.xcconfig"; path = "Pods/Target Support Files/Pods-StoryTell/Pods-StoryTell.release.xcconfig"; sourceTree = "<group>"; };
 		7A1CE72852B33412AAEBBD25 /* Pods_StoryTell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StoryTell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D3F95E61E664EAD00FD6453 /* StoryTell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoryTell.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,9 +45,18 @@
 		7DF015C91E6B9E4F0048AAA8 /* SherlockHolmes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SherlockHolmes.json; sourceTree = "<group>"; };
 		7DF015CB1E6BA2880048AAA8 /* SampleStory.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SampleStory.json; sourceTree = "<group>"; };
 		818518D61E7088DB00191121 /* LandingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
+
+		818518D81E71C9CF00191121 /* MapTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTableViewController.swift; sourceTree = "<group>"; };
+
 		DF1D27B41E70C6D6007285CE /* ReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderViewController.swift; sourceTree = "<group>"; };
+
 		DF1D27B81E71CFDA007285CE /* StitchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StitchViewController.swift; sourceTree = "<group>"; };
+
 		DF1D27BA1E723812007285CE /* V2ReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = V2ReaderViewController.swift; sourceTree = "<group>"; };
+
+
+
+
 		DF64A0BA1E708E44000EB09E /* TitlePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitlePageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,11 +121,20 @@
 		DF64A0B61E70773D000EB09E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+
+			
+				818518D81E71C9CF00191121 /* MapTableViewController.swift */,
+
 				818518D61E7088DB00191121 /* LandingPageViewController.swift */,
 				DF64A0BA1E708E44000EB09E /* TitlePageViewController.swift */,
 				DF1D27B41E70C6D6007285CE /* ReaderViewController.swift */,
+
 				DF1D27B81E71CFDA007285CE /* StitchViewController.swift */,
+
 				DF1D27BA1E723812007285CE /* V2ReaderViewController.swift */,
+
+
+
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -134,6 +163,7 @@
 				7D3F95F21E664EAD00FD6453 /* LaunchScreen.storyboard */,
 				7D3F95F01E664EAD00FD6453 /* Assets.xcassets */,
 				7D3F95F51E664EAD00FD6453 /* Info.plist */,
+				4CC0C7601E71F7320094823E /* Colors.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -263,6 +293,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D3F95EA1E664EAD00FD6453 /* AppDelegate.swift in Sources */,
+
+				4CC0C7611E71F7320094823E /* Colors.swift in Sources */,
+
+				818518D91E71C9CF00191121 /* MapTableViewController.swift in Sources */,
+
 				DF64A0BB1E708E44000EB09E /* TitlePageViewController.swift in Sources */,
 				DF1D27BB1E723812007285CE /* V2ReaderViewController.swift in Sources */,
 				7DF015C61E6B9B370048AAA8 /* Story.swift in Sources */,
