@@ -25,11 +25,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  
         
         // let navigationVC = UINavigationController(rootViewController: ViewController())
+
         //let navigationVC = UINavigationController(rootViewController: ReaderViewController())
         //let navigationVC = UINavigationController(rootViewController: TitlePageViewController())
-        let navigationVC = UINavigationController(rootViewController: MapTableViewController())
+        //let navigationVC = UINavigationController(rootViewController: MapTableViewController())
         //let navigationVC = UINavigationController(rootViewController: LandingPageViewController())
+        let navigationVC = UINavigationController(rootViewController: StitchViewController())
 
+
+      
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = navigationVC

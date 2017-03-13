@@ -58,7 +58,7 @@ class LandingPageViewController: UIViewController {
     
     }
     func writeButtonPressed() {
-        let newViewController = ReaderViewController() //change this to Write Page when finished
+        let newViewController = TitlePageViewController()
         self.navigationController?.pushViewController(newViewController, animated: true)
     }
     

@@ -5,7 +5,6 @@
 //  Created by Simone on 3/9/17.
 //  Copyright © 2017 Simone. All rights reserved.
 //
-
 import Foundation
 
 struct Option {
@@ -41,26 +40,30 @@ class Stitch {
                             //tempOptions.append(option)
                             //branches.updateValue(dictValue, forKey: "next")
                             newPath = dictValue as! String
-                            newOption = ""
+                            newOption = "divert"
                         }
-                        
-                        if dictKey == "option" {
+                            
+                        else if dictKey == "option" {
                             newOption = dictValue as! String
                         }
-                        
-                        if dictKey == "linkPath" {
+                            
+                        else if dictKey == "linkPath" {
                             newPath = dictValue as! String
                         }
-                        
-                        if newOption == "" && newPath == "" {
-                            break
-                        }
+                            
+                            //                        if newOption == "" && newPath == "" {
+                            //                            break
+                            //                        }
                         else {
                             //branches.updateValue(newPath, forKey: newOption)
+                            
                         }
+                        
                     }
-                    let option = Option(prompt: newOption, link: newPath)
-                    tempOptions.append(option)
+                    if newPath != "" {
+                        let option = Option(prompt: newOption, link: newPath)
+                        tempOptions.append(option)
+                    }
                 }
             }
         }
