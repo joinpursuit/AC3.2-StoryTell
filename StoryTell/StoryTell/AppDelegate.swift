@@ -22,8 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         // let navigationVC = UINavigationController(rootViewController: ViewController())
-        //let navigationVC = UINavigationController(rootViewController: ReaderViewController())
-        let navigationVC = UINavigationController(rootViewController: TitlePageViewController())
+        let navigationVC = UINavigationController(rootViewController: ReaderViewController())
+       // let navigationVC = UINavigationController(rootViewController: TitlePageViewController())
         
         
         self.window = UIWindow(frame: UIScreen.main.bounds)

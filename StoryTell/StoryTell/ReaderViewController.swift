@@ -10,80 +10,40 @@ import UIKit
 import SnapKit
 
 class ReaderViewController: UIViewController {
-    var story = [Story]()
-    var stitches: [String:Any]?
+    var story: Story!
     var linkPath = String()
     var branches = [String:Any]()
-    var nextLine = String()
+    var content = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        story = Story.readStory()
+        linkPath = story.linkPath
         view.addSubview(storyTextView)
         storyTextView.addSubview(buttonContainerView)
         constraints()
-        loadInitialView()
-        progressStory(linkPath)
-        
-        
+        storyTextView.text = "\(story.title)\nby: \(story.authorName)"
     }
     
-    func loadInitialView() {
-        story = Story.readStory()!
-        
-        for item in story {
-            let title = item.title
-            let author = item.authorName
-            let date = item.createdAt
-            linkPath = item.linkPath
-            storyTextView.text = "\(title)\n\(author)\n\(date)\n\n"
-            stitches = item.stitches
-        }
-    }
     
-    func progressStory(_ key: String) {
-        let stitchValue = stitches?[key]!
-        guard let dict = stitchValue as? [String: Any] else { return }
-        guard let contentArr = dict["content"] as? [Any] else { return }
-        guard let excerpt = contentArr[0] as? String else { return }
-        nextLine = excerpt
-        for content in contentArr {
-            if let newDict = content as? [String:Any] {
-                var newOption = String()
-                var newPath = String()
-                for (dictKey, dictValue) in newDict {
-                    if dictKey == "divert" {
-                        branches.updateValue(dictValue, forKey: "next")
-                    }
-                    else if dictKey == "option" {
-                        newOption = dictValue as! String
-                    }
-                    if dictKey == "linkPath" {
-                        newPath = dictValue as! String
-                    }
-                    if newOption == "" && newPath == "" {
-                        break
-                    } else {
-                        branches.updateValue(newPath, forKey: newOption)
-                    }
-                }
-            }
-        }
-        print(branches)
-        updateViews(nextLine)
-    }
     
-    func updateViews(_ text: String) {
-        deleteView()
-        storyTextView.text = text
-        generateButton()
-    }
     
-    func deleteView() {
-        for view in buttonContainerView.subviews {
-            view.removeFromSuperview()
-        }
-        
-    }
+    
+    
+    //populate table view
+    //    func updateViews(_ text: String) {
+    //        deleteView()
+    //        storyTextView.text = text
+    //        generateButton()
+    //    }
+    
+    //populate table view
+    //    func deleteView() {
+    //        for view in buttonContainerView.subviews {
+    //            view.removeFromSuperview()
+    //        }
+    //
+    //    }
     
     func generateButton() {
         var optionArr = [String]()
@@ -114,7 +74,7 @@ class ReaderViewController: UIViewController {
                     if (optKey == selection) {
                         print("You chose: \(selection)")
                         branches.removeAll()
-                        progressStory(optValue as! String)
+                        //       progressStory(optValue as! String)
                     }
                 }
             } else {
