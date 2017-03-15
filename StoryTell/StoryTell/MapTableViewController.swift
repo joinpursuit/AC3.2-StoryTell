@@ -11,7 +11,7 @@ import SnapKit
 
 class MapTableViewController: UITableViewController {
     var story: Story!
-    
+    var expandedStitches: [Any] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "stitchCell")
@@ -46,7 +46,14 @@ class MapTableViewController: UITableViewController {
         
         
     }
-
+    func expandStitches() {
+        for (_, stitch) in story.stitches {
+            expandedStitches.append(stitch)
+            for o in stitch.options {
+                expandedStitches.append(o)
+            }
+        }
+    }
     func homeTapped() {
     let newViewController = LandingPageViewController()
     self.navigationController?.pushViewController(newViewController, animated: true)
@@ -57,7 +64,8 @@ class MapTableViewController: UITableViewController {
     }
     func loadData() {
         story = Story.readStory()
-        }
+        expandStitches()
+    }
     
     // MARK: - Table view data source
 
@@ -66,16 +74,18 @@ class MapTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return story.stitches.keys.count
+        return expandedStitches.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "stitchCell", for: indexPath)
-        let validStitches = story.stitches
-        let key = Array(validStitches.keys)[indexPath.row]
-        let stitch = story.stitches[key]
-        cell.textLabel?.text = stitch?.content
+        if let stitch = expandedStitches[indexPath.row] as? Stitch {
+            cell.textLabel?.text = stitch.content
+        }
+        else if let option = expandedStitches[indexPath.row] as? Option {
+            cell.textLabel?.text = "\t\(option.prompt)"
+        }
         
         return cell
     }
