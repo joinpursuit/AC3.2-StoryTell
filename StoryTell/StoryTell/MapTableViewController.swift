@@ -44,7 +44,7 @@ class MapTableViewController: UITableViewController {
     self.navigationController?.pushViewController(newViewController, animated: true)
     }
     func loadData() {
-        story = Story.readStory()!
+        story = [Story.readStory()!]
         
         for item in story {
             let title = item.title
