@@ -148,12 +148,10 @@ extension StitchViewController: UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // wrote just to satify
-        let cell: UITableViewCell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = branch
         
         return cell
-        
     }
     
 }
