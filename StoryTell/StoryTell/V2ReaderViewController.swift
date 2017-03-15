@@ -14,8 +14,7 @@ class V2ReaderViewController: UIViewController {
     var stitches: [String:Stitch]?
     var readerText: String = String()
     var currentStitchKey: String!
-    
-    
+    // for nightMode
     var onOff: Bool = true
     
     override func viewDidLoad() {
@@ -32,24 +31,21 @@ class V2ReaderViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .fastForward, target: self, action: #selector(nightMode))
         
     }
-    
+    // Needs to be moved...into options view/tableview, which hasn't been created yet. 
     func nightMode(){
         print("nightmode")
         
-       
         if onOff == true {
             self.readerTextView.textColor = UIColor.white
             self.readerTextView.backgroundColor = UIColor.black
+            self.optionsTableView.backgroundColor = UIColor.black
             onOff = false
             
         }else {
             self.readerTextView.textColor = UIColor.black
             self.readerTextView.backgroundColor = UIColor.white
-            onOff = true 
-           
+            onOff = true
         }
-        
-        
     }
     
     
@@ -87,9 +83,9 @@ class V2ReaderViewController: UIViewController {
         readerText = (stitchValue?.content)!
         readerTextView.text = readerText
         currentStitchKey = key
-        dump(currentStitchKey)
         optionsTableView.reloadData()
         
+        dump(currentStitchKey)
     }
     
     // MARK: - Lazy Inits
@@ -99,6 +95,7 @@ class V2ReaderViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        
         return tableView
         
     }()
@@ -108,6 +105,7 @@ class V2ReaderViewController: UIViewController {
         textView.textColor = UIColor.lightGray
         textView.isEditable = false
         textView.font = UIFont.boldSystemFont(ofSize: 30)
+        
         
         return textView
     }()
