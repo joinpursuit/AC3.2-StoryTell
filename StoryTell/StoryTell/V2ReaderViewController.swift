@@ -34,18 +34,26 @@ class V2ReaderViewController: UIViewController {
     // Needs to be moved...into options view/tableview, which hasn't been created yet. 
     func nightMode(){
         print("nightmode")
+       // var color = UIColor()
         
         if onOff == true {
             self.readerTextView.textColor = UIColor.white
             self.readerTextView.backgroundColor = UIColor.black
             self.optionsTableView.backgroundColor = UIColor.black
+           // color = UIColor.black
+           // optionsTableView.reloadData()
+            
+            
             onOff = false
             
         }else {
             self.readerTextView.textColor = UIColor.black
             self.readerTextView.backgroundColor = UIColor.white
             onOff = true
+            //color = UIColor.white
+            //optionsTableView.reloadData()
         }
+        //return color
     }
     
     
@@ -102,7 +110,7 @@ class V2ReaderViewController: UIViewController {
     
     lazy var readerTextView: UITextView = {
         let textView: UITextView = UITextView()
-        textView.textColor = UIColor.lightGray
+        textView.textColor = UIColor.black
         textView.isEditable = false
         textView.font = UIFont.boldSystemFont(ofSize: 30)
         
@@ -129,6 +137,8 @@ extension V2ReaderViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 30)
+        cell.textLabel?.textColor = UIColor.red
         
         let stitch = story.stitches[currentStitchKey]
         

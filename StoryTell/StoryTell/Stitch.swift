@@ -16,17 +16,22 @@ struct Option {
 class Stitch {
     let content: String
     let options: [Option]
+    let key: String
     
-    init(content: String, options: [Option]) {
+    init(content: String, options: [Option], key: String) {
         self.content = content
         self.options = options
+        self.key = key
     }
     
-    convenience init?(with dict: [String:Any]) {
+    convenience init?(with dict: [String:Any], key: String) {
         var tempOptions = [Option]()
         var content: String = ""
-        for (_, value) in dict {
+       // for (_, _) in dict {
+            
+            
             //guard let stitchDict = value as? [String: Any] else { return nil }
+            //dump(stitchDict)
             guard let contentArr = dict["content"] as? [Any] else { return nil }
             guard let content2 = contentArr[0] as? String else { return nil }
             content = content2
@@ -67,15 +72,16 @@ class Stitch {
                     }
                 }
             }
-        }
-        self.init(content: content, options: tempOptions)
+        //}
+        self.init(content: content, options: tempOptions, key: key)
     }
     
     static func getStitches(from dict: [String:Any]) -> [String:Stitch] {
         var stitches:[String:Stitch] = [:]
         for (key, value) in dict {
+            dump(key)
             if let newDict = value as? [String:Any] {
-                let stitch = Stitch(with: newDict)
+                let stitch = Stitch(with: newDict, key: key)
                 stitches[key] = stitch
             }
         }
