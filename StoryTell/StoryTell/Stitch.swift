@@ -73,6 +73,7 @@ class Stitch {
             if let newDict = value as? [String:Any] {
             let stitch = Stitch(with: newDict)
             stitches[key] = stitch
+                print(stitches[key])
             }
         }
         return stitches

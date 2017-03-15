@@ -10,7 +10,11 @@ import UIKit
 
 class StitchTableViewCell: UITableViewCell {
     
-    var textField = UITextField()
+    var textField: UITextField! {
+        didSet {
+            textField = UITextField()
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -19,6 +19,10 @@ class StitchViewController: UIViewController {
         setupViewHierarchy()
         configureConstraints()
         
+        optionsTableView.delegate = self
+        optionsTableView.dataSource = self
+        optionsTableView.register(StitchTableViewCell.self, forCellReuseIdentifier: "cell")
+        
     }
     
     // MARK: - Setup
@@ -56,35 +60,36 @@ class StitchViewController: UIViewController {
     // MARK: - Actions
     
     func branchButtonAction(_ sender: UIButton){
+      
         
-        let alertController = UIAlertController(title: "Enter A Prompt", message: "Your prompt should be a choice for the user select", preferredStyle: .alert)
-        
-        let confirmAction = UIAlertAction(title: "Confirm", style: .default) { (_) in
-            let branchField = alertController.textFields![0] as UITextField
-            
-            if branchField.text != "" {
-                self.branch = branchField.text!
-                //store data
-            } else {
-                let errorAlert = UIAlertController(title: "Error", message: "Please add a prompt", preferredStyle: .alert)
-                errorAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: {
-                    alert -> Void in
-                    self.present(alertController, animated: true, completion: nil)
-                }))
-                self.present(errorAlert, animated: true, completion: nil)
-            }
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
-        
-        alertController.addTextField { (textField) in
-            textField.placeholder = "Enter your prompt"
-        }
-        
-        alertController.addAction(confirmAction)
-        alertController.addAction(cancelAction)
-        
-        self.present(alertController, animated: true, completion: nil)
+//        let alertController = UIAlertController(title: "Enter A Prompt", message: "Your prompt should be a choice for the user select", preferredStyle: .alert)
+//        
+//        let confirmAction = UIAlertAction(title: "Confirm", style: .default) { (_) in
+//            let branchField = alertController.textFields![0] as UITextField
+//            
+//            if branchField.text != "" {
+//                self.branch = branchField.text!
+//                //store data
+//            } else {
+//                let errorAlert = UIAlertController(title: "Error", message: "Please add a prompt", preferredStyle: .alert)
+//                errorAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: {
+//                    alert -> Void in
+//                    self.present(alertController, animated: true, completion: nil)
+//                }))
+//                self.present(errorAlert, animated: true, completion: nil)
+//            }
+//        }
+//        
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+//        
+//        alertController.addTextField { (textField) in
+//            textField.placeholder = "Enter your prompt"
+//        }
+//        
+//        alertController.addAction(confirmAction)
+//        alertController.addAction(cancelAction)
+//        
+//        self.present(alertController, animated: true, completion: nil)
         
         
     }
@@ -141,15 +146,16 @@ extension StitchViewController: UITextViewDelegate {
 extension StitchViewController: UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        
+
         return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // wrote just to satify
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! StitchTableViewCell
         
+         let option = Option(prompt: cell.textField.text!, link: "")
+        print(option)
         
         return cell
     }
