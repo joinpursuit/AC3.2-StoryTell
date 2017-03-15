@@ -18,6 +18,27 @@ class StitchViewController: UIViewController {
         proseTextView.delegate = self
         setupViewHierarchy()
         configureConstraints()
+        let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //Need to change action to show Publish Alert
+        
+        
+        var outlineImage = UIImage(named: "outlinePage")
+        
+        outlineImage = outlineImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        
+        let outlineButton = UIBarButtonItem(image: outlineImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(outlineTapped))
+        
+        
+        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //needs to be set up to go back a page consistently
+        
+        var homeImage = UIImage(named: "homePage")
+        
+        homeImage = homeImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        
+        let homeButton = UIBarButtonItem(image: homeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(homeTapped))
+        
+        navigationItem.rightBarButtonItems = [publishButton, outlineButton]
+        navigationItem.leftBarButtonItems = [backButton, homeButton]
+        
         
         optionsTableView.delegate = self
         optionsTableView.dataSource = self
@@ -25,7 +46,17 @@ class StitchViewController: UIViewController {
         
     }
     
+    
     // MARK: - Setup
+    func homeTapped() {
+        let newViewController = LandingPageViewController()
+        self.navigationController?.pushViewController(newViewController, animated: true)
+    }
+    func outlineTapped() {
+        let newViewController = MapTableViewController()
+        self.navigationController?.pushViewController(newViewController, animated: true)
+    }
+
     func setupViewHierarchy() {
         self.edgesForExtendedLayout = []
         self.view.addSubview(proseTextView)

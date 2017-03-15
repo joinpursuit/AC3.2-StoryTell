@@ -37,7 +37,11 @@ class Story {
     }
     
     static func readStory() -> Story? {
+<<<<<<< HEAD
         let jsonDoc = Bundle.main.path(forResource: "SampleStory", ofType: "json")
+=======
+        let jsonDoc = Bundle.main.path(forResource: "SherlockHolmes", ofType: "json")
+>>>>>>> de2d81bf19a6ef31459c079b28fa3fe53a07c395
         let jsonURL = URL(fileURLWithPath: jsonDoc!)
         let data = try? Data(contentsOf: jsonURL)
         
@@ -48,5 +52,9 @@ class Story {
             print(error)
         }
         return nil
+<<<<<<< HEAD
     }    
+=======
+    }
+>>>>>>> de2d81bf19a6ef31459c079b28fa3fe53a07c395
 }
