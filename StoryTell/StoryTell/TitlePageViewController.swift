@@ -18,9 +18,44 @@ class TitlePageViewController: UIViewController {
         
         setupViewHierarchy()
         configureConstraints()
+        let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //Need to change action to show Publish Alert
+        
+                
+        var outlineImage = UIImage(named: "outlinePage")
+        
+        outlineImage = outlineImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        
+        let outlineButton = UIBarButtonItem(image: outlineImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(outlineTapped))
+        
+        
+        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //needs to be set up to go back a page
+        
+        var homeImage = UIImage(named: "homePage")
+        
+        homeImage = homeImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        
+        let homeButton = UIBarButtonItem(image: homeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(homeTapped))
+        
+        //self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: homeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(homeTapped))
+        
+        navigationItem.rightBarButtonItems = [publishButton, outlineButton]
+        navigationItem.leftBarButtonItems = [backButton, homeButton]
+        
         
     }
     
+    func homeTapped() {
+        let newViewController = LandingPageViewController()
+        self.navigationController?.pushViewController(newViewController, animated: true)
+    }
+    func writeTapped() {
+        let newViewController = StitchViewController()
+        self.navigationController?.pushViewController(newViewController, animated: true)
+    }
+    func outlineTapped() {
+        let newViewController = MapTableViewController()
+        self.navigationController?.pushViewController(newViewController, animated: true)
+    }
     // MARK: - Setup
     func setupViewHierarchy() {
         self.edgesForExtendedLayout = []
@@ -67,10 +102,8 @@ class TitlePageViewController: UIViewController {
     // MARK: - Actions
     
     func createStoryAction(){
-        //present other view controller
-        print("button pressed")
-        present(StitchViewController(), animated: true, completion: nil)
-        
+        let newViewController = StitchViewController()
+        self.navigationController?.pushViewController(newViewController, animated: true)
     }
     
     

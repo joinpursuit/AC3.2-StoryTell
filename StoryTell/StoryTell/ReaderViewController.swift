@@ -28,7 +28,7 @@ class ReaderViewController: UIViewController {
     }
     
     func loadInitialView() {
-        story = Story.readStory()!
+        story = [Story.readStory()!]
         
         for item in story {
             let title = item.title
