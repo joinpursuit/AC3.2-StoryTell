@@ -46,12 +46,15 @@ class ReaderTitlePageViewController: UIViewController {
         
     }
     
+    // constraints need to be fixed... The height needs to adjust based on the text.
+    
     private func configureConstraints(){
         authorLabel.snp.makeConstraints { (author) in
             author.leading.equalToSuperview().offset(8)
             author.trailing.equalToSuperview()
             author.top.equalToSuperview()
-            author.centerX.equalToSuperview()
+            author.height.equalToSuperview().dividedBy(3)
+            //author.centerX.equalToSuperview()
             
         }
         
@@ -59,6 +62,7 @@ class ReaderTitlePageViewController: UIViewController {
             title.leading.equalToSuperview().offset(8)
             title.trailing.equalToSuperview()
             title.top.equalTo(authorLabel.snp.bottom).offset(8)
+            title.height.equalToSuperview().dividedBy(3)
         }
         
         beginStoryButton.snp.makeConstraints { (button) in
@@ -84,16 +88,26 @@ class ReaderTitlePageViewController: UIViewController {
         let label: UILabel = UILabel()
        // label.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
         label.font = UIFont.boldSystemFont(ofSize: 60)
-        label.numberOfLines = 0
+        label.numberOfLines = 3
+        label.minimumScaleFactor = 0.1
+        label.lineBreakMode = NSLineBreakMode.byWordWrapping
+        //label.sizeToFit()
         
         return label
     }()
     
+    
+    
     lazy var titleLabel: UILabel = {
         let label: UILabel = UILabel()
-        //label.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        ///// Ideas to shrik text based on how much text... not working..yet
+                label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.1
         label.font = UIFont.boldSystemFont(ofSize: 60)
-        label.numberOfLines = 0
+        label.numberOfLines = 3
+        
+        label.lineBreakMode = NSLineBreakMode.byTruncatingTail
+        //label.sizeToFit()
         
         return label
     }()
