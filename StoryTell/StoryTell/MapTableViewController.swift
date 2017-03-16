@@ -10,40 +10,60 @@ import UIKit
 import SnapKit
 
 class MapTableViewController: UITableViewController {
-    var story = [Story]()
-    var stitches: [String:Any]?
-    var linkPath = String()
-    var branches = [String:Any]()
-    var nextLine = String()
-    
+    var story: Story!
+    var expandedStitches: [Any] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "stitchCell")
         loadData()
-        progressStory(linkPath)
         self.navigationItem.titleView = setTitle(title: "title", subtitle: "author")
         navigationController?.navigationBar.barTintColor = .white //this will probably be hex #efe9e7
         view.backgroundColor = .white
         
         let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //Need to change action to show Publish Alert
         
-        let writeButton = UIBarButtonItem(title: "Write", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //Need to link to Write page
+        var writeImage = UIImage(named: "writeEdit")
+        
+        writeImage = writeImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        
+        //self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: writeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(writeButtonPressed))
+        
+        
+        let writeButton = UIBarButtonItem(image: writeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(writeTapped)) //Need to link to Write page
         
         let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //needs to be set up to go back a page
         
-        let homeButton = UIBarButtonItem(title: "Home", style: UIBarButtonItemStyle.plain, target: self, action: #selector(homeTapped)) //needs to be linked up to Landing Page
+        var homeImage = UIImage(named: "homePage")
         
-        navigationItem.rightBarButtonItems = [writeButton, publishButton]
+        homeImage = homeImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        
+        let homeButton = UIBarButtonItem(image: homeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(homeTapped))
+        
+        //self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: homeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(homeTapped))
+        
+        navigationItem.rightBarButtonItems = [publishButton, writeButton]
         navigationItem.leftBarButtonItems = [backButton, homeButton]
         
         
     }
-
+    func expandStitches() {
+        for (_, stitch) in story.stitches {
+            expandedStitches.append(stitch)
+            for o in stitch.options {
+                expandedStitches.append(o)
+            }
+        }
+    }
     func homeTapped() {
     let newViewController = LandingPageViewController()
     self.navigationController?.pushViewController(newViewController, animated: true)
     }
+    func writeTapped() {
+        let newViewController = StitchViewController()
+        self.navigationController?.pushViewController(newViewController, animated: true)
+    }
     func loadData() {
+<<<<<<< HEAD
         story = [Story.readStory()!]
         
         for item in story {
@@ -54,40 +74,12 @@ class MapTableViewController: UITableViewController {
             //storyTextView.text = "\(title)\n\(author)\n\(date)\n\n"
             stitches = item.stitches
         }
+=======
+        story = Story.readStory()
+        expandStitches()
+>>>>>>> de2d81bf19a6ef31459c079b28fa3fe53a07c395
     }
     
-    func progressStory(_ key: String) {
-        let stitchValue = stitches?[key]!
-        guard let dict = stitchValue as? [String: Any] else { return }
-        guard let contentArr = dict["content"] as? [Any] else { return }
-        guard let excerpt = contentArr[0] as? String else { return }
-        nextLine = excerpt
-        for content in contentArr {
-            if let newDict = content as? [String:Any] {
-                var newOption = String()
-                var newPath = String()
-                for (dictKey, dictValue) in newDict {
-                    if dictKey == "divert" {
-                        branches.updateValue(dictValue, forKey: "next")
-                    }
-                    else if dictKey == "option" {
-                        newOption = dictValue as! String
-                    }
-                    if dictKey == "linkPath" {
-                        newPath = dictValue as! String
-                    }
-                    if newOption == "" && newPath == "" {
-                        break
-                    } else {
-                        branches.updateValue(newPath, forKey: newOption)
-                    }
-                }
-            }
-        }
-        print(branches)
-        //updateViews(nextLine)
-    }
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -95,17 +87,19 @@ class MapTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return stitches?.keys.count ?? 0
+        return expandedStitches.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "stitchCell", for: indexPath)
-        if let validStitches = stitches {
-            cell.textLabel?.text = Array(validStitches.keys)[indexPath.row]
-            
+        if let stitch = expandedStitches[indexPath.row] as? Stitch {
+            cell.textLabel?.text = stitch.content
         }
+        else if let option = expandedStitches[indexPath.row] as? Option {
+            cell.textLabel?.text = "\t\(option.prompt)"
+        }
+        
         return cell
     }
     //sets Title & Subtitle in Navigation Bar. From: https://gist.github.com/nazywamsiepawel/0166e8a71d74e96c7898

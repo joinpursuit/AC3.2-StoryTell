@@ -30,7 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         //let navigationVC = UINavigationController(rootViewController: ReaderViewController())
 
-
       
         
         self.window = UIWindow(frame: UIScreen.main.bounds)

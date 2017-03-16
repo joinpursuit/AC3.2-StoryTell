@@ -18,10 +18,13 @@ class LandingPageViewController: UIViewController {
         view.backgroundColor = .white
         setupView()
         
-        let writeButton = UIBarButtonItem(title: "Write", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack))
+        var writeImage = UIImage(named: "writeEdit")
         
-        navigationItem.rightBarButtonItem = writeButton //Need to change action to show Write Controller
-    }
+        writeImage = writeImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: writeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(writeButtonPressed))
+        
+        }
     
     func setupView() {
         self.edgesForExtendedLayout = []
@@ -53,6 +56,10 @@ class LandingPageViewController: UIViewController {
         }
         
     
+    }
+    func writeButtonPressed() {
+        let newViewController = TitlePageViewController()
+        self.navigationController?.pushViewController(newViewController, animated: true)
     }
     
     internal lazy var landingPageText: UILabel = {
