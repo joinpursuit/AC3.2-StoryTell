@@ -14,8 +14,9 @@ class V2ReaderViewController: UIViewController {
     var stitches: [String:Stitch]?
     var readerText: String = String()
     var currentStitchKey: String!
-    // for nightMode
-    var onOff: Bool = true
+    
+    let nightMode = UserDefaults.standard.set(false, forKey: "onOff")
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,34 +28,47 @@ class V2ReaderViewController: UIViewController {
         progressStory(currentStitchKey)
         
         
+        
+        
         // hold spot for gear button
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .fastForward, target: self, action: #selector(nightMode))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .fastForward, target: self, action: #selector(optionsAction))
         
     }
-    // Needs to be moved...into options view/tableview, which hasn't been created yet. 
-    func nightMode(){
-        print("nightmode")
-       // var color = UIColor()
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        nightModeAction()
         
-        if onOff == true {
-            self.readerTextView.textColor = UIColor.white
-            self.readerTextView.backgroundColor = UIColor.black
-            self.optionsTableView.backgroundColor = UIColor.black
-           // color = UIColor.black
-           // optionsTableView.reloadData()
+    }
+    func optionsAction(){
+        
+        if let navigation = navigationController {
+            navigation.pushViewController(ReaderOptionsViewController(), animated: true)
             
-            
-            onOff = false
-            
-        }else {
-            self.readerTextView.textColor = UIColor.black
-            self.readerTextView.backgroundColor = UIColor.white
-            onOff = true
-            //color = UIColor.white
-            //optionsTableView.reloadData()
         }
-        //return color
     }
+    
+    
+    func nightModeAction() {
+        
+        if let status = UserDefaults.standard.object(forKey: "onOff") as? Bool {
+            if status == true {
+                
+                self.readerTextView.textColor = UIColor.white
+                self.readerTextView.backgroundColor = UIColor.black
+                self.optionsTableView.backgroundColor = UIColor.black
+                
+            } else {
+                
+                self.readerTextView.textColor = UIColor.black
+                self.readerTextView.backgroundColor = UIColor.white
+                self.optionsTableView.backgroundColor = UIColor.white
+            }
+            
+        }
+    }
+  
     
     
     // MARK: - Setup
@@ -88,6 +102,7 @@ class V2ReaderViewController: UIViewController {
     func progressStory(_ key: String) {
         
         let stitchValue = story.stitches[key]
+        
         readerText = (stitchValue?.content)!
         readerTextView.text = readerText
         currentStitchKey = key
