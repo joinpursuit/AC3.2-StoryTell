@@ -28,12 +28,6 @@ class Story {
         guard let createdAt = dict["created_at"] as? String else { return nil }
         guard let dataDict = dict["data"] as? [String:Any] else { return nil }
         guard let stitchDict = dataDict["stitches"] as? [String:Any] else { return nil }
-<<<<<<< HEAD
-        
-       
-       
-=======
->>>>>>> de2d81bf19a6ef31459c079b28fa3fe53a07c395
         guard let linkPath = dataDict["initial"] as? String else { return nil }
         guard let editorData = dataDict["editorData"] as? [String:Any] else { return nil }
         guard let authorName = editorData["authorName"] as? String else { return nil }
