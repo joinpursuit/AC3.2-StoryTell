@@ -11,93 +11,71 @@ import SnapKit
 
 class ReaderOptionsViewController: UIViewController {
     
-
+    //let reuseableCellIdentifier = "Cell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.red
+        view.backgroundColor = UIColor.white
         
         setupViewHierarchy()
         configureConstraints()
         
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
         
-        if let status = UserDefaults.standard.object(forKey: "onOff") as? Bool {
-            if status == true {
-                nightModeSwitch.isOn = true
-                
-            } else {
-                
-                nightModeSwitch.isOn = false
-            }
-            
-        } else {
-            nightModeSwitch.isOn = false
-            
-        }
     }
-    
-    
-    func nightAction() {
-        print("pressed the night")
-        
-        
-        if let status = UserDefaults.standard.object(forKey: "onOff") as? Bool {
-            if status == true {
-                nightModeSwitch.setOn(false, animated: false)
-                UserDefaults.standard.set(false, forKey: "onOff")
-                
-            } else {
-                UserDefaults.standard.set(true, forKey: "onOff")
-                nightModeSwitch.setOn(true, animated: false)
-            }
-            
-        } else {
-            nightModeSwitch.setOn(true, animated: false)
-            UserDefaults.standard.set(true, forKey: "onOff")
-        }
-    }
-    
     
     // MARK: - Setup
     func setupViewHierarchy() {
         self.edgesForExtendedLayout = []
-        
-        view.addSubview(nightModeSwitch)
-    
-        
+        view.addSubview(optionsTableView)
     }
     
     private func configureConstraints(){
-        
-        nightModeSwitch.snp.makeConstraints { (aSwitch) in
-            
-            aSwitch.leading.trailing.equalToSuperview()
-            aSwitch.height.width.equalTo(100)
-            aSwitch.centerX.equalToSuperview()
+        optionsTableView.snp.makeConstraints { (tableView) in
+            tableView.leading.trailing.bottom.top.equalToSuperview()
         }
+    }
+    
+ // MARK: - Lazy Inits
+    
+    lazy var optionsTableView: UITableView = {
+        let tableView: UITableView = UITableView()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(ReaderOptionsTableViewCell.self, forCellReuseIdentifier: "Cell")
+        
+        return tableView
+    }()
+    
+    
+}
+
+// MARK: - TableView Delegate/DataSource
+
+extension ReaderOptionsViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 1
         
     }
     
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ReaderOptionsTableViewCell
+        
+        
+        if let status = UserDefaults.standard.object(forKey: "onOff") as? Bool {
+            if status == true {
+                
+                cell.nightModeSwitch.isOn = true
+            } else {
+                cell.nightModeSwitch.isOn = false
+            }
+        }
+        cell.nightLabel.text = "NIGHT MODE: BRING THE DARKNESS"
+        
+        return cell
+    }
     
-    lazy var nightModeSwitch: UISwitch = {
-        let nightSwitch: UISwitch = UISwitch()
-        
-        nightSwitch.tintColor = UIColor.blue
-        nightSwitch.onTintColor = UIColor.cyan
-        nightSwitch.thumbTintColor = UIColor.red
-        nightSwitch.backgroundColor = UIColor.yellow
-        
-        // nightSwitch.setOn(false, animated: true)
-        nightSwitch.addTarget(self, action: #selector(nightAction), for: .touchUpInside)
-        
-        
-        return nightSwitch
-    }()
-    
-
 }
+

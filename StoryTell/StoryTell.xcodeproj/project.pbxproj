@@ -24,6 +24,7 @@
 		DF1D27C11E7AD848007285CE /* ReaderOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1D27C01E7AD848007285CE /* ReaderOptionsViewController.swift */; };
 		DF64A0BB1E708E44000EB09E /* TitlePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF64A0BA1E708E44000EB09E /* TitlePageViewController.swift */; };
 		DFBEF1D21E7AF40A009519C3 /* Stitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBEF1D11E7AF40A009519C3 /* Stitch.swift */; };
+		DFBEF1D41E7B214D009519C3 /* ReaderOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBEF1D31E7B214D009519C3 /* ReaderOptionsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		DF1D27C01E7AD848007285CE /* ReaderOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderOptionsViewController.swift; sourceTree = "<group>"; };
 		DF64A0BA1E708E44000EB09E /* TitlePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitlePageViewController.swift; sourceTree = "<group>"; };
 		DFBEF1D11E7AF40A009519C3 /* Stitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stitch.swift; sourceTree = "<group>"; };
+		DFBEF1D31E7B214D009519C3 /* ReaderOptionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderOptionsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				DF1D27BA1E723812007285CE /* V2ReaderViewController.swift */,
 				DF1D27BE1E77252F007285CE /* ReaderTitlePageViewController.swift */,
 				DF1D27C01E7AD848007285CE /* ReaderOptionsViewController.swift */,
+				DFBEF1D31E7B214D009519C3 /* ReaderOptionsTableViewCell.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				DF1D27BB1E723812007285CE /* V2ReaderViewController.swift in Sources */,
 				7DF015C61E6B9B370048AAA8 /* Story.swift in Sources */,
 				818518D71E7088DB00191121 /* LandingPageViewController.swift in Sources */,
+				DFBEF1D41E7B214D009519C3 /* ReaderOptionsTableViewCell.swift in Sources */,
 				DF1D27B91E71CFDA007285CE /* StitchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
