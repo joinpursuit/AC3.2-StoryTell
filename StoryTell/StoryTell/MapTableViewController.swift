@@ -17,11 +17,11 @@ class MapTableViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "stitchCell")
         loadData()
         self.navigationItem.titleView = setTitle(title: "title", subtitle: "author")
-        navigationController?.navigationBar.barTintColor = .white //this will probably be hex #efe9e7
-        view.backgroundColor = .white
+        navigationController?.navigationBar.barTintColor = Colors.cream
+        view.backgroundColor = Colors.cream
         
         let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //Need to change action to show Publish Alert
-        
+        publishButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
         var writeImage = UIImage(named: "writeEdit")
         
         writeImage = writeImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
@@ -29,7 +29,7 @@ class MapTableViewController: UITableViewController {
         let writeButton = UIBarButtonItem(image: writeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(writeTapped)) //Need to link to Write page
         
         let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //needs to be set up to go back a page
-        
+        backButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
         var homeImage = UIImage(named: "homePage")
         
         homeImage = homeImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
@@ -89,15 +89,15 @@ class MapTableViewController: UITableViewController {
         let titleLabel = UILabel(frame: CGRect(x:0, y:-5, width:0, height:0))
         
         titleLabel.backgroundColor = UIColor.clear
-        titleLabel.textColor = UIColor.gray
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
+        titleLabel.textColor = Colors.navy
+        titleLabel.font = UIFont(name: "Cochin-Bold", size: 17)
         titleLabel.text = title
         titleLabel.sizeToFit()
         
         let subtitleLabel = UILabel(frame: CGRect(x:0, y:18, width:0, height:0))
         subtitleLabel.backgroundColor = UIColor.clear
-        subtitleLabel.textColor = UIColor.black
-        subtitleLabel.font = UIFont.systemFont(ofSize: 12)
+        subtitleLabel.textColor = Colors.navy
+        subtitleLabel.font = UIFont(name: "Cochin", size: 14)
         subtitleLabel.text = subtitle
         subtitleLabel.sizeToFit()
         
