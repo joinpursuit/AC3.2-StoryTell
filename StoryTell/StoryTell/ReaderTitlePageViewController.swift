@@ -11,14 +11,19 @@ import UIKit
 class ReaderTitlePageViewController: UIViewController {
     
     var story: Story!
+    var standardMargin: Double = 8
+    let gesture = UITapGestureRecognizer(target: self, action: #selector(presentReaderTouch))
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = Colors.navy
+        view.backgroundColor = Colors.cream
         
         loadTitlePageView()
         setupViewHierarchy()
         configureConstraints()
+        
+        
+       
     }
     
     func loadTitlePageView() {
@@ -31,6 +36,12 @@ class ReaderTitlePageViewController: UIViewController {
         authorLabel.text = author
         titleLabel.text = title
         
+    }
+    
+    func presentReaderTouch(_ sender: UITapGestureRecognizer){
+    
+    present(V2ReaderViewController(), animated: true, completion: nil)
+    
     }
     
     
@@ -46,26 +57,34 @@ class ReaderTitlePageViewController: UIViewController {
     // constraints need to be fixed... The height needs to adjust based on the text.
     
     private func configureConstraints(){
-        authorLabel.snp.makeConstraints { (author) in
-            author.leading.equalToSuperview().offset(8)
-            author.trailing.equalToSuperview()
-            author.top.equalToSuperview()
-            author.height.equalToSuperview().dividedBy(3)
+        
+        
+        titleLabel.snp.makeConstraints { (title) in
+            title.leading.equalToSuperview().offset(standardMargin)
+            title.trailing.equalToSuperview().inset(standardMargin)
+            title.top.equalToSuperview().offset(8)
+            title.height.equalToSuperview().dividedBy(4)
             //author.centerX.equalToSuperview()
             
         }
         
-        titleLabel.snp.makeConstraints { (title) in
-            title.leading.equalToSuperview().offset(8)
-            title.trailing.equalToSuperview()
-            title.top.equalTo(authorLabel.snp.bottom).offset(8)
-            title.height.equalToSuperview().dividedBy(3)
+        authorLabel.snp.makeConstraints { (author) in
+            author.leading.equalToSuperview().offset(standardMargin)
+            author.trailing.equalToSuperview().inset(standardMargin)
+            author.top.equalTo(titleLabel.snp.bottom).offset(standardMargin)
+            author.height.equalToSuperview().dividedBy(4)
         }
         
+        
+        
         beginStoryButton.snp.makeConstraints { (button) in
-            button.leading.trailing.equalToSuperview()
-            button.top.equalTo(titleLabel.snp.bottom)
-            button.bottom.equalToSuperview()
+            button.top.equalTo(authorLabel.snp.bottom).offset(standardMargin)
+            //button.leading.trailing.equalToSuperview()
+           button.centerX.equalToSuperview()
+            //button.top.equalTo(titleLabel.snp.bottom)
+           // button.bottom.equalToSuperview().inset(20)
+            button.height.equalTo(50)
+            button.width.equalTo(200)
         }
         
     }
@@ -83,13 +102,14 @@ class ReaderTitlePageViewController: UIViewController {
     
     lazy var authorLabel: UILabel = {
         let label: UILabel = UILabel()
-       // label.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
-        label.font = UIFont.boldSystemFont(ofSize: 60)
+       // label.font = UIFont.boldSystemFont(ofSize: 40)
+        label.font = UIFont(name: "Cochin", size: 40)
         label.numberOfLines = 3
         label.minimumScaleFactor = 0.1
         label.lineBreakMode = NSLineBreakMode.byWordWrapping
+        label.textAlignment = .center
         //label.sizeToFit()
-        label.textColor = Colors.cream
+        label.textColor = Colors.navy
         
         return label
     }()
@@ -101,11 +121,12 @@ class ReaderTitlePageViewController: UIViewController {
         ///// Ideas to shrik text based on how much text... not working..yet
                 label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.1
-        label.font = UIFont.boldSystemFont(ofSize: 60)
+         label.font = UIFont(name: "Cochin-BoldItalic", size: 40)
         label.numberOfLines = 3
-        label.textColor = Colors.cream
+        label.textColor = Colors.navy
         
         label.lineBreakMode = NSLineBreakMode.byTruncatingTail
+        label.textAlignment = .center
         //label.sizeToFit()
         
         return label
@@ -113,13 +134,46 @@ class ReaderTitlePageViewController: UIViewController {
     
     lazy var beginStoryButton: UIButton = {
         let button: UIButton = UIButton()
-        button.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
-        button.backgroundColor = UIColor.green
-        button.setTitle("Begin Reading", for: .normal)
+        button.backgroundColor = Colors.cranberry
+       // button.alpha = 0.5
+        button.layer.cornerRadius = 7.0
+        let myAttribute = [NSForegroundColorAttributeName: Colors.cream]
+        let myString = NSMutableAttributedString(string: "Begin Reading", attributes: myAttribute)
+        var buttonRange = (myString.string as NSString).range(of: "Begin Reading")
+        myString.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: 20.0), range: buttonRange)
+        
+        button.setAttributedTitle(myString, for: .normal)
+    
         button.addTarget(self, action: #selector(beginStoryAction), for: .touchUpInside)
         
         return button
     }()
     
+    
+//    lazy var fancything: UIImageView = {
+//        
+//        
+//    }
+    
+    
+    /*
+     lazy var crisisButton: UIButton = {
+     let button = UIButton()
+     button.backgroundColor = .white
+     button.layer.cornerRadius = 7.0
+     
+     let darkRed = UIColor(red: 158/255, green: 9/255, blue: 28/255, alpha: 1.0)
+     
+     let myAttribute = [ NSForegroundColorAttributeName: darkRed ]
+     let myString = NSMutableAttributedString(string: "1-888-NYC-WELL (free)", attributes: myAttribute)
+     
+     var buttonRange = (myString.string as NSString).range(of: "1-888-NYC-WELL")
+     myString.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: 16.0), range: buttonRange)
+     
+     button.setAttributedTitle(myString, for: .normal)
+     return button
+     }()
+ 
+ */
     
 }
