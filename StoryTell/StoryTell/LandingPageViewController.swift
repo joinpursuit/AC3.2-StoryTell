@@ -24,6 +24,11 @@ class LandingPageViewController: UIViewController {
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: writeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(writeButtonPressed))
         
+        let logOutButton = UIBarButtonItem(title: "Log Out & Exit", style: UIBarButtonItemStyle.plain, target: self, action: #selector(logOutButtonPressed))
+        logOutButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
+        self.navigationItem.leftBarButtonItem = logOutButton
+        
+        
         }
     
     func setupView() {
@@ -61,7 +66,10 @@ class LandingPageViewController: UIViewController {
         let newViewController = TitlePageViewController()
         self.navigationController?.pushViewController(newViewController, animated: true)
     }
-    
+    func logOutButtonPressed() {
+        //let newViewController = MARIA's LOGIN PAGE VC
+        //self.navigationController?.pushViewController(newViewController, animated: true)
+    }
     internal lazy var landingPageText: UILabel = {
         let landingPageText = UILabel()
         landingPageText.text = "Welcome to Story Tell.\n\nBegin by playing a game (choose from your most recent games below) or you can create a new game by pressing the Write button in the upper right-hand corner."
