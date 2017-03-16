@@ -13,15 +13,25 @@ class LandingPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = Colors.cream
         self.navigationItem.titleView = setTitle(title: "Story Tell", subtitle: "Your Bookshelf")
-        navigationController?.navigationBar.barTintColor = .white //this will probably be hex #efe9e7
-        view.backgroundColor = .white
+        navigationController?.navigationBar.barTintColor = Colors.cream
         setupView()
         
-        let writeButton = UIBarButtonItem(title: "Write", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack))
+        var writeImage = UIImage(named: "writeEdit")
         
-        navigationItem.rightBarButtonItem = writeButton //Need to change action to show Write Controller
-    }
+        writeImage = writeImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: writeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(writeButtonPressed))
+        
+        let logOutButton = UIBarButtonItem(title: "Log Out & Exit", style: UIBarButtonItemStyle.plain, target: self, action: #selector(logOutButtonPressed))
+        logOutButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
+        self.navigationItem.leftBarButtonItem = logOutButton
+        
+        self.landingPageTableview.backgroundColor = Colors.cream
+        
+        
+        }
     
     func setupView() {
         self.edgesForExtendedLayout = []
@@ -54,12 +64,21 @@ class LandingPageViewController: UIViewController {
         
     
     }
-    
+    func writeButtonPressed() {
+        let newViewController = TitlePageViewController()
+        self.navigationController?.pushViewController(newViewController, animated: true)
+    }
+    func logOutButtonPressed() {
+        //let newViewController = MARIA's LOGIN PAGE VC
+        //self.navigationController?.pushViewController(newViewController, animated: true)
+    }
     internal lazy var landingPageText: UILabel = {
         let landingPageText = UILabel()
         landingPageText.text = "Welcome to Story Tell.\n\nBegin by playing a game (choose from your most recent games below) or you can create a new game by pressing the Write button in the upper right-hand corner."
         landingPageText.numberOfLines = 0
         landingPageText.textAlignment = .center
+        landingPageText.font = UIFont(name: "Cochin", size: 18)
+        landingPageText.textColor = Colors.navy
         return landingPageText
     }()
     
@@ -72,15 +91,15 @@ class LandingPageViewController: UIViewController {
         let titleLabel = UILabel(frame: CGRect(x:0, y:-5, width:0, height:0))
         
         titleLabel.backgroundColor = UIColor.clear
-        titleLabel.textColor = UIColor.gray
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
+        titleLabel.textColor = Colors.navy
+        titleLabel.font = UIFont(name: "Cochin-Bold", size: 17)
         titleLabel.text = title
         titleLabel.sizeToFit()
         
         let subtitleLabel = UILabel(frame: CGRect(x:0, y:18, width:0, height:0))
         subtitleLabel.backgroundColor = UIColor.clear
-        subtitleLabel.textColor = UIColor.black
-        subtitleLabel.font = UIFont.systemFont(ofSize: 12)
+        subtitleLabel.textColor = Colors.navy
+        subtitleLabel.font = UIFont(name: "Cochin", size: 14)
         subtitleLabel.text = subtitle
         subtitleLabel.sizeToFit()
         

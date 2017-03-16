@@ -25,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
 
-
  
         
     //let navigationVC = UINavigationController(rootViewController: ViewController())
@@ -34,6 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //let navigationVC = UINavigationController(rootViewController: TitlePageViewController())
         
         let navigationVC = UINavigationController(rootViewController: LoginViewController())
+
+
+        //let navigationVC = UINavigationController(rootViewController: ReaderViewController())
+
 
       
         
