@@ -45,8 +45,6 @@ class ReaderOptionsViewController: UIViewController {
         
         return tableView
     }()
-    
-    
 }
 
 // MARK: - TableView Delegate/DataSource
@@ -72,7 +70,7 @@ extension ReaderOptionsViewController: UITableViewDelegate, UITableViewDataSourc
                 cell.nightModeSwitch.isOn = false
             }
         }
-        cell.nightLabel.text = "NIGHT MODE: BRING THE DARKNESS"
+        cell.nightLabel.text = "Night Mode"
         
         return cell
     }

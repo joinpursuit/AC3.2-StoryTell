@@ -19,16 +19,14 @@ class ReaderTitlePageViewController: UIViewController {
         loadTitlePageView()
         setupViewHierarchy()
         configureConstraints()
-        
     }
-    
     
     func loadTitlePageView() {
         story = Story.readStory()
         
         let title = story.title
         let author = story.authorName
-        let date = story.createdAt
+        //let date = story.createdAt
         
         authorLabel.text = author
         titleLabel.text = title
@@ -42,7 +40,6 @@ class ReaderTitlePageViewController: UIViewController {
         view.addSubview(authorLabel)
         view.addSubview(titleLabel)
         view.addSubview(beginStoryButton)
-        
         
     }
     
@@ -77,8 +74,8 @@ class ReaderTitlePageViewController: UIViewController {
     
     func beginStoryAction() {
         print("Story is starting")
-        self.navigationController?.pushViewController(V2ReaderViewController(), animated: true)
-        // present(V2ReaderViewController(), animated: true, completion: nil)
+        //self.navigationController?.pushViewController(V2ReaderViewController(), animated: true)
+         present(UINavigationController(rootViewController: V2ReaderViewController()), animated: true, completion: nil)
         
     }
     

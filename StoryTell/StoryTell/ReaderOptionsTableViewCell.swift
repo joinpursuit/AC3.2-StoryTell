@@ -43,7 +43,7 @@ class ReaderOptionsTableViewCell: UITableViewCell {
        
     }
     
-    func nightAction() {
+    func nightModeAction() {
         print("pressed the night")
         
         if let status = UserDefaults.standard.object(forKey: "onOff") as? Bool {
@@ -76,7 +76,7 @@ class ReaderOptionsTableViewCell: UITableViewCell {
         //nightSwitch.backgroundColor = UIColor.yellow
         
          nightSwitch.setOn(false, animated: true)
-        nightSwitch.addTarget(self, action: #selector(nightAction), for: .touchUpInside)
+        nightSwitch.addTarget(self, action: #selector(nightModeAction), for: .touchUpInside)
         
         
         return nightSwitch
