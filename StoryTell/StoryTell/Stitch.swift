@@ -5,10 +5,7 @@
 //  Created by Simone on 3/9/17.
 //  Copyright © 2017 Simone. All rights reserved.
 //
-<<<<<<< HEAD
 
-=======
->>>>>>> de2d81bf19a6ef31459c079b28fa3fe53a07c395
 import Foundation
 
 struct Option {
@@ -19,7 +16,7 @@ struct Option {
 class Stitch {
     let content: String
     let options: [Option]
-<<<<<<< HEAD
+
     let key: String
     
     init(content: String, options: [Option], key: String) {
@@ -36,19 +33,8 @@ class Stitch {
             
             //guard let stitchDict = value as? [String: Any] else { return nil }
             //dump(stitchDict)
-=======
+
     
-    init(content: String, options: [Option]) {
-        self.content = content
-        self.options = options
-    }
-    
-    convenience init?(with dict: [String:Any]) {
-        var tempOptions = [Option]()
-        var content: String = ""
-        for (_, value) in dict {
-            //guard let stitchDict = value as? [String: Any] else { return nil }
->>>>>>> de2d81bf19a6ef31459c079b28fa3fe53a07c395
             guard let contentArr = dict["content"] as? [Any] else { return nil }
             guard let content2 = contentArr[0] as? String else { return nil }
             content = content2
@@ -89,26 +75,20 @@ class Stitch {
                     }
                 }
             }
-<<<<<<< HEAD
+
         //}
         self.init(content: content, options: tempOptions, key: key)
-=======
-        }
-        self.init(content: content, options: tempOptions)
->>>>>>> de2d81bf19a6ef31459c079b28fa3fe53a07c395
+
     }
     
     static func getStitches(from dict: [String:Any]) -> [String:Stitch] {
         var stitches:[String:Stitch] = [:]
         for (key, value) in dict {
-<<<<<<< HEAD
+
             dump(key)
             if let newDict = value as? [String:Any] {
                 let stitch = Stitch(with: newDict, key: key)
-=======
-            if let newDict = value as? [String:Any] {
-                let stitch = Stitch(with: newDict)
->>>>>>> de2d81bf19a6ef31459c079b28fa3fe53a07c395
+
                 stitches[key] = stitch
             }
         }

@@ -63,21 +63,11 @@ class MapTableViewController: UITableViewController {
         self.navigationController?.pushViewController(newViewController, animated: true)
     }
     func loadData() {
-<<<<<<< HEAD
-        story = [Story.readStory()!]
-        
-        for item in story {
-            let title = item.title
-            let author = item.authorName
-            let date = item.createdAt
-            linkPath = item.linkPath
-            //storyTextView.text = "\(title)\n\(author)\n\(date)\n\n"
-            stitches = item.stitches
-        }
-=======
+
+
         story = Story.readStory()
         expandStitches()
->>>>>>> de2d81bf19a6ef31459c079b28fa3fe53a07c395
+
     }
     
     // MARK: - Table view data source
