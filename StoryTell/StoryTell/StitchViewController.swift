@@ -19,7 +19,7 @@ class StitchViewController: UIViewController {
         proseTextView.delegate = self
         setupViewHierarchy()
         configureConstraints()
-        let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //Need to change action to show Publish Alert
+        let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(backButtonTapped)) //Need to change action to show Publish Alert
         
         
         var outlineImage = UIImage(named: "outlinePage")
@@ -57,7 +57,9 @@ class StitchViewController: UIViewController {
         let newViewController = MapTableViewController()
         self.navigationController?.pushViewController(newViewController, animated: true)
     }
-
+    func backButtonTapped() {
+        self.navigationController?.popViewController(animated: true) //this needs to be worked on so back button is hidden when on the bottom view controller
+    }
     func setupViewHierarchy() {
         self.edgesForExtendedLayout = []
         self.view.addSubview(proseTextView)

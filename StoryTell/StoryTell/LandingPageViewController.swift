@@ -16,6 +16,7 @@ class LandingPageViewController: UIViewController {
         view.backgroundColor = Colors.cream
         self.navigationItem.titleView = setTitle(title: "Story Tell", subtitle: "Your Bookshelf")
         navigationController?.navigationBar.barTintColor = Colors.cream
+        navigationController?.navigationBar.tintColor = Colors.cranberry
         setupView()
         
         var writeImage = UIImage(named: "writeEdit")
