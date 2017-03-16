@@ -38,7 +38,7 @@ class V2ReaderViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        realNight()
+        nightModeAction()
         
     }
     func optionsAction(){
@@ -50,7 +50,7 @@ class V2ReaderViewController: UIViewController {
     }
     
     
-    func realNight() {
+    func nightModeAction() {
         
         if let status = UserDefaults.standard.object(forKey: "onOff") as? Bool {
             if status == true {
