@@ -150,10 +150,12 @@ class ReaderTitlePageViewController: UIViewController {
     }()
     
     
-//    lazy var fancything: UIImageView = {
-//        
-//        
-//    }
+    lazy var ornament: UIImageView = {
+        let imageView: UIImageView = UIImageView()
+        
+       
+        return imageView
+    }()
     
     
     /*
