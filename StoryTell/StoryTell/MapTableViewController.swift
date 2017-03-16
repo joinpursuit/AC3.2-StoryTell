@@ -23,6 +23,8 @@ class MapTableViewController: UITableViewController {
         progressStory(linkPath)
         
         
+        
+        
     }
 
 

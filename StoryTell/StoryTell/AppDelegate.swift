@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,17 +19,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        FIRApp.configure()
+        
         // Override point for customization after application launch.
         
 
 
  
         
-        // let navigationVC = UINavigationController(rootViewController: ViewController())
+    //let navigationVC = UINavigationController(rootViewController: ViewController())
 
-        let navigationVC = UINavigationController(rootViewController: ReaderViewController())
+        //let navigationVC = UINavigationController(rootViewController: ReaderViewController())
         //let navigationVC = UINavigationController(rootViewController: TitlePageViewController())
         
+        let navigationVC = UINavigationController(rootViewController: LoginViewController())
 
       
         
