@@ -15,6 +15,7 @@
 		7D3F95F11E664EAD00FD6453 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D3F95F01E664EAD00FD6453 /* Assets.xcassets */; };
 		7D3F95F41E664EAD00FD6453 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D3F95F21E664EAD00FD6453 /* LaunchScreen.storyboard */; };
 		7DC90EA71E7B1D220077B71E /* StitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC90EA61E7B1D220077B71E /* StitchTableViewCell.swift */; };
+		7DC90EAB1E7B55680077B71E /* StitchTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC90EAA1E7B55680077B71E /* StitchTableViewExtension.swift */; };
 		7DF015C61E6B9B370048AAA8 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF015C51E6B9B370048AAA8 /* Story.swift */; };
 		7DF015CA1E6B9E4F0048AAA8 /* SherlockHolmes.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DF015C91E6B9E4F0048AAA8 /* SherlockHolmes.json */; };
 		7DF015CC1E6BA2880048AAA8 /* SampleStory.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DF015CB1E6BA2880048AAA8 /* SampleStory.json */; };
@@ -42,6 +43,7 @@
 		7D3F95F31E664EAD00FD6453 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D3F95F51E664EAD00FD6453 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DC90EA61E7B1D220077B71E /* StitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StitchTableViewCell.swift; sourceTree = "<group>"; };
+		7DC90EAA1E7B55680077B71E /* StitchTableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StitchTableViewExtension.swift; sourceTree = "<group>"; };
 		7DF015C51E6B9B370048AAA8 /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		7DF015C91E6B9E4F0048AAA8 /* SherlockHolmes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SherlockHolmes.json; sourceTree = "<group>"; };
 		7DF015CB1E6BA2880048AAA8 /* SampleStory.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SampleStory.json; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				818518D61E7088DB00191121 /* LandingPageViewController.swift */,
 				DF64A0BA1E708E44000EB09E /* TitlePageViewController.swift */,
 				DF1D27B81E71CFDA007285CE /* StitchViewController.swift */,
+				7DC90EAA1E7B55680077B71E /* StitchTableViewExtension.swift */,
 				7DC90EA61E7B1D220077B71E /* StitchTableViewCell.swift */,
 				DF1D27BA1E723812007285CE /* V2ReaderViewController.swift */,
 				DF1D27C01E7AD848007285CE /* ReaderOptionsViewController.swift */,
@@ -302,6 +305,7 @@
 				7DC90EA71E7B1D220077B71E /* StitchTableViewCell.swift in Sources */,
 				DF1D27C11E7AD848007285CE /* ReaderOptionsViewController.swift in Sources */,
 				DF64A0BB1E708E44000EB09E /* TitlePageViewController.swift in Sources */,
+				7DC90EAB1E7B55680077B71E /* StitchTableViewExtension.swift in Sources */,
 				81B782951E7AF97000F96DD8 /* Stitch.swift in Sources */,
 				DF1D27BB1E723812007285CE /* V2ReaderViewController.swift in Sources */,
 				7DF015C61E6B9B370048AAA8 /* Story.swift in Sources */,
