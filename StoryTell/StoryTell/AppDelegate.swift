@@ -19,19 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // let navigationVC = UINavigationController(rootViewController: ViewController())
         //let navigationVC = UINavigationController(rootViewController: ReaderViewController())
         //let navigationVC = UINavigationController(rootViewController: TitlePageViewController())
-<<<<<<< HEAD
-//        let navigationVC = UINavigationController(rootViewController: MapTableViewController())
-        let navigationVC = UINavigationController(rootViewController: StitchViewController())
-       
-=======
+
         //let navigationVC = UINavigationController(rootViewController: MapTableViewController())
         //let navigationVC = UINavigationController(rootViewController: LandingPageViewController())
         let navigationVC = UINavigationController(rootViewController: StitchViewController())
 
-
-      
-        
->>>>>>> de2d81bf19a6ef31459c079b28fa3fe53a07c395
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = navigationVC
         self.window?.makeKeyAndVisible()
