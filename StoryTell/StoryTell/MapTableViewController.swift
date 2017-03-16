@@ -14,22 +14,26 @@ class MapTableViewController: UITableViewController {
     var expandedStitches: [Any] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "stitchCell")
+        self.tableView.backgroundColor = Colors.cream
+        tableView.register(MapTableViewCell.self, forCellReuseIdentifier: "stitchCell")
         loadData()
-        self.navigationItem.titleView = setTitle(title: "title", subtitle: "author")
-        navigationController?.navigationBar.barTintColor = .white //this will probably be hex #efe9e7
-        view.backgroundColor = .white
+        
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 100
+        
+        self.navigationItem.titleView = setTitle(title: "Outline", subtitle: story.authorName)
+        navigationController?.navigationBar.barTintColor = Colors.cream
         
         let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //Need to change action to show Publish Alert
-        
+        publishButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
         var writeImage = UIImage(named: "writeEdit")
         
         writeImage = writeImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         
         let writeButton = UIBarButtonItem(image: writeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(writeTapped)) //Need to link to Write page
         
-        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //needs to be set up to go back a page
-        
+        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(backButtonTapped)) //needs to be set up to go back a page
+        backButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
         var homeImage = UIImage(named: "homePage")
         
         homeImage = homeImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
@@ -57,6 +61,10 @@ class MapTableViewController: UITableViewController {
         let newViewController = StitchViewController()
         self.navigationController?.pushViewController(newViewController, animated: true)
     }
+    func backButtonTapped() {
+        self.navigationController?.popViewController(animated: true)
+        
+    }
     func loadData() {
         story = Story.readStory()
         expandStitches()
@@ -74,12 +82,19 @@ class MapTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "stitchCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "stitchCell", for: indexPath) as! MapTableViewCell
         if let stitch = expandedStitches[indexPath.row] as? Stitch {
-            cell.textLabel?.text = stitch.content
+            cell.cellLabel.text = stitch.content
+            cell.cellLabel.font = UIFont(name: "Cochin", size: 17)
+            cell.cellLabel.textColor = Colors.navy
+            cell.cellLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+            cell.cellLabel.numberOfLines = 0
         }
         else if let option = expandedStitches[indexPath.row] as? Option {
-            cell.textLabel?.text = "\t\(option.prompt)"
+            cell.cellLabel.text = "\t\(option.prompt)"
+            cell.cellLabel.font = UIFont(name: "Cochin-Italic", size: 18)
+            cell.cellLabel.textColor = Colors.cranberry
+            cell.cellLabel.numberOfLines = 0
         }
         
         return cell
@@ -89,15 +104,15 @@ class MapTableViewController: UITableViewController {
         let titleLabel = UILabel(frame: CGRect(x:0, y:-5, width:0, height:0))
         
         titleLabel.backgroundColor = UIColor.clear
-        titleLabel.textColor = UIColor.gray
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
+        titleLabel.textColor = Colors.navy
+        titleLabel.font = UIFont(name: "Cochin-BoldItalic", size: 16)
         titleLabel.text = title
         titleLabel.sizeToFit()
         
         let subtitleLabel = UILabel(frame: CGRect(x:0, y:18, width:0, height:0))
         subtitleLabel.backgroundColor = UIColor.clear
-        subtitleLabel.textColor = UIColor.black
-        subtitleLabel.font = UIFont.systemFont(ofSize: 12)
+        subtitleLabel.textColor = Colors.navy
+        subtitleLabel.font = UIFont(name: "Cochin", size: 14)
         subtitleLabel.text = subtitle
         subtitleLabel.sizeToFit()
         
@@ -120,6 +135,9 @@ class MapTableViewController: UITableViewController {
         return titleView
     }
 
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = UIColor.clear
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
