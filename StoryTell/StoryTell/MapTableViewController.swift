@@ -14,11 +14,11 @@ class MapTableViewController: UITableViewController {
     var expandedStitches: [Any] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.backgroundColor = Colors.cream
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "stitchCell")
         loadData()
         self.navigationItem.titleView = setTitle(title: "title", subtitle: "author")
         navigationController?.navigationBar.barTintColor = Colors.cream
-        view.backgroundColor = Colors.cream
         
         let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //Need to change action to show Publish Alert
         publishButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
@@ -81,6 +81,7 @@ class MapTableViewController: UITableViewController {
         else if let option = expandedStitches[indexPath.row] as? Option {
             cell.textLabel?.text = "\t\(option.prompt)"
         }
+        cell.textLabel?.font = UIFont(name: "Cochin", size: 17)
         
         return cell
     }
@@ -120,6 +121,9 @@ class MapTableViewController: UITableViewController {
         return titleView
     }
 
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = UIColor.clear
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
