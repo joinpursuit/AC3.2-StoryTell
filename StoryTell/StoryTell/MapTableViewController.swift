@@ -26,9 +26,6 @@ class MapTableViewController: UITableViewController {
         
         writeImage = writeImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         
-        //self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: writeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(writeButtonPressed))
-        
-        
         let writeButton = UIBarButtonItem(image: writeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(writeTapped)) //Need to link to Write page
         
         let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //needs to be set up to go back a page
@@ -38,8 +35,6 @@ class MapTableViewController: UITableViewController {
         homeImage = homeImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         
         let homeButton = UIBarButtonItem(image: homeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(homeTapped))
-        
-        //self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: homeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(homeTapped))
         
         navigationItem.rightBarButtonItems = [publishButton, writeButton]
         navigationItem.leftBarButtonItems = [backButton, homeButton]
