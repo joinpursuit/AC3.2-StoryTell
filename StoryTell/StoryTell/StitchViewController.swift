@@ -9,6 +9,9 @@
 import UIKit
 
 class StitchViewController: UIViewController {
+    var options = [Option]()
+    var option: Option!
+    var branch: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +19,7 @@ class StitchViewController: UIViewController {
         proseTextView.delegate = self
         setupViewHierarchy()
         configureConstraints()
-        let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //Need to change action to show Publish Alert
+        let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(backButtonTapped)) //Need to change action to show Publish Alert
         
         
         var outlineImage = UIImage(named: "outlinePage")
@@ -38,6 +41,10 @@ class StitchViewController: UIViewController {
         navigationItem.leftBarButtonItems = [backButton, homeButton]
         
         
+        optionsTableView.delegate = self
+        optionsTableView.dataSource = self
+        optionsTableView.register(StitchTableViewCell.self, forCellReuseIdentifier: "cell")
+        
     }
     
     
@@ -50,7 +57,9 @@ class StitchViewController: UIViewController {
         let newViewController = MapTableViewController()
         self.navigationController?.pushViewController(newViewController, animated: true)
     }
-
+    func backButtonTapped() {
+        self.navigationController?.popViewController(animated: true) //this needs to be worked on so back button is hidden when on the bottom view controller
+    }
     func setupViewHierarchy() {
         self.edgesForExtendedLayout = []
         self.view.addSubview(proseTextView)
@@ -109,7 +118,34 @@ class StitchViewController: UIViewController {
         alertController.addAction(confirmAction)
         alertController.addAction(cancelAction)
         
-        self.present(alertController, animated: true, completion: nil)
+//        let alertController = UIAlertController(title: "Enter A Prompt", message: "Your prompt should be a choice for the user select", preferredStyle: .alert)
+//        
+//        let confirmAction = UIAlertAction(title: "Confirm", style: .default) { (_) in
+//            let branchField = alertController.textFields![0] as UITextField
+//            
+//            if branchField.text != "" {
+//                self.branch = branchField.text!
+//                //store data
+//            } else {
+//                let errorAlert = UIAlertController(title: "Error", message: "Please add a prompt", preferredStyle: .alert)
+//                errorAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: {
+//                    alert -> Void in
+//                    self.present(alertController, animated: true, completion: nil)
+//                }))
+//                self.present(errorAlert, animated: true, completion: nil)
+//            }
+//        }
+//        
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+//        
+//        alertController.addTextField { (textField) in
+//            textField.placeholder = "Enter your prompt"
+//        }
+//        
+//        alertController.addAction(confirmAction)
+//        alertController.addAction(cancelAction)
+//        
+//        self.present(alertController, animated: true, completion: nil)
         
         
     }
@@ -165,18 +201,37 @@ extension StitchViewController: UITextViewDelegate {
 // MARK: - TableView DataSource/Delegate
 extension StitchViewController: UITableViewDataSource,UITableViewDelegate {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0: return "Options"
+        default: return ""
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        
-        return 0
+
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // wrote just to satify
-        let cell: UITableViewCell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! StitchTableViewCell
+        
+        let prompts = Option(prompt: cell.textField.text!, link: "")
+        options.append(prompts)
+        print(prompts)
         
         return cell
-        
+    }
+    
+    func tableView(_ tableView: UITableView, didEndEditingRowAt indexPath: IndexPath?) {
+        let cell = StitchTableViewCell()
+        cell.textField.isHidden = true
+        cell.textLabel?.text = cell.textField.text!
     }
     
 }

@@ -14,35 +14,40 @@ class MapTableViewController: UITableViewController {
     var expandedStitches: [Any] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "stitchCell")
+        self.tableView.backgroundColor = Colors.cream
+        tableView.register(MapTableViewCell.self, forCellReuseIdentifier: "stitchCell")
         loadData()
-        self.navigationItem.titleView = setTitle(title: "title", subtitle: "author")
-        navigationController?.navigationBar.barTintColor = .white //this will probably be hex #efe9e7
-        view.backgroundColor = .white
+        
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 100
+        
+        navigationItem.title = "Outline"
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSForegroundColorAttributeName: Colors.navy,
+             NSFontAttributeName: UIFont(name: "Cochin-BoldItalic", size: 21)!]
+        navigationController?.navigationBar.barTintColor = Colors.cream
+        navigationController?.navigationBar.tintColor = Colors.cranberry
         
         let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //Need to change action to show Publish Alert
-        
+        publishButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
         var writeImage = UIImage(named: "writeEdit")
         
         writeImage = writeImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         
-        //self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: writeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(writeButtonPressed))
+        let writeButton = UIBarButtonItem(image: writeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(writeTapped))
         
-        
-        let writeButton = UIBarButtonItem(image: writeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(writeTapped)) //Need to link to Write page
-        
-        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //needs to be set up to go back a page
-        
+        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(backButtonTapped))
+        backButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
         var homeImage = UIImage(named: "homePage")
         
         homeImage = homeImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         
         let homeButton = UIBarButtonItem(image: homeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(homeTapped))
         
-        //self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: homeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(homeTapped))
-        
         navigationItem.rightBarButtonItems = [publishButton, writeButton]
         navigationItem.leftBarButtonItems = [backButton, homeButton]
+        
+        
         
         
     }
@@ -62,12 +67,22 @@ class MapTableViewController: UITableViewController {
         let newViewController = StitchViewController()
         self.navigationController?.pushViewController(newViewController, animated: true)
     }
+<<<<<<< HEAD
     func loadData() {
 
 
         story = Story.readStory()
         expandStitches()
 
+=======
+    func backButtonTapped() {
+        let _ = self.navigationController?.popViewController(animated: true)
+        
+    }
+    func loadData() {
+        story = Story.readStory()
+        expandStitches()
+>>>>>>> 55ae5f197c65518caad12fdecef8eaf71306d29d
     }
     
     // MARK: - Table view data source
@@ -82,52 +97,27 @@ class MapTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "stitchCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "stitchCell", for: indexPath) as! MapTableViewCell
         if let stitch = expandedStitches[indexPath.row] as? Stitch {
-            cell.textLabel?.text = stitch.content
+            cell.cellLabel.text = stitch.content
+            cell.cellLabel.font = UIFont(name: "Cochin", size: 17)
+            cell.cellLabel.textColor = Colors.navy
+            cell.cellLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+            cell.cellLabel.numberOfLines = 0
         }
         else if let option = expandedStitches[indexPath.row] as? Option {
-            cell.textLabel?.text = "\t\(option.prompt)"
+            cell.cellLabel.text = "\t\(option.prompt)"
+            cell.cellLabel.font = UIFont(name: "Cochin-Italic", size: 18)
+            cell.cellLabel.textColor = Colors.cranberry
+            cell.cellLabel.numberOfLines = 0
         }
         
         return cell
     }
-    //sets Title & Subtitle in Navigation Bar. From: https://gist.github.com/nazywamsiepawel/0166e8a71d74e96c7898
-    func setTitle(title:String, subtitle:String) -> UIView {
-        let titleLabel = UILabel(frame: CGRect(x:0, y:-5, width:0, height:0))
-        
-        titleLabel.backgroundColor = UIColor.clear
-        titleLabel.textColor = UIColor.gray
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
-        titleLabel.text = title
-        titleLabel.sizeToFit()
-        
-        let subtitleLabel = UILabel(frame: CGRect(x:0, y:18, width:0, height:0))
-        subtitleLabel.backgroundColor = UIColor.clear
-        subtitleLabel.textColor = UIColor.black
-        subtitleLabel.font = UIFont.systemFont(ofSize: 12)
-        subtitleLabel.text = subtitle
-        subtitleLabel.sizeToFit()
-        
-        let titleView = UIView(frame: CGRect(x:0, y:0, width:max(titleLabel.frame.size.width, subtitleLabel.frame.size.width), height:30))
-        titleView.addSubview(titleLabel)
-        titleView.addSubview(subtitleLabel)
-        
-        let widthDiff = subtitleLabel.frame.size.width - titleLabel.frame.size.width
-        
-        if widthDiff > 0 {
-            var frame = titleLabel.frame
-            frame.origin.x = widthDiff / 2
-            titleLabel.frame = frame.integral
-        } else {
-            var frame = subtitleLabel.frame
-            frame.origin.x = abs(widthDiff) / 2
-            titleLabel.frame = frame.integral
-        }
-        
-        return titleView
-    }
 
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = UIColor.clear
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
