@@ -48,6 +48,8 @@ class MapTableViewController: UITableViewController {
         navigationItem.leftBarButtonItems = [backButton, homeButton]
         
         
+        
+        
     }
     func expandStitches() {
         for (_, stitch) in story.stitches {
