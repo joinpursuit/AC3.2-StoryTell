@@ -57,7 +57,7 @@ class LandingPageViewController: UIViewController {
     
     internal lazy var landingPageText: UILabel = {
         let landingPageText = UILabel()
-        landingPageText.text = "Welcome to Story Tell.\n\nBegin by playing a game (choose from your most recent games below) or you can create a new game by pressing the write button in the upper right-hand corner."
+        landingPageText.text = "Welcome to Story Tell.\n\nBegin by playing a game (choose from your most recent games below) or you can create a new game by pressing the Write button in the upper right-hand corner."
         landingPageText.numberOfLines = 0
         landingPageText.textAlignment = .center
         return landingPageText
