@@ -34,10 +34,10 @@ class MapTableViewCell: UITableViewCell {
     }
     func setupConstraints() {
         cellLabel.translatesAutoresizingMaskIntoConstraints = false
-        cellLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20).isActive = true
+        cellLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
         cellLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
         cellLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
-        cellLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20).isActive = true
+        cellLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5).isActive = true
     }
     
     internal lazy var cellLabel: UILabel = {
