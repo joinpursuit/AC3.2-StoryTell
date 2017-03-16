@@ -1,4 +1,4 @@
-// !$*UTF8*$!
+//!$*UTF8*$!
 {
 	archiveVersion = 1;
 	classes = {
@@ -10,6 +10,7 @@
 		3743B9C7A4D0F9DA0CEDF2FC /* Pods_StoryTell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A1CE72852B33412AAEBBD25 /* Pods_StoryTell.framework */; };
 		4CC0C7611E71F7320094823E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC0C7601E71F7320094823E /* Colors.swift */; };
 		7D3F95EA1E664EAD00FD6453 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F95E91E664EAD00FD6453 /* AppDelegate.swift */; };
+
 		7D3F95F11E664EAD00FD6453 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D3F95F01E664EAD00FD6453 /* Assets.xcassets */; };
 		7D3F95F41E664EAD00FD6453 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D3F95F21E664EAD00FD6453 /* LaunchScreen.storyboard */; };
 		7DC90E8F1E7222AB0077B71E /* Stitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC90E8E1E7222AB0077B71E /* Stitch.swift */; };
@@ -39,6 +40,7 @@
 		7A1CE72852B33412AAEBBD25 /* Pods_StoryTell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StoryTell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D3F95E61E664EAD00FD6453 /* StoryTell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoryTell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D3F95E91E664EAD00FD6453 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+
 		7D3F95F01E664EAD00FD6453 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D3F95F31E664EAD00FD6453 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D3F95F51E664EAD00FD6453 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
