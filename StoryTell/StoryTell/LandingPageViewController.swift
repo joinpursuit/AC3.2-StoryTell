@@ -28,6 +28,8 @@ class LandingPageViewController: UIViewController {
         logOutButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
         self.navigationItem.leftBarButtonItem = logOutButton
         
+        self.landingPageTableview.backgroundColor = Colors.cream
+        
         
         }
     
