@@ -11,8 +11,7 @@ import SnapKit
 
 class ReaderOptionsViewController: UIViewController {
     
-    var on: Bool = true
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,57 +20,84 @@ class ReaderOptionsViewController: UIViewController {
         setupViewHierarchy()
         configureConstraints()
         
-        
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        if let status = UserDefaults.standard.object(forKey: "onOff") as? Bool {
+            if status == true {
+                nightModeSwitch.isOn = true
+                
+            } else {
+                
+                nightModeSwitch.isOn = false
+            }
+            
+        } else {
+            nightModeSwitch.isOn = false
+            
+        }
+    }
+    
+    
     func nightAction() {
-       print("pressed the night")
+        print("pressed the night")
         
         
         if let status = UserDefaults.standard.object(forKey: "onOff") as? Bool {
             if status == true {
+                nightModeSwitch.setOn(false, animated: false)
                 UserDefaults.standard.set(false, forKey: "onOff")
-    
+                
             } else {
+                UserDefaults.standard.set(true, forKey: "onOff")
+                nightModeSwitch.setOn(true, animated: false)
+            }
+            
+        } else {
+            nightModeSwitch.setOn(true, animated: false)
             UserDefaults.standard.set(true, forKey: "onOff")
         }
-        
-    }
     }
     
     
     // MARK: - Setup
     func setupViewHierarchy() {
         self.edgesForExtendedLayout = []
-        view.addSubview(nightModeButton)
         
-
-        
-        
+        view.addSubview(nightModeSwitch)
+    
         
     }
     
     private func configureConstraints(){
         
-        nightModeButton.snp.makeConstraints { (button) in
-            button.leading.trailing.top.bottom.equalToSuperview()
+        nightModeSwitch.snp.makeConstraints { (aSwitch) in
+            
+            aSwitch.leading.trailing.equalToSuperview()
+            aSwitch.height.width.equalTo(100)
+            aSwitch.centerX.equalToSuperview()
         }
         
     }
     
     
     
-    
-    lazy var nightModeButton: UIButton = {
-        let button: UIButton = UIButton()
-        button.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
-        button.backgroundColor = UIColor.green
-        button.setTitle("I am the Darkness", for: .normal)
-        button.addTarget(self, action: #selector(nightAction), for: .touchUpInside)
+    lazy var nightModeSwitch: UISwitch = {
+        let nightSwitch: UISwitch = UISwitch()
         
-        return button
+        nightSwitch.tintColor = UIColor.blue
+        nightSwitch.onTintColor = UIColor.cyan
+        nightSwitch.thumbTintColor = UIColor.red
+        nightSwitch.backgroundColor = UIColor.yellow
+        
+        // nightSwitch.setOn(false, animated: true)
+        nightSwitch.addTarget(self, action: #selector(nightAction), for: .touchUpInside)
+        
+        
+        return nightSwitch
     }()
     
-    
-    
+
 }

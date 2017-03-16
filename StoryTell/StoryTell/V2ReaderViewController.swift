@@ -19,7 +19,7 @@ class V2ReaderViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.cyan
+        view.backgroundColor = Colors.cream
         story = Story.readStory()
         setupViewHierarchy()
         configureConstraints()
@@ -63,8 +63,8 @@ class V2ReaderViewController: UIViewController {
             } else {
                 
                 self.readerTextView.textColor = UIColor.black
-                self.readerTextView.backgroundColor = UIColor.white
-                self.optionsTableView.backgroundColor = UIColor.white
+                self.readerTextView.backgroundColor = Colors.cream
+                self.optionsTableView.backgroundColor = Colors.cranberry
             }
             
             
@@ -73,8 +73,8 @@ class V2ReaderViewController: UIViewController {
         else {
             // 
             self.readerTextView.textColor = UIColor.black
-            self.readerTextView.backgroundColor = UIColor.white
-            self.optionsTableView.backgroundColor = UIColor.white
+            self.readerTextView.backgroundColor = Colors.cream
+            self.optionsTableView.backgroundColor = Colors.cranberry
             
             
         }
@@ -130,6 +130,8 @@ class V2ReaderViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.backgroundColor = Colors.cranberry
+
         
         return tableView
         
@@ -140,6 +142,7 @@ class V2ReaderViewController: UIViewController {
         textView.textColor = UIColor.black
         textView.isEditable = false
         textView.font = UIFont.boldSystemFont(ofSize: 30)
+        textView.backgroundColor = Colors.cream
         
         
         return textView
@@ -164,8 +167,9 @@ extension V2ReaderViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 30)
-        cell.textLabel?.textColor = UIColor.red
+        cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        cell.textLabel?.textColor = Colors.cream
+        cell.textLabel?.backgroundColor = Colors.cranberry
         
         let stitch = story.stitches[currentStitchKey]
         

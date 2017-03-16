@@ -14,7 +14,7 @@ class ReaderTitlePageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.red
+        view.backgroundColor = Colors.navy
         
         loadTitlePageView()
         setupViewHierarchy()
@@ -92,6 +92,7 @@ class ReaderTitlePageViewController: UIViewController {
         label.minimumScaleFactor = 0.1
         label.lineBreakMode = NSLineBreakMode.byWordWrapping
         //label.sizeToFit()
+        label.textColor = Colors.cream
         
         return label
     }()
@@ -105,6 +106,7 @@ class ReaderTitlePageViewController: UIViewController {
         label.minimumScaleFactor = 0.1
         label.font = UIFont.boldSystemFont(ofSize: 60)
         label.numberOfLines = 3
+        label.textColor = Colors.cream
         
         label.lineBreakMode = NSLineBreakMode.byTruncatingTail
         //label.sizeToFit()
@@ -121,5 +123,6 @@ class ReaderTitlePageViewController: UIViewController {
         
         return button
     }()
+    
     
 }
