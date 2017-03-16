@@ -15,8 +15,12 @@ class MapTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.backgroundColor = Colors.cream
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "stitchCell")
+        tableView.register(MapTableViewCell.self, forCellReuseIdentifier: "stitchCell")
         loadData()
+        
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 100
+        
         self.navigationItem.titleView = setTitle(title: "title", subtitle: "author")
         navigationController?.navigationBar.barTintColor = Colors.cream
         
@@ -74,14 +78,20 @@ class MapTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "stitchCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "stitchCell", for: indexPath) as! MapTableViewCell
         if let stitch = expandedStitches[indexPath.row] as? Stitch {
-            cell.textLabel?.text = stitch.content
+            cell.cellLabel.text = stitch.content
+            cell.cellLabel.font = UIFont(name: "Cochin", size: 17)
+            cell.cellLabel.textColor = Colors.navy
+            cell.cellLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+            cell.cellLabel.numberOfLines = 0
         }
         else if let option = expandedStitches[indexPath.row] as? Option {
-            cell.textLabel?.text = "\t\(option.prompt)"
+            cell.cellLabel.text = "\t\(option.prompt)"
+            cell.cellLabel.font = UIFont(name: "Cochin-Italic", size: 18)
+            cell.cellLabel.textColor = Colors.cranberry
+            cell.cellLabel.numberOfLines = 0
         }
-        cell.textLabel?.font = UIFont(name: "Cochin", size: 17)
         
         return cell
     }
@@ -98,7 +108,7 @@ class MapTableViewController: UITableViewController {
         let subtitleLabel = UILabel(frame: CGRect(x:0, y:18, width:0, height:0))
         subtitleLabel.backgroundColor = UIColor.clear
         subtitleLabel.textColor = Colors.navy
-        subtitleLabel.font = UIFont(name: "Cochin", size: 14)
+        subtitleLabel.font = UIFont(name: "Cochin", size: 18)
         subtitleLabel.text = subtitle
         subtitleLabel.sizeToFit()
         
