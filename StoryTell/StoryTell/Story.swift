@@ -48,5 +48,5 @@ class Story {
             print(error)
         }
         return nil
-}
+    }
 }

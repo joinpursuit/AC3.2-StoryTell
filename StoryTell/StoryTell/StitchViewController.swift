@@ -9,6 +9,7 @@
 import UIKit
 
 class StitchViewController: UIViewController {
+    var options = [Option]()
     var option: Option!
     var branch: String!
     
@@ -198,6 +199,17 @@ extension StitchViewController: UITextViewDelegate {
 // MARK: - TableView DataSource/Delegate
 extension StitchViewController: UITableViewDataSource,UITableViewDelegate {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0: return "Options"
+        default: return ""
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
         return 1
@@ -207,10 +219,17 @@ extension StitchViewController: UITableViewDataSource,UITableViewDelegate {
         // wrote just to satify
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! StitchTableViewCell
         
-         let option = Option(prompt: cell.textField.text!, link: "")
-        print(option)
+        let prompts = Option(prompt: cell.textField.text!, link: "")
+        options.append(prompts)
+        print(prompts)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didEndEditingRowAt indexPath: IndexPath?) {
+        let cell = StitchTableViewCell()
+        cell.textField.isHidden = true
+        cell.textLabel?.text = cell.textField.text!
     }
     
 }
