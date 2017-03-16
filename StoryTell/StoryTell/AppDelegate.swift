@@ -15,15 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-   
-        // let navigationVC = UINavigationController(rootViewController: ViewController())
+
+        let navigationVC = UINavigationController(rootViewController: V2ReaderViewController())
+         //let navigationVC = UINavigationController(rootViewController: TitlePageViewController())
         //let navigationVC = UINavigationController(rootViewController: ReaderViewController())
-        //let navigationVC = UINavigationController(rootViewController: TitlePageViewController())
 
-        //let navigationVC = UINavigationController(rootViewController: MapTableViewController())
-        //let navigationVC = UINavigationController(rootViewController: LandingPageViewController())
-        let navigationVC = UINavigationController(rootViewController: StitchViewController())
+        //let navigationVC = UINavigationController(rootViewController: ReaderViewController())
 
+      
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = navigationVC
         self.window?.makeKeyAndVisible()

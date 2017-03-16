@@ -18,9 +18,13 @@
 		7DF015CC1E6BA2880048AAA8 /* SampleStory.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DF015CB1E6BA2880048AAA8 /* SampleStory.json */; };
 		818518D71E7088DB00191121 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818518D61E7088DB00191121 /* LandingPageViewController.swift */; };
 		818518D91E71C9CF00191121 /* MapTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818518D81E71C9CF00191121 /* MapTableViewController.swift */; };
+
+		DF1D27BB1E723812007285CE /* V2ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1D27BA1E723812007285CE /* V2ReaderViewController.swift */; };
+
 		818518DF1E73566600191121 /* Stitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818518DE1E73566600191121 /* Stitch.swift */; };
 		818518E51E73585000191121 /* monkeyking.json in Resources */ = {isa = PBXBuildFile; fileRef = 818518E41E73585000191121 /* monkeyking.json */; };
 		DF1D27B91E71CFDA007285CE /* StitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1D27B81E71CFDA007285CE /* StitchViewController.swift */; };
+
 		DF64A0BB1E708E44000EB09E /* TitlePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF64A0BA1E708E44000EB09E /* TitlePageViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,9 +45,13 @@
 		7DF015CB1E6BA2880048AAA8 /* SampleStory.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SampleStory.json; sourceTree = "<group>"; };
 		818518D61E7088DB00191121 /* LandingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
 		818518D81E71C9CF00191121 /* MapTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTableViewController.swift; sourceTree = "<group>"; };
+
+		DF1D27BA1E723812007285CE /* V2ReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = V2ReaderViewController.swift; sourceTree = "<group>"; };
+
 		818518DE1E73566600191121 /* Stitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stitch.swift; sourceTree = "<group>"; };
 		818518E41E73585000191121 /* monkeyking.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = monkeyking.json; sourceTree = "<group>"; };
 		DF1D27B81E71CFDA007285CE /* StitchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StitchViewController.swift; sourceTree = "<group>"; };
+
 		DF64A0BA1E708E44000EB09E /* TitlePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitlePageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +121,11 @@
 				DF64A0BA1E708E44000EB09E /* TitlePageViewController.swift */,
 				DF1D27B81E71CFDA007285CE /* StitchViewController.swift */,
 				7DC90E981E79DD320077B71E /* StitchTableViewCell.swift */,
+
+				DF1D27B81E71CFDA007285CE /* StitchViewController.swift */,
+				DF1D27BA1E723812007285CE /* V2ReaderViewController.swift */,
+				DF1D27BE1E77252F007285CE /* ReaderTitlePageViewController.swift */,
+
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -122,6 +135,7 @@
 			children = (
 				7DF015C51E6B9B370048AAA8 /* Story.swift */,
 				818518DE1E73566600191121 /* Stitch.swift */,
+
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -277,10 +291,15 @@
 				4CC0C7611E71F7320094823E /* Colors.swift in Sources */,
 				818518D91E71C9CF00191121 /* MapTableViewController.swift in Sources */,
 				DF64A0BB1E708E44000EB09E /* TitlePageViewController.swift in Sources */,
+
+				DF1D27BF1E77252F007285CE /* ReaderTitlePageViewController.swift in Sources */,
+				DF1D27BB1E723812007285CE /* V2ReaderViewController.swift in Sources */,
+
 				818518DF1E73566600191121 /* Stitch.swift in Sources */,
+
 				7DF015C61E6B9B370048AAA8 /* Story.swift in Sources */,
 				818518D71E7088DB00191121 /* LandingPageViewController.swift in Sources */,
-				7DC90E8F1E7222AB0077B71E /* Stitch.swift in Sources */,
+
 				DF1D27B91E71CFDA007285CE /* StitchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

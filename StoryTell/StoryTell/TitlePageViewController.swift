@@ -145,16 +145,6 @@ class TitlePageViewController: UIViewController {
         
         return button
     }()
-    
-    
-    /*
-     let btn: UIButton = UIButton(frame: CGRect(x: 100, y: 400, width: 100, height: 50))
-     btn.backgroundColor = UIColor.green
-     btn.setTitle(title: "Click Me", for: .normal)
-     btn.addTarget(self, action: #selector(buttonAction), forControlEvents: .touchUpInside)
-     btn.tag = 1
-     self.view.addSubview(btn)
- 
- */
+   
     
 }

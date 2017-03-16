@@ -87,11 +87,33 @@ class StitchViewController: UIViewController {
         
     }
     
-    
     // MARK: - Actions
     
     func branchButtonAction(_ sender: UIButton){
-      
+        
+        print("Branch button Pressed")
+        
+        let alertController = UIAlertController(title: "What Choices", message: "Please input your options:", preferredStyle: .alert)
+        
+        let confirmAction = UIAlertAction(title: "Confirm", style: .default) { (_) in
+            if let field = alertController.textFields?[0] {
+                print(field.text)
+                
+                // store your data //
+                
+            } else {
+                // user did not fill field
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Options"
+        }
+        
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
         
 //        let alertController = UIAlertController(title: "Enter A Prompt", message: "Your prompt should be a choice for the user select", preferredStyle: .alert)
 //        
