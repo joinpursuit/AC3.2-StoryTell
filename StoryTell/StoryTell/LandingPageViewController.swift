@@ -13,6 +13,7 @@ class LandingPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.navigationItem.titleView = setTitle(title: "Story Tell", subtitle: "Your Bookshelf")
         navigationController?.navigationBar.barTintColor = .white //this will probably be hex #efe9e7
         view.backgroundColor = .white
