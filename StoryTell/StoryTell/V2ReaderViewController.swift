@@ -15,9 +15,8 @@ class V2ReaderViewController: UIViewController {
     var readerText: String = String()
     var currentStitchKey: String!
     
-    let nightMode = UserDefaults.standard.set(false, forKey: "onOff")
-    
-    
+   
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.cyan
@@ -52,6 +51,8 @@ class V2ReaderViewController: UIViewController {
     
     func nightModeAction() {
         
+         
+        
         if let status = UserDefaults.standard.object(forKey: "onOff") as? Bool {
             if status == true {
                 
@@ -66,7 +67,18 @@ class V2ReaderViewController: UIViewController {
                 self.optionsTableView.backgroundColor = UIColor.white
             }
             
+            
+            
         }
+        else {
+            // 
+            self.readerTextView.textColor = UIColor.black
+            self.readerTextView.backgroundColor = UIColor.white
+            self.optionsTableView.backgroundColor = UIColor.white
+            
+            
+        }
+        
     }
   
     

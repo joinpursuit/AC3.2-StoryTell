@@ -31,6 +31,7 @@ class ReaderOptionsViewController: UIViewController {
         if let status = UserDefaults.standard.object(forKey: "onOff") as? Bool {
             if status == true {
                 UserDefaults.standard.set(false, forKey: "onOff")
+    
             } else {
             UserDefaults.standard.set(true, forKey: "onOff")
         }
