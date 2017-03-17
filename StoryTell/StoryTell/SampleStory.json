@@ -1,0 +1,2074 @@
+{
+    "updated_at": "2012-10-16T08:29:44Z",
+    "url_key": "2rbj",
+    "title": "SAVE MERLIN THE PIG! A rescue quest of dubious proportions",
+    "created_at": "2012-07-03T03:09:56Z",
+    "data": {
+        "initial": "onASummerDayInBr",
+        "editorData": {
+            "libraryVisible": true,
+            "authorName": "Leigh Alexander",
+            "playPoint": "funFactIHaveNeve"
+        },
+        "stitches": {
+            "thereIsTheCrunch": {
+                "content": [
+                            "There is the crunch of glass and the creak of old wood as Grant straight up backs the van into the barn door. Okay, you didn't expect exactly that, but this is a smash-and-grab revolution, or something. Exhaust is pouring from the van's tail pipe and pale, porcine shapes are clustering around the gap you can see in the barn door. A farm dog is barking from far off. It sounds big, and the barking is getting closer. ",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "amidTheSoundOfSp",
+                            "option": "Run!",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "asIfOnCueGrantCr",
+                            "option": "GRAND THEFT PORK MOTHERFUCKER",
+                            "notIfConditions": null
+                            },
+                            {
+                            "pageNum": 8
+                            }
+                            ]
+            },
+            "itNeverQuiteMake": {
+                "content": [
+                            "It never quite makes it. They find you and Jarvis spooked, banged up and suddenly sober, huddled in the back of the van with about seven equally spooked but otherwise unharmed pigs.",
+                            {
+                            "divert": "atThePoliceStati"
+                            }
+                            ]
+            },
+            "theBestYoullBeAb": {
+                "content": [
+                            "The best you'll be able to do is find a safe place to keep the pig until you can find someone who knows something about pigs.",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "jarvisHandsYouTh",
+                            "option": "I SAID PASS THE JAMESON, JARVIS",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "umSorryItIsntMuc": {
+                "content": [
+                            "Um. Sorry. It isn't much. I mean, it's a nice apartment, big for what you pay for it, with finished wood floors, but your Ikea couch needs a new slip cover and there are still empty pizza boxes on your discount coffee table. At least your freezer's full of rainbow Italian ice. Oh, wait, not anymore. ",
+                            {
+                            "divert": "jarvisWandersInt"
+                            }
+                            ]
+            },
+            "itsReallySomethi": {
+                "content": [
+                            "It's really something you should do more often -- getting out, I mean. You wanted to have an adventure with Jarvis, and you did. Whatever restaurant issue you were drunkenly worried about ebbs away like the pale clouds that veil the sunrise. Only when the morning summer dew has burnt off, leaving you a bit too hot amid drifting dandelion seed, do you walk back to the bus station and return home.",
+                            {
+                            "divert": "totallyWorthIt"
+                            }
+                            ]
+            },
+            "whyAreYouDwellin": {
+                "content": [
+                            "Why are you dwelling on this? You know animals are mass-bred, hormone-stuffed and inhumanely slaughtered all over America. And you're not a vegetarian. In fact, you love bacon. Wouldn't you rather eat it with an awareness that it came from a living thing that was treated humanely? ",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "congratulationsY",
+                            "option": "Yeah, I guess.",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "whetherOrNotYouE",
+                            "option": "No! Do NOT name my food and give it a Twitter account!",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "tHEEND": {
+                "content": [
+                            "*-***THE END***-*",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "yeahRationalizeA",
+                            "option": "Let's try that restaurant again.",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "congratulationsY": {
+                "content": [
+                            "Congratulations: You and Jarvis will spend the whole night in deep discussion about why it would horrify you to eat a dog but not a pig, if both animals have names, are treated humanely, and are hand-raised by people. ",
+                            {
+                            "divert": "threeWeeksLaterY"
+                            }
+                            ]
+            },
+            "tomorrowWhenTheC": {
+                "content": [
+                            "Tomorrow when the cops come to take you to some station in Hudson Valley for questioning, you'll learn that Jarvis just figured you had things under control and went to go talk about Prince with Grant some more. Why do you always have to act like you have things under control?! ",
+                            {
+                            "divert": "theOwnerOfTheFar"
+                            }
+                            ]
+            },
+            "whiskeyIntuition": {
+                "content": [
+                            "Whiskey intuition is a funny thing. The last time you went to a farm you were in the sixth grade: A zealous teacher at your hippie school was closely involved with your small town's local community farm, and thought it'd be educational or something to drag the class out in summer to \"help out.\" You remember something to do with compost heaps, and dissecting owl pellets. ",
+                            {
+                            "divert": "iMeanYouJustNowR"
+                            }
+                            ]
+            },
+            "sureEnoughThePig": {
+                "content": [
+                            "Sure enough, the pig has a Twitter account. I mean, someone has made a Twitter account for Merlin the pig. You can't help but think of how you made a Facebook page for your cat...",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "merlinThePigsTwi",
+                            "option": "This... is kind of cute... ",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youAreReadingThe",
+                            "option": "This is ridiculous.",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "fATDELICIOUSEND": {
+                "content": [
+                            "***FAT, DELICIOUS END***",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youKnowWhatThisF",
+                            "option": "Poor Merlin. Go back a bit?",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "noOfCourseNotCan": {
+                "content": [
+                            "No! Of /=course =/not. Can you imagine? No, you're supposed to make reservations for whatever/= event=/ they're having /=involving =/this pig. Special pig birthday? I mean, why would they draw a cute pig, give it a name, a frickin' Twitter account, and have it be... I mean, they don't mean people are going to /=eat =/Merlin, right?",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "sureEnoughThePig",
+                            "option": "Use your iPhone and look up Merlin's Twitter...",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youThinkAboutSig",
+                            "option": "Ask a waiter. ",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "youKnowTheyWereF": {
+                "content": [
+                            "You know they were fattening up poor Merlin on a generous diet of grass-fed this and organic corn that, in preparation for his imminent slaughter, so you figure grabbing the biggest pig is the safest bet. It takes all three of you to lift him into the back of the van, especially because the big porker's scared, and pig hooves are kind of hard and rough and actually Merlin packs a punch with his flailing.",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youTryToGetYourA",
+                            "option": "It's okay, sweet piggy! We're saving you!",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "lookYouSayToJarv": {
+                "content": [
+                            "\"Look,\" you say to Jarvis about the latest one. \"They've added a bear into that tree.\" Jarvis thinks the bear is pretty good. ",
+                            {
+                            "divert": "youEndUpSpending"
+                            }
+                            ]
+            },
+            "andHowYouBrought": {
+                "content": [
+                            "And how you brought him to the schoolyard right before class let out, when basically nobody saw you and by the time animal control arrived no one could say where this big pig came from and you didn't get in trouble? Rad. ",
+                            {
+                            "divert": "andHowYouFoundOu"
+                            }
+                            ]
+            },
+            "thatsWhenYouNoti": {
+                "content": [
+                            "That's when you notice the hem of your hand-distressed Game of Thrones T-shirt has gotten into one of the guys' hand-pestled corn chowder with soft-shelled crab or whatever. The guy behind you is horrified, and calls for the waitress. ",
+                            {
+                            "divert": "hereSheComesYouA"
+                            }
+                            ]
+            },
+            "theSkyIsEnormous": {
+                "content": [
+                            "The sky is enormous and infinite in a way that it isn't in the sea of sidewalks and alleyways where you live, and the humidity isn't as oppressive. And you can see stars. It's more disorienting than you would have expected, and you feel quite fragile relative to the cars hurtling by. Before you moved to the city you drove everywhere.",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youMightNotBeTha",
+                            "option": "Walk down the hill.",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "carefulToStayBeh",
+                            "option": "Walk along the highway. ",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "youWaitALongTime": {
+                "content": [
+                            "You wait a long time for the two transfers it will take you to get back to your neighborhood, and it's sunrise by the time you get your key into your front door, dry-mouthed and aching with fatigue. Tomorrow you have to do dishes. Oh well. At least you had an adventure. Kind of. ",
+                            {
+                            "divert": "tHEEND3"
+                            }
+                            ]
+            },
+            "tHEEND6": {
+                "content": [
+                            "*-***THE END***-*",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youKnowWhatThisF",
+                            "option": "Want to go back a bit and try again?",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "ohYeahTotallyYou": {
+                "content": [
+                            "\"Oh yeah, totally,\" you reply, with zero confidence. ",
+                            {
+                            "divert": "youExitTheOldTra"
+                            }
+                            ]
+            },
+            "definitelyNotOne": {
+                "content": [
+                            "Definitely not. One day the heat had you feeling whimsical or something, so you went to the bodega and bought as much red, white and blue Italian ice as you could carry. Patriotic Italian ice was your breakfast, lunch and dinner for almost three days. The Italian ice diet. And then it was gone, but it was basically an amazing idea. You were a child again. You were summer incarnate. Oh, man. ",
+                            {
+                            "divert": "anyway"
+                            }
+                            ]
+            },
+            "jarvisReachesFor": {
+                "content": [
+                            "Jarvis reaches for your hand as you weave across the slick, dark glass toward the indistinct sound of living creatures moving about inside of looming shelters. You can actually hear the distant rumble of pigs grunting. Oh man, you've almost done this. You're really doing it. Oh man. You're running.  Your fingers tangle together and knit. ",
+                            {
+                            "divert": "theDoorToTheBarn"
+                            }
+                            ]
+            },
+            "severalWeeksLate": {
+                "content": [
+                            "Several weeks later a framed article appears on the wall of the corner restaurant about the 'case of the missing pig,' the hand-raised animal that went AWOL from its planned roast. Apparently it's a really cool twee mystery for everyone. ",
+                            {
+                            "divert": "nowIfYouCanOnlyF"
+                            }
+                            ]
+            },
+            "merlinThePigsTwi": {
+                "content": [
+                            "Merlin the Pig's Twitter is written in first person. Apparently he likes to eat cookies and is happy on his farm! Apparently Merlin is gaining a lot of weight. Apparently Merlin met a chef today...",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "whetherOrNotYouE",
+                            "option": "Oh no... Merlin...",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "whyAreYouDwellin",
+                            "option": "Hahaha. Oh man. Bacon. ",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "andItTakesTooLon": {
+                "content": [
+                            "And it takes too long. You hardly see the German Shepherds come tearing down the hill for the van until they're right up on you, leaping and barking. ",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youAndJarvisClim1",
+                            "option": "Dive into the van! Go-go-go!",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "thesePigsAreHeav": {
+                "content": [
+                            "These pigs are heavy, and they look nothing like the pink cartoons you pictured: They're burly, squint-eyed and wet-snouted, dappled with gray color on pale, flesh-colored skin rough with hair. It takes you and Jarvis together to lift even one. ",
+                            {
+                            "divert": "andItTakesTooLon"
+                            }
+                            ]
+            },
+            "allYouCanSeeIsUn": {
+                "content": [
+                            "All you can see is unlit road in either direction. ",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "letsSitDownForAS",
+                            "option": "Uh... shit. ",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "tHEEND3": {
+                "content": [
+                            "*-***THE END***-*",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youKnowWhatThisF",
+                            "option": "That kinda sucked. Let's go back a bit.",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "iMeanYouSavedAnE": {
+                "content": [
+                            "I mean, you saved an entire pig. How many bacons are in one pig? You'll probably never eat that much bacon. Probably. ",
+                            {
+                            "divert": "severalWeeksLate"
+                            }
+                            ]
+            },
+            "heySaysJarvisWal": {
+                "content": [
+                            "\"Hey,\" says Jarvis, walking back to you. \"This guy is a roadie for a band that has a van.\" Sweet!",
+                            {
+                            "divert": "turnsOutTheRoadi"
+                            }
+                            ]
+            },
+            "yeahThereIsAndIt": {
+                "content": [
+                            "Yeah, there is, and it's rad. It has $5 beer-and-well whiskey specials, picklebacks and they serve cheez puffs on the bar. But this wouldn't be much of a game if you had a fun and sensible time, would it? No, today we're going to go to the corner restaurant. I mean, if you go someplace that has cheap drinks you're going to spend a lot of money. You know yourself. Why not spend it on swanky food instead? Yeah?",
+                            {
+                            "divert": "yeahRationalizeA"
+                            }
+                            ]
+            },
+            "youreDrunkNotAnI": {
+                "content": [
+                            "You're drunk, not an idiot. ",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "grantDecidesHeWa",
+                            "option": "Haha, okay, look before you leap or whatever.",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "onASummerDayInBr": {
+                "content": [
+                            "On a summer day in Brooklyn, the sun doesn't go down 'til 9 PM. You'd be forgiven for letting entire lazy, hazy days pass without eating much besides two single-serving tubs of Marino's Italian Ice -- which is basically what you did today. It's now 9:30 PM, and the sudden fist of hunger angrily plunges itself into your gut, so you and Jarvis decide on getting some cheap sandwiches nearby the subway station.",
+                            {
+                            "divert": "theOrangeHaloesO"
+                            },
+                            {
+                            "pageNum": 1
+                            }
+                            ]
+            },
+            "anyway": {
+                "content": [
+                            "Anyway. ",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youPourYourselfA",
+                            "option": "Google the restaurant.",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "andHowYouFoundOu": {
+                "content": [
+                            "And how you found out from the animal rescue shelter website that Merlin was adopted by a Pennsylvania family that rescues livestock from slaughter? Wicked. ",
+                            {
+                            "divert": "andThenThatTimeL"
+                            }
+                            ]
+            },
+            "thisIsTheOneJarv": {
+                "content": [
+                            "\"This is the one?\" Jarvis looks at you trustingly.",
+                            {
+                            "divert": "ohYeahTotallyYou"
+                            },
+                            {
+                            "pageNum": 14
+                            }
+                            ]
+            },
+            "andThenTheresMer": {
+                "content": [
+                            "And then there's Merlin the Pig...getting him out from under their snooty noses might be just the thing. Thanks to the fact /=the pig has a Twitter account=/, you'll be able to find out where he lives...",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youAndJarvisCalc",
+                            "option": "Yeah! Let's look it up on the phone and get going!",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youFeelPrettyTer",
+                            "option": "Let's go home and do some thinking about this...",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "theBestDecisionY": {
+                "content": [
+                            "The best decision you can come to before deciding to play old PSOne games all night long is that you should probably dine out less often. ",
+                            {
+                            "divert": "tHEEND4"
+                            }
+                            ]
+            },
+            "theWaitressComes": {
+                "content": [
+                            "The waitress comes and takes your order. And she goes, \"Do you want bacon with that?\" ",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youFeelMilesAway",
+                            "option": "Yeah, what the hell.",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "soMaybeItWasALit",
+                            "option": "No. ",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "youSitOnAnOldRub": {
+                "content": [
+                            "You sit on an old rubber swing, and even though you've been up all night, you're not tired the way you've been in the city of New York for months. ",
+                            {
+                            "divert": "itsReallySomethi"
+                            }
+                            ]
+            },
+            "goodThinkingIMea": {
+                "content": [
+                            "Good thinking. I mean, that fence is /=festooned =/with razor wire, the kind that explodes into projectile barbs if you try to move it. /=Explodes=/. Isn't that sick? Like, why would you do that to another human being? Whatever happened to, like, good old-fashioned KEEP OUT signs? ",
+                            {
+                            "divert": "whateverTheRecen"
+                            }
+                            ]
+            },
+            "itsGonnaBeAllRig": {
+                "content": [
+                            "\"It's gonna be all right,\"  you tell Merlin.",
+                            {
+                            "divert": "andIMeanItBasica"
+                            }
+                            ]
+            },
+            "soMaybeItWasALit": {
+                "content": [
+                            "So maybe it was a /=little =/bit of a preposterous idea to leave the city thinking you were going to get to Hudson Valley and steal a pig. \nI mean, what were you going to do with it, anyway?\n",
+                            {
+                            "divert": "RememberThatTime"
+                            }
+                            ]
+            },
+            "dontYouThinkInst": {
+                "content": [
+                            "\"Don't you think instead of M-E-E-T Merlin, it should say M-E-A-T, in quotes?\" Jarvis suggests.",
+                            {
+                            "divert": "iveNeverHeardTha"
+                            }
+                            ]
+            },
+            "probablyBestToHe": {
+                "content": [
+                            "Probably best to head home and think about the best course of action. You and Jarvis spend a few minutes calculating the kind of tip that communicates restraint yet precludes insult, and step out into the night. ",
+                            {
+                            "divert": "itsWellDarkNowAl"
+                            }
+                            ]
+            },
+            "boyArentYouADeli": {
+                "content": [
+                            "Boy, aren't you a delicate flower. Muscling over the back of your seat, you lean closer to the chalkboard. There's a... Twitter address? It seems to belong to... the pig? Can't possibly make sense.",
+                            {
+                            "divert": "thatsWhenYouNoti"
+                            }
+                            ]
+            },
+            "youCallThePigsNa": {
+                "content": [
+                            "You call the pig's name into the half-light. Predictably no one answers. They say pigs are as smart as dogs, but  not this one. ",
+                            {
+                            "divert": "itsGottaBe"
+                            }
+                            ]
+            },
+            "butWhatAreYouGoi": {
+                "content": [
+                            "But what are you going to do now? By now, the farmer and his dogs will have discovered the smashed-in shed, the pigs scattered everywhere. Are you going to come back in Grant's van (which is still blasting Prince), carry Merlin out and say you're super sorry, but it was just a prank? Do you really expect a livestock farmer to have tons of sympathy for you trying to \"rescue\" the animal from its determined fate? ",
+                            {
+                            "divert": "theBestYoullBeAb"
+                            }
+                            ]
+            },
+            "itTakesYouAndJar": {
+                "content": [
+                            "It takes you and Jarvis a moment to notice it -- the absolute quiet. The distant movement of late-night freight vehicles seem to be sighing like the sea from far away. Maybe it's even a river. Most of all, you can see the stars. You can't even remember how long it's been. ",
+                            {
+                            "divert": "inTheFreshAirAnd"
+                            }
+                            ]
+            },
+            "youEndUpWaitingH": {
+                "content": [
+                            "You end up waiting half an hour and then you buy tuna melts. This has been the story of the sandwiches, thanks for playing, brave adventurer!",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "knewYoudSeeItMyW",
+                            "option": "Okay, fine, geez! ",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "theStarrySkySwim": {
+                "content": [
+                            "The starry sky swims cleanly overhead by the time gravel is crunching beneath Grant's tires, and an endless sea of blue-black grass and skeletal fence posts greet you. There are the shadows of buildings dotting your view. Yeah, it's like, totally a farm or something.",
+                            {
+                            "divert": "grantCutsTheEngi"
+                            }
+                            ]
+            },
+            "theyActuallyLook": {
+                "content": [
+                            "They actually look a little eerie. It's funny, we're taught that pigs are either cute or bacon, but the wan light from your phone screen illuminates these pale, squint-eyed hulks with dirty, slimy-looking snouts. They aren't pink so much as flesh-colored, with mottlings of gray and halos of wiry hair. ",
+                            {
+                            "divert": "howOnEarthAreYou"
+                            }
+                            ]
+            },
+            "bullshitYouShout": {
+                "content": [
+                            "\"Bullshit,\" you shout. ",
+                            {
+                            "divert": "whatSaysJarvisWa"
+                            }
+                            ]
+            },
+            "theOrangeHaloesO": {
+                "content": [
+                            "The orange haloes of street lamps contrast fuzzily with the jewel-violet twilight as you walk down long blocks, brick walls and broken cement. Where you live there's a lot of industrial architecture repurposed as lofts. When you moved in, the graffiti said things like MONEY MURDA, but now it's block after block of proper artist's murals. ",
+                            {
+                            "divert": "lookYouSayToJarv"
+                            }
+                            ]
+            },
+            "youThinkAboutSig": {
+                "content": [
+                            "You think about signaling a waiter to ask him about the chalkboard pig, and then you realize how dumb you're going to sound. All like, \"excuse me, but is this RESERVATIONS for a pig roast, or maybe like, a petting zoo party?\" Of course it's not a petting zoo party. This stupid expensive hipster foodie restaurant is hand-raising a pig so it can hand-kill the pig for some self-gratifying farm-to-table blah blah blah. ",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "whyAreYouDwellin",
+                            "option": "Don't wanna think about it. ",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youAreShyAboutFl",
+                            "option": "I need to know details. ",
+                            "notIfConditions": null
+                            },
+                            {
+                            "pageNum": 4
+                            }
+                            ]
+            },
+            "youPretendYouDon": {
+                "content": [
+                            "You pretend you don't notice when Jarvis starts drawing dotted lines inside the pig. ",
+                            {
+                            "divert": "fATDELICIOUSEND"
+                            }
+                            ]
+            },
+            "inTheAbsenceOfMu": {
+                "content": [
+                            "In the absence of much 2 AM traffic, you're able to climb down the off-ramp and find your way to a strip mall, where a McDonald's employee calls you a cab. It costs you $100 to get back to the city and to your neighborhood -- $100, and you were all het up about the flippin' $14 burgers.  The sky is already tinged with wan yellow by the time you, stinking of mud and loam, are finally able to get to uneasy sleep. You hope poor Grant will be okay.",
+                            {
+                            "divert": "youWillHaveToRef"
+                            }
+                            ]
+            },
+            "youWillHaveToRef": {
+                "content": [
+                            "You will have to refrain from dining out for a while. Like, almost two weeks. You envy the days that you had such bourgeois concerns about the local foodie pig roast. You make homemade brunch and eat bacon, obviously. ",
+                            {
+                            "divert": "butIMeanItsAFunn"
+                            }
+                            ]
+            },
+            "youreInADrunkRoa": {
+                "content": [
+                            "You're in a drunk roadie's van fleeing the city for a pig farm and if you let your buzz wear off you're gonna realize that none of the decisions you've made tonight will go down in history as, like, any of your best. So you beg a little whiskey just, you know, to keep the mood up. I mean, you bought it anyway, so. ",
+                            {
+                            "divert": "grantIsPrettyCoo"
+                            }
+                            ]
+            },
+            "YourPhoneScreenM": {
+                "content": [
+                            "\nYour phone screen makes a rectangle of white light that's at odds with the orange streetlamps and the inky shapes of passing cars. You and Jarvis stand still, heads bent toward one another, reading the Twitter feed of Merlin the Pig. \"Follow me to learn about what it's like to be a little pig on a great farm!\" It says. You think about Babe the pig and Charlotte's Web and everything good and pure you loved as a kid, and feel a queer pang.",
+                            {
+                            "divert": "theTwitterProfil"
+                            }
+                            ]
+            },
+            "youStabWetlyAndM": {
+                "content": [
+                            "You stab wetly and messily at your iPhone's maps app every so often to make sure you guys are on the right track. I mean, you probably are. There aren't too many pig farms around here. By this point you've decided it doesn't even matter -- you left your hood to find a pig, and probably any pig will do. Having a pet pig will be so cool. You can love it forever. Or you can crash that stupid restaurant's pig roast with an 11th-hour arrival: You and your pig enter the restaurant all cool-like, right? And everyone there is all/= gasp, what a cutie, we're so ashamed=/. ",
+                            {
+                            "divert": "orYouCanBeLikeHO"
+                            }
+                            ]
+            },
+            "threeWeeksLaterY": {
+                "content": [
+                            "Three weeks later you stumble out of your house at 2 PM on Sunday in search of a bloody mary, and you pass the corner restaurant. It smells like pork...",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "theRoastIsLively",
+                            "option": "Oh yeah, that pig roast!",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "soTheyGotTheirPo",
+                            "option": "Poor Merlin the Pig!",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "youTryToGetYourA": {
+                "content": [
+                            "You try to get your arms round Merlin to hang onto him in the back of the van, while being fully aware that the back of a drunk roadie's van is an incredibly hazardous place for you to be with Jarvis and a pig. What if you all end up splattered? Your heart is racing as the van rumbles back up the slope and crunches gravel to rejoin the nearly-empty highway, and as the adrenalin ebbs, you look at the animal in your arms, a dappled, sullen, squinty-eyed pig that is much, much bigger than you expected and probably scared, hooves scrabbling on the van floor like he doesn't understand why his world has suddenly become unstable. You can hardly hold him still.",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "itSureWasHahaDum",
+                            "option": "This was an absolutely terrible idea.",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "jarvisHandsYouTh",
+                            "option": "Nope, seein' this through, PASS THE JAMESON",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "howAboutThatGuyS": {
+                "content": [
+                            "\"How about that guy,\" says Jarvis.",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youWaitAwkwardly",
+                            "option": "Yeah, he looks rad!",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youDontExactlyKn",
+                            "option": "Nah, y'know? The train's fine. ",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "theUpcomingPorkR": {
+                "content": [
+                            "The upcoming pork roast is apparently n effort to raise awareness about the meat industry and how most of the food we eat comes from animals that were mistreated, confined, overfed and stuffed with drugs. Part of the proceeds from the pork roast will also benefit local farms.",
+                            {
+                            "divert": "theChefPledgesTh"
+                            }
+                            ]
+            },
+            "CongratulationsY": {
+                "content": [
+                            "\nCongratulations: You and Jarvis will spend the whole night in deep discussion about why it would horrify you to eat a dog but not a pig, if both animals have names, are treated humanely, and are hand-raised by people. And you will eat pity peanut butter and freezer pops and have to listen to Belle & Sebastian. ",
+                            {
+                            "divert": "tHEEND"
+                            }
+                            ]
+            },
+            "iMeanItDoesSound": {
+                "content": [
+                            "I mean, it does sound pretty reasonable. But it doesn't matter what you think. You don't actually know anything about food activism. You are pretty fond of bacon, in the end, and you are drunk. ",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "goodCall",
+                            "option": "CASTLEVANIA SYMPHONY OF THE NIGHT",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "yourPlaceIsEasyT": {
+                "content": [
+                            "Your place is easy to spot on the block: A brick four-story with a red door. Your neighbors, Crystal and Priscilla, call hello from the second-floor window; you tilt your head up as you greet them, though you can't quite see them through the dark leaves of the single tree that grows on the sidewalk. You put the key into the lock as you've done hundreds of times before: This is the place you've lived for four years.",
+                            {
+                            "divert": "umSorryItIsntMuc"
+                            }
+                            ]
+            },
+            "itsLateEnoughTha": {
+                "content": [
+                            "It's late enough that almost everything in the strip mall is closed, but something's spitting light into the front lot. Maybe there's someone who can tell you where you are so you can get a cab. ",
+                            {
+                            "divert": "ohMyGodItsAnIHOP"
+                            }
+                            ]
+            },
+            "theRoastIsLively": {
+                "content": [
+                            "The roast is lively and fun. You meet Chef Whatsisname, who gives you a card with a link to his blog all about the story of Merlin and how he spent a total of three years procuring and raising this one pig so that he could have the experience of being connected to the history, ethics and craft involved in his work. It's pretty interesting stuff. ",
+                            {
+                            "divert": "aWeekLaterTheNew"
+                            }
+                            ]
+            },
+            "becauseNowWhenYo": {
+                "content": [
+                            "Because now when you eat at that corner restaurant -- duh, you still eat there, it's the closest place -- the prices and the staff and the foodie stuff doesn't bother you, because you feel like you got away with murder. Or un-murder. The chalkboard on the wall just lists today's soups. ",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "yeahFromThenOnYo",
+                            "option": "And you never ate bacon again.",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "iMeanYouSavedAnE",
+                            "option": "Haha, of course you still eat bacon.",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "funFactThisInter": {
+                "content": [
+                            "*-Fun Fact:-* This interactive entertainment experience is about 33% based on a true story. ",
+                            {
+                            "divert": "funFactThereAreA"
+                            }
+                            ]
+            },
+            "letsSitDownForAS": {
+                "content": [
+                            "\"Let's sit down for a second and see if it comes to me,\" you tell Jarvis, while privately being basically sure you have no idea where you are.",
+                            {
+                            "divert": "theTwoOfYouFindA"
+                            }
+                            ]
+            },
+            "totallyWorthIt": {
+                "content": [
+                            "Totally worth it. ",
+                            {
+                            "divert": "tHEEND2"
+                            }
+                            ]
+            },
+            "ohMyGodItsAnIHOP": {
+                "content": [
+                            "Oh my god. It's an IHOP. ",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "itDoesntEvenMatt",
+                            "option": "Run to the IHOP.",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "itDoesntEvenMatt",
+                            "option": "Run to the fucking IHOP!",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "theDoorToTheBarn": {
+                "content": [
+                            "The door to the... barn? Sty? Whatever. It's locked. The pigs are inside for the night. ",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "yeahMightAsWellR",
+                            "option": "Maybe you should get Grant to help.",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "goodThingJarvisI",
+                            "option": "Go it on your own.     ",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "goodCall": {
+                "content": [
+                            "Good call. ",
+                            {
+                            "divert": "tHEEND5"
+                            }
+                            ]
+            },
+            "iMeanYouJustNowR": {
+                "content": [
+                            "I mean, you just now remembered this. It's something about the scent of loam and livestock feed punching you full on in the face and going straight to your heart in a way it might not if you were able to think clearly. Slop. Pigs eat slop; the stink of beast hair and overcooked oats just sort of guide you, like in those old cartoons where a scent forms a crooked finger that waves you along. ",
+                            {
+                            "divert": "jarvisReachesFor"
+                            }
+                            ]
+            },
+            "orYouCanBeLikeHO": {
+                "content": [
+                            "Or you can be like HOW DO Y'ALL KNOW YOU'RE EVEN EATING THE RIGHT PIG THIS IS THE REAL MERLIN. Ha, sorry, drunk. Right. ",
+                            {
+                            "divert": "theStarrySkySwim"
+                            }
+                            ]
+            },
+            "jarvisHandsYouTh": {
+                "content": [
+                            "Jarvis hands you the bottle of Jameson and a few sips later you feel remarkably better. There is fire in your belly. You look into the pig's eyes and for the first time you notice they are fringed with long, silvery lashes that make Merlin look soulful. ",
+                            {
+                            "divert": "youNeverHadAMora"
+                            },
+                            {
+                            "pageNum": 9
+                            }
+                            ]
+            },
+            "theChefPledgesTh": {
+                "content": [
+                            "The chef pledges that part of challenging himself as a culinary artist means that no portion of the pig will be discarded or wasted.",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youFeelKindOfBad",
+                            "option": "Well, that sounds pretty reasonable.",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "bullshitYouShout",
+                            "option": "I CALL BULLSHIT",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "tHEEND4": {
+                "content": [
+                            "*-***THE END***-*",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youKnowWhatThisF",
+                            "option": "Poor Merlin. Go back a bit? ",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "itDoesntEvenMatt": {
+                "content": [
+                            "It doesn't even matter that you just ate overpriced \"lodge food\" like, two hours ago. IHOP has /=world famous pancake combos=/, country-fried steak and eggs, biscuits and gravy. You open the door and the collision of syrup-scent with midnight coffee, sundae fudge and Heinz ketchup hits you, seeming to belong to the warm golden air. You will get laminated, soda-sticky menus on which nothing is vegan. You can talk loud. They have crayons. ",
+                            {
+                            "divert": "thereAreAFewFami"
+                            },
+                            {
+                            "pageNum": 16
+                            }
+                            ]
+            },
+            "yOUHAVEBASICALLY": {
+                "content": [
+                            "***YOU HAVE BASICALLY WON ***",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "funFactThisInter",
+                            "option": "This is basically the best ending. See some fun facts?",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "byAMYoureBackInT": {
+                "content": [
+                            "By 4 AM you're back in the bustle of Penn Station at a pretty gross hour to be there -- most of the food and drink places are shuttered, police pace at an uneasy truce with the panhandlers, and all the smell of human transit lingers unobstructed. ",
+                            {
+                            "divert": "youWaitALongTime"
+                            }
+                            ]
+            },
+            "youPourYourselfA": {
+                "content": [
+                            "You pour yourself a generous dose of rum and fill the rest of the glass with the warm Diet Coke that seems always to be living on your coffee table, and sit down on your Ikea couch in front of the lapop. This is formal, important research. Hokay.",
+                            {
+                            "divert": "throughTheRestau"
+                            }
+                            ]
+            },
+            "itTakesYouAboutA": {
+                "content": [
+                            "It takes you about an hour to reach an exit ramp. Off-ramps aren't meant for walking on, and it's probably lucky no cops have spotted you and tried to see what you were up to (/=we got lost trying to rescue a pig, officer=/), because neither of you brought your ID with you. ",
+                            {
+                            "divert": "youBailOnTheOffr"
+                            }
+                            ]
+            },
+            "itsNotElectricBu": {
+                "content": [
+                            "It's not electric, but there /=is =/razor wire, silly. After a while Grant will get tired of waiting and call 411 when he finds you and Jarvis' entrails glistening as they dangle in the dark. Unfortunately 411 is New York City's information hotline, not its emergency hotline. Oh well, he'll get it right eventually. You died the way you lived: With zero insight, circumspection or purpose beyond your immediate whim. ",
+                            {
+                            "divert": "yOUAREDEADYOLO"
+                            }
+                            ]
+            },
+            "tHEEND1": {
+                "content": [
+                            "*-***THE END***-*",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "thereIsTheCrunch",
+                            "option": "Wa-wait, I didn't mean that.",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "youExitTheOldTra": {
+                "content": [
+                            "You exit the old train into a completely unfamiliar concrete dungeon of a station with maps and signage you don't recognize at all. Except for it says \"Hudson Valley,\" which means you're on the right track. You follow a meandering path up some stairs and into a dark parking lot that's mostly empty, dotted with lights that suggest a service road.",
+                            {
+                            "divert": "youKnowWhereWere"
+                            }
+                            ]
+            },
+            "theHumOfTrafficF": {
+                "content": [
+                            "The hum of traffic fades away behind you, and the ambivalent savagery of an area not quite road, not quite nature closes in. Nothing really thrives here, but this scrap of odd-colored earth and scraggly trees below a highway don't look like they could be built upon, either. You're starting to sober up. This is a lot of weirdness to go through because of a pig. ",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youAndJarvisClim",
+                            "option": "Let's go back to the highway...",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "howOnEarthAreYou": {
+                "content": [
+                            "How on earth are you supposed to know which one is Merlin the Pig?",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "wadingThroughThe",
+                            "option": "The fattest.",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "areAnyOfTheseGru",
+                            "option": "The cutest.",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youCallThePigsNa",
+                            "option": "\"Merlin...?\" ",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "asIfOnCueGrantCr": {
+                "content": [
+                            "As if on cue, Grant cranks up the stereo, and you and Jarvis barrel into the gap in the barn door. The poor, startled pigs are trotting crookedly out into the dark. Shit. There's like 20 of 'em, and you have no idea which one is Merlin. ",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youKnowTheyWereF",
+                            "option": "Just grab the fattest pig. ",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "ohYeahThisIsAGre",
+                            "option": "FUCK IT GRAB AS MANY AS YOU CAN",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "YouKnowNothingAb": {
+                "content": [
+                            "\nYou know nothing about New York outside of the city. Past the bridges and tunnels and onto the highway, you have no clue where you are, exactly. ",
+                            {
+                            "divert": "youAndJarvisAreS"
+                            }
+                            ]
+            },
+            "soTheyGotTheirPo": {
+                "content": [
+                            "So they got their pork roast. You stand outside trying to imagine what it would have been like: People dressed in TV chef clothes. The local-local paper! More people with half their hair shaved than you can shake a stick at, drinking primrose mimosas and giving really sincere speeches about honoring the life and death of this pig, and about the culinary craft. ",
+                            {
+                            "divert": "aWeekLaterTheNew"
+                            }
+                            ]
+            },
+            "inTheBoothAcross": {
+                "content": [
+                            "In the booth across the aisle, a waitress is presenting a little girl with a big, big sundae. Jarvis is sketching a crayon pig on his placemat.\nIt just feels nicer to skip the bacon tonight, just on principle.",
+                            {
+                            "divert": "youPretendYouDon"
+                            }
+                            ]
+            },
+            "jarvisAddsDoYouR": {
+                "content": [
+                            "Jarvis adds, \"do you reckon people are just supposed to grab the chalk and fill in which bit of the pig they want?\" His hand makes dotted-line movements in the air. ",
+                            {
+                            "divert": "noOfCourseNotCan"
+                            }
+                            ]
+            },
+            "hereSheComesYouA": {
+                "content": [
+                            "Here she comes. You are now face to face with a Brooklyn waitress. She has many years' more education than you do, she knows what saffron infusion is, her boyfriend's band just got its local magazine cover, and she does NOT want to be wiping up after your shit right now. ",
+                            {
+                            "divert": "youreGoingToHave"
+                            }
+                            ]
+            },
+            "yeahRationalizeA": {
+                "content": [
+                            "Yeah! Rationalize away this illogical and pretentious expense, because, y'know. The corner restaurant serves truffle oil fries served in a little ceramic cup thingy. And you guys are in luck today: There's actually a candlelit booth by the window available. Normally you'd have to squinch into some teeny little apothecary table thing where you get your elbows smacked by anyone on their way to the bathroom. ",
+                            {
+                            "divert": "whileYouDrinkToo"
+                            },
+                            {
+                            "pageNum": 2
+                            }
+                            ]
+            },
+            "youKnowWhatThisF": {
+                "content": [
+                            "You know what this flippin' lodge restaurant needs? A good screwing-with. It's overpriced and precious, and the staff are super rude. ",
+                            {
+                            "divert": "andThenTheresMer"
+                            },
+                            {
+                            "pageNum": 5
+                            }
+                            ]
+            },
+            "inTheFreshAirAnd": {
+                "content": [
+                            "In the fresh air and the quiet, the city seems so far away. The pair of you decide to walk along the road, and then along a gravelly bike path illuminated by the first faint traces of stained light that begin to come into the sky. The silhouette of low wooden fences and structures resolve from the blue and green into the shapes of a state park. The sound of wings comes from the late summer trees, which weep pale petals you cannot name by the light of the sun that comes up. ",
+                            {
+                            "divert": "youSitOnAnOldRub"
+                            }
+                            ]
+            },
+            "jarvisWantsToGoH": {
+                "content": [
+                            "Jarvis wants to go home and go back to work on a book about dinosaurs. Plus, he doesn't have any money right now, so dinner is always up to you. If you leave it up to him you'll end up wandering back home and eating poverty peanut butter and freezer pops. Fuck that! You guys are getting $14 burgers and $8 well drinks. ",
+                            {
+                            "divert": "yeahRationalizeA"
+                            }
+                            ]
+            },
+            "areAnyOfTheseGru": {
+                "content": [
+                            "Are any of these grunting behemoths 'cute'? You think about this one dude you know on Twitter who sent you pictures of his pet pigs. He has two, and they seem to like to lay in mud. He clearly adores the pigs, and asked you \"aren't they cute\" in a way you felt it would be impolite to decline, but it now occurs to you you weren't really sure if the adult pigs were cute or not. Besides, you can't really make out their features in the dark.",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "ifABunchOfHipste",
+                            "option": "Better just go with the fattest.",
+                            "notIfConditions": null
+                            },
+                            {
+                            "pageNum": 12
+                            }
+                            ]
+            },
+            "andIMeanItBasica": {
+                "content": [
+                            "And I mean, it basically is. The panic you feel when you drunkenly invited your nearby friends over at 3 AM to see what you've done, and they saw Merlin and were genuinely horrified, like they didn't know what the hell you were thinking and how were going to get out of this? Okay, that bit was a little freaky, like the part when you woke up on the living room floor to the sound of your cat /=spitting =/at the nonplussed pig. And your head hurt and you wonder what the hell you'd done and how you were going to get out of it. ",
+                            {
+                            "divert": "butThePartWhenYo"
+                            }
+                            ]
+            },
+            "amidTheSoundOfSp": {
+                "content": [
+                            "Amid the sound of splintering wood, Prince blasting from the van and a dog that sounds less like a \"farm dog\" and more like a \"security dog\" you decide you can always buy another bottle of Jameson. You're going to need it, as your night spirals out into an anxious hike through the wee hours of the morning. Can't take the train -- what if the cops find you? What if an angry Grant is on your tail? ",
+                            {
+                            "divert": "youStayLowBeside"
+                            }
+                            ]
+            },
+            "knewYoudSeeItMyW": {
+                "content": [
+                            "Knew you'd see it my way. Just bear with me for now and write blog posts on this 'not-a-choice choice' later, okay? Thanks. ",
+                            {
+                            "divert": "youDontLoveTheCo"
+                            }
+                            ]
+            },
+            "youKnowWhereWere": {
+                "content": [
+                            "\"You know where we're going, right?\" asks Jarvis brightly.",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "allYouCanSeeIsUn",
+                            "option": "Completely. Down that road to the right.",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "allYouCanSeeIsUn",
+                            "option": "Oh yeah, we go down that road to the left.",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "youAndJarvisClim": {
+                "content": [
+                            "You and Jarvis climb the hill again. On the way up, the husk of a blanched baby doll stares eyelessly at you. ",
+                            {
+                            "divert": "dontPickItUpJarv"
+                            }
+                            ]
+            },
+            "youFeelKindOfBad": {
+                "content": [
+                            "You feel kind of bad now. I mean, the intention behind the pork roast is pretty good, and if you decide otherwise you'd totally have to become straight up vegan and you couldn't manage that, because you're allergic to soy, you get migraines from a lot of oils, and you also have absolutely zero self-control. ",
+                            {
+                            "divert": "theBestDecisionY"
+                            }
+                            ]
+            },
+            "thereAreAFewFami": {
+                "content": [
+                            "There are a few families here, but mostly truckers, people who drive all night with cargo unknown. You aren't hungry, but you know as soon as you see that you have your pick of double-wide, cherry-red vinyl booths you're going to stay and get some pancakes. Like, just on principle.",
+                            {
+                            "divert": "youreSmilingSoBi"
+                            }
+                            ]
+            },
+            "ohYeahThisIsAGre": {
+                "content": [
+                            "Oh yeah, this is a great idea. You, Grant and Jarvis start team-hauling pigs as fast as you can into the back of the van. Maybe they're accustomed to being moved around, because most of them are pretty docile about it, although you don't try to chase down the ones that squeal, short legs trucking them snorting off into the dark. Fortunately none of them will be able to climb the ramp to the highway, so they'll end up... somewhere.",
+                            {
+                            "divert": "thesePigsAreHeav"
+                            }
+                            ]
+            },
+            "itSaysThePigsNam": {
+                "content": [
+                            "\"It says the pig's name is Merlin,\" Jarvis reports dubiously, resting his chin on his hands. \"It says they're accepting reservations now to meet Merlin on August 5, and between now and then you can follow Merlin on Twitter.\" ",
+                            {
+                            "divert": "jarvisAddsDoYouR"
+                            }
+                            ]
+            },
+            "grantCutsTheEngi": {
+                "content": [
+                            "Grant cuts the engine and the three of you pile out into a dusty lot. As you walk toward the fence in the dead silence, you hear something humming, a weird din that kinda crackles across the back of your skull. ",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "grantDecidesHeWa",
+                            "option": "Damn, is that an electric fence?",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youreDrunkNotAnI",
+                            "option": "No way! Jump it, dudes!",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "funFactThereAreA": {
+                "content": [
+                            "*-Fun Fact: -*There are a few constructive ways to handle the restaurant scene.",
+                            {
+                            "divert": "funFactFiveDiffe"
+                            }
+                            ]
+            },
+            "youEndUpSpending": {
+                "content": [
+                            "You end up spending a long time at the counter at the organic market waiting  for someone to take your sandwich order, long enough for you and Jarvis to change your minds about your selections, like, twice each.",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youDontLoveTheCo",
+                            "option": "Try the corner restaurant.",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youreRightItIsSo",
+                            "option": "Nah, that place is expensive. ",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "theTwitterProfil": {
+                "content": [
+                            "The Twitter profile mentions a farm in the Hudson valley, and you're able to find it online without much difficulty. It has a blog, and someone's written endearingly about raising piglets, teaching local kids about farms, and the different breeds of pig that live there. Pig is such a cute word. You maybe had too many cocktails, but you are 100% all about making a mad late-night sprint for the farm. Cuddle some piglets. Set Merlin the Pig free. Preserve, somehow, the purity of this family farm from being muddled by obnoxious hipster restauranteurs. ",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youDontExactlyKn",
+                            "option": "Take the train.",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youLookAroundYou",
+                            "option": "Ask around for a ride.",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "funFactFiveDiffe": {
+                "content": [
+                            "*-Fun Fact-*: Five different types of liquor drinks are mentioned in this game: Jameson, well whiskey, beer, rum and picklebacks. A pickleback is when you chase a shot of whiskey (ideally bourbon) with a shot of pickle juice. Don't knock it 'til you've tried it.",
+                            {
+                            "divert": "funFactIHaveNeve"
+                            }
+                            ]
+            },
+            "youAndJarvisAreS": {
+                "content": [
+                            "You and Jarvis are standing at the top of a hill alongside a busy highway that stretches toward a distant cluster of lights. The earth here glitters with broken glass. It smells of motor oil, and there are rusty bits tangled in the dry grass, their original shape and purpose forgotten. ",
+                            {
+                            "divert": "theSkyIsEnormous"
+                            }
+                            ]
+            },
+            "whetherOrNotYouE": {
+                "content": [
+                            "Whether or not you eat meat, don't you think it's kind of screwed up to personify the animal and encourage diners to fondly identify with him? Oh no. You're fondly identifying with Merlin the pig. ",
+                            {
+                            "divert": "youAreShyAboutFl"
+                            },
+                            {
+                            "pageNum": 3
+                            }
+                            ]
+            },
+            "yourEyesArentVer": {
+                "content": [
+                            "Your eyes aren't very good in the dark, and this place enhances its \"lodge vibe\" by lighting tea candles against a general darkness. Behind you guys on the wall is a chalkboard with a drawing of a pig on it, and a lot of text. ",
+                            {
+                            "divert": "allYouCanMakeOut"
+                            }
+                            ]
+            },
+            "ohYeahLikeOhManC": {
+                "content": [
+                            "Oh, yeah. Like, oh, man. Cool. ",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youKnowWhatThisF",
+                            "option": "Poor Merlin. Go back a bit? ",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "itsAChalkboardWi": {
+                "content": [
+                            "\"It's a chalkboard with a pig on it,\" Jarvis explains. You glance quickly over your shoulder, and you can basically see that he's correct: There's a drawing of a very cute pig, with a lot of words written around it. ",
+                            {
+                            "divert": "allYouCanMakeOut"
+                            }
+                            ]
+            },
+            "andThenThatTimeL": {
+                "content": [
+                            "And then that time like a year later when you saw Grant at a DIY show and he had absolutely no clue who you were? Okay.",
+                            {
+                            "divert": "becauseNowWhenYo"
+                            }
+                            ]
+            },
+            "youAndJarvisClim1": {
+                "content": [
+                            "You and Jarvis climb up into the back of the van and pray, as the damaged vehicle lurches in the hands of its drunk driver, struggling up the hill carrying considerable weight. ",
+                            {
+                            "divert": "itNeverQuiteMake"
+                            }
+                            ]
+            },
+            "yOUAREDEADYOLO": {
+                "content": [
+                            "*-***YOU ARE DEAD, #YOLO***-*",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "ifJarvisWereTell",
+                            "option": "Uh... never mind? ",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "iWasntGoingToHeS": {
+                "content": [
+                            "\"I wasn't going to,\" he says. He was.",
+                            {
+                            "divert": "carefulToStayBeh"
+                            }
+                            ]
+            },
+            "sheGivesYouALowl": {
+                "content": [
+                            "She gives you, a lowly patron of her Temple of the Unpronounceable Menu, a scathing look, but seems placated once you've flagellated apologies several times to her and to the fellow diners whose entire evening you saw fit to destroy with your completely selfish eagerness to read the chalkboard.",
+                            {
+                            "divert": "fortunatelyJarvi"
+                            }
+                            ]
+            },
+            "butThePartWhenYo": {
+                "content": [
+                            "But the part when you and Jarvis got Merlin to walk down the sidewalk with you, and you passed that goddamn hipster restaurant, and the kids from your block ran behind for a block? Sweet. ",
+                            {
+                            "divert": "andHowYouBrought"
+                            }
+                            ]
+            },
+            "yeahEverythingYo": {
+                "content": [
+                            "Yeah, everything you say sounds stupid. You endangered the animals' lives and a local farmer's livelihood. As a final insult, you can't afford your bail and you have to call your parents to post you out. ",
+                            {
+                            "divert": "theNextTimeYouEa"
+                            },
+                            {
+                            "pageNum": 11
+                            }
+                            ]
+            },
+            "herEyesWidenInAf": {
+                "content": [
+                            "Her eyes widen in affront. You can tell this stuff is going to escalate and you are worried about starting a fight and Jarvis getting deported and really actually you hate arguing with anyone, and, like, fuck this snooty gentrification factory anyway. Quick as you came in, you and Jarvis are outta here. ",
+                            {
+                            "divert": "CongratulationsY"
+                            }
+                            ]
+            },
+            "itSureWasHahaDum": {
+                "content": [
+                            "It sure was! Haha, dumbass.",
+                            {
+                            "divert": "butWhatAreYouGoi"
+                            }
+                            ]
+            },
+            "goodThingJarvisI": {
+                "content": [
+                            "Good thing Jarvis is with you. He's a pretty tall dude, and he links his fingers to make a step to hoist you through the dusty little window. You wedge your upper body in, and immediately the contrast is stark: Outside the night air is cool and keening with insects, but this is a warm, pungent interior. The heavy air inside the barn hits you full-force with muffled silence that smells of rich wood, earth and what must be pig. The air rumbles with animal noise, a chorus of whining snorts that don't sound much like the oink-oink-oink of your childhood storybooks. ",
+                            {
+                            "divert": "suddenlyYouFallA"
+                            }
+                            ]
+            },
+            "itsGottaBe": {
+                "content": [
+                            "It's gotta be...",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "wadingThroughThe",
+                            "option": "The fattest pig.",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "areAnyOfTheseGru",
+                            "option": "The cutest pig. ",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "youWaitAwkwardly": {
+                "content": [
+                            "You wait awkwardly on the corner while Jarvis walks up and wakes the smoking guy, who looks kind of like a roadie. I mean, pretty much any older guy with a leather jacket and tattoos, people are going to say he looks like a roadie. You wonder if actual roadies are going to form an anti-defamation league. Think about it: portraits of ethnically and economically-diverse professionals from all walks of life, each of them declaring proudly, defiantly: I'M A ROADIE. Their stern gazes will silently judge you for assuming you know what a roadie looks like. You small-minded jerk. You snobby Brooklynite.",
+                            {
+                            "divert": "heySaysJarvisWal"
+                            },
+                            {
+                            "pageNum": 6
+                            }
+                            ]
+            },
+            "grantAgreesToDri": {
+                "content": [
+                            "Grant agrees to drive you the couple hours to the farm in Hudson Valley in exchange for a bottle of Jameson, which is easy enough to get at the Greek liquor store close by. What you didn't really realize is that Grant planned to drink the Jameson while driving. ",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youWereRaisedWit",
+                            "option": "Uhh... you can just let us off here.",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youreInADrunkRoa",
+                            "option": "It'll be fine. Pass the Jameson? ",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "youDoGoHereSomet": {
+                "content": [
+                            "You do go here sometimes, though. Mainly because it's the closest place to get a bloody mary when you wake up at 2PM on a Sunday. You and Jarvis had your first date here. ",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "yeahRationalizeA",
+                            "option": "Yeah. We deserve $14 burgers and $8 well drinks.",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "yeahThereIsAndIt",
+                            "option": "Wait, isn't there a new place down the street we could try? ",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "jarvisWantsToGoH",
+                            "option": "Can't decide. Jarvis, what do you think?",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "iveNeverHeardTha": {
+                "content": [
+                            "\"I've never heard that before,\" says the waiter in a clipped voice, rushing off to make sure no one's water is only 3/4 full. ",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "congratulationsY",
+                            "option": "Well, that's that.",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youKnowWhatThisF",
+                            "option": "No way, fuck this guy.",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "grantDecidesHeWa": {
+                "content": [
+                            "Grant decides he wants to wait right here for you guys, thanks. But as you and Jarvis creep closer to the border fence, you realize that it just seems like a normal fence. The noise that's making your skin crawl is a chorus of what's probably grasshoppers in the tall grass. Phew, right? For a second there you probably thought this was going to get difficult. ",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "goodThinkingIMea",
+                            "option": "Wriggle under the fence.",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "itsNotElectricBu",
+                            "option": "Just climb over it. ",
+                            "notIfConditions": null
+                            },
+                            {
+                            "pageNum": 7
+                            }
+                            ]
+            },
+            "likeOfTheseStops": {
+                "content": [
+                            "Like, of these stops has gotta be it, right? ",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "thisIsTheOneJarv",
+                            "option": "Oh yeah, it's this one. ",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "thisIsTheOneJarv",
+                            "option": "Definitely the next one. ",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "RememberThatTime": {
+                "content": [
+                            " Remember that time you were six and you and your little neighbor decided to collect goods for charity? You went round the neighborhood knocking on doors until a couple gave you an entire set of china dishes they didn't want, and that's when you realized you didn't know where to bring the dishes, or who the dishes were supposed to help. You were six years old and suddenly in possession of an unearned box of dishes and very frightened.You and your friend hid them in her closet and never told anyone.",
+                            {
+                            "divert": "youCouldntHaveHi"
+                            }
+                            ]
+            },
+            "yeahMightAsWellR": {
+                "content": [
+                            "Yeah. Might as well, right? He's used to moving heavy things in and out of a van. Oh man. You are like, the best at ideas. The /=best=/. You anarcho-nutritionist anti-gentrification pro-pork rebel! You're running heroic labels for yourself over in your head as you watch Grant drunkenly back the van over some weakened part of the wire fence and down the grassy slope; you're thinking about what you'll say to the first news outlets that want to interview you about the movement you're starting here, tonight. ",
+                            {
+                            "divert": "thereIsTheCrunch"
+                            }
+                            ]
+            },
+            "iMeanItSeemsKind": {
+                "content": [
+                            "I mean, it seems kind of a fucked up thing to do. People eat meat all the time, but they don't give it a name and a Twitter account and a cute chalk introduction before they do it. Maybe you're jumping to a grim conclusion.",
+                            {
+                            "divert": "youThinkAboutSig"
+                            }
+                            ]
+            },
+            "jarvisWandersInt": {
+                "content": [
+                            "Jarvis wanders into the bathroom. Your laptop is in the living room...",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youPourYourselfA",
+                            "option": "Google the restaurant.",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "definitelyNotOne",
+                            "option": "Wait, there's really no Italian Ice? ",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "theTwoOfYouFindA": {
+                "content": [
+                            "The two of you find an island of light at the edge of the parking lot that looks like a bus shelter, and you sit down, the only figures in sight in a sea of crumbling concrete and gravel. Glass glitters, and fists of grass break through the pavement. Crickets chirp from somewhere -- no, from everywhere.",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "itTakesYouAndJar",
+                            "option": "This is kind of beautiful.",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "actuallyYouCanTh",
+                            "option": "Hey, can we get a bus back to the city here? ",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "tHEEND5": {
+                "content": [
+                            "*-***THE END***-*",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youKnowWhatThisF",
+                            "option": "That was rad, but poor Merlin. Go back a bit?",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "youFoundTheFatte": {
+                "content": [
+                            "You found the fattest pig. There is no way you can lift it, and it evades your attempts to herd it to the door. ",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "thisWillBeAFunny",
+                            "option": "What now, bright bulb?!",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "youFeelMilesAway": {
+                "content": [
+                            "You feel miles away from the idea of saving some haute restaurateur's pig. Especially since, remember, you love bacon. You will pour maple syrup on yours, and you will think abstractly about the 'pork industry' without sentiment. And, I mean, doesn't this make the perfect ending for the story you'll tell your friends back in the hood this weekend? Like, /=oh man=/, we totally got in some drunk roadie's van thinking we were going to save the corner restaurant's pig, but we ended up having to walk like two miles down the highway and at the end we ate bacon at IHOP anyway. ",
+                            {
+                            "divert": "ohYeahLikeOhManC"
+                            }
+                            ]
+            },
+            "todayYouKindOfWa": {
+                "content": [
+                            "Today, you kind of want to live, though, so you ask Grant to pull the van over.",
+                            {
+                            "divert": "whatsWrongAsksGr"
+                            }
+                            ]
+            },
+            "youFeelPrettyTer": {
+                "content": [
+                            "You feel pretty terrible about how the snooty hipster restaurant is handling the whole Merlin the Pig thing, but being rash never helped anyone. I mean, what if the bartenders here know the bartenders from the cool place down the block, and you get a reputation and they start overcharging you for picklebacks? Or worse, they/= refuse to serve you=/? ",
+                            {
+                            "divert": "probablyBestToHe"
+                            }
+                            ]
+            },
+            "youreSmilingSoBi": {
+                "content": [
+                            "\"You're smiling so big,\" Jarvis says. ",
+                            {
+                            "divert": "theWaitressComes"
+                            }
+                            ]
+            },
+            "yOUHAVEPROBABLYW": {
+                "content": [
+                            "*-****YOU HAVE PROBABLY WON****-*"
+                            ]
+            },
+            "fortunatelyJarvi": {
+                "content": [
+                            "Fortunately Jarvis can read it.",
+                            {
+                            "divert": "itSaysThePigsNam"
+                            }
+                            ]
+            },
+            "tHEEND2": {
+                "content": [
+                            "*-***THE END***-*",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youKnowWhatThisF",
+                            "option": "But the pig, though. Go back?",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "youAreReadingThe": {
+                "content": [
+                            "You are reading the Twitter account for a pig advertised by some foodie place. This is why you left the house tonight? ",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "whyAreYouDwellin",
+                            "option": "Forget it. It's just bacon. ",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "iMeanItSeemsKind",
+                            "option": "Why would they make a Twitter account for a pig they plan to cook?",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "theNextTimeYouEa": {
+                "content": [
+                            "The next time you eat bacon with brunch -- two days later, actually -- you feel a pang of guilt. Because you're sort of glad you couldn't pull it off. Then how were you ever going to justify eating pork again? You decide to accept the fact you're the actual worst activist ever.",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "yeahRationalizeA",
+                            "option": "Let's try the restaurant again.",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youWaitAwkwardly",
+                            "option": "Let's go back to the van part.",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "ifJarvisWereTell": {
+                "content": [
+                            "If Jarvis were telling this story you totally would have stayed dead. Aren't you happy it's me? ",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "grantDecidesHeWa",
+                            "option": "Yes. I love you completely. Can I undo that, now? ",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "aWeekLaterTheNew": {
+                "content": [
+                            "A week later, the new place down the block will take picklebacks off the menu and begin selling Scotch Eggs with paddlefish caviar. All of your educated friends now enjoy discussing the differences between Bermuda and white onions. All they really need is for you to leave them a good Yelp review. All you really need is to be able to have a burger that costs less than $18, but whatever. You live in a post-industrial artist's community. Poor piggy!",
+                            {
+                            "divert": "tHEEND6"
+                            },
+                            {
+                            "pageNum": 18
+                            }
+                            ]
+            },
+            "youCouldntHaveHi": {
+                "content": [
+                            "You couldn't have hid the pig in your closet, obviously. You should have thought it through. But you had a kind idea when you were six; maybe you had a kind idea tonight, when you saw a chalk picture of Merlin the Pig and for whatever reason you didn't want to eat something that had a name. ",
+                            {
+                            "divert": "inTheBoothAcross"
+                            }
+                            ]
+            },
+            "itsWellDarkNowAl": {
+                "content": [
+                            "It's well dark now, although not too late to hear distant firecrackers and the sound of Spanish music coming from cars. It smells like wet pavement from the hydrant that'd been open earlier, and the sidewalk is still glistening. In the summertime, your neighborhood feels alive well into the night. ",
+                            {
+                            "divert": "yourPlaceIsEasyT"
+                            },
+                            {
+                            "pageNum": 17
+                            }
+                            ]
+            },
+            "funFactIHaveNeve": {
+                "content": [
+                            "*-Fun Fact:-* I have never seen a live pig up close.",
+                            {
+                            "pageNum": 10
+                            }
+                            ]
+            },
+            "youMightNotBeTha": {
+                "content": [
+                            "You might not be that far from where you meant to end up... I mean, how many pig farms can there be around here? You and Jarvis carefully pick your way down the highway slope, past roadside detritus and something that looks like a tiny knot of fur -- squirrel, maybe -- wreathed in the bodies of flies that glisten in the dark. ",
+                            {
+                            "divert": "theHumOfTrafficF"
+                            }
+                            ]
+            },
+            "whateverTheRecen": {
+                "content": [
+                            "Whatever. The recent rains have made a nice mud trench beneath the fence low enough that you and Jarvis can squeak through, one after the other. Couple damp bellies and smudged cheeks later, you're on the other side, and the tiny orange beacon of Grant's cigarette seems far, far away. ",
+                            {
+                            "divert": "whiskeyIntuition"
+                            }
+                            ]
+            },
+            "turnsOutTheRoadi": {
+                "content": [
+                            "Turns out the roadie's name is Grant, and he's allowed to use the band van while the guys are crashing at some loft a few blocks over. (What's the band name? Scissor Cismen. Shh, cut me a break!) ",
+                            {
+                            "divert": "grantAgreesToDri"
+                            }
+                            ]
+            },
+            "iMeanSupposedlyY": {
+                "content": [
+                            "I mean, supposedly. You're fine within the city's subway system, but it's those other thingers -- Amtrak, Long Island Railroad, NJ Transit -- you use so rarely that you aren't exactly confident. Luckily you find out that you can take Metro North to the Hudson Valley rail, and, uh... probably somewhere along that last one there is the farm where you can find Merlin the Pig. ",
+                            {
+                            "divert": "likeOfTheseStops"
+                            }
+                            ]
+            },
+            "wereHereYouLieAn": {
+                "content": [
+                            "\"We're here,\" you lie, and Grant pulls over kind of messily and you wait impatiently for him and Jarvis to get done talking New Power Generation so you can take stock of your situation. ",
+                            {
+                            "divert": "YouKnowNothingAb"
+                            }
+                            ]
+            },
+            "youShowJarvisThe": {
+                "content": [
+                            "You show Jarvis the chef's testimonial. He thinks it sounds reasonable and asks if you want to play Castlevania: Symphony of the night. You kind of do. ",
+                            {
+                            "divert": "iMeanItDoesSound"
+                            }
+                            ]
+            },
+            "youStayLowBeside": {
+                "content": [
+                            "You stay low beside the guard rail and walk until you determine arbitrarily you've passed a sufficient number of exit ramps. You and Jarvis don't talk much. You get the feeling he might be a little annoyed with you. ",
+                            {
+                            "divert": "inTheAbsenceOfMu"
+                            }
+                            ]
+            },
+            "thisWillBeAFunny": {
+                "content": [
+                            "This will be a funny story someday, you tell yourself. Because the barn you're stuck in is shut with an electric lock, so that you can't get in from the outside. You can't call Jarvis either, because he doesn't actually have a calling service and just uses his phone to refresh Tumblr and see how many 'notes' he has gotten. ",
+                            {
+                            "divert": "tomorrowWhenTheC"
+                            }
+                            ]
+            },
+            "youDontLoveTheCo": {
+                "content": [
+                            "You don't love the corner restaurant. It serves \"lodge food\" and people post about it on some website called \"localvore\" and the menus make a huge to-do about farm-freshness and sustainability. Which are pretty cool things, sure, but it's like, c'mon, dudes. You are right beside the subway station serving $20 duck ragout.",
+                            {
+                            "divert": "youDoGoHereSomet"
+                            }
+                            ]
+            },
+            "youLookAroundYou": {
+                "content": [
+                            "You look around you to see who looks like they might have cars. Definitely not the kids eating candy, and probably not those girls in high-waisted shorts and vintage blouses. They're definitely locals. The guy smoking nearby looks like he might drive, but he also seems to be falling asleep, which doesn't bode well for his faculties. ",
+                            {
+                            "divert": "howAboutThatGuyS"
+                            }
+                            ]
+            },
+            "youreGoingToHave": {
+                "content": [
+                            "\"You're going to have to buy them another chowder,\" she lets you know with unveiled disgust. Her eyes say that she knows how to get the machine to automatically include a 20 percent gratuity on your bill and she is going to /=do =/it because you are being so rude in this establishment. ",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "sheGivesYouALowl",
+                            "option": "\"Oh, gurl, I'm so sorry. I'm like, so sorry.\"",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "herEyesWidenInAf",
+                            "option": "\"It was an accident. Quit getting your Am Appy underwear in a twist.\" ",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "whatSaysJarvisWa": {
+                "content": [
+                            "\"What?\" says Jarvis, wandering out of the bathroom. ",
+                            {
+                            "divert": "youShowJarvisThe"
+                            }
+                            ]
+            },
+            "theOwnerOfTheFar": {
+                "content": [
+                            "The owner of the farm declines to press B&E charges against you, mercifully, although he seems a bit affronted that you'd invade his livelihood over some wacky stunt. People from /=Brooklyn=/, you know? ",
+                            {
+                            "divert": "threeWeeksLaterY"
+                            }
+                            ]
+            },
+            "suddenlyYouFallA": {
+                "content": [
+                            "Suddenly you fall, and it's further than you thought. There's a moment of terror as you plummet through unfamiliar dark, and you hit some kind of straw bale with enough force to knock the wind out of you, but not enough to really injure. By instinct you press the button on top of your iPhone to shine its precious rectangle of light into the dimness. ",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "theyActuallyLook",
+                            "option": "There are so many pigs...",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "actuallyYouCanTh": {
+                "content": [
+                            "Actually, you can. The schedule pasted to the inside of the shelter lets you know some bus service you never heard of will take you to Penn Station -- in about an hour and forty minutes. The conversation between you and Jarvis finally dies as your buzz wears off and you start to feel tired, and like he is probably a little cranky at you for dragging the pair of you out here for this kind of harebrained idea.",
+                            {
+                            "divert": "byAMYoureBackInT"
+                            }
+                            ]
+            },
+            "youWereRaisedWit": {
+                "content": [
+                            "You were raised with appropriate terror of drunk drivers. Actually, you were raised with a terror of anything involving cars, appropriate or otherwise. Crossing the street without holding an adult's hand? That asphalt is /=lava=/, kid. Once when you were four and you were told you could not have any more M&Ms, you went and lay down in the street because you wanted to /=really =/show 'em. ",
+                            {
+                            "divert": "todayYouKindOfWa"
+                            }
+                            ]
+            },
+            "ifABunchOfHipste": {
+                "content": [
+                            "If a bunch of hipster foodies are going to eat a pig, they probably fattened it up first with a lot of grass-fed this and organic corn that. Probably the pig in here that's the biggest is gonna be the one you ought to rescue. ",
+                            {
+                            "divert": "wadingThroughThe"
+                            }
+                            ]
+            },
+            "allYouCanMakeOut": {
+                "content": [
+                            "All you can make out are the oddly-sinister words \"MAKE YOUR RESERVATION.\" You could read better if you got a little closer, but the gay couple behind you is already giving you extremely irritated looks for leaning into their booth.",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "boyArentYouADeli",
+                            "option": "\"'Scuse me, dudes!\"",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "itSaysThePigsNam",
+                            "option": "\"Jarvis, what does it say?\" ",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "youAndJarvisCalc": {
+                "content": [
+                            "You and Jarvis calculate an unremarkable but not insulting tip and hustle out into the night.  All kinds of people are around: Some walk into the big organic food market to buy beers to take to the rooftop, while on the benches there are teens squabbling over gummy candy. A guy who looks like a biker is standing nearby smoking a cigarette. ",
+                            {
+                            "divert": "YourPhoneScreenM"
+                            }
+                            ]
+            },
+            "carefulToStayBeh": {
+                "content": [
+                            "Careful to stay behind the guard rail, you and Jarvis walk along the highway, toward the bold shape of a sign you see in the distance. You're lucky that Jarvis likes adventures, since now that the cocktails are wearing off you feel like if it were him dragging you into this mess, you'd have a lot worse of an attitude by now. ",
+                            {
+                            "divert": "itTakesYouAboutA"
+                            },
+                            {
+                            "pageNum": 13
+                            }
+                            ]
+            },
+            "throughTheRestau": {
+                "content": [
+                            "Through the restaurant's website, you confirm your worst fears. A farm-raised pig will be slaughtered for a special all-day pork event in just three weeks. The chef has been visiting the pig and working closely with the local farmers, and even prepared a batch of Merlin's special cookies himself. He wrote a testimonial...",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "theChefHasWritte",
+                            "option": "Click the chef's testimonial. ",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "butIMeanItsAFunn": {
+                "content": [
+                            "But I mean, it's a funny memory, the time you left the city and realized you had no fucking clue what you were doing. The time you haphazardly chose a cause and didn't think it through. The time you thought you could afford to adopt a pig! Man. You will have to put up with Jarvis making fun of you about this forever, or at least until the day he moves out. ",
+                            {
+                            "divert": "tHEEND1"
+                            }
+                            ]
+            },
+            "grantIsPrettyCoo": {
+                "content": [
+                            "Grant is pretty cool, actually. While he and Jarvis discuss their ironic enjoyment of the Insane Clown Posse, you sip right out of the bottle and watch the guard rail whip by, a strange geometric silver blur that leans. You keep your lips on the bottle because you don't want to blow up Jarvis' spot by revealing to Grant that Jarvis' thing with the ICP isn't 'ironic' at all. ",
+                            {
+                            "divert": "youStabWetlyAndM"
+                            }
+                            ]
+            },
+            "yeahFromThenOnYo": {
+                "content": [
+                            "Yeah. From then on you have a hard time eating anything with soulful eyes. Except for that time there was a block party outside your friend's bar and you ate burgers because it was summer. There was probably some meat in the mini-quiches you ate at that sponsored party. Oh, yeah, and there were those chicken nuggets you ate at the drivethrough the last time you were out late. Does chicken count? Duck? Shit, you had duck, too. I mean, it was duck. Oh well. You're not perfect. But you do your best to have a basic respect for life. Basically. ",
+                            {
+                            "divert": "yOUHAVEBASICALLY"
+                            }
+                            ]
+            },
+            "youreRightItIsSo": {
+                "content": [
+                            "You're right, it is. So how 'bout you and poor Jarvis just keep standing in line like chumps? That'd be a fun game, wouldn't it? ",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "youEndUpWaitingH",
+                            "option": "Yes, I'm really having fun in line.",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "knewYoudSeeItMyW",
+                            "option": "Okay, fine, the restaurant. ",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "theChefHasWritte": {
+                "content": [
+                            "The chef has written all of this stuff about how his love for food preparation extends to the love of all living things involved, from the local farms whose livelihood depends on providing fresh ingredients, to a concern with the humane keeping and slaughter of animals. ",
+                            {
+                            "divert": "theUpcomingPorkR"
+                            }
+                            ]
+            },
+            "youBailOnTheOffr": {
+                "content": [
+                            "You bail on the off-ramp and slide down a gravel-strewn hill that leads to the back parking lot of some outer-suburb strip mall. Abruptly you remember being 15, whiling away summers in the back parking lot of your own small-town strip mall with your friends, dreaming of the big city. ",
+                            {
+                            "divert": "itsLateEnoughTha"
+                            }
+                            ]
+            },
+            "dontPickItUpJarv": {
+                "content": [
+                            "\"Don't pick it up, Jarvis!\" You warn.",
+                            {
+                            "divert": "iWasntGoingToHeS"
+                            }
+                            ]
+            },
+            "whatsWrongAsksJa": {
+                "content": [
+                            "\"What's wrong?\" asks Jarvis, who has been bro-ing down with Grant about some Prince cassettes that were lying in the van's back seat.",
+                            {
+                            "divert": "wereHereYouLieAn"
+                            }
+                            ]
+            },
+            "whileYouDrinkToo": {
+                "content": [
+                            "While you drink too many cocktails and eat your overpriced burgers, you count three different people with their hair shaved off on only one side of their head. Jarvis seems to be looking at something over your shoulder.",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "yourEyesArentVer",
+                            "option": "Look over your shoulder.",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "itsAChalkboardWi",
+                            "option": "\"What are you looking at, dude?\" ",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "youNeverHadAMora": {
+                "content": [
+                            "You never had a moral objection to meat, but for the first time you kind of get people who do. ",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "itsGonnaBeAllRig",
+                            "option": "Hug Merlin.",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "wadingThroughThe": {
+                "content": [
+                            "Wading through the dark with your hands out you try to suss out the shapes of the big pigs. Remember in grade school when someone would accuse another child of being a pig, and the witty retort was always \"pigs are very clean\" or \"pigs are very smart?\" They seem to be pretty clean, at least, smooth and kind of soft, triggering a weird parental urge in you. One of them nudges at you with a hard snout and you blankly wonder if pigs bite. You are starting to sober up and feel anxious trapped in the dark with a bunch of pigs and as so often happens, it occurs to you that you are one of those \"idea people\" who sucks at follow-through. ",
+                            {
+                            "divert": "youFoundTheFatte"
+                            }
+                            ]
+            },
+            "youAreShyAboutFl": {
+                "content": [
+                            "You are shy about flagging down the waiter, so Jarvis does it for you. The waiter is clearly uncomfortable being asked about Merlin the Pig, and doesn't seem to know whether or not Jarvis is being serious. He's giving you guys a snobby brush-off -- but he's basically/= yeah, duh the pig is to eat, you plebes.=/",
+                            {
+                            "divert": "dontYouThinkInst"
+                            }
+                            ]
+            },
+            "youDontExactlyKn": {
+                "content": [
+                            "You don't exactly know how to get to where you're going, but hey! You can get anywhere by public transit, right?",
+                            {
+                            "divert": "iMeanSupposedlyY"
+                            }
+                            ]
+            },
+            "atThePoliceStati": {
+                "content": [
+                            "At the police station they ask you what the hell you could have possibly been planning to do with all the pigs. Your explanation is so half-baked, sounds so surreal and mad. ",
+                            {
+                            "ifConditions": null,
+                            "linkPath": "yeahEverythingYo",
+                            "option": "You were subverting the, uh....",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "yeahEverythingYo",
+                            "option": "You, like, wanted to experience, um...",
+                            "notIfConditions": null
+                            },
+                            {
+                            "ifConditions": null,
+                            "linkPath": "yeahEverythingYo",
+                            "option": "Something something anti-gentrification...",
+                            "notIfConditions": null
+                            }
+                            ]
+            },
+            "nowIfYouCanOnlyF": {
+                "content": [
+                            "Now if you can only figure out how to steal the framed article.  ",
+                            {
+                            "divert": "yOUHAVEPROBABLYW"
+                            }
+                            ]
+            },
+            "whatsWrongAsksGr": {
+                "content": [
+                            "\"What's wrong?\" asks Grant. ",
+                            {
+                            "divert": "whatsWrongAsksJa"
+                            }
+                            ]
+            }
+        }
+    }
+}
