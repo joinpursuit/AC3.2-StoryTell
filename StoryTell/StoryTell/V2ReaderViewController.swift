@@ -40,6 +40,7 @@ class V2ReaderViewController: UIViewController {
         
         let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(backButtonTapped))
         backButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
+        
         var homeImage = UIImage(named: "homePage")
         
         homeImage = homeImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
@@ -196,7 +197,7 @@ extension V2ReaderViewController: UITableViewDelegate, UITableViewDataSource {
         if let status = UserDefaults.standard.object(forKey: "onOff") as? Bool {
             if status == true {
                 // true == night mode
-                cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+                cell.textLabel?.font = UIFont(name: "Cochin", size: 20)
                 cell.textLabel?.textColor = UIColor.yellow
                 cell.textLabel?.backgroundColor = UIColor.black
                 cell.backgroundColor = UIColor.black
@@ -204,7 +205,7 @@ extension V2ReaderViewController: UITableViewDelegate, UITableViewDataSource {
                 
             } else {
                 // false == normal UI
-                cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+                cell.textLabel?.font = UIFont(name: "Cochin", size: 20)
                 cell.textLabel?.textColor = Colors.cream
                 cell.textLabel?.backgroundColor = Colors.cranberry
                 cell.backgroundColor = Colors.cranberry
@@ -212,7 +213,7 @@ extension V2ReaderViewController: UITableViewDelegate, UITableViewDataSource {
         }
         else {
             // triggers when no value has been saved in onOff
-            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+            cell.textLabel?.font = UIFont(name: "Cochin", size: 20)
             cell.textLabel?.textColor = Colors.cream
             cell.textLabel?.backgroundColor = Colors.cranberry
             cell.backgroundColor = Colors.cranberry
