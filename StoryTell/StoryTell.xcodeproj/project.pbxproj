@@ -14,6 +14,8 @@
 		7D3F95EA1E664EAD00FD6453 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F95E91E664EAD00FD6453 /* AppDelegate.swift */; };
 		7D3F95F11E664EAD00FD6453 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D3F95F01E664EAD00FD6453 /* Assets.xcassets */; };
 		7D3F95F41E664EAD00FD6453 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D3F95F21E664EAD00FD6453 /* LaunchScreen.storyboard */; };
+		7D686D351E7BEB980092E41B /* StitchTextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D686D341E7BEB980092E41B /* StitchTextFieldExtension.swift */; };
+		7D686D371E7BEBEB0092E41B /* StitchTextViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D686D361E7BEBEB0092E41B /* StitchTextViewExt.swift */; };
 		7DC90EA71E7B1D220077B71E /* StitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC90EA61E7B1D220077B71E /* StitchTableViewCell.swift */; };
 		7DC90EAB1E7B55680077B71E /* StitchTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC90EAA1E7B55680077B71E /* StitchTableViewExtension.swift */; };
 		7DC90EAD1E7B5E1B0077B71E /* ReaderTitlePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC90EAC1E7B5E1B0077B71E /* ReaderTitlePageViewController.swift */; };
@@ -50,6 +52,8 @@
 		7D3F95F01E664EAD00FD6453 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D3F95F31E664EAD00FD6453 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D3F95F51E664EAD00FD6453 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D686D341E7BEB980092E41B /* StitchTextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StitchTextFieldExtension.swift; sourceTree = "<group>"; };
+		7D686D361E7BEBEB0092E41B /* StitchTextViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StitchTextViewExt.swift; sourceTree = "<group>"; };
 		7DC90EA61E7B1D220077B71E /* StitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StitchTableViewCell.swift; sourceTree = "<group>"; };
 		7DC90EAA1E7B55680077B71E /* StitchTableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StitchTableViewExtension.swift; sourceTree = "<group>"; };
 		7DC90EAC1E7B5E1B0077B71E /* ReaderTitlePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderTitlePageViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +135,37 @@
 			path = StoryTell;
 			sourceTree = "<group>";
 		};
+		7D686D321E7BEB480092E41B /* Writer */ = {
+			isa = PBXGroup;
+			children = (
+				7D686D381E7BEC310092E41B /* StitchViewController */,
+				DF64A0BA1E708E44000EB09E /* TitlePageViewController.swift */,
+			);
+			name = Writer;
+			sourceTree = "<group>";
+		};
+		7D686D331E7BEB620092E41B /* Reader */ = {
+			isa = PBXGroup;
+			children = (
+				DF1D27C01E7AD848007285CE /* ReaderOptionsViewController.swift */,
+				DF1D27BA1E723812007285CE /* V2ReaderViewController.swift */,
+				7DC90EAC1E7B5E1B0077B71E /* ReaderTitlePageViewController.swift */,
+			);
+			name = Reader;
+			sourceTree = "<group>";
+		};
+		7D686D381E7BEC310092E41B /* StitchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DF1D27B81E71CFDA007285CE /* StitchViewController.swift */,
+				7DC90EAA1E7B55680077B71E /* StitchTableViewExtension.swift */,
+				7D686D341E7BEB980092E41B /* StitchTextFieldExtension.swift */,
+				7D686D361E7BEBEB0092E41B /* StitchTextViewExt.swift */,
+				7DC90EA61E7B1D220077B71E /* StitchTableViewCell.swift */,
+			);
+			name = StitchViewController;
+			sourceTree = "<group>";
+		};
 		DF64A0B61E70773D000EB09E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,13 +173,8 @@
 				4C000F1D1E77296E0007E32D /* LoginViewController.swift */,
 				81B782961E7B194400F96DD8 /* MapTableViewCell.swift */,
 				818518D61E7088DB00191121 /* LandingPageViewController.swift */,
-				DF64A0BA1E708E44000EB09E /* TitlePageViewController.swift */,
-				DF1D27B81E71CFDA007285CE /* StitchViewController.swift */,
-				7DC90EAA1E7B55680077B71E /* StitchTableViewExtension.swift */,
-				7DC90EA61E7B1D220077B71E /* StitchTableViewCell.swift */,
-				DF1D27BA1E723812007285CE /* V2ReaderViewController.swift */,
-				DF1D27C01E7AD848007285CE /* ReaderOptionsViewController.swift */,
-				7DC90EAC1E7B5E1B0077B71E /* ReaderTitlePageViewController.swift */,
+				7D686D321E7BEB480092E41B /* Writer */,
+				7D686D331E7BEB620092E41B /* Reader */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -323,6 +353,7 @@
 				81B782971E7B194400F96DD8 /* MapTableViewCell.swift in Sources */,
 				818518D91E71C9CF00191121 /* MapTableViewController.swift in Sources */,
 				7DC90EAD1E7B5E1B0077B71E /* ReaderTitlePageViewController.swift in Sources */,
+				7D686D371E7BEBEB0092E41B /* StitchTextViewExt.swift in Sources */,
 				7DC90EA71E7B1D220077B71E /* StitchTableViewCell.swift in Sources */,
 				DF1D27C11E7AD848007285CE /* ReaderOptionsViewController.swift in Sources */,
 				DF64A0BB1E708E44000EB09E /* TitlePageViewController.swift in Sources */,
@@ -338,6 +369,7 @@
 				DF1D27BB1E723812007285CE /* V2ReaderViewController.swift in Sources */,
 				7DF015C61E6B9B370048AAA8 /* Story.swift in Sources */,
 				818518D71E7088DB00191121 /* LandingPageViewController.swift in Sources */,
+				7D686D351E7BEB980092E41B /* StitchTextFieldExtension.swift in Sources */,
 				DF1D27B91E71CFDA007285CE /* StitchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

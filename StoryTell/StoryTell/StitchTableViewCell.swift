@@ -39,6 +39,11 @@ class StitchTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        self.contentView.snp.makeConstraints { (view) in
+            view.leading.equalToSuperview().offset(20)
+            view.trailing.equalToSuperview().inset(20)
+        }
     }
     
 }
