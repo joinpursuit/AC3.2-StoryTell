@@ -73,8 +73,16 @@ class MapTableViewController: UITableViewController {
         
     }
     func publishButtonTapped() {
-        //code to come for alert
-    }
+        let alertController = UIAlertController(title: "Coming Soon!", message: "You found a future feature. Soon Story Tell will allow you to publish and share your story with other Story Tell users.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+            (result : UIAlertAction) -> Void in
+            print("OK")
+        }
+        
+        
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)    }
     func loadData() {
         story = Story.readStory()
         expandStitches()
