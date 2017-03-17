@@ -164,9 +164,9 @@ class V2ReaderViewController: UIViewController {
     
     lazy var readerTextView: UITextView = {
         let textView: UITextView = UITextView()
-        textView.textColor = UIColor.black
+        textView.textColor = Colors.navy
         textView.isEditable = false
-        textView.font = UIFont.boldSystemFont(ofSize: 30)
+        textView.font = UIFont(name: "Cochin", size: 24)
         textView.backgroundColor = Colors.cream
         
         

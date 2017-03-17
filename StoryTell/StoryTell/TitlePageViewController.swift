@@ -16,19 +16,28 @@ class TitlePageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = Colors.navy
+
+        view.backgroundColor = Colors.cream
         
         setupViewHierarchy()
         configureConstraints()
+        
        navigationButtons()
         
     }
     
     // MARK: - Navigation Buttons
     func navigationButtons(){
-        let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //Need to change action to show Publish Alert
         
+        navigationItem.title = "New Story"
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSForegroundColorAttributeName: Colors.navy,
+             NSFontAttributeName: UIFont(name: "Cochin-BoldItalic", size: 18)!]
+        navigationController?.navigationBar.barTintColor = Colors.cream
+        navigationController?.navigationBar.tintColor = Colors.cranberry
+        
+        let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //Need to change action to show Publish Alert
+        publishButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
         
         var outlineImage = UIImage(named: "outlinePage")
         
@@ -37,7 +46,8 @@ class TitlePageViewController: UIViewController {
         let outlineButton = UIBarButtonItem(image: outlineImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(outlineTapped))
         
         
-        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //needs to be set up to go back a page
+        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(backButtonTapped))
+        backButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
         
         var homeImage = UIImage(named: "homePage")
         
@@ -65,16 +75,16 @@ class TitlePageViewController: UIViewController {
         let newViewController = MapTableViewController()
         self.navigationController?.pushViewController(newViewController, animated: true)
     }
-    
-    
-    
-    
-    
+
+    func backButtonTapped() {
+        let _ = self.navigationController?.popViewController(animated: true)
+    }
+
     // MARK: - Setup
     func setupViewHierarchy() {
         self.edgesForExtendedLayout = []
         view.addSubview(authorLabel)
-        view.addSubview(titleLabel)
+        //view.addSubview(titleLabel)
         view.addSubview(beginWritingButton)
         
     }
@@ -85,21 +95,21 @@ class TitlePageViewController: UIViewController {
     private func configureConstraints(){
         
         
-        titleLabel.snp.makeConstraints { (title) in
-            title.leading.equalToSuperview().offset(standardMargin)
-            title.trailing.equalToSuperview().inset(standardMargin)
-            title.top.equalToSuperview().offset(8)
-            title.height.equalToSuperview().dividedBy(4)
-            //author.centerX.equalToSuperview()
-            
-        }
-        
-        authorLabel.snp.makeConstraints { (author) in
-            author.leading.equalToSuperview().offset(standardMargin)
-            author.trailing.equalToSuperview().inset(standardMargin)
-            author.top.equalTo(titleLabel.snp.bottom).offset(standardMargin)
-            author.height.equalToSuperview().dividedBy(4)
-        }
+//        titleLabel.snp.makeConstraints { (title) in
+//            title.leading.equalToSuperview().offset(standardMargin)
+//            title.trailing.equalToSuperview().inset(standardMargin)
+//            title.top.equalToSuperview().offset(8)
+//            title.height.equalToSuperview().dividedBy(4)
+//            //author.centerX.equalToSuperview()
+//            
+//        }
+//        
+//        authorLabel.snp.makeConstraints { (author) in
+//            author.leading.equalToSuperview().offset(standardMargin)
+//            author.trailing.equalToSuperview().inset(standardMargin)
+//            author.top.equalTo(titleLabel.snp.bottom).offset(standardMargin)
+//            author.height.equalToSuperview().dividedBy(4)
+//        }
         
         
         
@@ -139,6 +149,7 @@ class TitlePageViewController: UIViewController {
        return textView
     }()
     
+
     
     lazy var authorLabel: UILabel = {
         let label: UILabel = UILabel()
@@ -158,26 +169,40 @@ class TitlePageViewController: UIViewController {
     
     
     
-    lazy var titleLabel: UILabel = {
-        let label: UILabel = UILabel()
-        ///// Ideas to shrik text based on how much text... not working..yet
-        label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.1
-        
-        label.font = UIFont(name: "Cochin-BoldItalic", size: 40)
-        
-        label.numberOfLines = 3
-        label.textColor = Colors.navy
-        
-        label.lineBreakMode = NSLineBreakMode.byTruncatingTail
-        label.textAlignment = .center
-        //label.sizeToFit()
-        
-        return label
-    }()
+//    lazy var titleLabel: UILabel = {
+//        let label: UILabel = UILabel()
+//        ///// Ideas to shrik text based on how much text... not working..yet
+//        label.adjustsFontSizeToFitWidth = true
+//        label.minimumScaleFactor = 0.1
+//        
+//        label.font = UIFont(name: "Cochin-BoldItalic", size: 40)
+//        
+//        label.numberOfLines = 3
+//        label.textColor = Colors.navy
+//        
+//        label.lineBreakMode = NSLineBreakMode.byTruncatingTail
+//        label.textAlignment = .center
+//        //label.sizeToFit()
+//
+//    lazy var titleTextField: UITextField = {
+//        let textField: UITextField = UITextField()
+//        textField.placeholder = "Title"
+//        textField.font = UIFont(name: "Cochin-Bold", size: 40)
+//        return textField
+//    }()
+//    
+//    lazy var authorTextField: UITextField = {
+//        let textField: UITextField = UITextField()
+//        textField.placeholder = "Author"
+//        textField.font = UIFont(name: "Cochin-Bold", size: 40)
+//
+//        
+//        return label
+//    }()
     
     lazy var beginWritingButton: UIButton = {
         let button: UIButton = UIButton()
+
         button.backgroundColor = Colors.cream
         
         // button.alpha = 0.5
@@ -190,18 +215,14 @@ class TitlePageViewController: UIViewController {
         
         button.setAttributedTitle(myString, for: .normal)
         
+
         button.addTarget(self, action: #selector(createStoryAction), for: .touchUpInside)
         
         return button
     }()
     
     
-    lazy var ornament: UIImageView = {
-        let imageView: UIImageView = UIImageView()
-        
-        
-        return imageView
-    }()
+
     
     
     
