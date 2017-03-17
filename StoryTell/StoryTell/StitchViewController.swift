@@ -13,6 +13,7 @@ class StitchViewController: UIViewController {
     var options = [Option]()
     var tableView = UITableView()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Colors.cream
@@ -21,6 +22,9 @@ class StitchViewController: UIViewController {
         configureConstraints()
         setupNavigation()
         addObservers()
+        
+        tableView.backgroundColor = Colors.cream
+        
     }
     
     
@@ -193,8 +197,9 @@ class StitchViewController: UIViewController {
     lazy var proseTextView: UITextView = {
         let textView: UITextView = UITextView()
         textView.textColor = UIColor.lightGray
-        textView.text = "Begin writing"
+        textView.text = "Once upon a time..."
         textView.font = UIFont(name: (textView.font?.fontName)!, size: 30)
+        textView.backgroundColor = Colors.cream
         
         return textView
     }()

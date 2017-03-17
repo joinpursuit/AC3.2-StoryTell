@@ -22,6 +22,8 @@ extension StitchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // wrote just to satify
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! StitchTableViewCell
+        
+        cell.textField.textColor = Colors.cranberry
         cell.textField.delegate = self
         cell.textField.tag = indexPath.row
         cell.textField.text = prompts[indexPath.row]
