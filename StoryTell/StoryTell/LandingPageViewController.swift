@@ -14,7 +14,10 @@ class LandingPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Colors.cream
-        self.navigationItem.titleView = setTitle(title: "Story Tell", subtitle: "Your Bookshelf")
+        navigationItem.title = "Your Bookshelf"
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSForegroundColorAttributeName: Colors.navy,
+             NSFontAttributeName: UIFont(name: "Cochin-BoldItalic", size: 20)!]
         navigationController?.navigationBar.barTintColor = Colors.cream
         navigationController?.navigationBar.tintColor = Colors.cranberry
         setupView()
@@ -25,7 +28,7 @@ class LandingPageViewController: UIViewController {
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: writeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(writeButtonPressed))
         
-        let logOutButton = UIBarButtonItem(title: "Log Out & Exit", style: UIBarButtonItemStyle.plain, target: self, action: #selector(logOutButtonPressed))
+        let logOutButton = UIBarButtonItem(title: "Log Out", style: UIBarButtonItemStyle.plain, target: self, action: #selector(logOutButtonPressed))
         logOutButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
         self.navigationItem.leftBarButtonItem = logOutButton
         
@@ -75,7 +78,7 @@ class LandingPageViewController: UIViewController {
     }
     internal lazy var landingPageText: UILabel = {
         let landingPageText = UILabel()
-        landingPageText.text = "Welcome to Story Tell.\n\nBegin by playing a game (choose from your most recent games below) or you can create a new game by pressing the Write button in the upper right-hand corner."
+        landingPageText.text = "Welcome to Story Tell.\n\nBegin by reading a story (choose from your most recent stories below) or you can create a new story by pressing the Write button in the upper right-hand corner."
         landingPageText.numberOfLines = 0
         landingPageText.textAlignment = .center
         landingPageText.font = UIFont(name: "Cochin", size: 18)
@@ -87,41 +90,41 @@ class LandingPageViewController: UIViewController {
         let landingPageTableview = UITableView()
         return landingPageTableview
     }()
-    //sets Title & Subtitle in Navigation Bar. From: https://gist.github.com/nazywamsiepawel/0166e8a71d74e96c7898
-    func setTitle(title:String, subtitle:String) -> UIView {
-        let titleLabel = UILabel(frame: CGRect(x:0, y:-5, width:0, height:0))
-        
-        titleLabel.backgroundColor = UIColor.clear
-        titleLabel.textColor = Colors.navy
-        titleLabel.font = UIFont(name: "Cochin-Bold", size: 17)
-        titleLabel.text = title
-        titleLabel.sizeToFit()
-        
-        let subtitleLabel = UILabel(frame: CGRect(x:0, y:18, width:0, height:0))
-        subtitleLabel.backgroundColor = UIColor.clear
-        subtitleLabel.textColor = Colors.navy
-        subtitleLabel.font = UIFont(name: "Cochin", size: 14)
-        subtitleLabel.text = subtitle
-        subtitleLabel.sizeToFit()
-        
-        let titleView = UIView(frame: CGRect(x:0, y:0, width:max(titleLabel.frame.size.width, subtitleLabel.frame.size.width), height:30))
-        titleView.addSubview(titleLabel)
-        titleView.addSubview(subtitleLabel)
-        
-        let widthDiff = subtitleLabel.frame.size.width - titleLabel.frame.size.width
-        
-        if widthDiff > 0 {
-            var frame = titleLabel.frame
-            frame.origin.x = widthDiff / 2
-            titleLabel.frame = frame.integral
-        } else {
-            var frame = subtitleLabel.frame
-            frame.origin.x = abs(widthDiff) / 2
-            titleLabel.frame = frame.integral
-        }
-        
-        return titleView
-    }
+//    //sets Title & Subtitle in Navigation Bar. From: https://gist.github.com/nazywamsiepawel/0166e8a71d74e96c7898
+//    func setTitle(title:String, subtitle:String) -> UIView {
+//        let titleLabel = UILabel(frame: CGRect(x:0, y:-5, width:0, height:0))
+//        
+//        titleLabel.backgroundColor = UIColor.clear
+//        titleLabel.textColor = Colors.navy
+//        titleLabel.font = UIFont(name: "Cochin-BoldItalic", size: 17)
+//        titleLabel.text = title
+//        titleLabel.sizeToFit()
+//        
+//        let subtitleLabel = UILabel(frame: CGRect(x:0, y:18, width:0, height:0))
+//        subtitleLabel.backgroundColor = UIColor.clear
+//        subtitleLabel.textColor = Colors.navy
+//        subtitleLabel.font = UIFont(name: "Cochin", size: 14)
+//        subtitleLabel.text = subtitle
+//        subtitleLabel.sizeToFit()
+//        
+//        let titleView = UIView(frame: CGRect(x:0, y:0, width:max(titleLabel.frame.size.width, subtitleLabel.frame.size.width), height:30))
+//        titleView.addSubview(titleLabel)
+//        titleView.addSubview(subtitleLabel)
+//        
+//        let widthDiff = subtitleLabel.frame.size.width - titleLabel.frame.size.width
+//        
+//        if widthDiff > 0 {
+//            var frame = titleLabel.frame
+//            frame.origin.x = widthDiff / 2
+//            titleLabel.frame = frame.integral
+//        } else {
+//            var frame = subtitleLabel.frame
+//            frame.origin.x = abs(widthDiff) / 2
+//            titleLabel.frame = frame.integral
+//        }
+//        
+//        return titleView
+//    }
 
     
     /*
