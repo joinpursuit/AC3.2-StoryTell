@@ -223,7 +223,7 @@ class StitchViewController: UIViewController {
  
        button.backgroundColor = UIColor.red
         button.setTitle("Delete", for: .normal)
-        button.addTarget(self, action: #selector(deleteAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(deleteBranch), for: .touchUpInside)
         
         
         return button
