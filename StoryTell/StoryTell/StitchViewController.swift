@@ -11,6 +11,7 @@ import UIKit
 class StitchViewController: UIViewController {
     var prompts = [String]()
     var options = [Option]()
+    var tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,12 +65,12 @@ class StitchViewController: UIViewController {
     func setupViewHierarchy() {
         self.edgesForExtendedLayout = []
         self.view.addSubview(proseTextView)
-        self.view.addSubview(optionsTableView)
+        self.view.addSubview(tableView)
         self.view.addSubview(branchButton)
         
-        optionsTableView.delegate = self
-        optionsTableView.dataSource = self
-        optionsTableView.register(StitchTableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(StitchTableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
     private func configureConstraints(){
@@ -86,7 +87,7 @@ class StitchViewController: UIViewController {
             
         }
         
-        optionsTableView.snp.makeConstraints { (tableView) in
+        tableView.snp.makeConstraints { (tableView) in
             tableView.leading.trailing.equalToSuperview()
             tableView.bottom.equalToSuperview()
             tableView.centerX.equalToSuperview()
@@ -97,7 +98,7 @@ class StitchViewController: UIViewController {
     
     //MARK: - Action
     
-    func branchButtonAction(_ sender: UIButton){
+    func branchButtonAction(_ sender: UIButton) {
         
         let alertController = UIAlertController(title: "Enter A Prompt", message: "Your prompt should be a choice for the user select", preferredStyle: .alert)
         
@@ -106,10 +107,10 @@ class StitchViewController: UIViewController {
             
             if branchField.text != "" {
                 let branch = branchField.text!
-                //store data
                 self.prompts.append(branch)
+                print(self.prompts)
                 DispatchQueue.main.async {
-                    self.optionsTableView.reloadData()
+                    self.tableView.reloadData()
                 }
                 
             } else {
@@ -138,12 +139,12 @@ class StitchViewController: UIViewController {
     
     // MARK: - Lazy Inits
     
-    lazy var optionsTableView: UITableView = {
-        let tableView: UITableView = UITableView()
-        //tableView.backgroundColor = UIColor.black
-        return tableView
-        
-    }()
+//    lazy var tableView: UITableView = {
+//        let tableView: UITableView = UITableView()
+//        //tableView.backgroundColor = UIColor.black
+//        return tableView
+//        
+//    }()
     
     lazy var proseTextView: UITextView = {
         let textView: UITextView = UITextView()
