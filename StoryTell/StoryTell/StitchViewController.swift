@@ -9,9 +9,9 @@
 import UIKit
 
 class StitchViewController: UIViewController {
+    var prompts = [String]()
     var options = [Option]()
-    var option: Option!
-    var branch: String!
+    var tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +19,26 @@ class StitchViewController: UIViewController {
         proseTextView.delegate = self
         setupViewHierarchy()
         configureConstraints()
+        setupNavigation()
+    }
+    
+    
+    // MARK: - Setup
+    func homeTapped() {
+        let newViewController = LandingPageViewController()
+        self.navigationController?.pushViewController(newViewController, animated: true)
+    }
+    
+    func outlineTapped() {
+        let newViewController = MapTableViewController()
+        self.navigationController?.pushViewController(newViewController, animated: true)
+    }
+    
+    func backButtonTapped() {
+        self.navigationController?.popViewController(animated: true) //this needs to be worked on so back button is hidden when on the bottom view controller
+    }
+    
+    func setupNavigation() {
         let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(backButtonTapped)) //Need to change action to show Publish Alert
         
         
@@ -40,35 +60,17 @@ class StitchViewController: UIViewController {
         navigationItem.rightBarButtonItems = [publishButton, outlineButton]
         navigationItem.leftBarButtonItems = [backButton, homeButton]
         
-        
-        optionsTableView.delegate = self
-        optionsTableView.dataSource = self
-        optionsTableView.register(StitchTableViewCell.self, forCellReuseIdentifier: "cell")
-        
     }
     
-    func branchButtonAction() {
-        
-    }
-    
-    
-    // MARK: - Setup
-    func homeTapped() {
-        let newViewController = LandingPageViewController()
-        self.navigationController?.pushViewController(newViewController, animated: true)
-    }
-    func outlineTapped() {
-        let newViewController = MapTableViewController()
-        self.navigationController?.pushViewController(newViewController, animated: true)
-    }
-    func backButtonTapped() {
-        self.navigationController?.popViewController(animated: true) //this needs to be worked on so back button is hidden when on the bottom view controller
-    }
     func setupViewHierarchy() {
         self.edgesForExtendedLayout = []
         self.view.addSubview(proseTextView)
-        self.view.addSubview(optionsTableView)
+        self.view.addSubview(tableView)
         self.view.addSubview(branchButton)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(StitchTableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
     private func configureConstraints(){
@@ -85,7 +87,7 @@ class StitchViewController: UIViewController {
             
         }
         
-        optionsTableView.snp.makeConstraints { (tableView) in
+        tableView.snp.makeConstraints { (tableView) in
             tableView.leading.trailing.equalToSuperview()
             tableView.bottom.equalToSuperview()
             tableView.centerX.equalToSuperview()
@@ -94,14 +96,55 @@ class StitchViewController: UIViewController {
         
     }
     
+    //MARK: - Action
+    
+    func branchButtonAction(_ sender: UIButton) {
+        
+        let alertController = UIAlertController(title: "Enter A Prompt", message: "Your prompt should be a choice for the user select", preferredStyle: .alert)
+        
+        let confirmAction = UIAlertAction(title: "Confirm", style: .default) { (_) in
+            let branchField = alertController.textFields![0] as UITextField
+            
+            if branchField.text != "" {
+                let branch = branchField.text!
+                self.prompts.append(branch)
+                print(self.prompts)
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                
+            } else {
+                let errorAlert = UIAlertController(title: "Error", message: "Please add a prompt", preferredStyle: .alert)
+                errorAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: {
+                    alert -> Void in
+                    self.present(alertController, animated: true, completion: nil)
+                }))
+                self.present(errorAlert, animated: true, completion: nil)
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Enter your prompt"
+        }
+        
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
+
+    
     // MARK: - Lazy Inits
     
-    lazy var optionsTableView: UITableView = {
-        let tableView: UITableView = UITableView()
-        //tableView.backgroundColor = UIColor.black
-        return tableView
-        
-    }()
+//    lazy var tableView: UITableView = {
+//        let tableView: UITableView = UITableView()
+//        //tableView.backgroundColor = UIColor.black
+//        return tableView
+//        
+//    }()
     
     lazy var proseTextView: UITextView = {
         let textView: UITextView = UITextView()
