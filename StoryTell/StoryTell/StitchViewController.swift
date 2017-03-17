@@ -20,7 +20,7 @@ class StitchViewController: UIViewController {
         setupViewHierarchy()
         configureConstraints()
         setupNavigation()
-        
+        addObservers()
     }
     
     
@@ -71,11 +71,19 @@ class StitchViewController: UIViewController {
         
     }
     
+    func addObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(StitchViewController.updateTextView(notification:)), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(StitchViewController.updateTextView(notification:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
+        
+    }
+    
     func setupViewHierarchy() {
         self.edgesForExtendedLayout = []
         self.view.addSubview(proseTextView)
         self.view.addSubview(tableView)
         self.view.addSubview(branchButton)
+        self.view.addSubview(deleteButton)
+        self.view.addSubview(doneWithTextViewButton)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -83,6 +91,12 @@ class StitchViewController: UIViewController {
     }
     
     private func configureConstraints(){
+        doneWithTextViewButton.snp.makeConstraints { (done) in
+            done.trailing.equalToSuperview()
+            done.bottom.equalTo(proseTextView.snp.top)
+        }
+        
+        
         proseTextView.snp.makeConstraints { (textView) in
             textView.leading.trailing.equalToSuperview()
             textView.top.equalToSuperview().offset(50)
@@ -95,6 +109,12 @@ class StitchViewController: UIViewController {
             button.leading.equalToSuperview().inset(20)
             
         }
+        
+        deleteButton.snp.makeConstraints { (delete) in
+            delete.top.equalTo(proseTextView.snp.bottom)
+            delete.trailing.equalToSuperview().inset(20)
+        }
+        
         
         tableView.snp.makeConstraints { (tableView) in
             tableView.leading.trailing.equalToSuperview()
@@ -149,6 +169,17 @@ class StitchViewController: UIViewController {
         tableView.setEditing(true, animated: true)
     }
     
+    func deleteAction(){
+        print("All your base are belong to us....DELETE")
+        
+    }
+    
+    func doneAction(){
+        proseTextView.resignFirstResponder()
+        
+        
+        
+    }
     
     // MARK: - Lazy Inits
     
@@ -169,15 +200,49 @@ class StitchViewController: UIViewController {
     }()
     
     lazy var branchButton: UIButton = {
-        let button: UIButton = UIButton()
+        let button: UIButton = UIButton(type: .custom)
         button.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-        button.backgroundColor = UIColor.green
-        button.setTitle("Create Branch", for: .normal)
+        button.layer.cornerRadius = 9
+        button.clipsToBounds = true
+        //button.imageView?.image = #imageLiteral(resourceName: "plusSign")
+        
+        button.backgroundColor = UIColor.cyan
+        button.setTitle("Branch", for: .normal)
         button.addTarget(self, action: #selector(branchButtonAction), for: .touchUpInside)
         
         
         return button
     }()
+    
+    
+    lazy var deleteButton: UIButton = {
+        let button: UIButton = UIButton(type: .custom)
+        button.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        button.layer.cornerRadius = 9
+        button.clipsToBounds = true
+ 
+       button.backgroundColor = UIColor.red
+        button.setTitle("Delete", for: .normal)
+        button.addTarget(self, action: #selector(deleteAction), for: .touchUpInside)
+        
+        
+        return button
+    }()
+    
+    lazy var doneWithTextViewButton: UIButton = {
+        let button: UIButton = UIButton()
+        button.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        button.layer.cornerRadius = 9
+        button.clipsToBounds = true
+        
+        button.backgroundColor = UIColor.darkGray
+        button.setTitle("Done", for: .normal)
+        button.addTarget(self, action: #selector(doneAction), for: .touchUpInside)
+        
+        
+       return button
+    }()
+    
     
     
 }
