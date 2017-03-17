@@ -28,7 +28,7 @@ class MapTableViewController: UITableViewController {
         navigationController?.navigationBar.barTintColor = Colors.cream
         navigationController?.navigationBar.tintColor = Colors.cranberry
         
-        let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //Need to change action to show Publish Alert
+        let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(publishButtonTapped)) //Need to change action to show Publish Alert
         publishButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
         var writeImage = UIImage(named: "writeEdit")
         
@@ -71,6 +71,9 @@ class MapTableViewController: UITableViewController {
     func backButtonTapped() {
         let _ = self.navigationController?.popViewController(animated: true)
         
+    }
+    func publishButtonTapped() {
+        //code to come for alert
     }
     func loadData() {
         story = Story.readStory()
