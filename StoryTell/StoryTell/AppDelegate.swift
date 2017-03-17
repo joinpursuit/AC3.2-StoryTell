@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let navigationVC = UINavigationController(rootViewController: MapTableViewController())
 
 
-        let navigationVC = UINavigationController(rootViewController: V2ReaderViewController())
+        let navigationVC = UINavigationController(rootViewController: LandingPageViewController())
 
 
       
