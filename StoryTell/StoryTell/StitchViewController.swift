@@ -9,6 +9,7 @@
 import UIKit
 
 class StitchViewController: UIViewController {
+    var prompts = [String]()
     var options = [Option]()
     
     override func viewDidLoad() {
@@ -96,9 +97,44 @@ class StitchViewController: UIViewController {
     
     //MARK: - Action
     
-    func branchButtonAction() {
+    func branchButtonAction(_ sender: UIButton){
+        
+        let alertController = UIAlertController(title: "Enter A Prompt", message: "Your prompt should be a choice for the user select", preferredStyle: .alert)
+        
+        let confirmAction = UIAlertAction(title: "Confirm", style: .default) { (_) in
+            let branchField = alertController.textFields![0] as UITextField
+            
+            if branchField.text != "" {
+                let branch = branchField.text!
+                //store data
+                self.prompts.append(branch)
+                DispatchQueue.main.async {
+                    self.optionsTableView.reloadData()
+                }
+                
+            } else {
+                let errorAlert = UIAlertController(title: "Error", message: "Please add a prompt", preferredStyle: .alert)
+                errorAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: {
+                    alert -> Void in
+                    self.present(alertController, animated: true, completion: nil)
+                }))
+                self.present(errorAlert, animated: true, completion: nil)
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Enter your prompt"
+        }
+        
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
         
     }
+
     
     // MARK: - Lazy Inits
     

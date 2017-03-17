@@ -30,14 +30,11 @@ extension StitchViewController: UITableViewDataSource,UITableViewDelegate {
         // wrote just to satify
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! StitchTableViewCell
         
+        cell.textField.text = prompts[indexPath.row]
+        
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didEndEditingRowAt indexPath: IndexPath?) {
-        let cell = StitchTableViewCell()
-        cell.textField.isHidden = true
-        cell.textLabel?.text = cell.textField.text!
-    }
     
 }
 
