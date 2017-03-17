@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 
 class LandingPageViewController: UIViewController {
-    
+    let stories = ["Read Me", "Some Lovely Fanfiction", "My Story About Me", "My Story About You", "C4Q: Sleep No More"]
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Colors.cream
@@ -107,14 +107,15 @@ class LandingPageViewController: UIViewController {
 
 extension LandingPageViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return stories.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = "Read Me"
+        cell.textLabel?.text = stories[indexPath.row]
         cell.textLabel?.font = UIFont(name: "Cochin", size: 20)
         cell.textLabel?.textColor = Colors.navy
         cell.backgroundColor = Colors.cream
+        cell.textLabel?.textAlignment = .center
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
