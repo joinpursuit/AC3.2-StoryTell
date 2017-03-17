@@ -11,7 +11,6 @@ import SnapKit
 
 class TitlePageViewController: UIViewController {
     
-    
     var standardMargin: Double = 8
     
     override func viewDidLoad() {
@@ -87,7 +86,6 @@ class TitlePageViewController: UIViewController {
         
     }
     
-    
     private func configureConstraints(){
         
         titleTextView.snp.makeConstraints { (title) in
@@ -135,11 +133,6 @@ class TitlePageViewController: UIViewController {
             
              alertController.addAction(okAction)
              self.present(alertController, animated: true, completion: nil)
- 
- 
- 
-            
-            
             
         }
         
