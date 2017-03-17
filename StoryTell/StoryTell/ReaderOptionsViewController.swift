@@ -11,12 +11,11 @@ import SnapKit
 
 class ReaderOptionsViewController: UIViewController {
     
-    var on: Bool = true
-    
+    //let reuseableCellIdentifier = "Cell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.red
+        view.backgroundColor = UIColor.white
         
         setupViewHierarchy()
         configureConstraints()
@@ -24,53 +23,57 @@ class ReaderOptionsViewController: UIViewController {
         
     }
     
-    func nightAction() {
-       print("pressed the night")
+    // MARK: - Setup
+    func setupViewHierarchy() {
+        self.edgesForExtendedLayout = []
+        view.addSubview(optionsTableView)
+    }
+    
+    private func configureConstraints(){
+        optionsTableView.snp.makeConstraints { (tableView) in
+            tableView.leading.trailing.bottom.top.equalToSuperview()
+        }
+    }
+    
+ // MARK: - Lazy Inits
+    
+    lazy var optionsTableView: UITableView = {
+        let tableView: UITableView = UITableView()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(ReaderOptionsTableViewCell.self, forCellReuseIdentifier: "Cell")
+        
+        return tableView
+    }()
+}
+
+// MARK: - TableView Delegate/DataSource
+
+extension ReaderOptionsViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 1
+        
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ReaderOptionsTableViewCell
         
         
         if let status = UserDefaults.standard.object(forKey: "onOff") as? Bool {
             if status == true {
-                UserDefaults.standard.set(false, forKey: "onOff")
+                
+                cell.nightModeSwitch.isOn = true
             } else {
-            UserDefaults.standard.set(true, forKey: "onOff")
+                cell.nightModeSwitch.isOn = false
+            }
         }
+        cell.nightLabel.text = "Night Mode"
         
+        return cell
     }
-    }
-    
-    
-    // MARK: - Setup
-    func setupViewHierarchy() {
-        self.edgesForExtendedLayout = []
-        view.addSubview(nightModeButton)
-        
-
-        
-        
-        
-    }
-    
-    private func configureConstraints(){
-        
-        nightModeButton.snp.makeConstraints { (button) in
-            button.leading.trailing.top.bottom.equalToSuperview()
-        }
-        
-    }
-    
-    
-    
-    
-    lazy var nightModeButton: UIButton = {
-        let button: UIButton = UIButton()
-        button.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
-        button.backgroundColor = UIColor.green
-        button.setTitle("I am the Darkness", for: .normal)
-        button.addTarget(self, action: #selector(nightAction), for: .touchUpInside)
-        
-        return button
-    }()
-    
-    
     
 }
+

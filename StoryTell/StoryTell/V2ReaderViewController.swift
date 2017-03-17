@@ -15,12 +15,10 @@ class V2ReaderViewController: UIViewController {
     var readerText: String = String()
     var currentStitchKey: String!
     
-    let nightMode = UserDefaults.standard.set(false, forKey: "onOff")
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.cyan
+        view.backgroundColor = Colors.cream
         story = Story.readStory()
         setupViewHierarchy()
         configureConstraints()
@@ -61,6 +59,7 @@ class V2ReaderViewController: UIViewController {
         
         if let navigation = navigationController {
             navigation.pushViewController(ReaderOptionsViewController(), animated: true)
+            optionsTableView.reloadData()
             
         }
     }
@@ -76,19 +75,35 @@ class V2ReaderViewController: UIViewController {
         
         if let status = UserDefaults.standard.object(forKey: "onOff") as? Bool {
             if status == true {
-                
-                self.readerTextView.textColor = UIColor.white
+                // true == night mode
+                self.readerTextView.textColor = UIColor.gray
                 self.readerTextView.backgroundColor = UIColor.black
                 self.optionsTableView.backgroundColor = UIColor.black
+                self.view.backgroundColor = UIColor.black
+                optionsTableView.reloadData()
                 
             } else {
-                
+                // false == normal UI
+                self.view.backgroundColor = Colors.cream
                 self.readerTextView.textColor = UIColor.black
-                self.readerTextView.backgroundColor = UIColor.white
-                self.optionsTableView.backgroundColor = UIColor.white
+                self.readerTextView.backgroundColor = Colors.cream
+                self.optionsTableView.backgroundColor = Colors.cranberry
+                optionsTableView.reloadData()
             }
             
+            
         }
+        else {
+            // triggers when no value has been saved in onOff
+            self.view.backgroundColor = Colors.cream
+            self.readerTextView.textColor = UIColor.black
+            self.readerTextView.backgroundColor = Colors.cream
+            self.optionsTableView.backgroundColor = Colors.cranberry
+            optionsTableView.reloadData()
+            
+            
+        }
+        
     }
   
     
@@ -140,6 +155,8 @@ class V2ReaderViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.backgroundColor = Colors.cranberry
+
         
         return tableView
         
@@ -150,6 +167,7 @@ class V2ReaderViewController: UIViewController {
         textView.textColor = UIColor.black
         textView.isEditable = false
         textView.font = UIFont.boldSystemFont(ofSize: 30)
+        textView.backgroundColor = Colors.cream
         
         
         return textView
@@ -174,8 +192,34 @@ extension V2ReaderViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 30)
-        cell.textLabel?.textColor = UIColor.red
+       
+        if let status = UserDefaults.standard.object(forKey: "onOff") as? Bool {
+            if status == true {
+                // true == night mode
+                cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+                cell.textLabel?.textColor = UIColor.yellow
+                cell.textLabel?.backgroundColor = UIColor.black
+                cell.backgroundColor = UIColor.black
+                
+                
+            } else {
+                // false == normal UI
+                cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+                cell.textLabel?.textColor = Colors.cream
+                cell.textLabel?.backgroundColor = Colors.cranberry
+                cell.backgroundColor = Colors.cranberry
+            }
+        }
+        else {
+            // triggers when no value has been saved in onOff
+            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+            cell.textLabel?.textColor = Colors.cream
+            cell.textLabel?.backgroundColor = Colors.cranberry
+            cell.backgroundColor = Colors.cranberry
+            
+        }
+        
+      
         
         let stitch = story.stitches[currentStitchKey]
         

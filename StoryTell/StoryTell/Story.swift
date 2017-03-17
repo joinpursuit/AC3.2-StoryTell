@@ -13,7 +13,7 @@ class Story {
     var authorName: String
     var createdAt: String
     var linkPath: String
-    var stitches: [String:Stitch]
+    var stitches: [String : Stitch]
     
     init(title:String, authorName:String, createdAt:String, linkPath:String, stitches: [String:Stitch]) {
         self.title = title
@@ -28,6 +28,7 @@ class Story {
         guard let createdAt = dict["created_at"] as? String else { return nil }
         guard let dataDict = dict["data"] as? [String:Any] else { return nil }
         guard let stitchDict = dataDict["stitches"] as? [String:Any] else { return nil }
+
         guard let linkPath = dataDict["initial"] as? String else { return nil }
         guard let editorData = dataDict["editorData"] as? [String:Any] else { return nil }
         guard let authorName = editorData["authorName"] as? String else { return nil }

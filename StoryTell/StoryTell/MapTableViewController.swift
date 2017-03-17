@@ -67,6 +67,7 @@ class MapTableViewController: UITableViewController {
         let newViewController = StitchViewController()
         self.navigationController?.pushViewController(newViewController, animated: true)
     }
+
     func backButtonTapped() {
         let _ = self.navigationController?.popViewController(animated: true)
         
@@ -74,6 +75,7 @@ class MapTableViewController: UITableViewController {
     func loadData() {
         story = Story.readStory()
         expandStitches()
+
     }
     
     // MARK: - Table view data source
