@@ -88,6 +88,7 @@ class StitchViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(StitchTableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     private func configureConstraints(){

@@ -19,17 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRApp.configure()
         
         // Override point for customization after application launch.
-        
+        let navigationVC = UINavigationController(rootViewController: StitchViewController())
 
-     
-
-
-
-        let navigationVC = UINavigationController(rootViewController: LoginViewController())
-
-
-
-      
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = navigationVC
         self.window?.makeKeyAndVisible()
