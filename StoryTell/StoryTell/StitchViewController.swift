@@ -20,7 +20,7 @@ class StitchViewController: UIViewController {
         setupViewHierarchy()
         configureConstraints()
         setupNavigation()
-        
+        addObservers()
     }
     
     
@@ -68,6 +68,12 @@ class StitchViewController: UIViewController {
         
         navigationItem.rightBarButtonItems = [publishButton, outlineButton]
         navigationItem.leftBarButtonItems = [backButton, homeButton]
+        
+    }
+    
+    func addObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(StitchViewController.updateTextView(notification:)), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(StitchViewController.updateTextView(notification:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
         
     }
     
