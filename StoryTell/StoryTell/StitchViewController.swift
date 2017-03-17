@@ -15,11 +15,12 @@ class StitchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.cyan
+        view.backgroundColor = Colors.cream
         proseTextView.delegate = self
         setupViewHierarchy()
         configureConstraints()
         setupNavigation()
+        
     }
     
     
@@ -35,21 +36,29 @@ class StitchViewController: UIViewController {
     }
     
     func backButtonTapped() {
-        self.navigationController?.popViewController(animated: true) //this needs to be worked on so back button is hidden when on the bottom view controller
+        let _ = self.navigationController?.popViewController(animated: true)
     }
-    
     func setupNavigation() {
-        let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(backButtonTapped)) //Need to change action to show Publish Alert
+        navigationItem.title = "Writer"
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSForegroundColorAttributeName: Colors.navy,
+             NSFontAttributeName: UIFont(name: "Cochin-BoldItalic", size: 18)!]
+        navigationController?.navigationBar.barTintColor = Colors.cream
+        navigationController?.navigationBar.tintColor = Colors.cranberry
         
+        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(backButtonTapped))
+        
+        backButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
+
+        
+        let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(backButtonTapped)) //Need to change action to show Publish Alert
+        publishButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
         
         var outlineImage = UIImage(named: "outlinePage")
         
         outlineImage = outlineImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         
         let outlineButton = UIBarButtonItem(image: outlineImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(outlineTapped))
-        
-        
-        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //needs to be set up to go back a page consistently
         
         var homeImage = UIImage(named: "homePage")
         
@@ -139,16 +148,16 @@ class StitchViewController: UIViewController {
     func deleteBranch(_ sender: UIButton) {
         tableView.setEditing(true, animated: true)
     }
-
+    
     
     // MARK: - Lazy Inits
     
-//    lazy var tableView: UITableView = {
-//        let tableView: UITableView = UITableView()
-//        //tableView.backgroundColor = UIColor.black
-//        return tableView
-//        
-//    }()
+    //    lazy var tableView: UITableView = {
+    //        let tableView: UITableView = UITableView()
+    //        //tableView.backgroundColor = UIColor.black
+    //        return tableView
+    //
+    //    }()
     
     lazy var proseTextView: UITextView = {
         let textView: UITextView = UITextView()

@@ -13,13 +13,20 @@ class TitlePageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = UIColor.cyan
+        view.backgroundColor = Colors.cream
         
         setupViewHierarchy()
         configureConstraints()
-        let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //Need to change action to show Publish Alert
         
+        navigationItem.title = "New Story"
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSForegroundColorAttributeName: Colors.navy,
+             NSFontAttributeName: UIFont(name: "Cochin-BoldItalic", size: 18)!]
+        navigationController?.navigationBar.barTintColor = Colors.cream
+        navigationController?.navigationBar.tintColor = Colors.cranberry
+        
+        let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //Need to change action to show Publish Alert
+        publishButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
                 
         var outlineImage = UIImage(named: "outlinePage")
         
@@ -28,7 +35,8 @@ class TitlePageViewController: UIViewController {
         let outlineButton = UIBarButtonItem(image: outlineImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(outlineTapped))
         
         
-        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //needs to be set up to go back a page
+        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(backButtonTapped))
+        backButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
         
         var homeImage = UIImage(named: "homePage")
         
@@ -53,6 +61,9 @@ class TitlePageViewController: UIViewController {
     func outlineTapped() {
         let newViewController = MapTableViewController()
         self.navigationController?.pushViewController(newViewController, animated: true)
+    }
+    func backButtonTapped() {
+        let _ = self.navigationController?.popViewController(animated: true)
     }
     // MARK: - Setup
     func setupViewHierarchy() {
@@ -121,15 +132,14 @@ class TitlePageViewController: UIViewController {
     lazy var titleTextField: UITextField = {
         let textField: UITextField = UITextField()
         textField.placeholder = "Title"
-        textField.font = UIFont.boldSystemFont(ofSize: 40.0)
-        
+        textField.font = UIFont(name: "Cochin-Bold", size: 40)
         return textField
     }()
     
     lazy var authorTextField: UITextField = {
         let textField: UITextField = UITextField()
         textField.placeholder = "Author"
-        textField.font = UIFont.boldSystemFont(ofSize: 40.0)
+        textField.font = UIFont(name: "Cochin-Bold", size: 40)
         
         return textField
     }()
@@ -137,7 +147,7 @@ class TitlePageViewController: UIViewController {
     lazy var createStoryButton: UIButton = {
         let button: UIButton = UIButton()
         button.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        button.backgroundColor = UIColor.green
+        button.backgroundColor = Colors.cranberry
         button.setTitle("Create Story", for: .normal)
         button.addTarget(self, action: #selector(createStoryAction), for: .touchUpInside)
         
