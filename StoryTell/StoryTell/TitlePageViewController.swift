@@ -83,8 +83,8 @@ class TitlePageViewController: UIViewController {
     // MARK: - Setup
     func setupViewHierarchy() {
         self.edgesForExtendedLayout = []
-        view.addSubview(authorLabel)
-        //view.addSubview(titleLabel)
+        view.addSubview(titleTextView)
+        
         view.addSubview(beginWritingButton)
         
     }
@@ -93,6 +93,13 @@ class TitlePageViewController: UIViewController {
     
     
     private func configureConstraints(){
+        
+        titleTextView.snp.makeConstraints { (title) in
+            title.leading.equalToSuperview().offset(standardMargin)
+            title.trailing.equalToSuperview().inset(standardMargin)
+            title.top.equalToSuperview().offset(8)
+            title.height.equalToSuperview().dividedBy(4)
+        }
         
         
 //        titleLabel.snp.makeConstraints { (title) in
@@ -114,7 +121,7 @@ class TitlePageViewController: UIViewController {
         
         
         beginWritingButton.snp.makeConstraints { (button) in
-            button.top.equalTo(authorLabel.snp.bottom).offset(standardMargin)
+            button.top.equalTo(titleTextView.snp.bottom).offset(standardMargin)
             //button.leading.trailing.equalToSuperview()
             
             button.centerX.equalToSuperview()
@@ -143,63 +150,46 @@ class TitlePageViewController: UIViewController {
         textView.delegate = self
         textView.textColor = UIColor.lightGray
         textView.text = "Title"
-        
-        
+        textView.adjustsFontForContentSizeCategory = true
+    
+        textView.font = UIFont(name: "Cochin-BoldItalic", size: 50)
+        textView.backgroundColor = Colors.cream
         
        return textView
     }()
     
-
-    
-    lazy var authorLabel: UILabel = {
-        let label: UILabel = UILabel()
+    lazy var authorTextView: UITextView = {
+        var textView: UITextView = UITextView()
+        textView.isEditable = true
+        textView.delegate = self
+        textView.textColor = UIColor.lightGray
+        textView.text = "Title"
+        textView.adjustsFontForContentSizeCategory = true
+        textView.font = UIFont(name: "Cochin", size: 40)
         
-        // label.font = UIFont.boldSystemFont(ofSize: 40)
         
-        label.font = UIFont(name: "Cochin", size: 40)
-        label.numberOfLines = 3
-        label.minimumScaleFactor = 0.1
-        label.lineBreakMode = NSLineBreakMode.byWordWrapping
-        label.textAlignment = .center
-        //label.sizeToFit()
-        label.textColor = Colors.navy
+        /*
+ 
+         label.adjustsFontSizeToFitWidth = true
+         label.minimumScaleFactor = 0.1
+         
+         label.font = UIFont(name: "Cochin-BoldItalic", size: 40)
+         
+         label.numberOfLines = 3
+         label.textColor = Colors.navy
+         
+         label.lineBreakMode = NSLineBreakMode.byTruncatingTail
+         label.textAlignment = .center
+ 
+ */
         
-        return label
+        
+        return textView
     }()
     
+  
     
-    
-//    lazy var titleLabel: UILabel = {
-//        let label: UILabel = UILabel()
-//        ///// Ideas to shrik text based on how much text... not working..yet
-//        label.adjustsFontSizeToFitWidth = true
-//        label.minimumScaleFactor = 0.1
-//        
-//        label.font = UIFont(name: "Cochin-BoldItalic", size: 40)
-//        
-//        label.numberOfLines = 3
-//        label.textColor = Colors.navy
-//        
-//        label.lineBreakMode = NSLineBreakMode.byTruncatingTail
-//        label.textAlignment = .center
-//        //label.sizeToFit()
-//
-//    lazy var titleTextField: UITextField = {
-//        let textField: UITextField = UITextField()
-//        textField.placeholder = "Title"
-//        textField.font = UIFont(name: "Cochin-Bold", size: 40)
-//        return textField
-//    }()
-//    
-//    lazy var authorTextField: UITextField = {
-//        let textField: UITextField = UITextField()
-//        textField.placeholder = "Author"
-//        textField.font = UIFont(name: "Cochin-Bold", size: 40)
-//
-//        
-//        return label
-//    }()
-    
+
     lazy var beginWritingButton: UIButton = {
         let button: UIButton = UIButton()
 
@@ -221,118 +211,7 @@ class TitlePageViewController: UIViewController {
         return button
     }()
     
-    
 
-    
-    
-    
-    
-    
-    
-    
-//    // MARK: - Setup
-//    func setupViewHierarchy() {
-//        self.edgesForExtendedLayout = []
-//        self.view.addSubview(titleContainerView)
-//        self.view.addSubview(authorContainerView)
-//        titleContainerView.addSubview(titleTextField)
-//        authorContainerView.addSubview(authorTextField)
-//        self.view.addSubview(createStoryButton)
-//    }
-//
-//    private func configureConstraints(){
-//        titleContainerView.snp.makeConstraints { (container) in
-//
-//            container.trailing.equalToSuperview()
-//            container.top.equalToSuperview().inset(20)
-//            container.leading.equalToSuperview().inset(50)
-//
-//
-//        }
-//
-//        titleTextField.snp.makeConstraints { (title) in
-//            title.top.leading.trailing.bottom.equalTo(titleContainerView)
-//        }
-//
-//        authorContainerView.snp.makeConstraints { (container) in
-//            container.trailing.equalToSuperview()
-//            container.leading.equalTo(50)
-//            container.top.equalTo(titleContainerView.snp.bottom)
-//        }
-//
-//        authorTextField.snp.makeConstraints { (author) in
-//            author.top.leading.trailing.bottom.equalTo(authorContainerView)
-//            author.height.equalTo(authorContainerView.snp.height)
-//
-//        }
-//
-//        createStoryButton.snp.makeConstraints { (button) in
-//            button.top.equalTo(authorTextField.snp.bottom).offset(50)
-//            button.centerX.equalToSuperview()
-//        }
-//
-//    }
-    
-    // MARK: - Actions
-    
-    
-    
-    // MARK: - Lazy Instantiate
-    
-//    lazy var titleContainerView: UIView = {
-//        let view: UIView = UIView()
-//        return view
-//    }()
-//    
-//    lazy var authorContainerView: UIView = {
-//        let view: UIView = UIView()
-//        
-//        return view
-//    }()
-//    
-//    lazy var titleTextField: UITextField = {
-//        let textField: UITextField = UITextField()
-//        textField.placeholder = "Title"
-//        textField.font = UIFont(name: "Cochin-BoldItalic", size: 40)
-//        
-//        return textField
-//    }()
-//    
-//    /*
-//     let label: UILabel = UILabel()
-//     ///// Ideas to shrik text based on how much text... not working..yet
-//     label.adjustsFontSizeToFitWidth = true
-//     label.minimumScaleFactor = 0.1
-//     
-//     label.font = UIFont(name: "Cochin-BoldItalic", size: 40)
-//     
-//     label.numberOfLines = 3
-//     label.textColor = Colors.navy
-//     
-//     label.lineBreakMode = NSLineBreakMode.byTruncatingTail
-//     label.textAlignment = .center
-//     //label.sizeToFit()
-// 
-// */
-//    
-//    
-//    lazy var authorTextField: UITextField = {
-//        let textField: UITextField = UITextField()
-//        textField.placeholder = "Author"
-//        textField.font = UIFont(name: "Cochin", size: 40)
-//        
-//        return textField
-//    }()
-//    
-//    lazy var createStoryButton: UIButton = {
-//        let button: UIButton = UIButton()
-//        button.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-//        button.backgroundColor = UIColor.green
-//        button.setTitle("Create Story", for: .normal)
-//        button.addTarget(self, action: #selector(createStoryAction), for: .touchUpInside)
-//        
-//        return button
-//    }()
    
     
 }
@@ -346,6 +225,16 @@ extension TitlePageViewController: UITextViewDelegate {
             textView.textColor = UIColor.black
             print("I am writing a title NOW")
         }
+    }
+    
+   
+   // I don't know if this is the way but its the only way I could find. Instead of a new line it returns
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
     }
     
 }

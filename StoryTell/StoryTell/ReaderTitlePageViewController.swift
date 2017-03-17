@@ -127,7 +127,7 @@ class ReaderTitlePageViewController: UIViewController {
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.1
 
-         label.font = UIFont(name: "Cochin-BoldItalic", size: 40)
+         label.font = UIFont(name: "Cochin-BoldItalic", size: 50)
 
         label.numberOfLines = 3
         label.textColor = Colors.navy
