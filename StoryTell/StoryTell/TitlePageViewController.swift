@@ -132,15 +132,14 @@ class TitlePageViewController: UIViewController {
     lazy var titleTextField: UITextField = {
         let textField: UITextField = UITextField()
         textField.placeholder = "Title"
-        textField.font = UIFont.boldSystemFont(ofSize: 40.0)
-        
+        textField.font = UIFont(name: "Cochin-Bold", size: 40)
         return textField
     }()
     
     lazy var authorTextField: UITextField = {
         let textField: UITextField = UITextField()
         textField.placeholder = "Author"
-        textField.font = UIFont.boldSystemFont(ofSize: 40.0)
+        textField.font = UIFont(name: "Cochin-Bold", size: 40)
         
         return textField
     }()
@@ -148,7 +147,7 @@ class TitlePageViewController: UIViewController {
     lazy var createStoryButton: UIButton = {
         let button: UIButton = UIButton()
         button.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        button.backgroundColor = UIColor.green
+        button.backgroundColor = Colors.cranberry
         button.setTitle("Create Story", for: .normal)
         button.addTarget(self, action: #selector(createStoryAction), for: .touchUpInside)
         
