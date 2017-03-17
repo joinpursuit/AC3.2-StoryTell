@@ -135,6 +135,10 @@ class StitchViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
         
     }
+    
+    func deleteBranch(_ sender: UIButton) {
+        tableView.setEditing(true, animated: true)
+    }
 
     
     // MARK: - Lazy Inits
