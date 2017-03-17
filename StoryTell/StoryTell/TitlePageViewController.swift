@@ -16,13 +16,11 @@ class TitlePageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         view.backgroundColor = Colors.cream
         
         setupViewHierarchy()
         configureConstraints()
-        
-       navigationButtons()
+        navigationButtons()
         
     }
     
@@ -75,21 +73,19 @@ class TitlePageViewController: UIViewController {
         let newViewController = MapTableViewController()
         self.navigationController?.pushViewController(newViewController, animated: true)
     }
-
+    
     func backButtonTapped() {
         let _ = self.navigationController?.popViewController(animated: true)
     }
-
+    
     // MARK: - Setup
     func setupViewHierarchy() {
         self.edgesForExtendedLayout = []
         view.addSubview(titleTextView)
-        
+        view.addSubview(authorTextView)
         view.addSubview(beginWritingButton)
         
     }
-    
-
     
     
     private func configureConstraints(){
@@ -97,37 +93,21 @@ class TitlePageViewController: UIViewController {
         titleTextView.snp.makeConstraints { (title) in
             title.leading.equalToSuperview().offset(standardMargin)
             title.trailing.equalToSuperview().inset(standardMargin)
-            title.top.equalToSuperview().offset(8)
-            title.height.equalToSuperview().dividedBy(4)
+            title.top.equalToSuperview().inset(100)
+            title.height.equalToSuperview().dividedBy(5)
         }
         
         
-//        titleLabel.snp.makeConstraints { (title) in
-//            title.leading.equalToSuperview().offset(standardMargin)
-//            title.trailing.equalToSuperview().inset(standardMargin)
-//            title.top.equalToSuperview().offset(8)
-//            title.height.equalToSuperview().dividedBy(4)
-//            //author.centerX.equalToSuperview()
-//            
-//        }
-//        
-//        authorLabel.snp.makeConstraints { (author) in
-//            author.leading.equalToSuperview().offset(standardMargin)
-//            author.trailing.equalToSuperview().inset(standardMargin)
-//            author.top.equalTo(titleLabel.snp.bottom).offset(standardMargin)
-//            author.height.equalToSuperview().dividedBy(4)
-//        }
-        
-        
+        authorTextView.snp.makeConstraints { (author) in
+            author.leading.equalToSuperview().offset(standardMargin)
+            author.trailing.equalToSuperview().inset(standardMargin)
+            author.top.equalTo(titleTextView.snp.bottom).offset(standardMargin)
+            author.height.equalToSuperview().dividedBy(5)
+        }
         
         beginWritingButton.snp.makeConstraints { (button) in
-            button.top.equalTo(titleTextView.snp.bottom).offset(standardMargin)
-            //button.leading.trailing.equalToSuperview()
-            
+            button.top.equalTo(authorTextView.snp.bottom).offset(standardMargin)
             button.centerX.equalToSuperview()
-            //button.top.equalTo(titleLabel.snp.bottom)
-            // button.bottom.equalToSuperview().inset(20)
-            
             button.height.equalTo(50)
             button.width.equalTo(200)
         }
@@ -138,8 +118,31 @@ class TitlePageViewController: UIViewController {
     
     
     func createStoryAction(){
-        let newViewController = StitchViewController()
-        self.navigationController?.pushViewController(newViewController, animated: true)
+        
+        if (titleTextView.text != "Title") && (authorTextView.text != "Author") && (titleTextView.text != "") && (authorTextView.text != "") {
+            let newViewController = StitchViewController()
+            self.navigationController?.pushViewController(newViewController, animated: true)
+            
+        } else {
+            
+          let alertController = UIAlertController(title: "Missing Fields", message: "Please write the name of the story and author", preferredStyle: UIAlertControllerStyle.alert)
+        
+             let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+             (result : UIAlertAction) -> Void in
+             print("OK")
+             }
+             
+            
+             alertController.addAction(okAction)
+             self.present(alertController, animated: true, completion: nil)
+ 
+ 
+ 
+            
+            
+            
+        }
+        
     }
     
     // MARK: - Lazy Inits
@@ -151,68 +154,53 @@ class TitlePageViewController: UIViewController {
         textView.textColor = UIColor.lightGray
         textView.text = "Title"
         textView.adjustsFontForContentSizeCategory = true
-    
         textView.font = UIFont(name: "Cochin-BoldItalic", size: 50)
         textView.backgroundColor = Colors.cream
-        
-       return textView
-    }()
-    
-    lazy var authorTextView: UITextView = {
-        var textView: UITextView = UITextView()
-        textView.isEditable = true
-        textView.delegate = self
-        textView.textColor = UIColor.lightGray
-        textView.text = "Title"
-        textView.adjustsFontForContentSizeCategory = true
-        textView.font = UIFont(name: "Cochin", size: 40)
-        
-        
-        /*
- 
-         label.adjustsFontSizeToFitWidth = true
-         label.minimumScaleFactor = 0.1
-         
-         label.font = UIFont(name: "Cochin-BoldItalic", size: 40)
-         
-         label.numberOfLines = 3
-         label.textColor = Colors.navy
-         
-         label.lineBreakMode = NSLineBreakMode.byTruncatingTail
-         label.textAlignment = .center
- 
- */
-        
+        textView.textAlignment = .center
         
         return textView
     }()
     
-  
+    lazy var authorTextView: UITextView = {
+        var textView: UITextView = UITextView()
+        textView.backgroundColor = Colors.cream
+        textView.isEditable = true
+        textView.delegate = self
+        textView.textColor = UIColor.lightGray
+        textView.text = "Author"
+        textView.adjustsFontForContentSizeCategory = true
+        textView.font = UIFont(name: "Cochin", size: 40)
+        textView.textAlignment = .center
+        
+        return textView
+    }()
     
-
+    
+    
+    
     lazy var beginWritingButton: UIButton = {
         let button: UIButton = UIButton()
-
-        button.backgroundColor = Colors.cream
+        
+        button.backgroundColor = Colors.cranberry
         
         // button.alpha = 0.5
         
         button.layer.cornerRadius = 7.0
-        let myAttribute = [NSForegroundColorAttributeName: Colors.cranberry]
+        let myAttribute = [NSForegroundColorAttributeName: Colors.cream]
         let myString = NSMutableAttributedString(string: "Begin Writing", attributes: myAttribute)
         var buttonRange = (myString.string as NSString).range(of: "Begin Writing")
         myString.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: 20.0), range: buttonRange)
         
         button.setAttributedTitle(myString, for: .normal)
         
-
+        
         button.addTarget(self, action: #selector(createStoryAction), for: .touchUpInside)
         
         return button
     }()
     
-
-   
+    
+    
     
 }
 
@@ -227,13 +215,41 @@ extension TitlePageViewController: UITextViewDelegate {
         }
     }
     
-   
-   // I don't know if this is the way but its the only way I could find. Instead of a new line it returns
+
+    
+    
+    // I don't know if this is the way but its the only way I could find. Instead of a new line it returns
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if(text == "\n") {
-            textView.resignFirstResponder()
-            return false
+        
+        if textView == titleTextView {
+            if(text == "\n") {
+                textView.resignFirstResponder()
+                if textView.text == ""{
+                    textView.textColor = UIColor.lightGray
+                    textView.text = "Title"
+                    return false
+                }
         }
+            
+        }
+        
+            if textView == authorTextView {
+                if(text == "\n") {
+                    textView.resignFirstResponder()
+                    if textView.text == ""{
+                        textView.textColor = UIColor.lightGray
+                        textView.text = "Author"
+                        return false
+                    }
+                
+            }
+                
+        }
+        
+            
+
+    
+        
         return true
     }
     
