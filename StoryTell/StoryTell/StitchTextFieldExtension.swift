@@ -28,9 +28,16 @@ extension StitchViewController: UITextFieldDelegate {
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         textField.backgroundColor = UIColor.white
         let prompt = textField.text!
-        prompts.append(prompt)
+        let cell = StitchTableViewCell()
+        let indexPath = cell.textField.tag
+        if textField.text == "" {
+            prompts.append(prompt)
+        } else {
+            prompts[indexPath] = textField.text!
+        }
         print(prompts)
         return true
+
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
