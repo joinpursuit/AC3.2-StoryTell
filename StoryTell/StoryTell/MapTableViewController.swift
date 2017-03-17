@@ -21,8 +21,12 @@ class MapTableViewController: UITableViewController {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 100
         
-        self.navigationItem.titleView = setTitle(title: "Outline", subtitle: story.authorName)
+        navigationItem.title = "Outline"
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSForegroundColorAttributeName: Colors.navy,
+             NSFontAttributeName: UIFont(name: "Cochin-BoldItalic", size: 21)!]
         navigationController?.navigationBar.barTintColor = Colors.cream
+        navigationController?.navigationBar.tintColor = Colors.cranberry
         
         let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //Need to change action to show Publish Alert
         publishButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
@@ -30,9 +34,9 @@ class MapTableViewController: UITableViewController {
         
         writeImage = writeImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         
-        let writeButton = UIBarButtonItem(image: writeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(writeTapped)) //Need to link to Write page
+        let writeButton = UIBarButtonItem(image: writeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(writeTapped))
         
-        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(backButtonTapped)) //needs to be set up to go back a page
+        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(backButtonTapped))
         backButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
         var homeImage = UIImage(named: "homePage")
         
@@ -63,13 +67,15 @@ class MapTableViewController: UITableViewController {
         let newViewController = StitchViewController()
         self.navigationController?.pushViewController(newViewController, animated: true)
     }
+
     func backButtonTapped() {
-        self.navigationController?.popViewController(animated: true)
+        let _ = self.navigationController?.popViewController(animated: true)
         
     }
     func loadData() {
         story = Story.readStory()
         expandStitches()
+
     }
     
     // MARK: - Table view data source
@@ -100,41 +106,6 @@ class MapTableViewController: UITableViewController {
         }
         
         return cell
-    }
-    //sets Title & Subtitle in Navigation Bar. From: https://gist.github.com/nazywamsiepawel/0166e8a71d74e96c7898
-    func setTitle(title:String, subtitle:String) -> UIView {
-        let titleLabel = UILabel(frame: CGRect(x:0, y:-5, width:0, height:0))
-        
-        titleLabel.backgroundColor = UIColor.clear
-        titleLabel.textColor = Colors.navy
-        titleLabel.font = UIFont(name: "Cochin-BoldItalic", size: 16)
-        titleLabel.text = title
-        titleLabel.sizeToFit()
-        
-        let subtitleLabel = UILabel(frame: CGRect(x:0, y:18, width:0, height:0))
-        subtitleLabel.backgroundColor = UIColor.clear
-        subtitleLabel.textColor = Colors.navy
-        subtitleLabel.font = UIFont(name: "Cochin", size: 14)
-        subtitleLabel.text = subtitle
-        subtitleLabel.sizeToFit()
-        
-        let titleView = UIView(frame: CGRect(x:0, y:0, width:max(titleLabel.frame.size.width, subtitleLabel.frame.size.width), height:30))
-        titleView.addSubview(titleLabel)
-        titleView.addSubview(subtitleLabel)
-        
-        let widthDiff = subtitleLabel.frame.size.width - titleLabel.frame.size.width
-        
-        if widthDiff > 0 {
-            var frame = titleLabel.frame
-            frame.origin.x = widthDiff / 2
-            titleLabel.frame = frame.integral
-        } else {
-            var frame = subtitleLabel.frame
-            frame.origin.x = abs(widthDiff) / 2
-            titleLabel.frame = frame.integral
-        }
-        
-        return titleView
     }
 
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

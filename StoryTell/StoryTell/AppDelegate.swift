@@ -13,11 +13,7 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
-    
-    
-    
-    
+  
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         FIRApp.configure()
@@ -25,27 +21,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
 
- 
-        
-    //let navigationVC = UINavigationController(rootViewController: ViewController())
-
-        //let navigationVC = UINavigationController(rootViewController: ReaderViewController())
-        //let navigationVC = UINavigationController(rootViewController: TitlePageViewController())
-        
-        let navigationVC = UINavigationController(rootViewController: LoginViewController())
+     
 
 
-        //let navigationVC = UINavigationController(rootViewController: ReaderViewController())
+
+        let navigationVC = UINavigationController(rootViewController: LandingPageViewController ())
+
 
 
       
-        
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = navigationVC
         self.window?.makeKeyAndVisible()
-        
-        
-        
+     
         return true
     }
     

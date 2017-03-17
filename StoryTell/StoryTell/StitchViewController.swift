@@ -9,24 +9,56 @@
 import UIKit
 
 class StitchViewController: UIViewController {
+    var prompts = [String]()
+    var options = [Option]()
+    var tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.cyan
+        view.backgroundColor = Colors.cream
         proseTextView.delegate = self
         setupViewHierarchy()
         configureConstraints()
-        let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //Need to change action to show Publish Alert
+        setupNavigation()
+        addObservers()
+    }
+    
+    
+    // MARK: - Setup
+    func homeTapped() {
+        let newViewController = LandingPageViewController()
+        self.navigationController?.pushViewController(newViewController, animated: true)
+    }
+    
+    func outlineTapped() {
+        let newViewController = MapTableViewController()
+        self.navigationController?.pushViewController(newViewController, animated: true)
+    }
+    
+    func backButtonTapped() {
+        let _ = self.navigationController?.popViewController(animated: true)
+    }
+    func setupNavigation() {
+        navigationItem.title = "Writer"
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSForegroundColorAttributeName: Colors.navy,
+             NSFontAttributeName: UIFont(name: "Cochin-BoldItalic", size: 18)!]
+        navigationController?.navigationBar.barTintColor = Colors.cream
+        navigationController?.navigationBar.tintColor = Colors.cranberry
         
+        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(backButtonTapped))
+        
+        backButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
+
+        
+        let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(backButtonTapped)) //Need to change action to show Publish Alert
+        publishButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
         
         var outlineImage = UIImage(named: "outlinePage")
         
         outlineImage = outlineImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         
         let outlineButton = UIBarButtonItem(image: outlineImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(outlineTapped))
-        
-        
-        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //needs to be set up to go back a page consistently
         
         var homeImage = UIImage(named: "homePage")
         
@@ -37,28 +69,34 @@ class StitchViewController: UIViewController {
         navigationItem.rightBarButtonItems = [publishButton, outlineButton]
         navigationItem.leftBarButtonItems = [backButton, homeButton]
         
+    }
+    
+    func addObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(StitchViewController.updateTextView(notification:)), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(StitchViewController.updateTextView(notification:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
         
     }
     
-    
-    // MARK: - Setup
-    func homeTapped() {
-        let newViewController = LandingPageViewController()
-        self.navigationController?.pushViewController(newViewController, animated: true)
-    }
-    func outlineTapped() {
-        let newViewController = MapTableViewController()
-        self.navigationController?.pushViewController(newViewController, animated: true)
-    }
-
     func setupViewHierarchy() {
         self.edgesForExtendedLayout = []
         self.view.addSubview(proseTextView)
-        self.view.addSubview(optionsTableView)
+        self.view.addSubview(tableView)
         self.view.addSubview(branchButton)
+        self.view.addSubview(deleteButton)
+        self.view.addSubview(doneWithTextViewButton)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(StitchTableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
     private func configureConstraints(){
+        doneWithTextViewButton.snp.makeConstraints { (done) in
+            done.trailing.equalToSuperview()
+            done.bottom.equalTo(proseTextView.snp.top)
+        }
+        
+        
         proseTextView.snp.makeConstraints { (textView) in
             textView.leading.trailing.equalToSuperview()
             textView.top.equalToSuperview().offset(50)
@@ -72,7 +110,13 @@ class StitchViewController: UIViewController {
             
         }
         
-        optionsTableView.snp.makeConstraints { (tableView) in
+        deleteButton.snp.makeConstraints { (delete) in
+            delete.top.equalTo(proseTextView.snp.bottom)
+            delete.trailing.equalToSuperview().inset(20)
+        }
+        
+        
+        tableView.snp.makeConstraints { (tableView) in
             tableView.leading.trailing.equalToSuperview()
             tableView.bottom.equalToSuperview()
             tableView.centerX.equalToSuperview()
@@ -81,29 +125,37 @@ class StitchViewController: UIViewController {
         
     }
     
-    // MARK: - Actions
+    //MARK: - Action
     
-    func branchButtonAction(_ sender: UIButton){
+    func branchButtonAction(_ sender: UIButton) {
         
-        print("Branch button Pressed")
-        
-        let alertController = UIAlertController(title: "What Choices", message: "Please input your options:", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Enter A Prompt", message: "Your prompt should be a choice for the user select", preferredStyle: .alert)
         
         let confirmAction = UIAlertAction(title: "Confirm", style: .default) { (_) in
-            if let field = alertController.textFields?[0] {
-                print(field.text)
-                
-                // store your data //
+            let branchField = alertController.textFields![0] as UITextField
+            
+            if branchField.text != "" {
+                let branch = branchField.text!
+                self.prompts.append(branch)
+                print(self.prompts)
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
                 
             } else {
-                // user did not fill field
+                let errorAlert = UIAlertController(title: "Error", message: "Please add a prompt", preferredStyle: .alert)
+                errorAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: {
+                    alert -> Void in
+                    self.present(alertController, animated: true, completion: nil)
+                }))
+                self.present(errorAlert, animated: true, completion: nil)
             }
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
         
         alertController.addTextField { (textField) in
-            textField.placeholder = "Options"
+            textField.placeholder = "Enter your prompt"
         }
         
         alertController.addAction(confirmAction)
@@ -111,17 +163,32 @@ class StitchViewController: UIViewController {
         
         self.present(alertController, animated: true, completion: nil)
         
+    }
+    
+    func deleteBranch(_ sender: UIButton) {
+        tableView.setEditing(true, animated: true)
+    }
+    
+    func deleteAction(){
+        print("All your base are belong to us....DELETE")
+        
+    }
+    
+    func doneAction(){
+        proseTextView.resignFirstResponder()
+        
+        
         
     }
     
     // MARK: - Lazy Inits
     
-    lazy var optionsTableView: UITableView = {
-        let tableView: UITableView = UITableView()
-        //tableView.backgroundColor = UIColor.black
-        return tableView
-        
-    }()
+    //    lazy var tableView: UITableView = {
+    //        let tableView: UITableView = UITableView()
+    //        //tableView.backgroundColor = UIColor.black
+    //        return tableView
+    //
+    //    }()
     
     lazy var proseTextView: UITextView = {
         let textView: UITextView = UITextView()
@@ -133,10 +200,14 @@ class StitchViewController: UIViewController {
     }()
     
     lazy var branchButton: UIButton = {
-        let button: UIButton = UIButton()
+        let button: UIButton = UIButton(type: .custom)
         button.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-        button.backgroundColor = UIColor.green
-        button.setTitle("Create Branch", for: .normal)
+        button.layer.cornerRadius = 9
+        button.clipsToBounds = true
+        //button.imageView?.image = #imageLiteral(resourceName: "plusSign")
+        
+        button.backgroundColor = UIColor.cyan
+        button.setTitle("Branch", for: .normal)
         button.addTarget(self, action: #selector(branchButtonAction), for: .touchUpInside)
         
         
@@ -144,41 +215,39 @@ class StitchViewController: UIViewController {
     }()
     
     
-}
-
-// MARK: - TextView Delegate
-
-extension StitchViewController: UITextViewDelegate {
+    lazy var deleteButton: UIButton = {
+        let button: UIButton = UIButton(type: .custom)
+        button.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        button.layer.cornerRadius = 9
+        button.clipsToBounds = true
+ 
+       button.backgroundColor = UIColor.red
+        button.setTitle("Delete", for: .normal)
+        button.addTarget(self, action: #selector(deleteAction), for: .touchUpInside)
+        
+        
+        return button
+    }()
     
-    func textViewDidBeginEditing(_ textView: UITextView) {
+    lazy var doneWithTextViewButton: UIButton = {
+        let button: UIButton = UIButton()
+        button.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        button.layer.cornerRadius = 9
+        button.clipsToBounds = true
         
-        if textView.textColor == UIColor.lightGray {
-            textView.text = nil
-            textView.textColor = UIColor.black
-            print("______________Hllo")
-        }
-    }
-}
-
-// Need to connect the alert textfield to the tableview
-
-// MARK: - TableView DataSource/Delegate
-extension StitchViewController: UITableViewDataSource,UITableViewDelegate {
+        button.backgroundColor = UIColor.darkGray
+        button.setTitle("Done", for: .normal)
+        button.addTarget(self, action: #selector(doneAction), for: .touchUpInside)
+        
+        
+       return button
+    }()
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        
-        return 0
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // wrote just to satify
-        let cell: UITableViewCell = UITableViewCell()
-        
-        return cell
-        
-    }
     
 }
+
+
+
 
 

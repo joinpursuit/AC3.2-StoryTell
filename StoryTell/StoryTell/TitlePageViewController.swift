@@ -11,16 +11,34 @@ import SnapKit
 
 class TitlePageViewController: UIViewController {
     
+    
+    var standardMargin: Double = 8
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = UIColor.cyan
+
+        view.backgroundColor = Colors.cream
         
         setupViewHierarchy()
         configureConstraints()
-        let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //Need to change action to show Publish Alert
         
-                
+       navigationButtons()
+        
+    }
+    
+    // MARK: - Navigation Buttons
+    func navigationButtons(){
+        
+        navigationItem.title = "New Story"
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSForegroundColorAttributeName: Colors.navy,
+             NSFontAttributeName: UIFont(name: "Cochin-BoldItalic", size: 18)!]
+        navigationController?.navigationBar.barTintColor = Colors.cream
+        navigationController?.navigationBar.tintColor = Colors.cranberry
+        
+        let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //Need to change action to show Publish Alert
+        publishButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
+        
         var outlineImage = UIImage(named: "outlinePage")
         
         outlineImage = outlineImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
@@ -28,7 +46,8 @@ class TitlePageViewController: UIViewController {
         let outlineButton = UIBarButtonItem(image: outlineImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(outlineTapped))
         
         
-        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(UIWebView.goBack)) //needs to be set up to go back a page
+        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(backButtonTapped))
+        backButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
         
         var homeImage = UIImage(named: "homePage")
         
@@ -39,8 +58,10 @@ class TitlePageViewController: UIViewController {
         navigationItem.rightBarButtonItems = [publishButton, outlineButton]
         navigationItem.leftBarButtonItems = [backButton, homeButton]
         
-        
     }
+    
+    
+    // MARK: - Navigation Actions
     
     func homeTapped() {
         let newViewController = LandingPageViewController()
@@ -54,95 +75,167 @@ class TitlePageViewController: UIViewController {
         let newViewController = MapTableViewController()
         self.navigationController?.pushViewController(newViewController, animated: true)
     }
+
+    func backButtonTapped() {
+        let _ = self.navigationController?.popViewController(animated: true)
+    }
+
     // MARK: - Setup
     func setupViewHierarchy() {
         self.edgesForExtendedLayout = []
-        self.view.addSubview(titleContainerView)
-        self.view.addSubview(authorContainerView)
-        titleContainerView.addSubview(titleTextField)
-        authorContainerView.addSubview(authorTextField)
-        self.view.addSubview(createStoryButton)
+        view.addSubview(titleTextView)
+        
+        view.addSubview(beginWritingButton)
+        
     }
     
+
+    
+    
     private func configureConstraints(){
-        titleContainerView.snp.makeConstraints { (container) in
-            
-            container.trailing.equalToSuperview()
-            container.top.equalToSuperview().inset(20)
-            container.leading.equalToSuperview().inset(50)
-            
-            
+        
+        titleTextView.snp.makeConstraints { (title) in
+            title.leading.equalToSuperview().offset(standardMargin)
+            title.trailing.equalToSuperview().inset(standardMargin)
+            title.top.equalToSuperview().offset(8)
+            title.height.equalToSuperview().dividedBy(4)
         }
         
-        titleTextField.snp.makeConstraints { (title) in
-            title.top.leading.trailing.bottom.equalTo(titleContainerView)
-        }
         
-        authorContainerView.snp.makeConstraints { (container) in
-            container.trailing.equalToSuperview()
-            container.leading.equalTo(50)
-            container.top.equalTo(titleContainerView.snp.bottom)
-        }
+//        titleLabel.snp.makeConstraints { (title) in
+//            title.leading.equalToSuperview().offset(standardMargin)
+//            title.trailing.equalToSuperview().inset(standardMargin)
+//            title.top.equalToSuperview().offset(8)
+//            title.height.equalToSuperview().dividedBy(4)
+//            //author.centerX.equalToSuperview()
+//            
+//        }
+//        
+//        authorLabel.snp.makeConstraints { (author) in
+//            author.leading.equalToSuperview().offset(standardMargin)
+//            author.trailing.equalToSuperview().inset(standardMargin)
+//            author.top.equalTo(titleLabel.snp.bottom).offset(standardMargin)
+//            author.height.equalToSuperview().dividedBy(4)
+//        }
         
-        authorTextField.snp.makeConstraints { (author) in
-            author.top.leading.trailing.bottom.equalTo(authorContainerView)
-            author.height.equalTo(authorContainerView.snp.height)
+        
+        
+        beginWritingButton.snp.makeConstraints { (button) in
+            button.top.equalTo(titleTextView.snp.bottom).offset(standardMargin)
+            //button.leading.trailing.equalToSuperview()
             
-        }
-        
-        createStoryButton.snp.makeConstraints { (button) in
-            button.top.equalTo(authorTextField.snp.bottom).offset(50)
             button.centerX.equalToSuperview()
+            //button.top.equalTo(titleLabel.snp.bottom)
+            // button.bottom.equalToSuperview().inset(20)
+            
+            button.height.equalTo(50)
+            button.width.equalTo(200)
         }
         
     }
     
     // MARK: - Actions
     
+    
     func createStoryAction(){
         let newViewController = StitchViewController()
         self.navigationController?.pushViewController(newViewController, animated: true)
     }
     
+    // MARK: - Lazy Inits
     
-    // MARK: - Lazy Instantiate
+    lazy var titleTextView: UITextView = {
+        var textView: UITextView = UITextView()
+        textView.isEditable = true
+        textView.delegate = self
+        textView.textColor = UIColor.lightGray
+        textView.text = "Title"
+        textView.adjustsFontForContentSizeCategory = true
     
-    lazy var titleContainerView: UIView = {
-        let view: UIView = UIView()
-        return view
-    }()
-    
-    lazy var authorContainerView: UIView = {
-        let view: UIView = UIView()
+        textView.font = UIFont(name: "Cochin-BoldItalic", size: 50)
+        textView.backgroundColor = Colors.cream
         
-        return view
+       return textView
     }()
     
-    lazy var titleTextField: UITextField = {
-        let textField: UITextField = UITextField()
-        textField.placeholder = "Title"
-        textField.font = UIFont.boldSystemFont(ofSize: 40.0)
+    lazy var authorTextView: UITextView = {
+        var textView: UITextView = UITextView()
+        textView.isEditable = true
+        textView.delegate = self
+        textView.textColor = UIColor.lightGray
+        textView.text = "Title"
+        textView.adjustsFontForContentSizeCategory = true
+        textView.font = UIFont(name: "Cochin", size: 40)
         
-        return textField
-    }()
-    
-    lazy var authorTextField: UITextField = {
-        let textField: UITextField = UITextField()
-        textField.placeholder = "Author"
-        textField.font = UIFont.boldSystemFont(ofSize: 40.0)
         
-        return textField
+        /*
+ 
+         label.adjustsFontSizeToFitWidth = true
+         label.minimumScaleFactor = 0.1
+         
+         label.font = UIFont(name: "Cochin-BoldItalic", size: 40)
+         
+         label.numberOfLines = 3
+         label.textColor = Colors.navy
+         
+         label.lineBreakMode = NSLineBreakMode.byTruncatingTail
+         label.textAlignment = .center
+ 
+ */
+        
+        
+        return textView
     }()
     
-    lazy var createStoryButton: UIButton = {
+  
+    
+
+    lazy var beginWritingButton: UIButton = {
         let button: UIButton = UIButton()
-        button.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        button.backgroundColor = UIColor.green
-        button.setTitle("Create Story", for: .normal)
+
+        button.backgroundColor = Colors.cream
+        
+        // button.alpha = 0.5
+        
+        button.layer.cornerRadius = 7.0
+        let myAttribute = [NSForegroundColorAttributeName: Colors.cranberry]
+        let myString = NSMutableAttributedString(string: "Begin Writing", attributes: myAttribute)
+        var buttonRange = (myString.string as NSString).range(of: "Begin Writing")
+        myString.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: 20.0), range: buttonRange)
+        
+        button.setAttributedTitle(myString, for: .normal)
+        
+
         button.addTarget(self, action: #selector(createStoryAction), for: .touchUpInside)
         
         return button
     }()
+    
+
    
     
 }
+
+extension TitlePageViewController: UITextViewDelegate {
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+            print("I am writing a title NOW")
+        }
+    }
+    
+   
+   // I don't know if this is the way but its the only way I could find. Instead of a new line it returns
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
+}
+
