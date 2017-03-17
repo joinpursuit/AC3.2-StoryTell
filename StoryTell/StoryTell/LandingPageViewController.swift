@@ -88,9 +88,11 @@ class LandingPageViewController: UIViewController {
     
     internal lazy var landingPageTableview: UITableView = {
         let landingPageTableview = UITableView()
+        landingPageTableview.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        landingPageTableview.delegate = self
+        landingPageTableview.dataSource = self
         return landingPageTableview
     }()
-
     
     /*
      // MARK: - Navigation
@@ -101,4 +103,22 @@ class LandingPageViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+}
+
+extension LandingPageViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.text = "Read Me"
+        cell.textLabel?.font = UIFont(name: "Cochin", size: 20)
+        cell.textLabel?.textColor = Colors.navy
+        cell.backgroundColor = Colors.cream
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let destination = V2ReaderViewController()
+        navigationController?.pushViewController(destination, animated: true)
+    }
 }
