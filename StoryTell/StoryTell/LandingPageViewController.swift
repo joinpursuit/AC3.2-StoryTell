@@ -117,9 +117,9 @@ extension LandingPageViewController: UITableViewDelegate, UITableViewDataSource 
         cell.backgroundColor = Colors.cream
         return cell
     }
-
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let destination = V2ReaderViewController()
         navigationController?.pushViewController(destination, animated: true)
+        //just to commit
     }
 }
