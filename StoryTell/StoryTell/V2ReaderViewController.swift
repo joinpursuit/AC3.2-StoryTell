@@ -27,12 +27,28 @@ class V2ReaderViewController: UIViewController {
         currentStitchKey = story.linkPath
         progressStory(currentStitchKey)
         
+        navigationItem.title = "Reader"
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSForegroundColorAttributeName: Colors.navy,
+             NSFontAttributeName: UIFont(name: "Cochin-BoldItalic", size: 21)!]
+        navigationController?.navigationBar.barTintColor = Colors.cream
+        navigationController?.navigationBar.tintColor = Colors.cranberry
         
+        var gearImage = UIImage(named: "gear")
         
+        gearImage = gearImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         
-        // hold spot for gear button
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .fastForward, target: self, action: #selector(optionsAction))
+        let gearButton = UIBarButtonItem(image: gearImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(optionsAction))
         
+        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(backButtonTapped))
+        backButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
+        var homeImage = UIImage(named: "homePage")
+        
+        homeImage = homeImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        
+        let homeButton = UIBarButtonItem(image: homeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(homeTapped))
+        navigationItem.rightBarButtonItem = gearButton
+        navigationItem.leftBarButtonItems = [backButton, homeButton]
     }
     
     
@@ -48,8 +64,14 @@ class V2ReaderViewController: UIViewController {
             
         }
     }
-    
-    
+    func homeTapped() {
+        let newViewController = LandingPageViewController()
+        self.navigationController?.pushViewController(newViewController, animated: true)
+    }
+    func backButtonTapped() {
+        let _ = self.navigationController?.popViewController(animated: true)
+        
+    }
     func nightModeAction() {
         
         if let status = UserDefaults.standard.object(forKey: "onOff") as? Bool {
