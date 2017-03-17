@@ -20,8 +20,11 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Story Tell"
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSForegroundColorAttributeName: Colors.navy,
+             NSFontAttributeName: UIFont(name: "Cochin-BoldItalic", size: 21)!]
         navigationController?.navigationBar.barTintColor = Colors.cream
-        
+        navigationController?.navigationBar.tintColor = Colors.cranberry
         
         view.backgroundColor = Colors.cream
     
