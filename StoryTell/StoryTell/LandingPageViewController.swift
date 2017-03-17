@@ -113,8 +113,8 @@ extension LandingPageViewController: UITableViewDelegate, UITableViewDataSource 
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = stories[indexPath.row]
         cell.textLabel?.font = UIFont(name: "Cochin", size: 20)
-        cell.textLabel?.textColor = Colors.navy
-        cell.backgroundColor = Colors.cream
+        cell.textLabel?.textColor = Colors.cream
+        cell.backgroundColor = Colors.navy
         cell.textLabel?.textAlignment = .center
         return cell
     }
