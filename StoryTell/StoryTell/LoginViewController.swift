@@ -7,8 +7,9 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseAuth
 import FirebaseDatabase
+
 
 class LoginViewController: UIViewController {
     
@@ -48,11 +49,15 @@ class LoginViewController: UIViewController {
         self.view.addSubview(emailContainerView)
         self.view.addSubview(passwordContainerView)
         self.view.addSubview(registerContainerView)
+        self.view.addSubview(logInContainerView)
         
         
         emailContainerView.addSubview(emailTextField)
         passwordContainerView.addSubview(passwordTextField)
         registerContainerView.addSubview(registerButton)
+        logInContainerView.addSubview(logInButton)
+        
+       
     }
     
     
@@ -88,8 +93,8 @@ class LoginViewController: UIViewController {
         
         registerContainerView.snp.makeConstraints { (container) in
             
-            container.trailing.equalToSuperview().inset(140)
-            container.leading.equalToSuperview().inset(140)
+            container.trailing.equalToSuperview().inset(190)
+            container.leading.equalToSuperview().inset(90)
             container.height.equalTo(30)
             container.top.equalTo(passwordContainerView).inset(55)
         }
@@ -98,6 +103,22 @@ class LoginViewController: UIViewController {
             button.top.leading.trailing.bottom.equalTo(registerContainerView)
             button.height.equalTo(registerContainerView.snp.height)
         }
+        
+        logInContainerView.snp.makeConstraints { (container) in
+            
+            container.trailing.equalToSuperview().inset(90)
+            container.width.equalTo(registerContainerView)
+            container.height.equalTo(30)
+            container.top.equalTo(passwordContainerView).inset(55)
+        }
+        
+        logInButton.snp.makeConstraints { (logButton) in
+            logButton.top.leading.trailing.bottom.equalTo(logInContainerView)
+            logButton.height.equalTo(logInContainerView.snp.height)
+        }
+        
+        
+        
     }
     
     
@@ -114,6 +135,11 @@ class LoginViewController: UIViewController {
     }()
     
     lazy var registerContainerView: UIView = {
+        let view: UIView = UIView()
+        return view
+    }()
+    
+    lazy var logInContainerView: UIView = {
         let view: UIView = UIView()
         return view
     }()
@@ -148,12 +174,29 @@ class LoginViewController: UIViewController {
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor.init(red: 0/255, green: 122/255, blue: 255/255, alpha: 1).cgColor
         
-        button.addTarget(self, action: #selector(handleSignIn), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleRegister), for: .touchUpInside)
         
         return button
     }()
     
-    func handleSignIn() {
+    lazy var logInButton: UIButton = {
+        let logButton: UIButton = UIButton(type: .system)
+        logButton.backgroundColor = Colors.cream
+        logButton.setTitle("Log In", for: .normal)
+        logButton.layer.cornerRadius = 6
+        logButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        logButton.layer.borderWidth = 1
+        logButton.layer.borderColor = UIColor.init(red: 0/255, green: 122/255, blue: 255/255, alpha: 1).cgColor
+        
+        logButton.addTarget(self, action: #selector(logIn), for: .touchUpInside)
+        
+        return logButton
+    }()
+    
+    
+    
+    
+    func handleRegister() {
         guard let email = emailTextField.text,
             let password = passwordTextField.text
             else {
@@ -181,16 +224,49 @@ class LoginViewController: UIViewController {
                     print(err!)
                     return
                 }
-                print("saved user succesfully in database")
-            })
-            
+                
+                let destination = LandingPageViewController()
+                self.navigationController?.pushViewController(destination, animated: true)
+
+                
+            print("saved user succesfully in database")
         })
-    }
+            
+    })
 }
 
+    func logIn() {
+        
+        if FIRAuth.auth()?.currentUser != nil {
+            do {
+                try FIRAuth.auth()?.signOut()
+                            }
+            catch {
+                print(error)
+            }
+        }
+        else if let email = emailTextField.text,
+            let password = passwordTextField.text {
+            FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user: FIRUser?, error: Error?) in
+                if user != nil {
+                    
+                        let destination = LandingPageViewController()
+                        self.navigationController?.pushViewController(destination, animated: true)
+                
+                }
+                else {
+                    let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alert.addAction(ok)
+                    self.present(alert, animated: true, completion: nil)
+                }
+            })
+        }
+    }
 
-
-
+    
+    
+}
 
 
 
