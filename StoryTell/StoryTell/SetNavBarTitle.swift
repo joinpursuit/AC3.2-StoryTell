@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 struct SetNavTitle{
@@ -25,6 +26,7 @@ struct SetNavTitle{
         subtitleLabel.backgroundColor = UIColor.clear
         subtitleLabel.textColor = UIColor.black
         subtitleLabel.font = UIFont.systemFont(ofSize: 12)
+
         subtitleLabel.text = subtitle
         subtitleLabel.sizeToFit()
         
