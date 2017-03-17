@@ -47,6 +47,10 @@ class StitchViewController: UIViewController {
         
     }
     
+    func branchButtonAction() {
+        
+    }
+    
     
     // MARK: - Setup
     func homeTapped() {
@@ -90,66 +94,6 @@ class StitchViewController: UIViewController {
         
     }
     
-    // MARK: - Actions
-    
-    func branchButtonAction(_ sender: UIButton){
-        
-        print("Branch button Pressed")
-        
-        let alertController = UIAlertController(title: "What Choices", message: "Please input your options:", preferredStyle: .alert)
-        
-        let confirmAction = UIAlertAction(title: "Confirm", style: .default) { (_) in
-            if let field = alertController.textFields?[0] {
-                print(field.text)
-                
-                // store your data //
-                
-            } else {
-                // user did not fill field
-            }
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
-        
-        alertController.addTextField { (textField) in
-            textField.placeholder = "Options"
-        }
-        
-        alertController.addAction(confirmAction)
-        alertController.addAction(cancelAction)
-        
-//        let alertController = UIAlertController(title: "Enter A Prompt", message: "Your prompt should be a choice for the user select", preferredStyle: .alert)
-//        
-//        let confirmAction = UIAlertAction(title: "Confirm", style: .default) { (_) in
-//            let branchField = alertController.textFields![0] as UITextField
-//            
-//            if branchField.text != "" {
-//                self.branch = branchField.text!
-//                //store data
-//            } else {
-//                let errorAlert = UIAlertController(title: "Error", message: "Please add a prompt", preferredStyle: .alert)
-//                errorAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: {
-//                    alert -> Void in
-//                    self.present(alertController, animated: true, completion: nil)
-//                }))
-//                self.present(errorAlert, animated: true, completion: nil)
-//            }
-//        }
-//        
-//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
-//        
-//        alertController.addTextField { (textField) in
-//            textField.placeholder = "Enter your prompt"
-//        }
-//        
-//        alertController.addAction(confirmAction)
-//        alertController.addAction(cancelAction)
-//        
-//        self.present(alertController, animated: true, completion: nil)
-        
-        
-    }
-    
     // MARK: - Lazy Inits
     
     lazy var optionsTableView: UITableView = {
@@ -182,22 +126,7 @@ class StitchViewController: UIViewController {
     
 }
 
-// MARK: - TextView Delegate
 
-extension StitchViewController: UITextViewDelegate {
-    
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        
-        if textView.textColor == UIColor.lightGray {
-            textView.text = nil
-            textView.textColor = UIColor.black
-            print("______________Hllo")
-        }
-    }
-}
 
-// Need to connect the alert textfield to the tableview
-
-// MARK: - TableView DataSource/Delegate
 
 
