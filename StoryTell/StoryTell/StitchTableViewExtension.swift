@@ -30,10 +30,6 @@ extension StitchViewController: UITableViewDataSource,UITableViewDelegate {
         // wrote just to satify
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! StitchTableViewCell
         
-        let prompts = Option(prompt: cell.textField.text!, link: "")
-        options.append(prompts)
-        print(prompts)
-        
         return cell
     }
     

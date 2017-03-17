@@ -10,8 +10,6 @@ import UIKit
 
 class StitchViewController: UIViewController {
     var options = [Option]()
-    var option: Option!
-    var branch: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,11 +18,6 @@ class StitchViewController: UIViewController {
         setupViewHierarchy()
         configureConstraints()
         setupNavigation()
-        
-    }
-    
-    func branchButtonAction() {
-        
     }
     
     
@@ -98,6 +91,12 @@ class StitchViewController: UIViewController {
             tableView.centerX.equalToSuperview()
             tableView.height.equalToSuperview().dividedBy(3)
         }
+        
+    }
+    
+    //MARK: - Action
+    
+    func branchButtonAction() {
         
     }
     
