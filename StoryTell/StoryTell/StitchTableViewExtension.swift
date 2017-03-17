@@ -26,6 +26,7 @@ extension StitchViewController: UITableViewDataSource, UITableViewDelegate {
         cell.textField.tag = indexPath.row
         cell.textField.text = prompts[indexPath.row]
         
+        
         return cell
     }
     

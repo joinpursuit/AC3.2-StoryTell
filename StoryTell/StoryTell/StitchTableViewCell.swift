@@ -24,7 +24,9 @@ class StitchTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: "cell")
 
         textField = UITextField(frame: self.frame)
-        self.addSubview(textField)
+        self.contentView.addSubview(textField)
+        
+        self.contentView.addSubview(writeOptionButton)
         
     }
     
@@ -37,13 +39,46 @@ class StitchTableViewCell: UITableViewCell {
         super.init(coder: aDecoder)
     }
     
+    
+    // MARK: - Constraints
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        self.contentView.snp.makeConstraints { (view) in
-            view.leading.equalToSuperview().offset(20)
-            view.trailing.equalToSuperview().inset(20)
+        textField.snp.makeConstraints { (textField) in
+            textField.leading.equalTo(contentView.snp.leading).inset(15)
+            textField.centerY.equalTo(contentView.snp.centerY)
+            //textField.bottom.equalTo(contentView.snp.bottom)
         }
+        // button needs to show change when clicked 
+        writeOptionButton.snp.makeConstraints { (button) in
+            button.trailing.equalTo(contentView.snp.trailing).inset(15)
+            button.centerY.equalTo(contentView.snp.centerY)
+           // button.bottom.equalTo(contentView.snp.bottom).inset(5)
+            
+            button.height.width.equalTo(20)
+        }
+        
+        
     }
+    
+    // MARK: - Actions
+    func writeOptionAction(){
+        // code when button is pressed
+        
+    }
+    
+    
+    // MARK: - Lazy Inits
+    
+    lazy var writeOptionButton: UIButton = {
+        let button: UIButton = UIButton()
+        
+        button.setImage(#imageLiteral(resourceName: "writerArrow"), for: .normal)
+        button.addTarget(self, action: #selector(writeOptionAction), for: .touchUpInside)
+        
+        return button
+    }()
+    
+    
     
 }
