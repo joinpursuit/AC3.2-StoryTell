@@ -224,6 +224,11 @@ class LoginViewController: UIViewController {
                     print(err!)
                     return
                 }
+                
+                let destination = LandingPageViewController()
+                self.navigationController?.pushViewController(destination, animated: true)
+
+                
             print("saved user succesfully in database")
         })
             
@@ -244,7 +249,10 @@ class LoginViewController: UIViewController {
             let password = passwordTextField.text {
             FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user: FIRUser?, error: Error?) in
                 if user != nil {
-                    print("Log in successful")
+                    
+                        let destination = LandingPageViewController()
+                        self.navigationController?.pushViewController(destination, animated: true)
+                
                 }
                 else {
                     let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
@@ -256,7 +264,8 @@ class LoginViewController: UIViewController {
         }
     }
 
-
+    
+    
 }
 
 
