@@ -19,6 +19,31 @@ class StitchViewController: UIViewController {
         proseTextView.delegate = self
         setupViewHierarchy()
         configureConstraints()
+        setupNavigation()
+        
+    }
+    
+    func branchButtonAction() {
+        
+    }
+    
+    
+    // MARK: - Setup
+    func homeTapped() {
+        let newViewController = LandingPageViewController()
+        self.navigationController?.pushViewController(newViewController, animated: true)
+    }
+    
+    func outlineTapped() {
+        let newViewController = MapTableViewController()
+        self.navigationController?.pushViewController(newViewController, animated: true)
+    }
+    
+    func backButtonTapped() {
+        self.navigationController?.popViewController(animated: true) //this needs to be worked on so back button is hidden when on the bottom view controller
+    }
+    
+    func setupNavigation() {
         let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(backButtonTapped)) //Need to change action to show Publish Alert
         
         
@@ -40,35 +65,17 @@ class StitchViewController: UIViewController {
         navigationItem.rightBarButtonItems = [publishButton, outlineButton]
         navigationItem.leftBarButtonItems = [backButton, homeButton]
         
-        
-        optionsTableView.delegate = self
-        optionsTableView.dataSource = self
-        optionsTableView.register(StitchTableViewCell.self, forCellReuseIdentifier: "cell")
-        
     }
     
-    func branchButtonAction() {
-        
-    }
-    
-    
-    // MARK: - Setup
-    func homeTapped() {
-        let newViewController = LandingPageViewController()
-        self.navigationController?.pushViewController(newViewController, animated: true)
-    }
-    func outlineTapped() {
-        let newViewController = MapTableViewController()
-        self.navigationController?.pushViewController(newViewController, animated: true)
-    }
-    func backButtonTapped() {
-        self.navigationController?.popViewController(animated: true) //this needs to be worked on so back button is hidden when on the bottom view controller
-    }
     func setupViewHierarchy() {
         self.edgesForExtendedLayout = []
         self.view.addSubview(proseTextView)
         self.view.addSubview(optionsTableView)
         self.view.addSubview(branchButton)
+        
+        optionsTableView.delegate = self
+        optionsTableView.dataSource = self
+        optionsTableView.register(StitchTableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
     private func configureConstraints(){
