@@ -129,8 +129,8 @@
 		7D686D321E7BEB480092E41B /* Writer */ = {
 			isa = PBXGroup;
 			children = (
-				7D686D381E7BEC310092E41B /* StitchViewController */,
 				DF64A0BA1E708E44000EB09E /* TitlePageViewController.swift */,
+				7D686D381E7BEC310092E41B /* StitchViewController */,
 			);
 			name = Writer;
 			sourceTree = "<group>";
@@ -138,9 +138,10 @@
 		7D686D331E7BEB620092E41B /* Reader */ = {
 			isa = PBXGroup;
 			children = (
-				DF1D27C01E7AD848007285CE /* ReaderOptionsViewController.swift */,
 				DF1D27BA1E723812007285CE /* V2ReaderViewController.swift */,
-				7DC90EAC1E7B5E1B0077B71E /* ReaderTitlePageViewController.swift */,
+				DF1D27C01E7AD848007285CE /* ReaderOptionsViewController.swift */,
+				DFBEF1D31E7B214D009519C3 /* ReaderOptionsTableViewCell.swift */,
+				DFBEF1D51E7B624C009519C3 /* ReaderTitlePageViewController.swift */,
 			);
 			name = Reader;
 			sourceTree = "<group>";
@@ -149,10 +150,10 @@
 			isa = PBXGroup;
 			children = (
 				DF1D27B81E71CFDA007285CE /* StitchViewController.swift */,
+				7DC90EA61E7B1D220077B71E /* StitchTableViewCell.swift */,
 				7DC90EAA1E7B55680077B71E /* StitchTableViewExtension.swift */,
 				7D686D341E7BEB980092E41B /* StitchTextFieldExtension.swift */,
 				7D686D361E7BEBEB0092E41B /* StitchTextViewExt.swift */,
-				7DC90EA61E7B1D220077B71E /* StitchTableViewCell.swift */,
 			);
 			name = StitchViewController;
 			sourceTree = "<group>";
@@ -164,14 +165,6 @@
 				4C000F1D1E77296E0007E32D /* LoginViewController.swift */,
 				81B782961E7B194400F96DD8 /* MapTableViewCell.swift */,
 				818518D61E7088DB00191121 /* LandingPageViewController.swift */,
-				DF64A0BA1E708E44000EB09E /* TitlePageViewController.swift */,
-				DF1D27B81E71CFDA007285CE /* StitchViewController.swift */,
-				7DC90EAA1E7B55680077B71E /* StitchTableViewExtension.swift */,
-				7DC90EA61E7B1D220077B71E /* StitchTableViewCell.swift */,
-				DF1D27BA1E723812007285CE /* V2ReaderViewController.swift */,
-				DF1D27C01E7AD848007285CE /* ReaderOptionsViewController.swift */,
-				DFBEF1D31E7B214D009519C3 /* ReaderOptionsTableViewCell.swift */,
-				DFBEF1D51E7B624C009519C3 /* ReaderTitlePageViewController.swift */,
 				DFBEF1D71E7B625F009519C3 /* SetNavBarTitle.swift */,
 				7D686D321E7BEB480092E41B /* Writer */,
 				7D686D331E7BEB620092E41B /* Reader */,
@@ -348,7 +341,6 @@
 				4C000F1E1E77296E0007E32D /* LoginViewController.swift in Sources */,
 				81B782971E7B194400F96DD8 /* MapTableViewCell.swift in Sources */,
 				818518D91E71C9CF00191121 /* MapTableViewController.swift in Sources */,
-				7DC90EAD1E7B5E1B0077B71E /* ReaderTitlePageViewController.swift in Sources */,
 				7D686D371E7BEBEB0092E41B /* StitchTextViewExt.swift in Sources */,
 				7DC90EA71E7B1D220077B71E /* StitchTableViewCell.swift in Sources */,
 				DFBEF1D61E7B624C009519C3 /* ReaderTitlePageViewController.swift in Sources */,

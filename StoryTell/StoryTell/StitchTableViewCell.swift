@@ -22,10 +22,10 @@ class StitchTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: "cell")
-        
-        contentView.backgroundColor = .white
+
         textField = UITextField(frame: self.frame)
-        self.contentView.addSubview(textField)
+        self.addSubview(textField)
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

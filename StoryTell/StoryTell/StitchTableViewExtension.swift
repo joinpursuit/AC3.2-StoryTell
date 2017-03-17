@@ -29,11 +29,23 @@ extension StitchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // wrote just to satify
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! StitchTableViewCell
-        cell.textField.delegate = self
-        
+        cell.textField.delegate = self       
         cell.textField.text = prompts[indexPath.row]
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return UITableViewCellEditingStyle.delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            prompts.remove(at: indexPath.row)
+            
+            self.tableView.reloadData()
+        }
     }
     
     

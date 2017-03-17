@@ -16,7 +16,7 @@ extension StitchViewController: UITextFieldDelegate {
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        textField.backgroundColor = UIColor.lightGray
+//        textField.backgroundColor = UIColor.lightGray
         return true
     }
     
