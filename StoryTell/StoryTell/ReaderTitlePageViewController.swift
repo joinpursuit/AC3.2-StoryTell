@@ -1,7 +1,4 @@
 //
-//  ReaderTitlePageViewController.swift
-//  StoryTell
-//
 //  Created by John Gabriel Breshears on 3/13/17.
 //  Copyright © 2017 Simone. All rights reserved.
 //
@@ -39,9 +36,11 @@ class ReaderTitlePageViewController: UIViewController {
     }
     
     func presentReaderTouch(_ sender: UITapGestureRecognizer){
-    
-    present(V2ReaderViewController(), animated: true, completion: nil)
-    
+
+        
+        present(V2ReaderViewController(), animated: true, completion: nil)
+        
+
     }
     
     
@@ -80,9 +79,11 @@ class ReaderTitlePageViewController: UIViewController {
         beginStoryButton.snp.makeConstraints { (button) in
             button.top.equalTo(authorLabel.snp.bottom).offset(standardMargin)
             //button.leading.trailing.equalToSuperview()
+
            button.centerX.equalToSuperview()
             //button.top.equalTo(titleLabel.snp.bottom)
            // button.bottom.equalToSuperview().inset(20)
+
             button.height.equalTo(50)
             button.width.equalTo(200)
         }
@@ -94,7 +95,9 @@ class ReaderTitlePageViewController: UIViewController {
     func beginStoryAction() {
         print("Story is starting")
         //self.navigationController?.pushViewController(V2ReaderViewController(), animated: true)
+
          present(UINavigationController(rootViewController: V2ReaderViewController()), animated: true, completion: nil)
+
         
     }
     
@@ -102,7 +105,9 @@ class ReaderTitlePageViewController: UIViewController {
     
     lazy var authorLabel: UILabel = {
         let label: UILabel = UILabel()
+
        // label.font = UIFont.boldSystemFont(ofSize: 40)
+
         label.font = UIFont(name: "Cochin", size: 40)
         label.numberOfLines = 3
         label.minimumScaleFactor = 0.1
@@ -119,9 +124,11 @@ class ReaderTitlePageViewController: UIViewController {
     lazy var titleLabel: UILabel = {
         let label: UILabel = UILabel()
         ///// Ideas to shrik text based on how much text... not working..yet
-                label.adjustsFontSizeToFitWidth = true
+        label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.1
+
          label.font = UIFont(name: "Cochin-BoldItalic", size: 40)
+
         label.numberOfLines = 3
         label.textColor = Colors.navy
         
@@ -135,7 +142,9 @@ class ReaderTitlePageViewController: UIViewController {
     lazy var beginStoryButton: UIButton = {
         let button: UIButton = UIButton()
         button.backgroundColor = Colors.cranberry
+
        // button.alpha = 0.5
+
         button.layer.cornerRadius = 7.0
         let myAttribute = [NSForegroundColorAttributeName: Colors.cream]
         let myString = NSMutableAttributedString(string: "Begin Reading", attributes: myAttribute)
@@ -143,7 +152,7 @@ class ReaderTitlePageViewController: UIViewController {
         myString.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: 20.0), range: buttonRange)
         
         button.setAttributedTitle(myString, for: .normal)
-    
+
         button.addTarget(self, action: #selector(beginStoryAction), for: .touchUpInside)
         
         return button
@@ -153,29 +162,11 @@ class ReaderTitlePageViewController: UIViewController {
     lazy var ornament: UIImageView = {
         let imageView: UIImageView = UIImageView()
         
-       
+
         return imageView
     }()
     
     
-    /*
-     lazy var crisisButton: UIButton = {
-     let button = UIButton()
-     button.backgroundColor = .white
-     button.layer.cornerRadius = 7.0
-     
-     let darkRed = UIColor(red: 158/255, green: 9/255, blue: 28/255, alpha: 1.0)
-     
-     let myAttribute = [ NSForegroundColorAttributeName: darkRed ]
-     let myString = NSMutableAttributedString(string: "1-888-NYC-WELL (free)", attributes: myAttribute)
-     
-     var buttonRange = (myString.string as NSString).range(of: "1-888-NYC-WELL")
-     myString.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: 16.0), range: buttonRange)
-     
-     button.setAttributedTitle(myString, for: .normal)
-     return button
-     }()
- 
- */
+
     
 }

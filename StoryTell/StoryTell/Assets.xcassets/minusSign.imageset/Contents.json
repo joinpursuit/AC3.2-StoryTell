@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "S Logo TIGHT SQUARE 1x.png",
+      "filename" : "minusSign.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "S Logo TIGHT SQUARE 2x.png",
+      "filename" : "minusSign-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "S Logo TIGHT SQUARE.png",
+      "filename" : "minusSign-2.png",
       "scale" : "3x"
     }
   ],

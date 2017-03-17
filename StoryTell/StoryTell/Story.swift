@@ -13,7 +13,7 @@ class Story {
     var authorName: String
     var createdAt: String
     var linkPath: String
-    var stitches: [String:Stitch]
+    var stitches: [String : Stitch]
     
     init(title:String, authorName:String, createdAt:String, linkPath:String, stitches: [String:Stitch]) {
         self.title = title

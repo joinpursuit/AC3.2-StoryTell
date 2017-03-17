@@ -7,37 +7,45 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
-    
-    
-    
-    
+  
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        FIRApp.configure()
+        
         // Override point for customization after application launch.
         
-        //let navigationVC = UINavigationController(rootViewController: V2ReaderViewController())
+
         // let navigationVC = UINavigationController(rootViewController: TitlePageViewController())
        // let navigationVC = UINavigationController(rootViewController: LandingPageViewController())
-        let navigationVC  = UINavigationController(rootViewController: ReaderTitlePageViewController())
+        //let navigationVC  = UINavigationController(rootViewController: ReaderTitlePageViewController())
+
+         //let navigationVC = UINavigationController(rootViewController: TitlePageViewController())
 
 
+       let navigationVC = UINavigationController(rootViewController: LandingPageViewController())
+        //let navigationVC = UINavigationController(rootViewController: MapTableViewController())
+
+       //let navigationVC = UINavigationController(rootViewController: StitchViewController())
+
+
+       //let navigationVC = UINavigationController(rootViewController: LandingPageViewController())
+//        let navigationVC = UINavigationController(rootViewController: MapTableViewController())
 
 
         //let navigationVC = UINavigationController(rootViewController: ReaderViewController())
 
+
       
-        
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = navigationVC
         self.window?.makeKeyAndVisible()
-        
-        
-        
+     
         return true
     }
     
