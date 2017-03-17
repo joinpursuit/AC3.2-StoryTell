@@ -210,7 +210,7 @@ extension TitlePageViewController: UITextViewDelegate {
         
         if textView.textColor == UIColor.lightGray {
             textView.text = nil
-            textView.textColor = UIColor.black
+            textView.textColor = Colors.navy
             print("I am writing a title NOW")
         }
     }
