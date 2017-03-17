@@ -10,6 +10,11 @@ import UIKit
 
 extension StitchViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+            print("I am writing a title NOW")
+        }
         textView.becomeFirstResponder()
     }
     
@@ -26,5 +31,9 @@ extension StitchViewController: UITextViewDelegate {
         }
         proseTextView.scrollRangeToVisible(proseTextView.selectedRange)
     }
+    
+    
+
+    
 
 }

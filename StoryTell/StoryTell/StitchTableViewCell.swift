@@ -13,6 +13,7 @@ class StitchTableViewCell: UITableViewCell {
     var textField: UITextField! {
         didSet {
             textField = UITextField()
+            
         }
     }
     
@@ -23,6 +24,7 @@ class StitchTableViewCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: "cell")
 
+        contentView.backgroundColor = Colors.cream
         textField = UITextField(frame: self.frame)
         self.contentView.addSubview(textField)
         
