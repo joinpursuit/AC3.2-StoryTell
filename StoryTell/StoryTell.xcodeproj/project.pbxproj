@@ -26,7 +26,7 @@
 		DF1D27B91E71CFDA007285CE /* StitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1D27B81E71CFDA007285CE /* StitchViewController.swift */; };
 		DF1D27BB1E723812007285CE /* V2ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1D27BA1E723812007285CE /* V2ReaderViewController.swift */; };
 		DF1D27C11E7AD848007285CE /* ReaderOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1D27C01E7AD848007285CE /* ReaderOptionsViewController.swift */; };
-		DF5E4AA81E7C259900CA4E8B /* Stitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5E4AA71E7C259900CA4E8B /* Stitch.swift */; };
+		DF5E4AAA1E7C40F700CA4E8B /* Stitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5E4AA91E7C40F700CA4E8B /* Stitch.swift */; };
 		DF64A0BB1E708E44000EB09E /* TitlePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF64A0BA1E708E44000EB09E /* TitlePageViewController.swift */; };
 		DFBEF1D41E7B214D009519C3 /* ReaderOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBEF1D31E7B214D009519C3 /* ReaderOptionsTableViewCell.swift */; };
 		DFBEF1D61E7B624C009519C3 /* ReaderTitlePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBEF1D51E7B624C009519C3 /* ReaderTitlePageViewController.swift */; };
@@ -57,7 +57,7 @@
 		DF1D27B81E71CFDA007285CE /* StitchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StitchViewController.swift; sourceTree = "<group>"; };
 		DF1D27BA1E723812007285CE /* V2ReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = V2ReaderViewController.swift; sourceTree = "<group>"; };
 		DF1D27C01E7AD848007285CE /* ReaderOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderOptionsViewController.swift; sourceTree = "<group>"; };
-		DF5E4AA71E7C259900CA4E8B /* Stitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stitch.swift; sourceTree = "<group>"; };
+		DF5E4AA91E7C40F700CA4E8B /* Stitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stitch.swift; sourceTree = "<group>"; };
 		DF64A0BA1E708E44000EB09E /* TitlePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitlePageViewController.swift; sourceTree = "<group>"; };
 		DFBEF1D31E7B214D009519C3 /* ReaderOptionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		DFBEF1D51E7B624C009519C3 /* ReaderTitlePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderTitlePageViewController.swift; sourceTree = "<group>"; };
@@ -145,7 +145,7 @@
 		DF64A0B71E7077D7000EB09E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DF5E4AA71E7C259900CA4E8B /* Stitch.swift */,
+				DF5E4AA91E7C40F700CA4E8B /* Stitch.swift */,
 				7DF015C51E6B9B370048AAA8 /* Story.swift */,
 			);
 			name = Models;
@@ -306,7 +306,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF5E4AA81E7C259900CA4E8B /* Stitch.swift in Sources */,
 				7D3F95EA1E664EAD00FD6453 /* AppDelegate.swift in Sources */,
 				4CC0C7611E71F7320094823E /* Colors.swift in Sources */,
 				4C000F1E1E77296E0007E32D /* LoginViewController.swift in Sources */,
@@ -316,6 +315,7 @@
 				DFBEF1D61E7B624C009519C3 /* ReaderTitlePageViewController.swift in Sources */,
 				DF1D27C11E7AD848007285CE /* ReaderOptionsViewController.swift in Sources */,
 				DF64A0BB1E708E44000EB09E /* TitlePageViewController.swift in Sources */,
+				DF5E4AAA1E7C40F700CA4E8B /* Stitch.swift in Sources */,
 				7DC90EAB1E7B55680077B71E /* StitchTableViewExtension.swift in Sources */,
 				DF1D27BB1E723812007285CE /* V2ReaderViewController.swift in Sources */,
 				7DF015C61E6B9B370048AAA8 /* Story.swift in Sources */,
