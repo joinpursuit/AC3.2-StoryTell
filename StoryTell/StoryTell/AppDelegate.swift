@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 
-        let navigationVC = UINavigationController(rootViewController: LandingPageViewController ())
+        let navigationVC = UINavigationController(rootViewController: LoginViewController())
 
 
 

@@ -35,13 +35,7 @@ class ReaderTitlePageViewController: UIViewController {
         
     }
     
-    func presentReaderTouch(_ sender: UITapGestureRecognizer){
-
-        
-        present(V2ReaderViewController(), animated: true, completion: nil)
-        
-
-    }
+  
     
     
     // MARK: - Setup
