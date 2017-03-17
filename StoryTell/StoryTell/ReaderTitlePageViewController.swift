@@ -9,7 +9,7 @@ class ReaderTitlePageViewController: UIViewController {
     
     var story: Story!
     var standardMargin: Double = 8
-    let gesture = UITapGestureRecognizer(target: self, action: #selector(presentReaderTouch))
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
