@@ -43,6 +43,8 @@ class ReaderOptionsTableViewCell: UITableViewCell {
        
     }
     
+    // MARK:
+    
     func nightModeAction() {
         print("pressed the night")
         
@@ -54,8 +56,8 @@ class ReaderOptionsTableViewCell: UITableViewCell {
                 
             } else {
                 // false == nightmode is off and is being turned on
-                UserDefaults.standard.set(true, forKey: "onOff")
                 nightModeSwitch.setOn(true, animated: false)
+                UserDefaults.standard.set(true, forKey: "onOff")
             }
             
         } else {
