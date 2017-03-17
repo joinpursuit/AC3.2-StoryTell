@@ -16,8 +16,11 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Story Tell"
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSForegroundColorAttributeName: Colors.navy,
+             NSFontAttributeName: UIFont(name: "Cochin-BoldItalic", size: 21)!]
         navigationController?.navigationBar.barTintColor = Colors.cream
-        
+        navigationController?.navigationBar.tintColor = Colors.cranberry
         
         view.backgroundColor = Colors.cream
     
@@ -158,12 +161,19 @@ class LoginViewController: UIViewController {
     
     lazy var registerButton: UIButton = {
         let button: UIButton = UIButton(type: .system)
-        button.backgroundColor = Colors.cream
+        button.backgroundColor = Colors.cranberry
         button.setTitle("Register", for: .normal)
         button.layer.cornerRadius = 6
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.titleLabel?.font = UIFont(name: "Cochin", size: 20)//UIFont.boldSystemFont(ofSize: 16)
         button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor.init(red: 0/255, green: 122/255, blue: 255/255, alpha: 1).cgColor
+        button.layer.borderColor = Colors.cranberry.cgColor
+        let myAttribute = [NSForegroundColorAttributeName: Colors.cream]
+        let myString = NSMutableAttributedString(string: "Register", attributes: myAttribute)
+        var buttonRange = (myString.string as NSString).range(of: "Register")
+        let appFontForButton = UIFont(name: "Cochin", size: 20)
+        myString.addAttribute(NSFontAttributeName, value: appFontForButton!, range: buttonRange)
+        
+        button.setAttributedTitle(myString, for: .normal)
         
         button.addTarget(self, action: #selector(handleRegister), for: .touchUpInside)
         
@@ -175,10 +185,17 @@ class LoginViewController: UIViewController {
         logButton.backgroundColor = Colors.cream
         logButton.setTitle("Log In", for: .normal)
         logButton.layer.cornerRadius = 6
-        logButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        logButton.titleLabel?.font = UIFont(name: "Cochin", size: 20)
         logButton.layer.borderWidth = 1
-        logButton.layer.borderColor = UIColor.init(red: 0/255, green: 122/255, blue: 255/255, alpha: 1).cgColor
+        logButton.layer.borderColor = Colors.navy.cgColor
+        let myAttribute = [NSForegroundColorAttributeName: Colors.navy]
+        let myString = NSMutableAttributedString(string: "Log In", attributes: myAttribute)
+        var buttonRange = (myString.string as NSString).range(of: "Log In")
+        let appFontForButton = UIFont(name: "Cochin", size: 20)
+        myString.addAttribute(NSFontAttributeName, value: appFontForButton!, range: buttonRange)
         
+        logButton.setAttributedTitle(myString, for: .normal)
+
         logButton.addTarget(self, action: #selector(logIn), for: .touchUpInside)
         
         return logButton
