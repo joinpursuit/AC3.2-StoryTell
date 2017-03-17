@@ -35,10 +35,12 @@ extension StitchViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            
-            prompts.remove(at: indexPath.row)
-            
-            self.tableView.reloadData()
+            //            let item = prompts[indexPath.row]
+            //            confirmDelete(item: item)
+            self.prompts.remove(at: indexPath.row)
+            self.tableView.beginUpdates()
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+            self.tableView.endUpdates()
         }
     }
     
