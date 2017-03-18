@@ -132,8 +132,7 @@ class StitchViewController: UIViewController {
     //MARK: - Action
     
     func branchButtonAction(_ sender: UIButton) {
-        
-        let alertController = UIAlertController(title: "Enter A Prompt", message: "Your prompt should be a choice for the user select", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "New Story Branch", message: "Enter the prompt text for your new story branch (for example: \"She took the path less travelled by.\")", preferredStyle: .alert)
         
         let confirmAction = UIAlertAction(title: "Confirm", style: .default) { (_) in
             let branchField = alertController.textFields![0] as UITextField
