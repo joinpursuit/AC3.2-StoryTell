@@ -146,7 +146,7 @@ class StitchViewController: UIViewController {
     
        private func configureConstraints(){
         doneWithTextViewButton.snp.makeConstraints { (done) in
-            done.trailing.equalToSuperview()
+            done.trailing.equalToSuperview().inset(15)
             done.bottom.equalTo(proseTextView.snp.top)
         }
         
@@ -157,20 +157,25 @@ class StitchViewController: UIViewController {
         }
         
         branchButton.snp.makeConstraints { (button) in
-            button.top.equalTo(proseTextView.snp.bottom)
+            button.top.equalTo(proseTextView.snp.bottom).offset(8)
             button.leading.equalToSuperview().inset(20)
+            button.height.equalTo(50)
+            button.width.equalTo(50)
+            
         }
         
         deleteButton.snp.makeConstraints { (delete) in
-            delete.top.equalTo(proseTextView.snp.bottom)
+            delete.top.equalTo(proseTextView.snp.bottom).offset(8)
             delete.trailing.equalToSuperview().inset(20)
+            delete.height.equalTo(50)
+            delete.width.equalTo(50)
         }
         
         tableView.snp.makeConstraints { (tableView) in
-            tableView.leading.trailing.equalToSuperview()
+            tableView.leading.trailing.equalToSuperview().inset(20)
             tableView.bottom.equalToSuperview()
             tableView.centerX.equalToSuperview()
-            tableView.height.equalToSuperview().dividedBy(3)
+            tableView.height.equalToSuperview().dividedBy(3.75)
         }
         
     }
