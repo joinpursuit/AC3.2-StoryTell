@@ -61,15 +61,13 @@ class StitchTableViewCell: UITableViewCell {
             
             button.height.width.equalTo(20)
         }
-        
-        
     }
     
     // MARK: - Actions
-    func writeOptionAction(){
-        // code when button is pressed
-        
-    }
+//    func writeOptionAction(_ sender: UIButton){
+//        let vc = StitchViewController()
+//        
+//    }
     
     
     // MARK: - Lazy Inits
@@ -78,7 +76,7 @@ class StitchTableViewCell: UITableViewCell {
         let button: UIButton = UIButton()
         
         button.setImage(#imageLiteral(resourceName: "writerArrow"), for: .normal)
-        button.addTarget(self, action: #selector(writeOptionAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(StitchViewController.refreshView), for: .touchUpInside)
         
         return button
     }()

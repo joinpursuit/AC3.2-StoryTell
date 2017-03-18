@@ -12,11 +12,7 @@ import FirebaseDatabase
 
 
 class LoginViewController: UIViewController {
-    
-    
-    
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Story Tell"
@@ -120,12 +116,7 @@ class LoginViewController: UIViewController {
             logButton.height.equalTo(logInContainerView.snp.height)
         }
         
-        
-        
     }
-    
-    
-    
     
     lazy var emailContainerView: UIView = {
         let view: UIView = UIView()

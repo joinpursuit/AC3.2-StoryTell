@@ -11,8 +11,6 @@ import UIKit
 class StitchViewController: UIViewController {
     var prompts = [String]()
     var options = [Option]()
-    var tableView = UITableView()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,13 +20,24 @@ class StitchViewController: UIViewController {
         configureConstraints()
         setupNavigation()
         addObservers()
-        
-        tableView.backgroundColor = Colors.cream
-        
     }
     
     
     // MARK: - Setup
+    func setupViewHierarchy() {
+        self.edgesForExtendedLayout = []
+        self.view.addSubview(proseTextView)
+        self.view.addSubview(tableView)
+        self.view.addSubview(branchButton)
+        self.view.addSubview(deleteButton)
+        self.view.addSubview(doneWithTextViewButton)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(StitchTableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
     func homeTapped() {
         let newViewController = LandingPageViewController()
         self.navigationController?.pushViewController(newViewController, animated: true)
@@ -53,7 +62,7 @@ class StitchViewController: UIViewController {
         let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(backButtonTapped))
         
         backButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
-
+        
         
         let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(backButtonTapped)) //Need to change action to show Publish Alert
         publishButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
@@ -81,64 +90,12 @@ class StitchViewController: UIViewController {
         
     }
     
-    func setupViewHierarchy() {
-        self.edgesForExtendedLayout = []
-        self.view.addSubview(proseTextView)
-        self.view.addSubview(tableView)
-        self.view.addSubview(branchButton)
-        self.view.addSubview(deleteButton)
-        self.view.addSubview(doneWithTextViewButton)
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(StitchTableViewCell.self, forCellReuseIdentifier: "cell")
-    }
-    
-    private func configureConstraints(){
-        doneWithTextViewButton.snp.makeConstraints { (done) in
-            done.trailing.equalToSuperview().inset(10)
-            done.bottom.equalTo(proseTextView.snp.top)
-        }
-        
-        
-        proseTextView.snp.makeConstraints { (textView) in
-            textView.leading.trailing.equalToSuperview().inset(10)
-            textView.top.equalToSuperview().offset(50)
-            textView.height.equalToSuperview().dividedBy(2)
-            
-        }
-        
-        branchButton.snp.makeConstraints { (button) in
-            button.top.equalTo(proseTextView.snp.bottom).offset(8)
-            button.leading.equalToSuperview().inset(20)
-            button.height.equalTo(50)
-            button.width.equalTo(50)
-            
-        }
-        
-        deleteButton.snp.makeConstraints { (delete) in
-            delete.top.equalTo(proseTextView.snp.bottom).offset(8)
-            delete.trailing.equalToSuperview().inset(20)
-            delete.height.equalTo(50)
-            delete.width.equalTo(50)
-        }
-        
-        
-        tableView.snp.makeConstraints { (tableView) in
-            tableView.leading.trailing.equalToSuperview()
-            tableView.bottom.equalToSuperview()
-            tableView.centerX.equalToSuperview()
-            tableView.height.equalToSuperview().dividedBy(3.75)
-        }
-        
-    }
-    
     //MARK: - Action
     
     func branchButtonAction(_ sender: UIButton) {
-        let alertController = UIAlertController(title: "New Story Branch", message: "Enter the prompt text for your new story branch (for example: \"She took the path less travelled by.\")", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "New Story Branch", message: "Enter the prompt text for your new story branch (example: \"She took the path less travelled by.\")", preferredStyle: .alert)
         
-        let confirmAction = UIAlertAction(title: "Confirm", style: .default) { (_) in
+        let confirmAction = UIAlertAction(title: "Done", style: .default) { (_) in
             let branchField = alertController.textFields![0] as UITextField
             
             if branchField.text != "" {
@@ -169,26 +126,64 @@ class StitchViewController: UIViewController {
         alertController.addAction(cancelAction)
         
         self.present(alertController, animated: true, completion: nil)
-        
     }
     
     func deleteBranch(_ sender: UIButton) {
         tableView.setEditing(true, animated: true)
     }
     
-    func deleteAction(){
-        print("All your base are belong to us....DELETE")
-        
-    }
-    
     func doneAction(){
         proseTextView.resignFirstResponder()
+    }
+    
+    func refreshView(_ sender: UIButton) {
+        proseTextView.text = ""
+        prompts = []
+        tableView.reloadData()
+    }
+    
+    //MARK: - Constraints
+    
+       private func configureConstraints(){
+        doneWithTextViewButton.snp.makeConstraints { (done) in
+            done.trailing.equalToSuperview()
+            done.bottom.equalTo(proseTextView.snp.top)
+        }
         
+        proseTextView.snp.makeConstraints { (textView) in
+            textView.leading.trailing.equalToSuperview()
+            textView.top.equalToSuperview().offset(50)
+            textView.height.equalToSuperview().dividedBy(2)
+        }
         
+        branchButton.snp.makeConstraints { (button) in
+            button.top.equalTo(proseTextView.snp.bottom)
+            button.leading.equalToSuperview().inset(20)
+        }
+        
+        deleteButton.snp.makeConstraints { (delete) in
+            delete.top.equalTo(proseTextView.snp.bottom)
+            delete.trailing.equalToSuperview().inset(20)
+        }
+        
+        tableView.snp.makeConstraints { (tableView) in
+            tableView.leading.trailing.equalToSuperview()
+            tableView.bottom.equalToSuperview()
+            tableView.centerX.equalToSuperview()
+            tableView.height.equalToSuperview().dividedBy(3)
+        }
         
     }
     
     // MARK: - Lazy Inits
+    
+    lazy var tableView: UITableView = {
+        let tableView: UITableView = UITableView()
+        tableView.backgroundColor = Colors.cream
+        tableView.separatorStyle = .none
+        return tableView
+        
+    }()
     
     lazy var proseTextView: UITextView = {
         let textView: UITextView = UITextView()
@@ -218,7 +213,6 @@ class StitchViewController: UIViewController {
 
         button.addTarget(self, action: #selector(branchButtonAction), for: .touchUpInside)
         
-        
         return button
     }()
     
@@ -226,7 +220,6 @@ class StitchViewController: UIViewController {
     lazy var deleteButton: UIButton = {
         let button: UIButton = UIButton(type: .custom)
         var branchImage = UIImage(named: "branchNo")
-        
         branchImage = branchImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         button.setBackgroundImage(branchImage, for: .normal)
         button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
@@ -238,7 +231,6 @@ class StitchViewController: UIViewController {
         button.showsTouchWhenHighlighted = true
         button.contentVerticalAlignment = UIControlContentVerticalAlignment.bottom
         button.addTarget(self, action: #selector(deleteBranch), for: .touchUpInside)
-        
         
         return button
     }()
@@ -260,8 +252,7 @@ class StitchViewController: UIViewController {
 
         button.addTarget(self, action: #selector(doneAction), for: .touchUpInside)
         
-        
-       return button
+        return button
     }()
     
     
