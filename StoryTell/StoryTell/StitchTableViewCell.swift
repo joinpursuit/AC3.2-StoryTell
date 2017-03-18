@@ -50,6 +50,7 @@ class StitchTableViewCell: UITableViewCell {
         textField.snp.makeConstraints { (textField) in
             textField.leading.equalTo(contentView.snp.leading).inset(15)
             textField.centerY.equalTo(contentView.snp.centerY)
+            textField.trailing.equalTo(contentView.snp.trailing).inset(35)
             //textField.bottom.equalTo(contentView.snp.bottom)
         }
         // button needs to show change when clicked 
