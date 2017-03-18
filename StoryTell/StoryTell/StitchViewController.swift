@@ -189,7 +189,7 @@ class StitchViewController: UIViewController {
         let textView: UITextView = UITextView()
         textView.textColor = UIColor.lightGray
         textView.text = "Once upon a time..."
-        textView.font = UIFont(name: (textView.font?.fontName)!, size: 30)
+        textView.font = UIFont(name: "Cochin", size: 30)
         textView.backgroundColor = Colors.cream
         
         return textView
@@ -197,13 +197,20 @@ class StitchViewController: UIViewController {
     
     lazy var branchButton: UIButton = {
         let button: UIButton = UIButton(type: .custom)
-        button.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-        button.layer.cornerRadius = 9
-        button.clipsToBounds = true
-        //button.imageView?.image = #imageLiteral(resourceName: "plusSign")
+        var branchImage = UIImage(named: "branchYes")
         
-        button.backgroundColor = UIColor.cyan
-        button.setTitle("Branch", for: .normal)
+        branchImage = branchImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        button.setBackgroundImage(branchImage, for: .normal)
+        button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+        button.setTitle("Add\nBranch", for: .normal)
+        button.setTitleColor(Colors.navy, for: .normal)
+        button.titleLabel?.textAlignment = .center
+        button.titleLabel?.font = UIFont(name: "Cochin", size: 14)
+        button.titleEdgeInsets.bottom = -35
+        button.showsTouchWhenHighlighted = true
+        button.contentVerticalAlignment = UIControlContentVerticalAlignment.bottom
+        
+
         button.addTarget(self, action: #selector(branchButtonAction), for: .touchUpInside)
         
         return button
@@ -212,25 +219,37 @@ class StitchViewController: UIViewController {
     
     lazy var deleteButton: UIButton = {
         let button: UIButton = UIButton(type: .custom)
-        button.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-        button.layer.cornerRadius = 9
-        button.clipsToBounds = true
-        
-        button.backgroundColor = UIColor.red
-        button.setTitle("Delete", for: .normal)
+        var branchImage = UIImage(named: "branchNo")
+        branchImage = branchImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        button.setBackgroundImage(branchImage, for: .normal)
+        button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+        button.titleLabel?.textAlignment = .center
+        button.setTitle("Remove\nBranch", for: .normal)
+        button.setTitleColor(Colors.cranberry, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Cochin", size: 14)
+        button.titleEdgeInsets.bottom = -35
+        button.showsTouchWhenHighlighted = true
+        button.contentVerticalAlignment = UIControlContentVerticalAlignment.bottom
         button.addTarget(self, action: #selector(deleteBranch), for: .touchUpInside)
         
         return button
     }()
     
     lazy var doneWithTextViewButton: UIButton = {
-        let button: UIButton = UIButton()
+        let button: UIButton = UIButton(type: .custom)
+
         button.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         button.layer.cornerRadius = 9
         button.clipsToBounds = true
         
-        button.backgroundColor = UIColor.darkGray
-        button.setTitle("Done", for: .normal)
+        button.backgroundColor = Colors.cranberry
+        button.setTitle("Done\nTyping", for: .normal)
+        button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+        button.titleLabel?.textAlignment = .center
+        button.setTitleColor(Colors.cream, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Cochin-Italic", size: 16)
+        button.contentEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 5)
+
         button.addTarget(self, action: #selector(doneAction), for: .touchUpInside)
         
         return button

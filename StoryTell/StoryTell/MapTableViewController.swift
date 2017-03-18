@@ -27,8 +27,8 @@ class MapTableViewController: UITableViewController {
              NSFontAttributeName: UIFont(name: "Cochin-BoldItalic", size: 21)!]
         navigationController?.navigationBar.barTintColor = Colors.cream
         navigationController?.navigationBar.tintColor = Colors.cranberry
-        
-        let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(publishButtonTapped)) //Need to change action to show Publish Alert
+
+        let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(publishButtonTapped))
         publishButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
         var writeImage = UIImage(named: "writeEdit")
         
@@ -43,7 +43,7 @@ class MapTableViewController: UITableViewController {
         homeImage = homeImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         
         let homeButton = UIBarButtonItem(image: homeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(homeTapped))
-        
+
         navigationItem.rightBarButtonItems = [publishButton, writeButton]
         navigationItem.leftBarButtonItems = [backButton, homeButton]
         
