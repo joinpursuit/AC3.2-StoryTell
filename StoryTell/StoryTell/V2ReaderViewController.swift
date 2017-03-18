@@ -164,7 +164,7 @@ class V2ReaderViewController: UIViewController {
             } else {
                 // false == normal UI
                 self.view.backgroundColor = Colors.cream
-                self.readerTextView.textColor = UIColor.black
+                self.readerTextView.textColor = Colors.navy
                 self.readerTextView.backgroundColor = Colors.cream
                 self.optionsTableView.backgroundColor = Colors.cranberry
                 optionsTableView.reloadData()

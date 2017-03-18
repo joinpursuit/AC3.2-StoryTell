@@ -12,11 +12,7 @@ import FirebaseDatabase
 
 
 class LoginViewController: UIViewController {
-    
-    
-    
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Story Tell"
@@ -120,12 +116,7 @@ class LoginViewController: UIViewController {
             logButton.height.equalTo(logInContainerView.snp.height)
         }
         
-        
-        
     }
-    
-    
-    
     
     lazy var emailContainerView: UIView = {
         let view: UIView = UIView()
@@ -147,10 +138,10 @@ class LoginViewController: UIViewController {
         return view
     }()
     
-    lazy var emailTextField: UITextField = {
-        let textField: UITextField = UITextField()
-        textField.placeholder = "  Email"
-        textField.font = UIFont(name: "Cochin-BoldItalic", size: 20)
+    lazy var emailTextField: LeftPaddedTextField = {
+        let textField: LeftPaddedTextField = LeftPaddedTextField()
+        textField.placeholder = "Email"
+        textField.font = UIFont(name: "Cochin-Italic", size: 20)
         textField.backgroundColor = UIColor.white
         textField.layer.cornerRadius = 8
         textField.textColor = Colors.navy
@@ -158,10 +149,10 @@ class LoginViewController: UIViewController {
         return textField
     }()
     
-    lazy var passwordTextField: UITextField = {
-        let textField: UITextField = UITextField()
-        textField.placeholder = "  Password"
-        textField.font = UIFont(name: "Cochin-BoldItalic", size: 20)
+    lazy var passwordTextField: LeftPaddedTextField = {
+        let textField: LeftPaddedTextField = LeftPaddedTextField()
+        textField.placeholder = "Password"
+        textField.font = UIFont(name: "Cochin-Italic", size: 20)
         textField.backgroundColor = UIColor.white
         textField.layer.cornerRadius = 8
         textField.isSecureTextEntry = true
@@ -284,6 +275,18 @@ class LoginViewController: UIViewController {
     }
 
     
+    
+}
+
+class LeftPaddedTextField: UITextField {
+    
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        return CGRect(x: bounds.origin.x + 15, y: bounds.origin.y, width: bounds.width, height: bounds.height)
+    }
+    
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return CGRect(x: bounds.origin.x + 15, y: bounds.origin.y, width: bounds.width, height: bounds.height)
+    }
     
 }
 
