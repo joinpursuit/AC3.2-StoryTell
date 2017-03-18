@@ -153,6 +153,7 @@ class LoginViewController: UIViewController {
         textField.font = UIFont(name: "Cochin-BoldItalic", size: 20)
         textField.backgroundColor = UIColor.white
         textField.layer.cornerRadius = 8
+        textField.textColor = Colors.navy
         
         return textField
     }()
@@ -164,6 +165,7 @@ class LoginViewController: UIViewController {
         textField.backgroundColor = UIColor.white
         textField.layer.cornerRadius = 8
         textField.isSecureTextEntry = true
+        textField.textColor = Colors.navy
         
         return textField
     }()
