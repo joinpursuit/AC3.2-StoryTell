@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "S Logo Rounded Sq.png",
+      "filename" : "BranchYes.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "S Logo Rounded Sq-1.png",
+      "filename" : "BranchYes-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "S Logo Rounded Sq-2.png",
+      "filename" : "BranchYes-2.png",
       "scale" : "3x"
     }
   ],

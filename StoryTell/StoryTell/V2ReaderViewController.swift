@@ -15,7 +15,9 @@ class V2ReaderViewController: UIViewController {
     var readerText: String = String()
     var currentStitchKey: String!
     
-
+    var stackOfStoryKey: Stack = Stack<String>()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Colors.cream
@@ -23,6 +25,7 @@ class V2ReaderViewController: UIViewController {
         setupViewHierarchy()
         configureConstraints()
         currentStitchKey = story.linkPath
+        stackOfStoryKey.push(currentStitchKey)
         progressStory(currentStitchKey)
         
         navigationItem.title = "Reader"
@@ -32,20 +35,7 @@ class V2ReaderViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = Colors.cream
         navigationController?.navigationBar.tintColor = Colors.cranberry
         
-        var gearImage = UIImage(named: "gear")
         
-        gearImage = gearImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
-        
-        let gearButton = UIBarButtonItem(image: gearImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(optionsAction))
-        
-        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(backButtonTapped))
-        backButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
-        
-        var homeImage = UIImage(named: "homePage")
-        
-        homeImage = homeImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
-        
-        let homeButton = UIBarButtonItem(image: homeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(homeTapped))
         navigationItem.rightBarButtonItem = gearButton
         navigationItem.leftBarButtonItems = [backButton, homeButton]
     }
@@ -56,22 +46,32 @@ class V2ReaderViewController: UIViewController {
         nightModeAction()
         
     }
+    
+    // MARK: - Navigation Actions
     func optionsAction(){
-        
         if let navigation = navigationController {
             navigation.pushViewController(ReaderOptionsViewController(), animated: true)
             optionsTableView.reloadData()
-            
         }
     }
+    
     func homeTapped() {
         let newViewController = LandingPageViewController()
         self.navigationController?.pushViewController(newViewController, animated: true)
     }
+    
     func backButtonTapped() {
-        let _ = self.navigationController?.popViewController(animated: true)
+        if let previousKey = stackOfStoryKey.pop() {
+            progressStory(previousKey)
+        }
         
+        if stackOfStoryKey.peek() == nil {
+            backButton.isEnabled = false
+        }
     }
+    
+    
+    // MARK: - ThemesActions
     func nightModeAction() {
         
         if let status = UserDefaults.standard.object(forKey: "onOff") as? Bool {
@@ -101,12 +101,10 @@ class V2ReaderViewController: UIViewController {
             self.readerTextView.backgroundColor = Colors.cream
             self.optionsTableView.backgroundColor = Colors.cranberry
             optionsTableView.reloadData()
-            
-            
         }
         
     }
-  
+    
     
     
     // MARK: - Setup
@@ -140,13 +138,13 @@ class V2ReaderViewController: UIViewController {
     func progressStory(_ key: String) {
         
         let stitchValue = story.stitches[key]
-        
         readerText = (stitchValue?.content)!
         readerTextView.text = readerText
         currentStitchKey = key
+        
         optionsTableView.reloadData()
         
-        dump(currentStitchKey)
+        //dump(currentStitchKey)
     }
     
     // MARK: - Lazy Inits
@@ -157,7 +155,7 @@ class V2ReaderViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         tableView.backgroundColor = Colors.cranberry
-
+        
         
         return tableView
         
@@ -174,6 +172,39 @@ class V2ReaderViewController: UIViewController {
         return textView
     }()
     
+    
+    lazy var backButton: UIBarButtonItem = {
+        let barButton: UIBarButtonItem = UIBarButtonItem()
+        barButton.title = "Back"
+        barButton.style = UIBarButtonItemStyle.plain
+        barButton.target = self
+        barButton.action = #selector(backButtonTapped)
+        barButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
+        barButton.isEnabled = false
+        
+        return barButton
+    }()
+    
+    lazy var homeButton: UIBarButtonItem = {
+        let barButton: UIBarButtonItem = UIBarButtonItem()
+        barButton.style = UIBarButtonItemStyle.plain
+        barButton.target = self
+        barButton.action = #selector(homeTapped)
+        barButton.image = #imageLiteral(resourceName: "homePage")
+        
+        return barButton
+    }()
+    
+    lazy var gearButton: UIBarButtonItem = {
+        let barButton: UIBarButtonItem = UIBarButtonItem()
+        barButton.style = UIBarButtonItemStyle.plain
+        barButton.target = self
+        barButton.action = #selector(optionsAction)
+        barButton.image = #imageLiteral(resourceName: "gear")
+        
+        
+        return barButton
+    }()
     
 }
 
@@ -193,7 +224,7 @@ extension V2ReaderViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-       
+        
         if let status = UserDefaults.standard.object(forKey: "onOff") as? Bool {
             if status == true {
                 // true == night mode
@@ -220,7 +251,7 @@ extension V2ReaderViewController: UITableViewDelegate, UITableViewDataSource {
             
         }
         
-      
+        
         
         let stitch = story.stitches[currentStitchKey]
         
@@ -236,8 +267,10 @@ extension V2ReaderViewController: UITableViewDelegate, UITableViewDataSource {
         
         let stitch = story.stitches[currentStitchKey]
         
-        //unwrapped safely later
         
+        stackOfStoryKey.push(currentStitchKey)
+        backButton.isEnabled = true
+        //unwrapped safely later
         progressStory((stitch?.options[indexPath.row].link)!)
         
     }
