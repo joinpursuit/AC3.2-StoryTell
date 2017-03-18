@@ -26,6 +26,7 @@ class StitchTableViewCell: UITableViewCell {
 
         contentView.backgroundColor = Colors.cream
         textField = UITextField(frame: self.frame)
+        textField.font = UIFont(name: "Cochin", size: 20)
         self.contentView.addSubview(textField)
         
         self.contentView.addSubview(writeOptionButton)
@@ -49,6 +50,7 @@ class StitchTableViewCell: UITableViewCell {
         textField.snp.makeConstraints { (textField) in
             textField.leading.equalTo(contentView.snp.leading).inset(15)
             textField.centerY.equalTo(contentView.snp.centerY)
+            textField.trailing.equalTo(contentView.snp.trailing).inset(35)
             //textField.bottom.equalTo(contentView.snp.bottom)
         }
         // button needs to show change when clicked 
