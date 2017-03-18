@@ -119,7 +119,7 @@ extension LandingPageViewController: UITableViewDelegate, UITableViewDataSource 
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let destination = V2ReaderViewController()
+        let destination = ReaderTitlePageViewController()
         navigationController?.pushViewController(destination, animated: true)
     }
 }
