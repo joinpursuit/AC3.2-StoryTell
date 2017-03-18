@@ -71,7 +71,7 @@ class Stitch {
         var stitches:[String:Stitch] = [:]
         for (key, value) in dict {
             
-            dump(key)
+           // dump(key)
             if let newDict = value as? [String:Any] {
                 let stitch = Stitch(with: newDict, key: key)
                 
