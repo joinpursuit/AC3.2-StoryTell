@@ -7,6 +7,7 @@
 //
 
 import UIKit
+//import UIKit.UIGestureRecognizerSubclass
 
 class V2ReaderViewController: UIViewController {
     
@@ -16,6 +17,8 @@ class V2ReaderViewController: UIViewController {
     var currentStitchKey: String!
     
     var stackOfStoryKey: Stack = Stack<String>()
+    
+    var peekKey: String!
     
     
     override func viewDidLoad() {
@@ -38,7 +41,80 @@ class V2ReaderViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = gearButton
         navigationItem.leftBarButtonItems = [backButton, homeButton]
+        
+        
+        
     }
+    
+    
+    func longTap(_ sender : UIGestureRecognizer){
+        print("Long tap")
+        
+        if sender.state == .ended {
+            print("UIGestureRecognizerStateEnded")
+            //Do Whatever You want on End of Gesture
+        }
+        else if sender.state == .began {
+            print("UIGestureRecognizerStateBegan.")
+            peek(peekKey)
+            
+            //Do Whatever You want on Began of Gesture
+        }
+        
+        
+    }
+    
+    func peek(_ key: String){
+        
+        
+        
+        let stitchValue = story.stitches[key]
+        
+        
+        guard let shortedText = story.stitches[key]?.content else {return}
+        
+        
+        let peekCharacters: [Character] = Array(shortedText.characters)
+        var peekMessage:[Character] = []
+        
+        for (index,character) in peekCharacters.enumerated() {
+        
+            if index > 80 {
+                break
+            }
+            peekMessage.append(character)
+        }
+        
+        let alertController = UIAlertController(title: "Peek", message: "\(String(peekMessage))...", preferredStyle: .alert)
+        
+        
+        present(alertController, animated: true, completion: nil)
+        
+        let timer = DispatchTime.now() + 1.5
+        DispatchQueue.main.asyncAfter(deadline: timer) {
+            alertController.dismiss(animated: true, completion: nil)
+            
+        }
+        
+        
+     /*
+ 
+         let when = DispatchTime.now() + 5
+         DispatchQueue.main.asyncAfter(deadline: when){
+         // your code with delay
+         alert.dismiss(animated: true, completion: nil)
+ 
+ */
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,6 +137,8 @@ class V2ReaderViewController: UIViewController {
     }
     
     func backButtonTapped() {
+        
+        
         if let previousKey = stackOfStoryKey.pop() {
             progressStory(previousKey)
         }
@@ -251,6 +329,11 @@ extension V2ReaderViewController: UITableViewDelegate, UITableViewDataSource {
             
         }
         
+        // Long Press
+        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.longTap(_:)))
+        
+        cell.addGestureRecognizer(longGesture)
+        
         
         
         let stitch = story.stitches[currentStitchKey]
@@ -271,7 +354,17 @@ extension V2ReaderViewController: UITableViewDelegate, UITableViewDataSource {
         stackOfStoryKey.push(currentStitchKey)
         backButton.isEnabled = true
         //unwrapped safely later
+        
         progressStory((stitch?.options[indexPath.row].link)!)
+        
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        
+        let stitch = story.stitches[currentStitchKey]
+        
+        peekKey = stitch?.options[indexPath.row].link
         
     }
 }
