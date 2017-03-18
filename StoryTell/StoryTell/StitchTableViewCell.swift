@@ -64,10 +64,10 @@ class StitchTableViewCell: UITableViewCell {
     }
     
     // MARK: - Actions
-//    func writeOptionAction(_ sender: UIButton){
-//        let vc = StitchViewController()
-//        
-//    }
+    func writeOptionAction(_ sender: UIButton){
+        let vc = StitchViewController()
+        
+    }
     
     
     // MARK: - Lazy Inits
@@ -76,7 +76,7 @@ class StitchTableViewCell: UITableViewCell {
         let button: UIButton = UIButton()
         
         button.setImage(#imageLiteral(resourceName: "writerArrow"), for: .normal)
-        button.addTarget(self, action: #selector(StitchViewController.refreshView), for: .touchUpInside)
+        button.addTarget(self, action: #selector(writeOptionAction), for: .touchUpInside)
         
         return button
     }()
