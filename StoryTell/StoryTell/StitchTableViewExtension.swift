@@ -44,6 +44,7 @@ extension StitchViewController: UITableViewDataSource, UITableViewDelegate {
             self.tableView.beginUpdates()
             self.tableView.deleteRows(at: [indexPath], with: .fade)
             self.tableView.endUpdates()
+            self.tableView.setEditing(false, animated: true)
         }
     }
     
