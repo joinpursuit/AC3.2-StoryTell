@@ -26,6 +26,7 @@ class StitchTableViewCell: UITableViewCell {
 
         contentView.backgroundColor = Colors.cream
         textField = UITextField(frame: self.frame)
+        textField.font = UIFont(name: "Cochin", size: 20)
         self.contentView.addSubview(textField)
         
         self.contentView.addSubview(writeOptionButton)
