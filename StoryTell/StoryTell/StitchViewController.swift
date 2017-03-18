@@ -11,8 +11,6 @@ import UIKit
 class StitchViewController: UIViewController {
     var prompts = [String]()
     var options = [Option]()
-    var tableView = UITableView()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +20,6 @@ class StitchViewController: UIViewController {
         configureConstraints()
         setupNavigation()
         addObservers()
-        
-        tableView.backgroundColor = Colors.cream
-        
     }
     
     
@@ -101,25 +96,21 @@ class StitchViewController: UIViewController {
             done.bottom.equalTo(proseTextView.snp.top)
         }
         
-        
         proseTextView.snp.makeConstraints { (textView) in
             textView.leading.trailing.equalToSuperview()
             textView.top.equalToSuperview().offset(50)
             textView.height.equalToSuperview().dividedBy(2)
-            
         }
         
         branchButton.snp.makeConstraints { (button) in
             button.top.equalTo(proseTextView.snp.bottom)
             button.leading.equalToSuperview().inset(20)
-            
         }
         
         deleteButton.snp.makeConstraints { (delete) in
             delete.top.equalTo(proseTextView.snp.bottom)
             delete.trailing.equalToSuperview().inset(20)
         }
-        
         
         tableView.snp.makeConstraints { (tableView) in
             tableView.leading.trailing.equalToSuperview()
@@ -133,9 +124,9 @@ class StitchViewController: UIViewController {
     //MARK: - Action
     
     func branchButtonAction(_ sender: UIButton) {
-        let alertController = UIAlertController(title: "New Story Branch", message: "Enter the prompt text for your new story branch (for example: \"She took the path less travelled by.\")", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "New Story Branch", message: "Enter the prompt text for your new story branch (example: \"She took the path less travelled by.\")", preferredStyle: .alert)
         
-        let confirmAction = UIAlertAction(title: "Confirm", style: .default) { (_) in
+        let confirmAction = UIAlertAction(title: "Done", style: .default) { (_) in
             let branchField = alertController.textFields![0] as UITextField
             
             if branchField.text != "" {
@@ -187,12 +178,12 @@ class StitchViewController: UIViewController {
     
     // MARK: - Lazy Inits
     
-    //    lazy var tableView: UITableView = {
-    //        let tableView: UITableView = UITableView()
-    //        //tableView.backgroundColor = UIColor.black
-    //        return tableView
-    //
-    //    }()
+        lazy var tableView: UITableView = {
+            let tableView: UITableView = UITableView()
+            tableView.backgroundColor = Colors.cream
+            return tableView
+    
+        }()
     
     lazy var proseTextView: UITextView = {
         let textView: UITextView = UITextView()
