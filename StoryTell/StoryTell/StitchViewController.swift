@@ -24,6 +24,20 @@ class StitchViewController: UIViewController {
     
     
     // MARK: - Setup
+    func setupViewHierarchy() {
+        self.edgesForExtendedLayout = []
+        self.view.addSubview(proseTextView)
+        self.view.addSubview(tableView)
+        self.view.addSubview(branchButton)
+        self.view.addSubview(deleteButton)
+        self.view.addSubview(doneWithTextViewButton)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(StitchTableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
     func homeTapped() {
         let newViewController = LandingPageViewController()
         self.navigationController?.pushViewController(newViewController, animated: true)
@@ -48,7 +62,7 @@ class StitchViewController: UIViewController {
         let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(backButtonTapped))
         
         backButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
-
+        
         
         let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(backButtonTapped)) //Need to change action to show Publish Alert
         publishButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
@@ -73,51 +87,6 @@ class StitchViewController: UIViewController {
     func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(StitchViewController.updateTextView(notification:)), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(StitchViewController.updateTextView(notification:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
-        
-    }
-    
-    func setupViewHierarchy() {
-        self.edgesForExtendedLayout = []
-        self.view.addSubview(proseTextView)
-        self.view.addSubview(tableView)
-        self.view.addSubview(branchButton)
-        self.view.addSubview(deleteButton)
-        self.view.addSubview(doneWithTextViewButton)
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(StitchTableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.rowHeight = UITableViewAutomaticDimension
-    }
-    
-    private func configureConstraints(){
-        doneWithTextViewButton.snp.makeConstraints { (done) in
-            done.trailing.equalToSuperview()
-            done.bottom.equalTo(proseTextView.snp.top)
-        }
-        
-        proseTextView.snp.makeConstraints { (textView) in
-            textView.leading.trailing.equalToSuperview()
-            textView.top.equalToSuperview().offset(50)
-            textView.height.equalToSuperview().dividedBy(2)
-        }
-        
-        branchButton.snp.makeConstraints { (button) in
-            button.top.equalTo(proseTextView.snp.bottom)
-            button.leading.equalToSuperview().inset(20)
-        }
-        
-        deleteButton.snp.makeConstraints { (delete) in
-            delete.top.equalTo(proseTextView.snp.bottom)
-            delete.trailing.equalToSuperview().inset(20)
-        }
-        
-        tableView.snp.makeConstraints { (tableView) in
-            tableView.leading.trailing.equalToSuperview()
-            tableView.bottom.equalToSuperview()
-            tableView.centerX.equalToSuperview()
-            tableView.height.equalToSuperview().dividedBy(3)
-        }
         
     }
     
@@ -157,33 +126,64 @@ class StitchViewController: UIViewController {
         alertController.addAction(cancelAction)
         
         self.present(alertController, animated: true, completion: nil)
-        
     }
     
     func deleteBranch(_ sender: UIButton) {
         tableView.setEditing(true, animated: true)
     }
     
-    func deleteAction(){
-        print("All your base are belong to us....DELETE")
-        
-    }
-    
     func doneAction(){
         proseTextView.resignFirstResponder()
+    }
+    
+    func refreshView(_ sender: UIButton) {
+        proseTextView.text = ""
+        prompts = []
+        tableView.reloadData()
+    }
+    
+    //MARK: - Constraints
+    
+       private func configureConstraints(){
+        doneWithTextViewButton.snp.makeConstraints { (done) in
+            done.trailing.equalToSuperview()
+            done.bottom.equalTo(proseTextView.snp.top)
+        }
         
+        proseTextView.snp.makeConstraints { (textView) in
+            textView.leading.trailing.equalToSuperview()
+            textView.top.equalToSuperview().offset(50)
+            textView.height.equalToSuperview().dividedBy(2)
+        }
         
+        branchButton.snp.makeConstraints { (button) in
+            button.top.equalTo(proseTextView.snp.bottom)
+            button.leading.equalToSuperview().inset(20)
+        }
+        
+        deleteButton.snp.makeConstraints { (delete) in
+            delete.top.equalTo(proseTextView.snp.bottom)
+            delete.trailing.equalToSuperview().inset(20)
+        }
+        
+        tableView.snp.makeConstraints { (tableView) in
+            tableView.leading.trailing.equalToSuperview()
+            tableView.bottom.equalToSuperview()
+            tableView.centerX.equalToSuperview()
+            tableView.height.equalToSuperview().dividedBy(3)
+        }
         
     }
     
     // MARK: - Lazy Inits
     
-        lazy var tableView: UITableView = {
-            let tableView: UITableView = UITableView()
-            tableView.backgroundColor = Colors.cream
-            return tableView
-    
-        }()
+    lazy var tableView: UITableView = {
+        let tableView: UITableView = UITableView()
+        tableView.backgroundColor = Colors.cream
+        tableView.separatorStyle = .none
+        return tableView
+        
+    }()
     
     lazy var proseTextView: UITextView = {
         let textView: UITextView = UITextView()
@@ -206,7 +206,6 @@ class StitchViewController: UIViewController {
         button.setTitle("Branch", for: .normal)
         button.addTarget(self, action: #selector(branchButtonAction), for: .touchUpInside)
         
-        
         return button
     }()
     
@@ -216,11 +215,10 @@ class StitchViewController: UIViewController {
         button.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         button.layer.cornerRadius = 9
         button.clipsToBounds = true
- 
-       button.backgroundColor = UIColor.red
+        
+        button.backgroundColor = UIColor.red
         button.setTitle("Delete", for: .normal)
         button.addTarget(self, action: #selector(deleteBranch), for: .touchUpInside)
-        
         
         return button
     }()
@@ -235,8 +233,7 @@ class StitchViewController: UIViewController {
         button.setTitle("Done", for: .normal)
         button.addTarget(self, action: #selector(doneAction), for: .touchUpInside)
         
-        
-       return button
+        return button
     }()
     
     
