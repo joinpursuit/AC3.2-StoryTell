@@ -102,7 +102,7 @@ class StitchViewController: UIViewController {
         
         
         proseTextView.snp.makeConstraints { (textView) in
-            textView.leading.trailing.equalToSuperview()
+            textView.leading.trailing.equalToSuperview().inset(10)
             textView.top.equalToSuperview().offset(50)
             textView.height.equalToSuperview().dividedBy(2)
             

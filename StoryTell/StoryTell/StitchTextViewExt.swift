@@ -12,8 +12,8 @@ extension StitchViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.lightGray {
             textView.text = nil
-            textView.textColor = UIColor.black
-            print("I am writing a title NOW")
+            textView.textColor = Colors.navy
+            print("I am writing NOW")
         }
         textView.becomeFirstResponder()
     }
