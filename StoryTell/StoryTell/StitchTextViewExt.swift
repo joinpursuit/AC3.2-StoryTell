@@ -33,7 +33,9 @@ extension StitchViewController: UITextViewDelegate {
     }
     
     
-
+    func textViewDidChange(_ textView: UITextView) {
+        textView.scrollRangeToVisible(textView.selectedRange)
+    }
     
 
 }
