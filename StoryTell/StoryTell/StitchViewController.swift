@@ -22,6 +22,10 @@ class StitchViewController: UIViewController {
         addObservers()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        toolbar()
+    }
+    
     
     // MARK: - Setup
     func setupViewHierarchy() {
@@ -36,6 +40,20 @@ class StitchViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(StitchTableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
+    func toolbar() {
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonClicked))
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let tb = UIToolbar()
+        tb.sizeToFit()
+        tb.setItems([flexSpace, doneButton], animated: false)
+        proseTextView.inputAccessoryView = tb
+        
+    }
+    
+    func doneButtonClicked() {
+        proseTextView.resignFirstResponder()
     }
     
     func homeTapped() {
@@ -93,6 +111,7 @@ class StitchViewController: UIViewController {
     //MARK: - Action
     
     func branchButtonAction(_ sender: UIButton) {
+        tableView.setEditing(false, animated: true)
         let alertController = UIAlertController(title: "New Story Branch", message: "Enter the prompt text for your new story branch (example: \"She took the path less travelled by.\")", preferredStyle: .alert)
         
         let confirmAction = UIAlertAction(title: "Done", style: .default) { (_) in
@@ -137,9 +156,14 @@ class StitchViewController: UIViewController {
     }
     
     func refreshView(_ sender: UIButton) {
-        proseTextView.text = ""
-        prompts = []
-        tableView.reloadData()
+        print("You called me")
+        DispatchQueue.main.async {
+            self.proseTextView.text = ""
+            self.proseTextView.setNeedsDisplay()
+            self.prompts = []
+            self.tableView.reloadData()
+        }
+        
     }
     
     //MARK: - Constraints
@@ -191,6 +215,7 @@ class StitchViewController: UIViewController {
         textView.text = "Once upon a time..."
         textView.font = UIFont(name: "Cochin", size: 30)
         textView.backgroundColor = Colors.cream
+        textView.isHidden = false
         
         return textView
     }()

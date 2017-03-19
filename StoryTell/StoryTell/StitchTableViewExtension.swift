@@ -28,6 +28,9 @@ extension StitchViewController: UITableViewDataSource, UITableViewDelegate {
         cell.textField.tag = indexPath.row
         cell.textField.text = prompts[indexPath.row]
         
+        cell.writeOptionButton.tag = indexPath.row
+        let button = cell.writeOptionButton
+        button.addTarget(self, action: #selector(refreshView(_:)), for: .touchUpInside)
         
         return cell
     }
