@@ -157,12 +157,10 @@ class StitchViewController: UIViewController {
     
     func refreshView(_ sender: UIButton) {
         print("You called me")
-        DispatchQueue.main.async {
             self.proseTextView.text = ""
             self.proseTextView.setNeedsDisplay()
             self.prompts = []
             self.tableView.reloadData()
-        }
         
     }
     
