@@ -20,6 +20,7 @@ class StitchViewController: UIViewController {
         configureConstraints()
         setupNavigation()
         addObservers()
+        toolbar()
     }
     
     
@@ -30,12 +31,22 @@ class StitchViewController: UIViewController {
         self.view.addSubview(tableView)
         self.view.addSubview(branchButton)
         self.view.addSubview(deleteButton)
-        self.view.addSubview(doneWithTextViewButton)
+        self.view.addSubview(promptLabel)
         
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(StitchTableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
+    func toolbar() {
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneAction))
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let tb = UIToolbar()
+        tb.sizeToFit()
+        tb.setItems([flexSpace, doneButton], animated: false)
+        proseTextView.inputAccessoryView = tb
+        
     }
     
     func homeTapped() {
@@ -64,7 +75,7 @@ class StitchViewController: UIViewController {
         backButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
         
         
-        let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(backButtonTapped)) //Need to change action to show Publish Alert
+        let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(publishButtonTapped))
         publishButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
         
         var outlineImage = UIImage(named: "outlinePage")
@@ -93,6 +104,7 @@ class StitchViewController: UIViewController {
     //MARK: - Action
     
     func branchButtonAction(_ sender: UIButton) {
+        tableView.setEditing(false, animated: true)
         let alertController = UIAlertController(title: "New Story Branch", message: "Enter the prompt text for your new story branch (example: \"She took the path less travelled by.\")", preferredStyle: .alert)
         
         let confirmAction = UIAlertAction(title: "Done", style: .default) { (_) in
@@ -137,45 +149,78 @@ class StitchViewController: UIViewController {
     }
     
     func refreshView(_ sender: UIButton) {
-        proseTextView.text = ""
-        prompts = []
-        tableView.reloadData()
+        print("You called me")
+        self.proseTextView.text = ""
+        self.proseTextView.setNeedsDisplay()
+        self.proseTextView.textColor = .lightGray
+        self.proseTextView.text = "I work"  ///////Placeholder
+        promptLabel.isHidden = false
+        promptLabel.text = ""
+        self.prompts = []
+        self.tableView.reloadData()
+        
     }
+    func publishButtonTapped() {
+        let alertController = UIAlertController(title: "Coming Soon!", message: "You found a future feature. Soon Story Tell will allow you to publish and share your story with other Story Tell users.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+            (result : UIAlertAction) -> Void in
+            print("OK")
+        }
+        
+        
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)    }
     
     //MARK: - Constraints
     
-       private func configureConstraints(){
-        doneWithTextViewButton.snp.makeConstraints { (done) in
-            done.trailing.equalToSuperview()
-            done.bottom.equalTo(proseTextView.snp.top)
+    private func configureConstraints(){
+        promptLabel.snp.makeConstraints { (label) in
+            label.top.equalToSuperview().offset(20)
+            label.leading.equalToSuperview().offset(15)
+            label.trailing.equalToSuperview().inset(15)
         }
-        
         proseTextView.snp.makeConstraints { (textView) in
-            textView.leading.trailing.equalToSuperview()
-            textView.top.equalToSuperview().offset(50)
+            textView.leading.equalToSuperview().offset(15)
+            textView.trailing.equalToSuperview().inset(15)
+            textView.top.equalTo(promptLabel.snp.bottom).offset(4)
             textView.height.equalToSuperview().dividedBy(2)
         }
         
         branchButton.snp.makeConstraints { (button) in
-            button.top.equalTo(proseTextView.snp.bottom)
+            button.top.equalTo(proseTextView.snp.bottom).offset(8)
             button.leading.equalToSuperview().inset(20)
+            button.height.equalTo(50)
+            button.width.equalTo(50)
+            
         }
         
         deleteButton.snp.makeConstraints { (delete) in
-            delete.top.equalTo(proseTextView.snp.bottom)
+            delete.top.equalTo(proseTextView.snp.bottom).offset(8)
             delete.trailing.equalToSuperview().inset(20)
+            delete.height.equalTo(50)
+            delete.width.equalTo(50)
         }
         
         tableView.snp.makeConstraints { (tableView) in
-            tableView.leading.trailing.equalToSuperview()
+            tableView.leading.trailing.equalToSuperview().inset(20)
             tableView.bottom.equalToSuperview()
             tableView.centerX.equalToSuperview()
-            tableView.height.equalToSuperview().dividedBy(3)
+            tableView.height.equalToSuperview().dividedBy(3.75)
         }
         
     }
     
     // MARK: - Lazy Inits
+    
+    lazy var promptLabel: UITextField = {
+        let label = UITextField()
+        label.isUserInteractionEnabled = false
+        label.isHidden = true
+        label.textColor = UIColor.lightGray
+        label.font = UIFont(name: "Cochin", size: 15)
+        return label
+    }()
     
     lazy var tableView: UITableView = {
         let tableView: UITableView = UITableView()
@@ -189,8 +234,9 @@ class StitchViewController: UIViewController {
         let textView: UITextView = UITextView()
         textView.textColor = UIColor.lightGray
         textView.text = "Once upon a time..."
-        textView.font = UIFont(name: "Cochin", size: 30)
+        textView.font = UIFont(name: "Cochin", size: 25)
         textView.backgroundColor = Colors.cream
+        textView.isHidden = false
         
         return textView
     }()
@@ -210,7 +256,7 @@ class StitchViewController: UIViewController {
         button.showsTouchWhenHighlighted = true
         button.contentVerticalAlignment = UIControlContentVerticalAlignment.bottom
         
-
+        
         button.addTarget(self, action: #selector(branchButtonAction), for: .touchUpInside)
         
         return button
@@ -234,32 +280,4 @@ class StitchViewController: UIViewController {
         
         return button
     }()
-    
-    lazy var doneWithTextViewButton: UIButton = {
-        let button: UIButton = UIButton(type: .custom)
-
-        button.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-        button.layer.cornerRadius = 9
-        button.clipsToBounds = true
-        
-        button.backgroundColor = Colors.cranberry
-        button.setTitle("Done\nTyping", for: .normal)
-        button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
-        button.titleLabel?.textAlignment = .center
-        button.setTitleColor(Colors.cream, for: .normal)
-        button.titleLabel?.font = UIFont(name: "Cochin-Italic", size: 16)
-        button.contentEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 5)
-
-        button.addTarget(self, action: #selector(doneAction), for: .touchUpInside)
-        
-        return button
-    }()
-    
-    
-    
 }
-
-
-
-
-

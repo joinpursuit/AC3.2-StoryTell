@@ -16,6 +16,7 @@ extension StitchViewController: UITextViewDelegate {
             print("I am writing NOW")
         }
         textView.becomeFirstResponder()
+        promptLabel.text = "I work" ///////Placeholder
     }
     
     func updateTextView(notification:Notification) {
@@ -33,7 +34,9 @@ extension StitchViewController: UITextViewDelegate {
     }
     
     
-
+    func textViewDidChange(_ textView: UITextView) {
+        textView.scrollRangeToVisible(textView.selectedRange)
+    }
     
 
 }
