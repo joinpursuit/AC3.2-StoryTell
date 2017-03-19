@@ -20,9 +20,6 @@ class StitchViewController: UIViewController {
         configureConstraints()
         setupNavigation()
         addObservers()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
         toolbar()
     }
     
@@ -42,10 +39,11 @@ class StitchViewController: UIViewController {
     }
     
     func toolbar() {
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneAction))
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let tb = UIToolbar()
         tb.sizeToFit()
-        tb.setItems([flexSpace], animated: false)
+        tb.setItems([flexSpace, doneButton], animated: false)
         proseTextView.inputAccessoryView = tb
         
     }
