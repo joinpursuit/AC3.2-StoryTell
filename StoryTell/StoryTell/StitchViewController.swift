@@ -34,7 +34,6 @@ class StitchViewController: UIViewController {
         self.view.addSubview(tableView)
         self.view.addSubview(branchButton)
         self.view.addSubview(deleteButton)
-        self.view.addSubview(doneWithTextViewButton)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -43,17 +42,12 @@ class StitchViewController: UIViewController {
     }
     
     func toolbar() {
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonClicked))
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let tb = UIToolbar()
         tb.sizeToFit()
-        tb.setItems([flexSpace, doneButton], animated: false)
+        tb.setItems([flexSpace], animated: false)
         proseTextView.inputAccessoryView = tb
         
-    }
-    
-    func doneButtonClicked() {
-        proseTextView.resignFirstResponder()
     }
     
     func homeTapped() {
@@ -167,11 +161,6 @@ class StitchViewController: UIViewController {
     //MARK: - Constraints
     
        private func configureConstraints(){
-        doneWithTextViewButton.snp.makeConstraints { (done) in
-            done.trailing.equalToSuperview().inset(15)
-            done.bottom.equalTo(proseTextView.snp.top)
-        }
-        
         proseTextView.snp.makeConstraints { (textView) in
             textView.leading.trailing.equalToSuperview()
             textView.top.equalToSuperview().offset(50)
@@ -262,32 +251,4 @@ class StitchViewController: UIViewController {
         
         return button
     }()
-    
-    lazy var doneWithTextViewButton: UIButton = {
-        let button: UIButton = UIButton(type: .custom)
-
-        button.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-        button.layer.cornerRadius = 9
-        button.clipsToBounds = true
-        
-        button.backgroundColor = Colors.cranberry
-        button.setTitle("Done\nTyping", for: .normal)
-        button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
-        button.titleLabel?.textAlignment = .center
-        button.setTitleColor(Colors.cream, for: .normal)
-        button.titleLabel?.font = UIFont(name: "Cochin-Italic", size: 16)
-        button.contentEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 5)
-
-        button.addTarget(self, action: #selector(doneAction), for: .touchUpInside)
-        
-        return button
-    }()
-    
-    
-    
 }
-
-
-
-
-
