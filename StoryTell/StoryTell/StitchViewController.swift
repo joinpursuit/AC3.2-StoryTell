@@ -31,6 +31,7 @@ class StitchViewController: UIViewController {
         self.view.addSubview(tableView)
         self.view.addSubview(branchButton)
         self.view.addSubview(deleteButton)
+        self.view.addSubview(promptLabel)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -149,10 +150,14 @@ class StitchViewController: UIViewController {
     
     func refreshView(_ sender: UIButton) {
         print("You called me")
-            self.proseTextView.text = ""
-            self.proseTextView.setNeedsDisplay()
-            self.prompts = []
-            self.tableView.reloadData()
+        self.proseTextView.text = ""
+        self.proseTextView.setNeedsDisplay()
+        self.proseTextView.textColor = .lightGray
+        self.proseTextView.text = "I work"  ///////Placeholder
+        promptLabel.isHidden = false
+        promptLabel.text = ""
+        self.prompts = []
+        self.tableView.reloadData()
         
     }
     func publishButtonTapped() {
@@ -169,10 +174,16 @@ class StitchViewController: UIViewController {
     
     //MARK: - Constraints
     
-       private func configureConstraints(){
+    private func configureConstraints(){
+        promptLabel.snp.makeConstraints { (label) in
+            label.top.equalToSuperview().offset(20)
+            label.leading.equalToSuperview().offset(15)
+            label.trailing.equalToSuperview().inset(15)
+        }
         proseTextView.snp.makeConstraints { (textView) in
-            textView.leading.trailing.equalToSuperview()
-            textView.top.equalToSuperview().offset(50)
+            textView.leading.equalToSuperview().offset(15)
+            textView.trailing.equalToSuperview().inset(15)
+            textView.top.equalTo(promptLabel.snp.bottom).offset(4)
             textView.height.equalToSuperview().dividedBy(2)
         }
         
@@ -202,6 +213,15 @@ class StitchViewController: UIViewController {
     
     // MARK: - Lazy Inits
     
+    lazy var promptLabel: UITextField = {
+        let label = UITextField()
+        label.isUserInteractionEnabled = false
+        label.isHidden = true
+        label.textColor = UIColor.lightGray
+        label.font = UIFont(name: "Cochin", size: 15)
+        return label
+    }()
+    
     lazy var tableView: UITableView = {
         let tableView: UITableView = UITableView()
         tableView.backgroundColor = Colors.cream
@@ -214,7 +234,7 @@ class StitchViewController: UIViewController {
         let textView: UITextView = UITextView()
         textView.textColor = UIColor.lightGray
         textView.text = "Once upon a time..."
-        textView.font = UIFont(name: "Cochin", size: 30)
+        textView.font = UIFont(name: "Cochin", size: 25)
         textView.backgroundColor = Colors.cream
         textView.isHidden = false
         
@@ -236,7 +256,7 @@ class StitchViewController: UIViewController {
         button.showsTouchWhenHighlighted = true
         button.contentVerticalAlignment = UIControlContentVerticalAlignment.bottom
         
-
+        
         button.addTarget(self, action: #selector(branchButtonAction), for: .touchUpInside)
         
         return button
