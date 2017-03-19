@@ -76,7 +76,7 @@ class StitchViewController: UIViewController {
         backButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
         
         
-        let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(backButtonTapped)) //Need to change action to show Publish Alert
+        let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(publishButtonTapped))
         publishButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
         
         var outlineImage = UIImage(named: "outlinePage")
@@ -157,6 +157,17 @@ class StitchViewController: UIViewController {
             self.tableView.reloadData()
         
     }
+    func publishButtonTapped() {
+        let alertController = UIAlertController(title: "Coming Soon!", message: "You found a future feature. Soon Story Tell will allow you to publish and share your story with other Story Tell users.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+            (result : UIAlertAction) -> Void in
+            print("OK")
+        }
+        
+        
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)    }
     
     //MARK: - Constraints
     
