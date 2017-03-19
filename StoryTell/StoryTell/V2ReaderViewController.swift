@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//import UIKit.UIGestureRecognizerSubclass
 
 class V2ReaderViewController: UIViewController {
     
@@ -66,11 +65,6 @@ class V2ReaderViewController: UIViewController {
     
     func peek(_ key: String){
         
-        
-        
-        let stitchValue = story.stitches[key]
-        
-        
         guard let shortedText = story.stitches[key]?.content else {return}
         
         
@@ -97,24 +91,7 @@ class V2ReaderViewController: UIViewController {
         }
         
         
-     /*
- 
-         let when = DispatchTime.now() + 5
-         DispatchQueue.main.asyncAfter(deadline: when){
-         // your code with delay
-         alert.dismiss(animated: true, completion: nil)
- 
- */
-        
-        
-        
     }
-    
-    
-    
-    
-    
-    
     
     
     override func viewWillAppear(_ animated: Bool) {
