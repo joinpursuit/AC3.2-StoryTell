@@ -8,521 +8,36 @@
         "editorData": {
             "textSize": 0,
             "libraryVisible": false,
-            "authorName": "Gabriel",
+            "authorName": "Gabriel Breshears",
             "playPoint": "butInTruthThereW"
         },
         "optionMirroring": true,
         "stitches": {
-            "youShookHisHand": {
+            
+            
+          
+         
+          
+           
+           
+         
+          
+           
+           
+           
+          
+         
+         
+           
+         
+           
+            
+         
+         
+          
+                       "whileIWasNeverLe": {
                 "content": [
-                            "\"You shook his hand.\"",
-                            {
-                            "divert": "iDidStoodUpFromM"
-                            }
-                            ]
-            },
-            "someKindOfGameWa": {
-                "content": [
-                            "\"Some kind of game?\" {watson opens box:Taking the string and peg from the box, I began attempting to thread the cord around the discs in some fashion.| I leant forward, the better to look into the box in Holmes' hand.}",
-                            {
-                            "divert": "noGameSomethingO"
-                            }
-                            ]
-            },
-            "iHaveNoIdeaWhatT": {
-                "content": [
-                            "\"I have no idea what that means,\" I complained.",
-                            {
-                            "divert": "andTheresNoReaso"
-                            }
-                            ]
-            },
-            "wellThenIReplied": {
-                "content": [
-                            "\"Well, then,\" I replied, lifting a document near by the foot of my chair. \"Let us see about that.\" The bundle I had chosen was no less than seventy pages of close writing. \"Why don't you tell me the tale of this case in my hand, word for word?\"",
-                            {
-                            "divert": "holmesLookedBack"
-                            },
-                            {
-                            "flagName": "bold + 1"
-                            }
-                            ]
-            },
-            "aCaseWithLargeIs": {
-                "content": [
-                            "\"A case with large issues at stake, certainly, although I didn't know that to begin with. At first, I thought nothing more than that I was seeing an old friend from college. Reginald Musgrave, an aristocratic fellow and a scion of one of the very oldest families in the kingdom, established in the Manor House of Hurlstone, ",
-                            {
-                            "runOn": true
-                            },
-                            {
-                            "divert": "perhapsTheOldest"
-                            },
-                            {
-                            "flagName": "known from college"
-                            }
-                            ]
-            },
-            "holmesResumedHis": {
-                "content": [
-                            "Holmes resumed his seat, picking his way across the bundled stacks of manuscripts that littered the floor. ",
-                            {
-                            "divert": "burnPapersForSuc"
-                            },
-                            {
-                            "notIfCondition": "stood up"
-                            },
-                            {
-                            "pageNum": -1
-                            }
-                            ]
-            },
-            "iAmQuiteComforta": {
-                "content": [
-                            "\"I am quite comfortable here,\" I replied, waving away the box. \"Tell your story, if you must, but do not trouble me to get up from under my blanket.\"",
-                            {
-                            "divert": "heLookedBackAtMe"
-                            },
-                            {
-                            "flagName": "mischevious + 1"
-                            }
-                            ]
-            },
-            "enoughIDropTheBu": {
-                "content": [
-                            "\"Enough.\" I drop the bundle to the carpet. \"You are quite right.\"",
-                            {
-                            "divert": "myDearWatsonHolm"
-                            },
-                            {
-                            "flagName": "mischevious-1"
-                            }
-                            ]
-            },
-            "perhapsTheOldest": {
-                "content": [
-                            "perhaps the oldest inhabited building in the country.\"",
-                            {
-                            "ifConditions": null,
-                            "linkPath": "youVisitedHimInH",
-                            "option": "\"You visited him?\"",
-                            "notIfConditions": null
-                            },
-                            {
-                            "ifConditions": null,
-                            "linkPath": "heCameToSeeYou",
-                            "option": "\"He came to see you.\"",
-                            "notIfConditions": null
-                            }
-                            ]
-            },
-            "iDidStoodUpFromM": {
-                "content": [
-                            "\"I did. Stood up from my chair and welcomed him in. 'How has all gone with you, Musgrave?' I asked.",
-                            {
-                            "divert": "heOnlyShookHisHe"
-                            }
-                            ]
-            },
-            "letMeFindAnother": {
-                "content": [
-                            "\"Let me find another, then. {mischevious > 1:That one was near the top of the pile and you will have seen it more frequently.|One bout of one is hardly enough to decide a contest.}\"",
-                            {
-                            "divert": "myDearWatsonHolm"
-                            }
-                            ]
-            },
-            "iGotToMyFeetAndS": {
-                "content": [
-                            "I got to my feet, and scuttled a few more coals onto the embers of the fire. They took quickly and the room began to warm a little. A rogue spark jumped and landed on one of the many piles of papers lying about the room, and I quickly batted it down.",
-                            {
-                            "ifConditions": null,
-                            "linkPath": "youShouldTidyThi",
-                            "option": "\"You should tidy this place, Holmes.\"",
-                            "notIfConditions": null
-                            },
-                            {
-                            "ifConditions": null,
-                            "linkPath": "iResumedMySeatPi",
-                            "option": "\"Why do you keep so many papers?\"",
-                            "notIfConditions": null
-                            },
-                            {
-                            "flagName": "stood up"
-                            },
-                            {
-                            "notIfCondition": "burn papers"
-                            }
-                            ]
-            },
-            "veryWellThenLets": {
-                "content": [
-                            "\"Very well, then. Let's have it.\"",
-                            {
-                            "divert": "sherlockHolmesWa"
-                            },
-                            {
-                            "flagName": "mischevious + 1"
-                            }
-                            ]
-            },
-            "soMuchSoMyDearWa": {
-                "content": [
-                            "\"So much so, my dear Watson, that they /=are=/ a history.\"",
-                            {
-                            "divert": "whatDoYouMeanByT"
-                            }
-                            ]
-            },
-            "iKnowItYourHabit": {
-                "content": [
-                            "\"I know it your habit to begin tales with the weather and setting - 'It was a hot summer's day...' or 'It was a long autumn morning.' Well, I cannot remember the detail and I will refrain from inventing it. Let us simply say this. ",
-                            {
-                            "runOn": true
-                            },
-                            {
-                            "divert": "heWalkedIntoMyRo"
-                            }
-                            ]
-            },
-            "youDoMeADisservi": {
-                "content": [
-                            "\"You do me a disservice,\" I protested, returning my eyes to the document in front of me. \"I am telling you the name is as I read it, and if you cannot detail the case, then I believe I have won our little wager of a moment ago.\"",
-                            {
-                            "divert": "itIsYouWhoDoesMe"
-                            },
-                            {
-                            "flagName": "mischevious + 1"
-                            }
-                            ]
-            },
-            "wellThenHeDeclar": {
-                "content": [
-                            "\"Well, then?\" he declared, with {mischevious> 2: an air of combative stubbornness | childish excitement}. \"Open it, and tell me what you make of the contents.\" Then he stepped back, grabbed a poker and pushed vigorously at the fresh coals {more coal: I|he} had previously added, as if by helping them to kindle he was stoking my own enthusiasm for his adventure.",
-                            {
-                            "divert": "iDidAsInstructed"
-                            },
-                            {
-                            "flagName": "watson opens box"
-                            }
-                            ]
-            },
-            "theAffairOfTheCh": {
-                "content": [
-                            "\"The Affair of the Chinese Tailor.\"",
-                            {
-                            "divert": "holmesLookedUpAt"
-                            },
-                            {
-                            "flagName": "okay attempt"
-                            },
-                            {
-                            "flagName": "chinese tailor"
-                            }
-                            ]
-            },
-            "wellMyBoyNotWats": {
-                "content": [
-                            "\"Well, my boy?\" {not watson opens box:  He tipped the box towards me|He waved a hand towards the box}.",
-                            {
-                            "ifConditions": null,
-                            "linkPath": "iNoddedSlightlyI",
-                            "option": "\"It is a curious collection.\"",
-                            "notIfConditions": null
-                            },
-                            {
-                            "ifConditions": null,
-                            "linkPath": "someKindOfGameWa",
-                            "option": "\"Some kind of game, perhaps?\"",
-                            "notIfConditions": null
-                            },
-                            {
-                            "ifConditions": null,
-                            "linkPath": "theItemsThemselv",
-                            "option": "Examine the items",
-                            "notIfConditions": null
-                            }
-                            ]
-            },
-            "butThereAreHundr": {
-                "content": [
-                            "\"But there are hundreds here,\" I replied. \"You can't possibly remember them all, not in detail. Why,\" and I snatched at one nearby bundle, \"this one here must be seventy pages of close writing. You cannot have it word for word.\"",
-                            {
-                            "divert": "tellMeTheTitleHe"
-                            }
-                            ]
-            },
-            "myDearWatsonIAmE": {
-                "content": [
-                            "\"My dear Watson, I am employing Cicero's /=method of loci=/, only here, in my own space. I know every document in this room by how it looks and where it is. Where you see disorder, I see quite a serviceable index.\"",
-                            {
-                            "ifConditions": null,
-                            "linkPath": "wellThenIReplied",
-                            "option": "\"We shall see about that.\"",
-                            "notIfConditions": null
-                            },
-                            {
-                            "ifConditions": null,
-                            "linkPath": "thenThatIsQuiteA",
-                            "option": "\"Then that is quite a feat of memory.\"",
-                            "notIfConditions": null
-                            }
-                            ]
-            },
-            "holmesNodsQuiteR": {
-                "content": [
-                            "Holmes nods. \"Quite right. ",
-                            {
-                            "runOn": true
-                            },
-                            {
-                            "divert": "forgiveMyTheatri"
-                            }
-                            ]
-            },
-            "theItemsThemselv": {
-                "content": [
-                            "The items themselves did not seem outwardly curious: they were made strange only by their placement alongside each other.",
-                            {
-                            "ifConditions": null,
-                            "linkPath": "theKeyWasSimplyA",
-                            "option": "Examine the key",
-                            "notIfConditions": [
-                                                {
-                                                "notIfCondition": "examined key"
-                                                },
-                                                {
-                                                "notIfCondition": "number examined >= 3"
-                                                }
-                                                ]
-                            },
-                            {
-                            "ifConditions": null,
-                            "linkPath": "thePaperWasMostC",
-                            "option": "Examine the paper",
-                            "notIfConditions": [
-                                                {
-                                                "notIfCondition": "examined paper"
-                                                }
-                                                ]
-                            },
-                            {
-                            "ifConditions": null,
-                            "linkPath": "theWoodenPegAndS",
-                            "option": "Examine the peg",
-                            "notIfConditions": [
-                                                {
-                                                "notIfCondition": "examined peg"
-                                                }
-                                                ]
-                            },
-                            {
-                            "ifConditions": [
-                                             {
-                                             "ifCondition": "number examined >= 1"
-                                             }
-                                             ],
-                            "linkPath": "lessInterestingW",
-                            "option": "Examine the discs",
-                            "notIfConditions": [
-                                                {
-                                                "notIfCondition": "examined discs"
-                                                }
-                                                ]
-                            },
-                            {
-                            "ifConditions": [
-                                             {
-                                             "ifCondition": "number examined >= 2"
-                                             }
-                                             ],
-                            "linkPath": "iNoddedSlightlyI",
-                            "option": "\"It is a curious collection, no doubt.\"",
-                            "notIfConditions": null
-                            },
-                            {
-                            "flagName": "seen items"
-                            },
-                            {
-                            "ifCondition": "number examined = 0"
-                            },
-                            {
-                            "pageNum": 8
-                            },
-                            {
-                            "pageLabel": "Examining items"
-                            }
-                            ]
-            },
-            "theSevenItalians": {
-                "content": [
-                            "\"The Seven Italians.\" My eye had fallen on a stack of operas in the bookcase by the door to my room.",
-                            {
-                            "divert": "holmesLookedUpAt"
-                            },
-                            {
-                            "flagName": "okay attempt"
-                            }
-                            ]
-            },
-            "andNotAllSuccess": {
-                "content": [
-                            "\"And not all successes, either. Now here.\" ",
-                            {
-                            "divert": "reachingIntoTheT"
-                            }
-                            ]
-            },
-            "inGoodTimeMyGood": {
-                "content": [
-                            "\"In good time, my good man,\" Holmes chided. \"Though I will be honest, my question to Musgrave was quite the same.",
-                            {
-                            "runOn": true
-                            },
-                            {
-                            "divert": "prayLetMeHaveThe"
-                            }
-                            ]
-            },
-            "prayLetMeHaveThe": {
-                "content": [
-                            "'Pray let me have the details,'\" I cried.",
-                            {
-                            "divert": "reginaldMusgrave1"
-                            },
-                            {
-                            "pageNum": 11
-                            },
-                            {
-                            "pageLabel": " The details"
-                            }
-                            ]
-            },
-            "thePaperWasMostC": {
-                "content": [
-                            "The paper was most curious. Smoothing it out, I read a serious of questions and answers, like some kind of rhyme. Looking up at Holmes to ask him what it meant, he smiled, and waved my question away.",
-                            {
-                            "divert": "inGoodTimeWatson"
-                            },
-                            {
-                            "flagName": "examined paper"
-                            },
-                            {
-                            "flagName": "number examined + 1"
-                            }
-                            ]
-            },
-            "youAreQuiteRight1": {
-                "content": [
-                            "\"You are quite right,\" I snapped, with irritation. \"Damn you, Holmes, will you never be bested?\"",
-                            {
-                            "divert": "iAmNoFreshYoungW"
-                            },
-                            {
-                            "notIfCondition": "mischevious < 1"
-                            }
-                            ]
-            },
-            "youVisitedHimInH": {
-                "content": [
-                            "\"You visited him? In his house?\"",
-                            {
-                            "divert": "youWouldHaveThou"
-                            }
-                            ]
-            },
-            "doNotTroubleYour": {
-                "content": [
-                            "\"Do not trouble yourself with that,\" he remarked, getting to his feet. \"Instead, let me interest you with the facts of a case I most certainly do remember. One moment.\" ",
-                            {
-                            "runOn": true
-                            },
-                            {
-                            "divert": "andWithASuddenBu"
-                            }
-                            ]
-            },
-            "tellMeHowDidTheC": {
-                "content": [
-                            "\"Tell me: how did the case begin?\"",
-                            {
-                            "divert": "reginaldMusgrave"
-                            }
-                            ]
-            },
-            "itWouldBeAPleasu": {
-                "content": [
-                            "\"It would be a pleasure,\" Holmes replied, spreading his hands to the fire. ",
-                            {
-                            "runOn": true
-                            },
-                            {
-                            "divert": "whenIFirstCameUp"
-                            }
-                            ]
-            },
-            "ricolettiOfTheCl": {
-                "content": [
-                            "\"Ricoletti of the club-foot,\" I announced, looking at the cover of the page. \"Tell me, my dear Holmes, if you would - what comes next?\"",
-                            {
-                            "divert": "holmesLookedBack"
-                            },
-                            {
-                            "flagName": "mischevious - 1"
-                            }
-                            ]
-            },
-            "butThoseDetailsI": {
-                "content": [
-                            "\"But those details I have practised since,\" I replied. \"They are the tools of my trade. If you asked me instead to remember the face of each man I have treated when shot; well, then I should have a harder time of it.\"",
-                            {
-                            "divert": "theExamplesDrawn"
-                            }
-                            ]
-            },
-            "inGoodTimeWatson": {
-                "content": [
-                            "\"In good time, Watson. In good time.\"",
-                            {
-                            "divert": "theItemsThemselv"
-                            }
-                            ]
-            },
-            "holmesLookedUpAt": {
-                "content": [
-                            "Holmes looked up at me with a frown.",
-                            {
-                            "divert": "reallyWatsonHeDe"
-                            }
-                            ]
-            },
-            "whatIsThatIAsked": {
-                "content": [
-                            "\"What is that?\" I asked, leaning forward with interest. \"Records of your early work?\"",
-                            {
-                            "divert": "andNotAllSuccess"
-                            }
-                            ]
-            },
-            "tellMeTheTitleHe": {
-                "content": [
-                            "\"Tell me the title,\" he replied, steepling his fingers.",
-                            {
-                            "ifConditions": null,
-                            "linkPath": "ricolettiOfTheCl",
-                            "option": "Read it honestly",
-                            "notIfConditions": null
-                            },
-                            {
-                            "ifConditions": null,
-                            "linkPath": "althoughItPainsM",
-                            "option": "Invent something to infuriate him",
-                            "notIfConditions": null
-                            }
-                            ]
-            },
-            "whileIWasNeverLe": {
-                "content": [
-                            "A talking Wolf approaches....Well I could describe in great detail what is about but I don't have the time... Red gets eaten by the wolf! ",
+                            "A wild talking Wolf appears!!! The wolf unhinges her jaw and devours Red whole. The wolf grins and says, Now that's a spicy meatball!",
                             {
                             "divert": "burnPapersWeShou"
                             },
@@ -607,10 +122,8 @@
             },
             "burnPapersISeeTh": {
                 "content": [
-                            "{burn papers:\"I see the cold has put you in a foul mood this evening.\" He got himself slowly to his feet, and moved over to the fire. \"I'll stoke it up and see if we can't warm up your usual good spirits.\"|\"If you'd be so kind.\" He waved a narrow hand towards the grate. \"I have no energy for the cold this evening.\"}",
-                            {
-                            "divert": "iGotToMyFeetAndS"
-                            }
+                            "To be Continued",
+                            
                             ]
             },
             "thenYouDontNeedT": {
@@ -623,7 +136,7 @@
             },
             "toBeContinued": {
                 "content": [
-                            "/=To be continued...=/*--*",
+                            "To be continued...",
                             {
                             "pageNum": 12
                             },
@@ -737,7 +250,7 @@
             },
             "thoseWhoHaveFoll": {
                 "content": [
-                            "After surving a harrowing visit to grandma's house. Red decided to become a developer and stay away from  the woods",
+                            "After surving a harrowing visit to grandma's house. Red decided to become a developer and stay away from  the woods.",
                             {
                             "image": "http://upload.wikimedia.org/wikipedia/commons/7/73/Paget_holmes.png"
                             },
@@ -841,10 +354,8 @@
             },
             "burnPapersWeShou": {
                 "content": [
-                            "{burn papers:\"We should burn these infernal papers of yours, Holmes. Keep this room warm and put them to some use.\"|\"More coal, Holmes?\"}",
-                            {
-                            "divert": "burnPapersISeeTh"
-                            }
+                            "To be Continued... Come back next week to read the next exciting installment of Red Riding Hood",
+                            
                             ]
             },
             "theKeyWasSimplyA": {
@@ -954,9 +465,9 @@
             },
             "weHadBeenSitting": {
                 "content": [
-                            "Red crammed her way into the full subway car. A little annoyed, but she's confident she made th right choice ",
+                            "Red forced her way into a full subway car. Annoyed, but confident she made the right choice.",
                             {
-                            "divert": "youWouldHaveThou"
+                            "divert": "burnPapersWeShou"
                             },
                             {
                             "flagName": "more coal"
@@ -1235,7 +746,7 @@
             },
             "butInTruthThereW": {
                 "content": [
-                            "Standing next to Lincoln Center, Red is debating whether to cut through Central Park or take the 1 to SquareSpace",
+                            "Standing next to Lincoln Center, Red debates whether to cut through Central Park or take the 1 to SquareSpace.",
                             {
                             "ifConditions": null,
                             "linkPath": "weHadBeenSitting",
@@ -1379,7 +890,7 @@
                             {
                             "ifConditions": null,
                             "linkPath": "thoseWhoHaveFoll",
-                            "option": "Next",
+                            "option": "next",
                             "notIfConditions": null
                             },
                             {
