@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 
 class LandingPageViewController: UIViewController {
-    let stories = ["Read Me", "Some Lovely Fanfiction", "My Story About Me", "My Story About You", "C4Q: Sleep No More"]
+    let stories = ["Read Me", "Some Lovely Fanfiction", "Slack: A Love Story", "Github: A Frustration Story", "C4Q: Sleep No More"]
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Colors.cream
@@ -35,7 +35,7 @@ class LandingPageViewController: UIViewController {
         self.landingPageTableview.backgroundColor = Colors.cream
         
         
-        }
+    }
     
     func setupView() {
         self.edgesForExtendedLayout = []
@@ -66,7 +66,7 @@ class LandingPageViewController: UIViewController {
             view.height.equalTo(300)
         }
         
-    
+        
     }
     func writeButtonPressed() {
         let newViewController = TitlePageViewController()
@@ -111,6 +111,7 @@ extension LandingPageViewController: UITableViewDelegate, UITableViewDataSource 
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.selectionStyle = .none
         cell.textLabel?.text = stories[indexPath.row]
         cell.textLabel?.font = UIFont(name: "Cochin", size: 20)
         cell.textLabel?.textColor = Colors.cream
@@ -121,5 +122,23 @@ extension LandingPageViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let destination = ReaderTitlePageViewController()
         navigationController?.pushViewController(destination, animated: true)
+    }
+    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.text = stories[indexPath.row]
+        cell.textLabel?.font = UIFont(name: "Cochin", size: 20)
+        cell.textLabel?.textColor = Colors.cream
+        cell.textLabel?.textAlignment = .center
+        cell.contentView.backgroundColor = Colors.cranberry
+    }
+    
+    func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.text = stories[indexPath.row]
+        cell.textLabel?.font = UIFont(name: "Cochin", size: 20)
+        cell.textLabel?.textColor = Colors.cream
+        cell.textLabel?.textAlignment = .center
+        cell.contentView.backgroundColor = .clear
+        
     }
 }

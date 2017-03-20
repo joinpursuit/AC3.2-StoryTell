@@ -143,8 +143,23 @@ class StitchViewController: UIViewController {
     }
     
     func deleteBranch(_ sender: UIButton) {
-        tableView.setEditing(true, animated: true)
-    }
+        let alertController = UIAlertController(title: "Delete Branch?", message: "This will erase the selected branch(es) and all their offshoots.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+            (result : UIAlertAction) -> Void in
+            self.tableView.setEditing(true, animated: true)
+            print("OK")
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) {
+            (result : UIAlertAction) -> Void in
+            print("Cancel")
+        }
+        
+        
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)    }
     
     func doneAction(){
         proseTextView.resignFirstResponder()
