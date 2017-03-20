@@ -57,6 +57,7 @@ class V2ReaderViewController: UIViewController {
         readerTextView.resignFirstResponder()
         editButton.isEnabled = false
         editButton.tintColor = UIColor.clear
+        story.stitches[currentStitchKey]?.content = readerTextView.text
         
     }
     
@@ -383,7 +384,7 @@ extension V2ReaderViewController: UITableViewDelegate, UITableViewDataSource {
         
         
         // Line 364 is the changes the model.
-        story.stitches[currentStitchKey]?.content = readerTextView.text
+        //story.stitches[currentStitchKey]?.content = readerTextView.text
         stackOfStoryKey.push(currentStitchKey)
         backButton.isEnabled = true
         //unwrapped safely later
