@@ -68,7 +68,7 @@ class V2ReaderViewController: UIViewController {
         
         
         
-        let stitchValue = story.stitches[key]
+        let _ = story.stitches[key]
         
         
         guard let shortedText = story.stitches[key]?.content else {return}
