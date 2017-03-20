@@ -19,6 +19,11 @@ class V2ReaderViewController: UIViewController {
     
     var peekKey: String!
     
+    //Change 1 to MTA 1Font
+    //Next needs to be captialized
+    //row height bigger
+    //Make a story an optional 
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +34,16 @@ class V2ReaderViewController: UIViewController {
         currentStitchKey = story.linkPath
         stackOfStoryKey.push(currentStitchKey)
         progressStory(currentStitchKey)
+       
+        
+        //optionsTableView.tableFooterView = UIView()
+        optionsTableView.rowHeight = 60
+        
+        
+
+        //optionsTableView.separatorInset = UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 50)
+        
+        
         
         
         
@@ -236,6 +251,7 @@ class V2ReaderViewController: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         tableView.backgroundColor = Colors.cranberry
         tableView.separatorStyle = .none
+       
         
         return tableView
         
@@ -260,7 +276,7 @@ class V2ReaderViewController: UIViewController {
         barButton.style = UIBarButtonItemStyle.plain
         barButton.target = self
         barButton.action = #selector(backButtonTapped)
-        barButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
+        barButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 20)!], for: UIControlState.normal)
         barButton.isEnabled = false
         
         return barButton
@@ -365,11 +381,14 @@ extension V2ReaderViewController: UITableViewDelegate, UITableViewDataSource {
         cell.addGestureRecognizer(longGesture)
         
         
-        
+        var bulletpoint:String = "❧"
         let stitch = story.stitches[currentStitchKey]
         
-        cell.textLabel?.text = stitch?.options[indexPath.row].prompt
-        cell.textLabel?.textAlignment = .center
+        cell.textLabel?.text = "\(bulletpoint)  \((stitch?.options[indexPath.row].prompt)!)"
+       // cell.textLabel?.textAlignment = .center
+        cell.layoutMargins = .zero
+        cell.contentView.layoutMargins = .zero
+         //cell.textLabel?.textAlignment = .center
         
         return cell
         

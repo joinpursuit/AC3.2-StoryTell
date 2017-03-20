@@ -44,7 +44,7 @@ class Stitch {
                         
                         newPath = dictValue as! String
 
-                        newOption = "next"
+                        newOption = "Next"
 
                     }
                         
