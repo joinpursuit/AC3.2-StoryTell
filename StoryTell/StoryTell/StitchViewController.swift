@@ -152,8 +152,6 @@ class StitchViewController: UIViewController {
         print("You called me")
         self.proseTextView.text = ""
         self.proseTextView.setNeedsDisplay()
-        self.proseTextView.textColor = .lightGray
-        self.proseTextView.text = "I work"  ///////Placeholder
         promptLabel.isHidden = false
         promptLabel.text = ""
         self.prompts = []

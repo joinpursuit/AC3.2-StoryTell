@@ -159,6 +159,7 @@ class V2ReaderViewController: UIViewController {
                 self.readerTextView.backgroundColor = UIColor.black
                 self.optionsTableView.backgroundColor = UIColor.black
                 self.view.backgroundColor = UIColor.black
+                
                 optionsTableView.reloadData()
                 
             } else {
@@ -233,7 +234,7 @@ class V2ReaderViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         tableView.backgroundColor = Colors.cranberry
-        
+        tableView.separatorStyle = .none
         
         return tableView
         
@@ -339,6 +340,7 @@ extension V2ReaderViewController: UITableViewDelegate, UITableViewDataSource {
         let stitch = story.stitches[currentStitchKey]
         
         cell.textLabel?.text = stitch?.options[indexPath.row].prompt
+        cell.textLabel?.textAlignment = .center
         
         return cell
         
