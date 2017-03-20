@@ -8,12 +8,22 @@
 
 import UIKit
 
+
+
 class StitchViewController: UIViewController {
     var prompts = [String]()
     var optionsArr = [Option]()
     let buildStory = BuildStory()
     var branchLine = String()
+<<<<<<< HEAD
     var tag = Int()
+=======
+    //var story: Story!
+    
+    //var readervc = V2ReaderViewController()
+    var keyFromReader: String!
+    
+>>>>>>> 17c64471092e7e381404404054d26a34d6031239
     
     
     override func viewDidLoad() {
@@ -23,19 +33,27 @@ class StitchViewController: UIViewController {
         setupViewHierarchy()
         configureConstraints()
         setupNavigation()
-        addObservers()
         toolbar()
+        
+       // keyFromReader = readervc.currentStitchKey
+        //proseTextView.text = story.stitches[keyFromReader]?.content
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        //proseTextView.text = story.stitches[keyFromReader]?.content
     }
     
     
     // MARK: - Setup
     func setupViewHierarchy() {
         self.edgesForExtendedLayout = []
+        self.view.addSubview(promptLabel)
         self.view.addSubview(proseTextView)
         self.view.addSubview(tableView)
         self.view.addSubview(branchButton)
         self.view.addSubview(deleteButton)
-        self.view.addSubview(promptLabel)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -99,11 +117,7 @@ class StitchViewController: UIViewController {
         
     }
     
-    func addObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(StitchViewController.updateTextView(notification:)), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(StitchViewController.updateTextView(notification:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
-        
-    }
+  
     
     //MARK: - Action
     
@@ -258,7 +272,7 @@ class StitchViewController: UIViewController {
     lazy var proseTextView: UITextView = {
         let textView: UITextView = UITextView()
         textView.textColor = UIColor.lightGray
-        textView.text = "Once upon a time..."
+        //textView.text = "Once upon a time..."
         textView.font = UIFont(name: "Cochin", size: 25)
         textView.backgroundColor = Colors.cream
         textView.isHidden = false
