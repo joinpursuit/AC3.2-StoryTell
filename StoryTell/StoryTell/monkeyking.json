@@ -1,0 +1,46 @@
+{
+    "updated_at": "2017-03-09T00:00:00Z",
+    "url_key": "q22d",
+    "title": "Monkey King",
+    "created_at": "2017-03-09T20:51:59Z"
+    "data": {
+        "initial": "onceUponATimeThe",
+        "editorData": {
+            "authorName": "Gabriel"
+        },
+        "stitches": {
+            "theMonkeyKingLov": {
+                "content": [
+                            "The monkey king loves bananas! So he picked the banana cake and was happy! His court jester asked him for a piece. The Monkey King thought about it and did what?",
+                            {
+                            "linkPath": "heThrewTheCakeIn",
+                            "option": "Threw Banana BreadCake into Jester's Face",
+                            }
+                            ]
+            },
+            "onceUponATimeThe": {
+                "content": [
+                            "Once upon a time... There was a Monkey King! He was a new King and his first act as Monkey King was to decided what type of cake he wants at his coronation.",
+                            {
+                            "linkPath": "theMonkeyKingLov",
+                            "option": "Banana BreadCake",
+                            },
+                            {
+                            "linkPath": "theMonkeyKingPic",
+                            "option": "Carrot Cake ",
+                            },
+                            ]
+            },
+            "heThrewTheCakeIn": {
+                "content": [
+                            "He Threw the cake into the Jester's face and laughed!! "
+                            ]
+            },
+            "theMonkeyKingPic": {
+                "content": [
+                            "The Monkey King picked carrot Cake and was sad."
+                            ]
+            }
+        },
+    },
+}
