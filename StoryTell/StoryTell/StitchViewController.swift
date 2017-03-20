@@ -21,7 +21,6 @@ class StitchViewController: UIViewController {
         setupViewHierarchy()
         configureConstraints()
         setupNavigation()
-        addObservers()
         toolbar()
     }
     
@@ -29,11 +28,11 @@ class StitchViewController: UIViewController {
     // MARK: - Setup
     func setupViewHierarchy() {
         self.edgesForExtendedLayout = []
+        self.view.addSubview(promptLabel)
         self.view.addSubview(proseTextView)
         self.view.addSubview(tableView)
         self.view.addSubview(branchButton)
         self.view.addSubview(deleteButton)
-        self.view.addSubview(promptLabel)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -97,11 +96,7 @@ class StitchViewController: UIViewController {
         
     }
     
-    func addObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(StitchViewController.updateTextView(notification:)), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(StitchViewController.updateTextView(notification:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
-        
-    }
+  
     
     //MARK: - Action
     
