@@ -84,7 +84,8 @@ class V2ReaderViewController: UIViewController {
         
         present(alertController, animated: true, completion: nil)
         
-        let timer = DispatchTime.now() + 1.5
+        //Change to 1.5 but for the app
+        let timer = DispatchTime.now() + 2
         DispatchQueue.main.asyncAfter(deadline: timer) {
             alertController.dismiss(animated: true, completion: nil)
             
@@ -199,7 +200,7 @@ class V2ReaderViewController: UIViewController {
         
         optionsTableView.reloadData()
         
-        //dump(currentStitchKey)
+        dump(currentStitchKey)
     }
     
     // MARK: - Lazy Inits

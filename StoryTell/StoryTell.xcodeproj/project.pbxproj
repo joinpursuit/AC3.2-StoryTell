@@ -34,6 +34,7 @@
 		DFBEF1D61E7B624C009519C3 /* ReaderTitlePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBEF1D51E7B624C009519C3 /* ReaderTitlePageViewController.swift */; };
 		DFBEF1D81E7B6260009519C3 /* SetNavBarTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBEF1D71E7B625F009519C3 /* SetNavBarTitle.swift */; };
 		DFD15E701E7CC60000B88E2B /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD15E6F1E7CC60000B88E2B /* Stack.swift */; };
+		DFD15E721E7F4F5D00B88E2B /* RedRidingHood.json in Resources */ = {isa = PBXBuildFile; fileRef = DFD15E711E7F4F5D00B88E2B /* RedRidingHood.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		DFBEF1D51E7B624C009519C3 /* ReaderTitlePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderTitlePageViewController.swift; sourceTree = "<group>"; };
 		DFBEF1D71E7B625F009519C3 /* SetNavBarTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetNavBarTitle.swift; sourceTree = "<group>"; };
 		DFD15E6F1E7CC60000B88E2B /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		DFD15E711E7F4F5D00B88E2B /* RedRidingHood.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RedRidingHood.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 			children = (
 				7DF015CB1E6BA2880048AAA8 /* SampleStory.json */,
 				7DF015C91E6B9E4F0048AAA8 /* SherlockHolmes.json */,
+				DFD15E711E7F4F5D00B88E2B /* RedRidingHood.json */,
 				818518E41E73585000191121 /* monkeyking.json */,
 			);
 			name = JsonStories;
@@ -277,6 +280,7 @@
 			files = (
 				4C000F201E7759B90007E32D /* GoogleService-Info.plist in Resources */,
 				7D3F95F41E664EAD00FD6453 /* LaunchScreen.storyboard in Resources */,
+				DFD15E721E7F4F5D00B88E2B /* RedRidingHood.json in Resources */,
 				7D3F95F11E664EAD00FD6453 /* Assets.xcassets in Resources */,
 				7DF015CA1E6B9E4F0048AAA8 /* SherlockHolmes.json in Resources */,
 				818518E51E73585000191121 /* monkeyking.json in Resources */,

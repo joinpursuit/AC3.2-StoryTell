@@ -38,7 +38,7 @@ class Story {
     }
     
     static func readStory() -> Story? {
-        let jsonDoc = Bundle.main.path(forResource: "SherlockHolmes", ofType: "json")
+        let jsonDoc = Bundle.main.path(forResource: "RedRidingHood", ofType: "json")
         let jsonURL = URL(fileURLWithPath: jsonDoc!)
         let data = try? Data(contentsOf: jsonURL)
         
