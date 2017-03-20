@@ -11,6 +11,8 @@ import UIKit
 class StitchViewController: UIViewController {
     var prompts = [String]()
     var options = [Option]()
+    let buildStory = BuildStory()
+    var branchLine = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -141,19 +143,32 @@ class StitchViewController: UIViewController {
     }
     
     func deleteBranch(_ sender: UIButton) {
-        tableView.setEditing(true, animated: true)
-    }
+        let alertController = UIAlertController(title: "Delete Branch?", message: "This will erase the selected branch(es) and all their offshoots.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+            (result : UIAlertAction) -> Void in
+            self.tableView.setEditing(true, animated: true)
+            print("OK")
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) {
+            (result : UIAlertAction) -> Void in
+            print("Cancel")
+        }
+        
+        
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)    }
     
     func doneAction(){
         proseTextView.resignFirstResponder()
     }
     
     func refreshView(_ sender: UIButton) {
-        print("You called me")
+        getStory()
         self.proseTextView.text = ""
         self.proseTextView.setNeedsDisplay()
-        self.proseTextView.textColor = .lightGray
-        self.proseTextView.text = "I work"  ///////Placeholder
         promptLabel.isHidden = false
         promptLabel.text = ""
         self.prompts = []

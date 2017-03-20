@@ -71,12 +71,18 @@ class V2ReaderViewController: UIViewController {
         let peekCharacters: [Character] = Array(shortedText.characters)
         var peekMessage:[Character] = []
         
-        for (index,character) in peekCharacters.enumerated() {
-        
-            if index > 80 {
+        var count: Int = 0
+        for character in peekCharacters {
+            
+            if count > 7 {
                 break
             }
+            
+            if character == " "{
+                count += 1
+            }
             peekMessage.append(character)
+            
         }
         
         let alertController = UIAlertController(title: "Peek", message: "\(String(peekMessage))...", preferredStyle: .alert)
@@ -133,10 +139,11 @@ class V2ReaderViewController: UIViewController {
         if let status = UserDefaults.standard.object(forKey: "onOff") as? Bool {
             if status == true {
                 // true == night mode
-                self.readerTextView.textColor = UIColor.gray
+                self.readerTextView.textColor = UIColor.white
                 self.readerTextView.backgroundColor = UIColor.black
                 self.optionsTableView.backgroundColor = UIColor.black
                 self.view.backgroundColor = UIColor.black
+                
                 optionsTableView.reloadData()
                 
             } else {
@@ -211,7 +218,7 @@ class V2ReaderViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         tableView.backgroundColor = Colors.cranberry
-        
+        tableView.separatorStyle = .none
         
         return tableView
         
@@ -285,7 +292,7 @@ extension V2ReaderViewController: UITableViewDelegate, UITableViewDataSource {
             if status == true {
                 // true == night mode
                 cell.textLabel?.font = UIFont(name: "Cochin", size: 20)
-                cell.textLabel?.textColor = UIColor.yellow
+                cell.textLabel?.textColor = UIColor.white
                 cell.textLabel?.backgroundColor = UIColor.black
                 cell.backgroundColor = UIColor.black
                 
@@ -317,6 +324,7 @@ extension V2ReaderViewController: UITableViewDelegate, UITableViewDataSource {
         let stitch = story.stitches[currentStitchKey]
         
         cell.textLabel?.text = stitch?.options[indexPath.row].prompt
+        cell.textLabel?.textAlignment = .center
         
         return cell
         

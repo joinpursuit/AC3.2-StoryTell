@@ -16,7 +16,7 @@ extension StitchViewController: UITextViewDelegate {
             print("I am writing NOW")
         }
         textView.becomeFirstResponder()
-        promptLabel.text = "I work" ///////Placeholder
+        promptLabel.text = "Branch: I work" ///////Placeholder
     }
     
     func updateTextView(notification:Notification) {
