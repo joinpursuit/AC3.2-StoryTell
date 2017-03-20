@@ -22,6 +22,10 @@ class LandingPageViewController: UIViewController {
         navigationController?.navigationBar.tintColor = Colors.cranberry
         setupView()
         
+
+        
+        //Commented out for the demo only
+        
 //        var writeImage = UIImage(named: "writeEdit")
 //        
 //        writeImage = writeImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
