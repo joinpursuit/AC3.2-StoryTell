@@ -737,7 +737,7 @@
             },
             "thoseWhoHaveFoll": {
                 "content": [
-                            "After surving a harrowing visit to grandma's house. Red decided to become a developer and stay away from  the woods",
+                            "After surving a harrowing visit to grandma's house, Red decided to become a developer and stay away from the woods.",
                             {
                             "image": "http://upload.wikimedia.org/wikipedia/commons/7/73/Paget_holmes.png"
                             },
@@ -954,7 +954,7 @@
             },
             "weHadBeenSitting": {
                 "content": [
-                            "Red crammed her way into the full subway car. A little annoyed, but she's confident she made th right choice ",
+                            "Red crammed her way into the full subway car—a little annoyed, but she's confident she made the right choice. ",
                             {
                             "divert": "youWouldHaveThou"
                             },
@@ -1235,7 +1235,7 @@
             },
             "butInTruthThereW": {
                 "content": [
-                            "Standing next to Lincoln Center, Red is debating whether to cut through Central Park or take the 1 to SquareSpace",
+                            "Standing next to Lincoln Center, Red is debating whether to cut through Central Park or take the 1 to SquareSpace.",
                             {
                             "ifConditions": null,
                             "linkPath": "weHadBeenSitting",
@@ -1375,7 +1375,7 @@
             },
             "fromTheMemoirsOf": {
                 "content": [
-                            "Once upon a time Red was running late for demo day at SquareSpace. ",
+                            "Once upon a time Red was running late for Demo Day at SquareSpace. ",
                             {
                             "ifConditions": null,
                             "linkPath": "thoseWhoHaveFoll",
