@@ -336,7 +336,6 @@ extension V2ReaderViewController: UITableViewDelegate, UITableViewDataSource {
         
         let stitch = story.stitches[currentStitchKey]
         
-        
         stackOfStoryKey.push(currentStitchKey)
         backButton.isEnabled = true
         //unwrapped safely later
