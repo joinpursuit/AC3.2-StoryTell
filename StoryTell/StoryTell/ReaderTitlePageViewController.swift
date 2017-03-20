@@ -143,7 +143,8 @@ class ReaderTitlePageViewController: UIViewController {
         let myAttribute = [NSForegroundColorAttributeName: Colors.cream]
         let myString = NSMutableAttributedString(string: "Begin Reading", attributes: myAttribute)
         var buttonRange = (myString.string as NSString).range(of: "Begin Reading")
-        myString.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: 20.0), range: buttonRange)
+        let appFontForButton = UIFont(name: "Cochin-Bold", size: 22.0)
+        myString.addAttribute(NSFontAttributeName, value: appFontForButton!, range: buttonRange)
         
         button.setAttributedTitle(myString, for: .normal)
 
