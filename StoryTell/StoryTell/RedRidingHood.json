@@ -16,7 +16,7 @@
             
             "whileIWasNeverLe": {
                 "content": [
-                            "A wild talking Wolf appears!!! The wolf unhinges her jaw and devours Red whole. The wolf grins and says, Now that's a spicy meatball!",
+                            "A wild talking Wolf appears!!! The Wolf unhinges her jaw and devours Red whole. Grinning the Wolf says, Now that's a spicy meatball!",
                             {
                             "divert": "burnPapersWeShou"
                             },
@@ -36,7 +36,7 @@
             },
             "thoseWhoHaveFoll": {
                 "content": [
-                            "After surving a harrowing visit to grandma's house. Red decided to become a developer and stay away from  the woods.",
+                            "After surviving a harrowing visit to grandma's house, Red decided to become a developer and stay away from the woods.",
                             {
                             "image": "http://upload.wikimedia.org/wikipedia/commons/7/73/Paget_holmes.png"
                             },
@@ -79,7 +79,7 @@
             
             "butInTruthThereW": {
                 "content": [
-                            "Standing next to Lincoln Center, Red debates whether to cut through Central Park or take the 1 to SquareSpace.",
+                            "Standing next to Lincoln Center, Red debates whether to cut through Central Park or take the 1 to Squarespace.",
                             {
                             "ifConditions": null,
                             "linkPath": "weHadBeenSitting",
@@ -97,7 +97,7 @@
             
             "fromTheMemoirsOf": {
                 "content": [
-                            "Once upon a time Red was running late for demo day at SquareSpace. ",
+                            "Once upon a time, Red was running late for Demo Day at Squarespace. ",
                             {
                             "ifConditions": null,
                             "linkPath": "thoseWhoHaveFoll",
