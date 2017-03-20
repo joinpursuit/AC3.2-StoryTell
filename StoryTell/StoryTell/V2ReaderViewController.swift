@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//import UIKit.UIGestureRecognizerSubclass
 
 class V2ReaderViewController: UIViewController {
     
@@ -66,23 +65,24 @@ class V2ReaderViewController: UIViewController {
     
     func peek(_ key: String){
         
-        
-        
-        let _ = story.stitches[key]
-        
-        
         guard let shortedText = story.stitches[key]?.content else {return}
         
         
         let peekCharacters: [Character] = Array(shortedText.characters)
         var peekMessage:[Character] = []
         
-        for (index,character) in peekCharacters.enumerated() {
-        
-            if index > 80 {
+        var count: Int = 0
+        for character in peekCharacters {
+            
+            if count > 7 {
                 break
             }
+            
+            if character == " "{
+                count += 1
+            }
             peekMessage.append(character)
+            
         }
         
         let alertController = UIAlertController(title: "Peek", message: "\(String(peekMessage))...", preferredStyle: .alert)
@@ -90,31 +90,15 @@ class V2ReaderViewController: UIViewController {
         
         present(alertController, animated: true, completion: nil)
         
-        let timer = DispatchTime.now() + 1.5
+        //Change to 1.5 but for the app
+        let timer = DispatchTime.now() + 2
         DispatchQueue.main.asyncAfter(deadline: timer) {
             alertController.dismiss(animated: true, completion: nil)
             
         }
         
         
-     /*
- 
-         let when = DispatchTime.now() + 5
-         DispatchQueue.main.asyncAfter(deadline: when){
-         // your code with delay
-         alert.dismiss(animated: true, completion: nil)
- 
- */
-        
-        
-        
     }
-    
-    
-    
-    
-    
-    
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -223,7 +207,7 @@ class V2ReaderViewController: UIViewController {
         
         optionsTableView.reloadData()
         
-        //dump(currentStitchKey)
+        dump(currentStitchKey)
     }
     
     // MARK: - Lazy Inits

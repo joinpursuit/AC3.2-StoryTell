@@ -43,7 +43,9 @@ class Stitch {
                     if dictKey == "divert" {
                         
                         newPath = dictValue as! String
+
                         newOption = "next"
+
                     }
                         
                     else if dictKey == "option" {
