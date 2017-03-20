@@ -10,11 +10,11 @@ import UIKit
 import SnapKit
 
 class LandingPageViewController: UIViewController {
-    let stories = ["Read Me", "Some Lovely Fanfiction", "Slack: A Love Story", "Github: A Frustration Story", "C4Q: Sleep No More"]
+    let stories = ["Red Riding Hood", "Fifty Shades of Fanfiction", "Slack: A Love Story", "Github: A Frustration Story", "C4Q: Sleep No More"]
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Colors.cream
-        navigationItem.title = "Your Bookshelf"
+        navigationItem.title = "Bookshelf"
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSForegroundColorAttributeName: Colors.navy,
              NSFontAttributeName: UIFont(name: "Cochin-BoldItalic", size: 20)!]
