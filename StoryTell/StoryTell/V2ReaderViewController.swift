@@ -155,7 +155,7 @@ class V2ReaderViewController: UIViewController {
         if let status = UserDefaults.standard.object(forKey: "onOff") as? Bool {
             if status == true {
                 // true == night mode
-                self.readerTextView.textColor = UIColor.gray
+                self.readerTextView.textColor = UIColor.white
                 self.readerTextView.backgroundColor = UIColor.black
                 self.optionsTableView.backgroundColor = UIColor.black
                 self.view.backgroundColor = UIColor.black
@@ -307,7 +307,7 @@ extension V2ReaderViewController: UITableViewDelegate, UITableViewDataSource {
             if status == true {
                 // true == night mode
                 cell.textLabel?.font = UIFont(name: "Cochin", size: 20)
-                cell.textLabel?.textColor = UIColor.yellow
+                cell.textLabel?.textColor = UIColor.white
                 cell.textLabel?.backgroundColor = UIColor.black
                 cell.backgroundColor = UIColor.black
                 
