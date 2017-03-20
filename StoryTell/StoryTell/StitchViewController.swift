@@ -11,6 +11,8 @@ import UIKit
 class StitchViewController: UIViewController {
     var prompts = [String]()
     var options = [Option]()
+    let buildStory = BuildStory()
+    var branchLine = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -149,7 +151,7 @@ class StitchViewController: UIViewController {
     }
     
     func refreshView(_ sender: UIButton) {
-        print("You called me")
+        getStory()
         self.proseTextView.text = ""
         self.proseTextView.setNeedsDisplay()
         promptLabel.isHidden = false
