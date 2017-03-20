@@ -30,6 +30,8 @@ class V2ReaderViewController: UIViewController {
         stackOfStoryKey.push(currentStitchKey)
         progressStory(currentStitchKey)
         
+        
+        
         navigationItem.title = "Reader"
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSForegroundColorAttributeName: Colors.navy,
@@ -37,11 +39,25 @@ class V2ReaderViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = Colors.cream
         navigationController?.navigationBar.tintColor = Colors.cranberry
         
+
         
-        navigationItem.rightBarButtonItem = gearButton
+        
+        navigationItem.rightBarButtonItems = [gearButton, editButton]
         navigationItem.leftBarButtonItems = [backButton, homeButton]
         
         
+        
+    }
+    
+    
+    func editButtonAction(){
+        print("I am a motherfucking barbutton!")
+       // present(StitchViewController(), animated: true, completion: nil)
+        
+        readerTextView.resignFirstResponder()
+        editButton.isEnabled = false
+        editButton.tintColor = UIColor.clear
+        story.stitches[currentStitchKey]?.content = readerTextView.text
         
     }
     
@@ -203,6 +219,7 @@ class V2ReaderViewController: UIViewController {
         let stitchValue = story.stitches[key]
         readerText = (stitchValue?.content)!
         readerTextView.text = readerText
+       
         currentStitchKey = key
         
         optionsTableView.reloadData()
@@ -227,10 +244,11 @@ class V2ReaderViewController: UIViewController {
     lazy var readerTextView: UITextView = {
         let textView: UITextView = UITextView()
         textView.textColor = Colors.navy
-        textView.isEditable = false
+        //textView.isEditable = false
         textView.font = UIFont(name: "Cochin", size: 24)
         textView.backgroundColor = Colors.cream
         
+        textView.delegate = self
         
         return textView
     }()
@@ -268,6 +286,33 @@ class V2ReaderViewController: UIViewController {
         
         return barButton
     }()
+    
+    lazy var editButton: UIBarButtonItem = {
+        let barButton: UIBarButtonItem = UIBarButtonItem()
+        barButton.style = UIBarButtonItemStyle.plain
+        barButton.target = self
+        barButton.action = #selector(editButtonAction)
+        barButton.image = #imageLiteral(resourceName: "writeEdit")
+        barButton.isEnabled = false
+        barButton.tintColor = UIColor.clear
+        
+       return barButton
+    }()
+    
+    
+}
+
+
+extension V2ReaderViewController: UITextViewDelegate {
+    
+    
+    func textViewDidChange(_ textView: UITextView) {
+        
+        if textView == readerTextView {
+            editButton.isEnabled = true
+            editButton.tintColor = nil
+        }
+    }
     
 }
 
@@ -335,8 +380,11 @@ extension V2ReaderViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let stitch = story.stitches[currentStitchKey]
+  
         
         
+        // Line 364 is the changes the model.
+        //story.stitches[currentStitchKey]?.content = readerTextView.text
         stackOfStoryKey.push(currentStitchKey)
         backButton.isEnabled = true
         //unwrapped safely later
