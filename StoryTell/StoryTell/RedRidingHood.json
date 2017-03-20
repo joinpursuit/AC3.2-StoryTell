@@ -79,11 +79,11 @@
             
             "butInTruthThereW": {
                 "content": [
-                            "Standing next to Lincoln Center, Red debates whether to cut through Central Park or take the 1 to Squarespace.",
+                            "Standing next to Lincoln Center, Red debates whether to cut through Central Park or take the ① to Squarespace.",
                             {
                             "ifConditions": null,
                             "linkPath": "weHadBeenSitting",
-                            "option": "Take the 1",
+                            "option": "Take the ①",
                             "notIfConditions": null
                             },
                             {
@@ -101,7 +101,7 @@
                             {
                             "ifConditions": null,
                             "linkPath": "thoseWhoHaveFoll",
-                            "option": "next",
+                            "option": "Next",
                             "notIfConditions": null
                             },
                             {
