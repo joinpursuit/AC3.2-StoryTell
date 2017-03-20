@@ -22,15 +22,15 @@ class LandingPageViewController: UIViewController {
         navigationController?.navigationBar.tintColor = Colors.cranberry
         setupView()
         
-        var writeImage = UIImage(named: "writeEdit")
-        
-        writeImage = writeImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: writeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(writeButtonPressed))
-        
-        let logOutButton = UIBarButtonItem(title: "Log Out", style: UIBarButtonItemStyle.plain, target: self, action: #selector(logOutButtonPressed))
-        logOutButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
-        self.navigationItem.leftBarButtonItem = logOutButton
+//        var writeImage = UIImage(named: "writeEdit")
+//        
+//        writeImage = writeImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+//        
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: writeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(writeButtonPressed))
+//        
+//        let logOutButton = UIBarButtonItem(title: "Log Out", style: UIBarButtonItemStyle.plain, target: self, action: #selector(logOutButtonPressed))
+//        logOutButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
+        //self.navigationItem.leftBarButtonItem = logOutButton
         
         self.landingPageTableview.backgroundColor = Colors.cream
         
