@@ -14,7 +14,7 @@ class LandingPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Colors.cream
-        navigationItem.title = "Your Bookshelf"
+        navigationItem.title = "Bookshelf"
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSForegroundColorAttributeName: Colors.navy,
              NSFontAttributeName: UIFont(name: "Cochin-BoldItalic", size: 20)!]
