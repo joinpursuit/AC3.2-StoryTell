@@ -14,7 +14,7 @@ struct Option {
 }
 
 class Stitch {
-    let content: String
+    var content: String
     let options: [Option]
     
     let key: String
