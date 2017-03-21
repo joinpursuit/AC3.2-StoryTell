@@ -34,7 +34,7 @@ class LandingPageViewController: UIViewController {
         
         self.landingPageTableview.backgroundColor = Colors.cream
         
-        
+        self.navigationItem.setHidesBackButton(true, animated:true);
     }
     
     func setupView() {
