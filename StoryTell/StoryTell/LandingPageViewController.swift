@@ -72,7 +72,7 @@ class LandingPageViewController: UIViewController {
         view.addSubview(landingPageText)
         
         landingPageText.snp.makeConstraints { (view) in
-            view.top.equalTo(landingPageTextStoryTell.snp.bottom).offset(16)
+            view.top.equalTo(landingPageTextStoryTell.snp.bottom).offset(12)
             view.centerX.equalTo(self.view)
             view.width.equalToSuperview().multipliedBy(0.8)
             view.height.equalTo(50)
