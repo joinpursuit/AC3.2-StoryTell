@@ -20,7 +20,7 @@ class ReaderTitlePageViewController: UIViewController {
         configureConstraints()
         
         
-       
+       self.navigationItem.setHidesBackButton(true, animated:true)
     }
     
     func loadTitlePageView() {

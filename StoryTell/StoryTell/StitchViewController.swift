@@ -12,15 +12,14 @@ import UIKit
 
 class StitchViewController: UIViewController {
     var prompts = [String]()
-    var options = [Option]()
+    var optionsArr = [Option]()
     let buildStory = BuildStory()
     var branchLine = String()
+    var tag = Int()
     //var story: Story!
     
     //var readervc = V2ReaderViewController()
     var keyFromReader: String!
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -179,8 +178,9 @@ class StitchViewController: UIViewController {
     
     func refreshView(_ sender: UIButton) {
         getStory()
+        branchLine = prompts[tag]
         self.proseTextView.text = ""
-        self.proseTextView.setNeedsDisplay()
+//        self.proseTextView.setNeedsDisplay()
         promptLabel.isHidden = false
         promptLabel.text = ""
         self.prompts = []
@@ -198,6 +198,13 @@ class StitchViewController: UIViewController {
         
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)    }
+    
+    func getStory() {
+        //in progress
+        let content = proseTextView.text!
+        let linkpath = buildStory.getLinkPath(input: content)
+        let stitch = Stitch(content: content, options: optionsArr, key: linkpath)
+    }
     
     //MARK: - Constraints
     

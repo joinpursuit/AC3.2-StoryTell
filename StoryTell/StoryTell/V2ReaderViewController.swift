@@ -401,9 +401,7 @@ extension V2ReaderViewController: UITableViewDelegate, UITableViewDataSource {
         let stitch = story.stitches[currentStitchKey]
   
         
-        
-        // Line 364 is the changes the model.
-        //story.stitches[currentStitchKey]?.content = readerTextView.text
+
         stackOfStoryKey.push(currentStitchKey)
         backButton.isEnabled = true
         //unwrapped safely later
