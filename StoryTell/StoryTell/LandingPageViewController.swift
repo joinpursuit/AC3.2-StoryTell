@@ -38,7 +38,7 @@ class LandingPageViewController: UIViewController {
         
         self.landingPageTableview.backgroundColor = Colors.cream
         
-        
+        self.navigationItem.setHidesBackButton(true, animated:true);
     }
     
     func setupView() {
@@ -49,17 +49,33 @@ class LandingPageViewController: UIViewController {
         view.addSubview(imageView)
         imageView.snp.makeConstraints({ (view) in
             view.centerX.equalTo(self.view)
-            view.width.height.equalTo(150)
-            view.top.equalToSuperview().offset(15)
+            view.width.height.equalTo(165)
+            view.top.equalToSuperview().offset(18)
         })
         
+        view.addSubview(landingPageTextWelcome)
+        
+        landingPageTextWelcome.snp.makeConstraints { (view) in
+            view.top.equalTo(imageView.snp.bottom).offset(24)
+            view.centerX.equalTo(self.view)
+            view.width.equalToSuperview().multipliedBy(0.8)
+            view.height.equalTo(15)
+        }
+        view.addSubview(landingPageTextStoryTell)
+        
+        landingPageTextStoryTell.snp.makeConstraints { (view) in
+            view.top.equalTo(landingPageTextWelcome.snp.bottom)
+            view.centerX.equalTo(self.view)
+            view.width.equalToSuperview()
+            view.height.equalTo(45)
+        }
         view.addSubview(landingPageText)
         
         landingPageText.snp.makeConstraints { (view) in
-            view.top.equalTo(imageView.snp.bottom).offset(15)
+            view.top.equalTo(landingPageTextStoryTell.snp.bottom).offset(12)
             view.centerX.equalTo(self.view)
             view.width.equalToSuperview().multipliedBy(0.8)
-            view.height.equalTo(imageView.snp.height)
+            view.height.equalTo(50)
         }
         view.addSubview(landingPageTableview)
         
@@ -80,12 +96,30 @@ class LandingPageViewController: UIViewController {
         //let newViewController = MARIA's LOGIN PAGE VC
         //self.navigationController?.pushViewController(newViewController, animated: true)
     }
-    internal lazy var landingPageText: UILabel = {
+    internal lazy var landingPageTextWelcome: UILabel = {
         let landingPageText = UILabel()
-        landingPageText.text = "Welcome to Story Tell.\n\nBegin by reading a story (choose from your most recent stories below) or you can create a new story by pressing the Write button in the upper right-hand corner."
+        landingPageText.text = "Welcome to"
         landingPageText.numberOfLines = 0
         landingPageText.textAlignment = .center
-        landingPageText.font = UIFont(name: "Cochin", size: 18)
+        landingPageText.font = UIFont(name: "Cochin-Italic", size: 20)
+        landingPageText.textColor = Colors.navy
+        return landingPageText
+    }()
+    internal lazy var landingPageTextStoryTell: UILabel = {
+        let landingPageText = UILabel()
+        landingPageText.text = "Story Tell"
+        landingPageText.numberOfLines = 0
+        landingPageText.textAlignment = .center
+        landingPageText.font = UIFont(name: "Cochin-Bold", size: 40)
+        landingPageText.textColor = Colors.navy
+        return landingPageText
+    }()
+    internal lazy var landingPageText: UILabel = {
+        let landingPageText = UILabel()
+        landingPageText.text = "Begin reading a story. Choose from your most recent stories below."
+        landingPageText.numberOfLines = 0
+        landingPageText.textAlignment = .center
+        landingPageText.font = UIFont(name: "Cochin", size: 20)
         landingPageText.textColor = Colors.navy
         return landingPageText
     }()
