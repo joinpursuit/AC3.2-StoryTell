@@ -49,8 +49,8 @@ class LandingPageViewController: UIViewController {
         view.addSubview(imageView)
         imageView.snp.makeConstraints({ (view) in
             view.centerX.equalTo(self.view)
-            view.width.height.equalTo(150)
-            view.top.equalToSuperview().offset(15)
+            view.width.height.equalTo(165)
+            view.top.equalToSuperview().offset(18)
         })
         
         view.addSubview(landingPageTextWelcome)
