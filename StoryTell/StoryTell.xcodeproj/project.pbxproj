@@ -12,7 +12,7 @@
 		4C000F201E7759B90007E32D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C000F1F1E7759B90007E32D /* GoogleService-Info.plist */; };
 		4CC0C7611E71F7320094823E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC0C7601E71F7320094823E /* Colors.swift */; };
 		7D21B0581E7FED1B005A145D /* BuildStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D21B0571E7FED1B005A145D /* BuildStory.swift */; };
-		7D21B05C1E7FEE26005A145D /* StitchExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D21B05B1E7FEE26005A145D /* StitchExtension.swift */; };
+		7D21B05E1E8059FC005A145D /* Serialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D21B05D1E8059FC005A145D /* Serialization.swift */; };
 		7D3F95EA1E664EAD00FD6453 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F95E91E664EAD00FD6453 /* AppDelegate.swift */; };
 		7D3F95F11E664EAD00FD6453 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D3F95F01E664EAD00FD6453 /* Assets.xcassets */; };
 		7D3F95F41E664EAD00FD6453 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D3F95F21E664EAD00FD6453 /* LaunchScreen.storyboard */; };
@@ -47,7 +47,7 @@
 		5CBDCEDAA67C5077B0EE6A4A /* Pods-StoryTell.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoryTell.release.xcconfig"; path = "Pods/Target Support Files/Pods-StoryTell/Pods-StoryTell.release.xcconfig"; sourceTree = "<group>"; };
 		7A1CE72852B33412AAEBBD25 /* Pods_StoryTell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StoryTell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D21B0571E7FED1B005A145D /* BuildStory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildStory.swift; sourceTree = "<group>"; };
-		7D21B05B1E7FEE26005A145D /* StitchExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StitchExtension.swift; sourceTree = "<group>"; };
+		7D21B05D1E8059FC005A145D /* Serialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serialization.swift; sourceTree = "<group>"; };
 		7D3F95E61E664EAD00FD6453 /* StoryTell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoryTell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D3F95E91E664EAD00FD6453 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D3F95F01E664EAD00FD6453 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -158,7 +158,6 @@
 			isa = PBXGroup;
 			children = (
 				DF1D27B81E71CFDA007285CE /* StitchViewController.swift */,
-				7D21B05B1E7FEE26005A145D /* StitchExtension.swift */,
 				7DC90EA61E7B1D220077B71E /* StitchTableViewCell.swift */,
 				7DC90EAA1E7B55680077B71E /* StitchTableViewExtension.swift */,
 				7D686D341E7BEB980092E41B /* StitchTextFieldExtension.swift */,
@@ -185,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				DF5E4AA91E7C40F700CA4E8B /* Stitch.swift */,
+				7D21B05D1E8059FC005A145D /* Serialization.swift */,
 				7D21B0571E7FED1B005A145D /* BuildStory.swift */,
 				7DF015C51E6B9B370048AAA8 /* Story.swift */,
 			);
@@ -353,7 +353,6 @@
 				4CC0C7611E71F7320094823E /* Colors.swift in Sources */,
 				4C000F1E1E77296E0007E32D /* LoginViewController.swift in Sources */,
 				81B782971E7B194400F96DD8 /* MapTableViewCell.swift in Sources */,
-				7D21B05C1E7FEE26005A145D /* StitchExtension.swift in Sources */,
 				818518D91E71C9CF00191121 /* MapTableViewController.swift in Sources */,
 				7D686D371E7BEBEB0092E41B /* StitchTextViewExt.swift in Sources */,
 				7DC90EA71E7B1D220077B71E /* StitchTableViewCell.swift in Sources */,
@@ -368,6 +367,7 @@
 				DFBEF1D81E7B6260009519C3 /* SetNavBarTitle.swift in Sources */,
 				DFD15E701E7CC60000B88E2B /* Stack.swift in Sources */,
 				DFBEF1D41E7B214D009519C3 /* ReaderOptionsTableViewCell.swift in Sources */,
+				7D21B05E1E8059FC005A145D /* Serialization.swift in Sources */,
 				7D686D351E7BEB980092E41B /* StitchTextFieldExtension.swift in Sources */,
 				7D21B0581E7FED1B005A145D /* BuildStory.swift in Sources */,
 				DF1D27B91E71CFDA007285CE /* StitchViewController.swift in Sources */,

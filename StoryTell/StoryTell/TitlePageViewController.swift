@@ -21,6 +21,10 @@ class TitlePageViewController: UIViewController {
         configureConstraints()
         navigationButtons()
         
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Cochin", size: 20)!]
+
+        
     }
     
     // MARK: - Navigation Buttons

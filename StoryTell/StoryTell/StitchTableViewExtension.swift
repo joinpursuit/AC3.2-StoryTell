@@ -29,6 +29,16 @@ extension StitchViewController: UITableViewDataSource, UITableViewDelegate {
         cell.textField.text = prompts[indexPath.row]
         
         cell.writeOptionButton.tag = indexPath.row
+        branchLine = prompts[indexPath.row]
+        
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        let dateStr = formatter.string(from: date)
+        
+        let option = Option(prompt: branchLine, link: dateStr)
+        optionsArr.append(option)
+        
         let button = cell.writeOptionButton
         button.addTarget(self, action: #selector(refreshView(_:)), for: .touchUpInside)
         
@@ -53,8 +63,12 @@ extension StitchViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = StitchTableViewCell()
-        if indexPath.section == 0 && indexPath.row == 0 {
+        if indexPath.section == 0  {
             cell.textField.becomeFirstResponder()
+        }
+        if branchLine == prompts[indexPath.row] {
+            tag = indexPath.row
+            
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }

@@ -20,7 +20,7 @@ class ReaderOptionsViewController: UIViewController {
         setupViewHierarchy()
         configureConstraints()
         
-        
+//        self.navigationItem.setHidesBackButton(true, animated:true)
     }
     
     // MARK: - Setup
