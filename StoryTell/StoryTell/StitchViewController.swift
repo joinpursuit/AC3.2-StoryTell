@@ -13,14 +13,13 @@ class StitchViewController: UIViewController {
     var optionsArr = [Option]()
     let buildStory = BuildStory()
     var branchLine = String()
-<<<<<<< HEAD
-=======
+
     var tag = Int()
     //var story: Story!
     
     //var readervc = V2ReaderViewController()
     var keyFromReader: String!
->>>>>>> develop
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
