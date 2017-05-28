@@ -336,7 +336,7 @@ extension V2ReaderViewController: UITableViewDelegate, UITableViewDataSource {
         cell.addGestureRecognizer(longGesture)
         
         
-        var bulletpoint:String = "❧"
+        let bulletpoint:String = "❧"
         let stitch = story.stitches[currentStitchKey]
         
         cell.textLabel?.text = "\(bulletpoint)  \((stitch?.options[indexPath.row].prompt)!)"
