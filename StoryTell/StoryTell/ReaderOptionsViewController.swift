@@ -15,7 +15,6 @@ class ReaderOptionsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.white
         
         setupViewHierarchy()
         configureConstraints()
@@ -60,8 +59,6 @@ extension ReaderOptionsViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ReaderOptionsTableViewCell
-        
-        
         if let status = UserDefaults.standard.object(forKey: "onOff") as? Bool {
             if status == true {
                 
@@ -71,9 +68,11 @@ extension ReaderOptionsViewController: UITableViewDelegate, UITableViewDataSourc
             }
         }
         cell.nightLabel.text = "Night Mode"
-        
+        cell.nightLabel.textColor = Colors.cranberry
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        tableView.backgroundColor = Colors.cream
+    }
 }
 
