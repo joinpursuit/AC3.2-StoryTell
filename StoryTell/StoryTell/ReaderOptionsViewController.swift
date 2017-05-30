@@ -68,7 +68,8 @@ extension ReaderOptionsViewController: UITableViewDelegate, UITableViewDataSourc
             }
         }
         cell.nightLabel.text = "Night Mode"
-        cell.nightLabel.textColor = Colors.cranberry
+        cell.nightLabel.textColor = Colors.navy
+        cell.nightLabel.font = UIFont(name: "Cochin", size: 20)
         return cell
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
