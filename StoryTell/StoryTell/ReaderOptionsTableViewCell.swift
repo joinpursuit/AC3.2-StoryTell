@@ -15,7 +15,7 @@ class ReaderOptionsTableViewCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        contentView.backgroundColor = UIColor.white
+        contentView.backgroundColor = Colors.cream
         
         self.contentView.addSubview(nightModeSwitch)
         self.contentView.addSubview(nightLabel)

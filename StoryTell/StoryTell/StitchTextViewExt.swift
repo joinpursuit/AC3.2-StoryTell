@@ -10,11 +10,7 @@ import UIKit
 
 extension StitchViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
-        
-        //textView.text = story.stitches[keyFromReader]?.content
         if textView.textColor == UIColor.lightGray {
-            
-            
             textView.text = nil
             textView.textColor = Colors.navy
             print("I am writing NOW")

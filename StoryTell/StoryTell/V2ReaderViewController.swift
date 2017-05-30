@@ -45,8 +45,6 @@ class V2ReaderViewController: UIViewController {
         
         
         
-        
-        
         navigationItem.title = "Reader"
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSForegroundColorAttributeName: Colors.navy,
@@ -54,28 +52,14 @@ class V2ReaderViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = Colors.cream
         navigationController?.navigationBar.tintColor = Colors.cranberry
         
-
         
-        
-        navigationItem.rightBarButtonItems = [gearButton, editButton]
+        navigationItem.rightBarButtonItem = gearButton
         navigationItem.leftBarButtonItems = [backButton, homeButton]
         
         
         
     }
  
-    
-    func editButtonAction(){
-        print("I am a motherfucking barbutton!")
-       // present(StitchViewController(), animated: true, completion: nil)
-        
-        readerTextView.resignFirstResponder()
-        editButton.isEnabled = false
-        editButton.tintColor = UIColor.clear
-        story.stitches[currentStitchKey]?.content = readerTextView.text
-        
-    }
-    
     
     func longTap(_ sender : UIGestureRecognizer){
         print("Long tap")
@@ -250,7 +234,6 @@ class V2ReaderViewController: UIViewController {
         let stitchValue = story.stitches[key]
         readerText = (stitchValue?.content)!
         readerTextView.text = readerText
-       
         currentStitchKey = key
         
         optionsTableView.reloadData()
@@ -276,11 +259,10 @@ class V2ReaderViewController: UIViewController {
     lazy var readerTextView: UITextView = {
         let textView: UITextView = UITextView()
         textView.textColor = Colors.navy
-        //textView.isEditable = false
+        textView.isEditable = false
         textView.font = UIFont(name: "Cochin", size: 24)
         textView.backgroundColor = Colors.cream
         
-        textView.delegate = self
         
         return textView
     }()
@@ -318,33 +300,6 @@ class V2ReaderViewController: UIViewController {
         
         return barButton
     }()
-    
-    lazy var editButton: UIBarButtonItem = {
-        let barButton: UIBarButtonItem = UIBarButtonItem()
-        barButton.style = UIBarButtonItemStyle.plain
-        barButton.target = self
-        barButton.action = #selector(editButtonAction)
-        barButton.image = #imageLiteral(resourceName: "writeEdit")
-        barButton.isEnabled = false
-        barButton.tintColor = UIColor.clear
-        
-       return barButton
-    }()
-    
-    
-}
-
-
-extension V2ReaderViewController: UITextViewDelegate {
-    
-    
-    func textViewDidChange(_ textView: UITextView) {
-        
-        if textView == readerTextView {
-            editButton.isEnabled = true
-            editButton.tintColor = nil
-        }
-    }
     
 }
 
@@ -397,7 +352,7 @@ extension V2ReaderViewController: UITableViewDelegate, UITableViewDataSource {
         cell.addGestureRecognizer(longGesture)
         
         
-        var bulletpoint:String = "❧"
+        let bulletpoint:String = "❧"
         let stitch = story.stitches[currentStitchKey]
         
         cell.textLabel?.text = "\(bulletpoint)  \((stitch?.options[indexPath.row].prompt)!)"
@@ -415,7 +370,6 @@ extension V2ReaderViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let stitch = story.stitches[currentStitchKey]
-  
         
 
         stackOfStoryKey.push(currentStitchKey)

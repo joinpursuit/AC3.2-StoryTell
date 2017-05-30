@@ -8,18 +8,18 @@
 
 import UIKit
 
-
-
 class StitchViewController: UIViewController {
     var prompts = [String]()
     var optionsArr = [Option]()
     let buildStory = BuildStory()
     var branchLine = String()
+
     var tag = Int()
     //var story: Story!
     
     //var readervc = V2ReaderViewController()
     var keyFromReader: String!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,15 +29,6 @@ class StitchViewController: UIViewController {
         configureConstraints()
         setupNavigation()
         toolbar()
-        
-       // keyFromReader = readervc.currentStitchKey
-        //proseTextView.text = story.stitches[keyFromReader]?.content
-    }
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        //proseTextView.text = story.stitches[keyFromReader]?.content
     }
     
     
@@ -267,7 +258,7 @@ class StitchViewController: UIViewController {
     lazy var proseTextView: UITextView = {
         let textView: UITextView = UITextView()
         textView.textColor = UIColor.lightGray
-        //textView.text = "Once upon a time..."
+        textView.text = "Once upon a time..."
         textView.font = UIFont(name: "Cochin", size: 25)
         textView.backgroundColor = Colors.cream
         textView.isHidden = false

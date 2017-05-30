@@ -10,32 +10,28 @@ import UIKit
 import SnapKit
 
 class LandingPageViewController: UIViewController {
-    let stories = ["Red Riding Hood", "Fifty Shades of Fanfiction", "Slack: A Love Story", "Github: A Frustration Story", "C4Q: Sleep No More"]
+    let stories = ["Read Me", "Some Lovely Fanfiction", "Slack: A Love Story", "Github: A Frustration Story", "C4Q: Sleep No More"]
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Colors.cream
-        navigationItem.title = "Bookshelf"
+        navigationItem.title = "Your Bookshelf"
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSForegroundColorAttributeName: Colors.navy,
              NSFontAttributeName: UIFont(name: "Cochin-BoldItalic", size: 20)!]
         navigationController?.navigationBar.barTintColor = Colors.cream
         navigationController?.navigationBar.tintColor = Colors.cranberry
         setupView()
+                
+        var writeImage = UIImage(named: "writeEdit")
         
+        writeImage = writeImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: writeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(writeButtonPressed))
+        
+        let logOutButton = UIBarButtonItem(title: "Log Out", style: UIBarButtonItemStyle.plain, target: self, action: #selector(logOutButtonPressed))
+        logOutButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
+        self.navigationItem.leftBarButtonItem = logOutButton
 
-        
-        //Commented out for the demo only
-        
-//        var writeImage = UIImage(named: "writeEdit")
-//        
-//        writeImage = writeImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
-//        
-//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: writeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(writeButtonPressed))
-//        
-//        let logOutButton = UIBarButtonItem(title: "Log Out", style: UIBarButtonItemStyle.plain, target: self, action: #selector(logOutButtonPressed))
-//        logOutButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
-        //self.navigationItem.leftBarButtonItem = logOutButton
-        
         self.landingPageTableview.backgroundColor = Colors.cream
         
         self.navigationItem.setHidesBackButton(true, animated:true);
