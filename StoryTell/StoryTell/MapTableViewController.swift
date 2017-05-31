@@ -28,8 +28,6 @@ class MapTableViewController: UITableViewController {
         navigationController?.navigationBar.barTintColor = Colors.cream
         navigationController?.navigationBar.tintColor = Colors.cranberry
 
-        let publishButton = UIBarButtonItem(title: "Publish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(publishButtonTapped))
-        publishButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Cochin", size: 16)!], for: UIControlState.normal)
         var writeImage = UIImage(named: "writeEdit")
         
         writeImage = writeImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
@@ -44,7 +42,7 @@ class MapTableViewController: UITableViewController {
         
         let homeButton = UIBarButtonItem(image: homeImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(homeTapped))
 
-        navigationItem.rightBarButtonItems = [publishButton, writeButton]
+        navigationItem.rightBarButtonItems = [writeButton]
         navigationItem.leftBarButtonItems = [backButton, homeButton]
         
         
@@ -72,17 +70,7 @@ class MapTableViewController: UITableViewController {
         let _ = self.navigationController?.popViewController(animated: true)
         
     }
-    func publishButtonTapped() {
-        let alertController = UIAlertController(title: "Coming Soon!", message: "You found a future feature. Soon Story Tell will allow you to publish and share your story with other Story Tell users.", preferredStyle: UIAlertControllerStyle.alert)
-        
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
-            (result : UIAlertAction) -> Void in
-            print("OK")
-        }
-        
-        
-        alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion: nil)    }
+    
     func loadData() {
         story = Story.readStory()
         expandStitches()
