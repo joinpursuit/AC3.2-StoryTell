@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        UINavigationBar.appearance().titleTextAttributes = [
 //            NSFontAttributeName: UIFont(name: "Cochin", size: 20)!
 //        ]
-        let navigationVC = UINavigationController(rootViewController: LandingPageViewController())
+        let navigationVC = UINavigationController(rootViewController: LoginViewController())
         
         
         self.window = UIWindow(frame: UIScreen.main.bounds)

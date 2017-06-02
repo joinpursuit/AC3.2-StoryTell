@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import FirebaseAuth
 
 class LandingPageViewController: UIViewController {
     let stories = ["Read Me", "Some Lovely Fanfiction", "Slack: A Love Story", "Github: A Frustration Story", "C4Q: Sleep No More"]
@@ -89,9 +90,17 @@ class LandingPageViewController: UIViewController {
         self.navigationController?.pushViewController(newViewController, animated: true)
     }
     func logOutButtonPressed() {
+        do {
+            try FIRAuth.auth()?.signOut()
+        } catch {
+            print(error)
+        }
+        let vc = LoginViewController()
+        self.present(vc, animated: true, completion: nil)
+        return
+    }
         //let newViewController = MARIA's LOGIN PAGE VC
         //self.navigationController?.pushViewController(newViewController, animated: true)
-    }
     internal lazy var landingPageTextWelcome: UILabel = {
         let landingPageText = UILabel()
         landingPageText.text = "Welcome to"
