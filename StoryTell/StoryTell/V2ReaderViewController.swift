@@ -59,7 +59,7 @@ class V2ReaderViewController: UIViewController {
         
         
     }
-    
+ 
     
     func longTap(_ sender : UIGestureRecognizer){
         print("Long tap")
@@ -158,6 +158,11 @@ class V2ReaderViewController: UIViewController {
                 self.readerTextView.backgroundColor = UIColor.black
                 self.optionsTableView.backgroundColor = UIColor.black
                 self.view.backgroundColor = UIColor.black
+                navigationController?.navigationBar.tintColor = UIColor.white
+                navigationController?.navigationBar.barTintColor = UIColor.black
+                self.navigationController?.navigationBar.titleTextAttributes =
+                    [NSForegroundColorAttributeName: UIColor.white,
+                     NSFontAttributeName: UIFont(name: "Cochin-BoldItalic", size: 21)!]
                 
                 optionsTableView.reloadData()
                 
@@ -167,7 +172,13 @@ class V2ReaderViewController: UIViewController {
                 self.readerTextView.textColor = Colors.navy
                 self.readerTextView.backgroundColor = Colors.cream
                 self.optionsTableView.backgroundColor = Colors.cranberry
+                navigationController?.navigationBar.barTintColor = Colors.cream
+                navigationController?.navigationBar.tintColor = Colors.cranberry
+                self.navigationController?.navigationBar.titleTextAttributes =
+                    [NSForegroundColorAttributeName: Colors.navy,
+                     NSFontAttributeName: UIFont(name: "Cochin-BoldItalic", size: 21)!]
                 optionsTableView.reloadData()
+                
             }
             
             
@@ -178,6 +189,11 @@ class V2ReaderViewController: UIViewController {
             self.readerTextView.textColor = UIColor.black
             self.readerTextView.backgroundColor = Colors.cream
             self.optionsTableView.backgroundColor = Colors.cranberry
+            navigationController?.navigationBar.barTintColor = Colors.cream
+            navigationController?.navigationBar.tintColor = Colors.cranberry
+            self.navigationController?.navigationBar.titleTextAttributes =
+                [NSForegroundColorAttributeName: Colors.navy,
+                 NSFontAttributeName: UIFont(name: "Cochin-BoldItalic", size: 21)!]
             optionsTableView.reloadData()
         }
         
